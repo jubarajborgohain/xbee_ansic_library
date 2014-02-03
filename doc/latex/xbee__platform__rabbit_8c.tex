@@ -1,0 +1,32 @@
+\hypertarget{xbee__platform__rabbit_8c}{\section{src/rabbit/xbee\-\_\-platform\-\_\-rabbit.c File Reference}
+\label{xbee__platform__rabbit_8c}\index{src/rabbit/xbee\-\_\-platform\-\_\-rabbit.\-c@{src/rabbit/xbee\-\_\-platform\-\_\-rabbit.\-c}}
+}
+
+
+Platform-\/specific functions for use by the X\-Bee Driver on Rabbit/\-Dynamic C platform.  
+
+
+{\ttfamily \#include \char`\"{}xbee/platform.\-h\char`\"{}}\\*
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{group__hal__rabbit_gae8fb830d9a707a0f6d60a2c480ed7dfc}{\#define {\bfseries xbee\-\_\-seconds\-\_\-timer}()~(S\-E\-C\-\_\-\-T\-I\-M\-E\-R + 0)}\label{group__hal__rabbit_gae8fb830d9a707a0f6d60a2c480ed7dfc}
+
+\item 
+\hypertarget{group__hal__rabbit_gae68dcfee6e7c24b7a401c769c3fc1dd0}{\#define {\bfseries xbee\-\_\-millisecond\-\_\-timer}()~(M\-S\-\_\-\-T\-I\-M\-E\-R + 0)}\label{group__hal__rabbit_gae68dcfee6e7c24b7a401c769c3fc1dd0}
+
+\item 
+\hypertarget{group__hal__rabbit_gab5b9fab5902286c1bb085bfd9dfe9db0}{\#define {\bfseries xbee\-\_\-readline}(buffer, \hyperlink{group__zdo_gab2b3adeb2a67e656ff030b56727fd0ac}{length})~getsn\-\_\-tick(buffer, \hyperlink{group__zdo_gab2b3adeb2a67e656ff030b56727fd0ac}{length})}\label{group__hal__rabbit_gab5b9fab5902286c1bb085bfd9dfe9db0}
+
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{group__hal_gae1affc9ca37cfb624959c866a73f83c2}{uint8\-\_\-t} \hyperlink{group__hal__rabbit_ga02da89986736815045b1a11e1c58733e}{\-\_\-xbee\-\_\-checksum\-\_\-inline} (const void \-\_\-\-\_\-far $\ast$bytes, uint\-\_\-fast8\-\_\-t \hyperlink{group__zdo_gab2b3adeb2a67e656ff030b56727fd0ac}{length}, uint\-\_\-fast8\-\_\-t initial)
+\begin{DoxyCompactList}\small\item\em Rabbit-\/assembly version of \hyperlink{group__xbee__device_gac80e0cc51e69ec00731528a04ba8d667}{\-\_\-xbee\-\_\-checksum()}. \end{DoxyCompactList}\item 
+void \hyperlink{group__hal__rabbit_ga23fd4d4005a80a26ff3c6ba23a4af560}{\-\_\-swapcpy} (void \hyperlink{group__hal_gaef060b3456fdcc093a7210a762d5f2ed}{F\-A\-R} $\ast$dst, const void \hyperlink{group__hal_gaef060b3456fdcc093a7210a762d5f2ed}{F\-A\-R} $\ast$src, uint\-\_\-fast8\-\_\-t bytes)
+\begin{DoxyCompactList}\small\item\em Function similar to memcpy() but reverses byte order during copy. Copy {\itshape count} from {\itshape src} to {\itshape dst} while reversing the order. Assumes that {\itshape src} and {\itshape dst} do not overlap. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Platform-\/specific functions for use by the X\-Bee Driver on Rabbit/\-Dynamic C platform. 

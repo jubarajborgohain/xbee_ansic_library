@@ -1,0 +1,68 @@
+\hypertarget{structem3xx__header__t}{\section{em3xx\-\_\-header\-\_\-t Struct Reference}
+\label{structem3xx__header__t}\index{em3xx\-\_\-header\-\_\-t@{em3xx\-\_\-header\-\_\-t}}
+}
+
+
+Header for E\-M3\-X\-X-\/based firmware images.  
+
+
+
+
+{\ttfamily \#include \char`\"{}xbee/ebl\-\_\-file.\-h\char`\"{}}
+
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{structem3xx__header__t_a7de4514a713d8a42dd9d4749d775a0ef}{\hyperlink{group__hal_ga5a8b2dc9e45a9ee81a94ef304fb62505}{uint16\-\_\-t} \hyperlink{structem3xx__header__t_a7de4514a713d8a42dd9d4749d775a0ef}{ebltag\-\_\-be}}\label{structem3xx__header__t_a7de4514a713d8a42dd9d4749d775a0ef}
+
+\begin{DoxyCompactList}\small\item\em Set to E\-B\-L\-T\-A\-G\-\_\-\-H\-E\-A\-D\-E\-R (0x0000) \end{DoxyCompactList}\item 
+\hypertarget{structem3xx__header__t_a44c1c906129a1b8f619154f42c31d706}{\hyperlink{group__hal_ga5a8b2dc9e45a9ee81a94ef304fb62505}{uint16\-\_\-t} \hyperlink{structem3xx__header__t_a44c1c906129a1b8f619154f42c31d706}{length\-\_\-be}}\label{structem3xx__header__t_a44c1c906129a1b8f619154f42c31d706}
+
+\begin{DoxyCompactList}\small\item\em Set to 140. \end{DoxyCompactList}\item 
+\hypertarget{structem3xx__header__t_a47c27db5c7ed6378e2345c0781bd140d}{\hyperlink{group__hal_ga5a8b2dc9e45a9ee81a94ef304fb62505}{uint16\-\_\-t} \hyperlink{structem3xx__header__t_a47c27db5c7ed6378e2345c0781bd140d}{version\-\_\-be}}\label{structem3xx__header__t_a47c27db5c7ed6378e2345c0781bd140d}
+
+\begin{DoxyCompactList}\small\item\em Version of the ebl format. \end{DoxyCompactList}\item 
+\hypertarget{structem3xx__header__t_ab20e78cfd004b348162a62ebe3689514}{\hyperlink{group__hal_ga5a8b2dc9e45a9ee81a94ef304fb62505}{uint16\-\_\-t} \hyperlink{structem3xx__header__t_ab20e78cfd004b348162a62ebe3689514}{signature\-\_\-be}}\label{structem3xx__header__t_ab20e78cfd004b348162a62ebe3689514}
+
+\begin{DoxyCompactList}\small\item\em Set to I\-M\-A\-G\-E\-\_\-\-S\-I\-G\-N\-A\-T\-U\-R\-E\-\_\-\-E\-M350 (0x\-E350) \end{DoxyCompactList}\item 
+\hypertarget{structem3xx__header__t_a3815ffdb1bd4a85cf7264add6f501a04}{\hyperlink{group__hal_gae1affc9ca37cfb624959c866a73f83c2}{uint8\-\_\-t} {\bfseries reserved0} \mbox{[}32\mbox{]}}\label{structem3xx__header__t_a3815ffdb1bd4a85cf7264add6f501a04}
+
+\item 
+\hypertarget{structem3xx__header__t_a92f03de0e95503b40dd0b3f5f6fea571}{\hyperlink{group__hal_gae1affc9ca37cfb624959c866a73f83c2}{uint8\-\_\-t} \hyperlink{structem3xx__header__t_a92f03de0e95503b40dd0b3f5f6fea571}{plat\-\_\-info}}\label{structem3xx__header__t_a92f03de0e95503b40dd0b3f5f6fea571}
+
+\begin{DoxyCompactList}\small\item\em type of platform \end{DoxyCompactList}\item 
+\hypertarget{structem3xx__header__t_a5fe184b033b139667d6bb11e7e635068}{\hyperlink{group__hal_gae1affc9ca37cfb624959c866a73f83c2}{uint8\-\_\-t} \hyperlink{structem3xx__header__t_a5fe184b033b139667d6bb11e7e635068}{micro\-\_\-info}}\label{structem3xx__header__t_a5fe184b033b139667d6bb11e7e635068}
+
+\begin{DoxyCompactList}\small\item\em type of micro \end{DoxyCompactList}\item 
+\hypertarget{structem3xx__header__t_a0a3dfa3e71fdb6dcbbfc46ac07b1f57b}{\hyperlink{group__hal_gae1affc9ca37cfb624959c866a73f83c2}{uint8\-\_\-t} \hyperlink{structem3xx__header__t_a0a3dfa3e71fdb6dcbbfc46ac07b1f57b}{phy\-\_\-info}}\label{structem3xx__header__t_a0a3dfa3e71fdb6dcbbfc46ac07b1f57b}
+
+\begin{DoxyCompactList}\small\item\em type of phy \end{DoxyCompactList}\item 
+\hypertarget{structem3xx__header__t_a2a2556147677ece60b8aadf4a0d608ed}{\hyperlink{group__hal_gae1affc9ca37cfb624959c866a73f83c2}{uint8\-\_\-t} {\bfseries reserved1}}\label{structem3xx__header__t_a2a2556147677ece60b8aadf4a0d608ed}
+
+\item 
+\hypertarget{structem3xx__header__t_aca5866225bd639aaf7cd605882ba8ccb}{\hyperlink{group__hal_gae1affc9ca37cfb624959c866a73f83c2}{uint8\-\_\-t} \hyperlink{structem3xx__header__t_aca5866225bd639aaf7cd605882ba8ccb}{znet\-\_\-build}}\label{structem3xx__header__t_aca5866225bd639aaf7cd605882ba8ccb}
+
+\begin{DoxyCompactList}\small\item\em Ember\-Z\-Net build. \end{DoxyCompactList}\item 
+\hypertarget{structem3xx__header__t_a1a7c62d0355b014b3bb108da63ac4cdd}{\hyperlink{group__hal_gae1affc9ca37cfb624959c866a73f83c2}{uint8\-\_\-t} \hyperlink{structem3xx__header__t_a1a7c62d0355b014b3bb108da63ac4cdd}{znet\-\_\-release}}\label{structem3xx__header__t_a1a7c62d0355b014b3bb108da63ac4cdd}
+
+\begin{DoxyCompactList}\small\item\em Ember\-Z\-Net release (0x46 = 4.\-6.\-x) \end{DoxyCompactList}\item 
+\hypertarget{structem3xx__header__t_ad87bb8ef8872d65e286655fb4998c101}{\hyperlink{group__hal_gae1affc9ca37cfb624959c866a73f83c2}{uint8\-\_\-t} {\bfseries reserved2} \mbox{[}2\mbox{]}}\label{structem3xx__header__t_ad87bb8ef8872d65e286655fb4998c101}
+
+\item 
+\hypertarget{structem3xx__header__t_ac434298f7073e722b21a649fa534bdc4}{\hyperlink{group__hal__dos_ga09a1e304d66d35dd47daffee9731edaa}{uint32\-\_\-t} \hyperlink{structem3xx__header__t_ac434298f7073e722b21a649fa534bdc4}{timestamp\-\_\-le}}\label{structem3xx__header__t_ac434298f7073e722b21a649fa534bdc4}
+
+\begin{DoxyCompactList}\small\item\em .ebl file build time; seconds since 1/1/1970 \end{DoxyCompactList}\item 
+\hypertarget{structem3xx__header__t_ac8e0e93c0a3fec6ad01c8d1ff930ff3a}{\hyperlink{group__hal_gae1affc9ca37cfb624959c866a73f83c2}{uint8\-\_\-t} \hyperlink{structem3xx__header__t_ac8e0e93c0a3fec6ad01c8d1ff930ff3a}{image\-\_\-info} \mbox{[}32\mbox{]}}\label{structem3xx__header__t_ac8e0e93c0a3fec6ad01c8d1ff930ff3a}
+
+\begin{DoxyCompactList}\small\item\em string \end{DoxyCompactList}\item 
+\hypertarget{structem3xx__header__t_aac50499c70d1c3386dae5720b0878a7a}{\hyperlink{group__hal_gae1affc9ca37cfb624959c866a73f83c2}{uint8\-\_\-t} {\bfseries reserved3} \mbox{[}60\mbox{]}}\label{structem3xx__header__t_aac50499c70d1c3386dae5720b0878a7a}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Header for E\-M3\-X\-X-\/based firmware images. 
+
+The documentation for this struct was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+include/xbee/\hyperlink{ebl__file_8h}{ebl\-\_\-file.\-h}\end{DoxyCompactItemize}

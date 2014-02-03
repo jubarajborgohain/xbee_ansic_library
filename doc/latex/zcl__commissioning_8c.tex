@@ -1,0 +1,60 @@
+\hypertarget{zcl__commissioning_8c}{\section{src/zigbee/zcl\-\_\-commissioning.c File Reference}
+\label{zcl__commissioning_8c}\index{src/zigbee/zcl\-\_\-commissioning.\-c@{src/zigbee/zcl\-\_\-commissioning.\-c}}
+}
+
+
+Implementation of Z\-C\-L Commissioning Cluster.  
+
+
+{\ttfamily \#include $<$stdio.\-h$>$}\\*
+{\ttfamily \#include \char`\"{}zigbee/zcl\-\_\-commissioning.\-h\char`\"{}}\\*
+{\ttfamily \#include $<$stdlib.\-h$>$}\\*
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{group__zcl__commissioning_gae3180284d1a5a9af2176173a58cc1f4c}{\-\_\-zcl\-\_\-comm\-\_\-startup\-\_\-control\-\_\-set} (const \hyperlink{structzcl__attribute__full__t}{zcl\-\_\-attribute\-\_\-full\-\_\-t} \hyperlink{group__hal_gaef060b3456fdcc093a7210a762d5f2ed}{F\-A\-R} $\ast$attribute, \hyperlink{structzcl__attribute__write__rec__t}{zcl\-\_\-attribute\-\_\-write\-\_\-rec\-\_\-t} $\ast$rec)
+\begin{DoxyCompactList}\small\item\em Limit values of startup\-\_\-control based on firmware type (e.\-g., some firmwares can't be Z\-C\-L\-\_\-\-C\-O\-M\-M\-\_\-\-S\-T\-A\-R\-T\-U\-P\-\_\-\-C\-O\-O\-R\-D\-I\-N\-A\-T\-O\-R). \end{DoxyCompactList}\item 
+\hypertarget{group__zcl__commissioning_ga57f9aaf3da6dc9b513f7f9ccbb473a0b}{int \hyperlink{group__zcl__commissioning_ga57f9aaf3da6dc9b513f7f9ccbb473a0b}{zcl\-\_\-comm\-\_\-response} (const \hyperlink{structwpan__envelope__t}{wpan\-\_\-envelope\-\_\-t} \hyperlink{group__hal_gaef060b3456fdcc093a7210a762d5f2ed}{F\-A\-R} $\ast$envelope, uint\-\_\-fast8\-\_\-t \hyperlink{group__xbee__atcmd_gade818037fd6c985038ff29656089758d}{status})}\label{group__zcl__commissioning_ga57f9aaf3da6dc9b513f7f9ccbb473a0b}
+
+\begin{DoxyCompactList}\small\item\em Send response to a Commissioning Server Cluster request. \end{DoxyCompactList}\item 
+int \hyperlink{group__zcl__commissioning_ga0eeed24c2ca26aa030876addc4caf67d}{\-\_\-zcl\-\_\-comm\-\_\-command\-\_\-build} (\hyperlink{structwpan__envelope__t}{wpan\-\_\-envelope\-\_\-t} \hyperlink{group__hal_gaef060b3456fdcc093a7210a762d5f2ed}{F\-A\-R} $\ast$envelope, \hyperlink{group__zcl_gae988eb59c8a2e75b6cb34aefeca315d1}{zcl\-\_\-header\-\_\-nomfg\-\_\-t} $\ast$header)
+\begin{DoxyCompactList}\small\item\em Common function used by zcl\-\_\-comm\-\_\-restart\-\_\-device and zcl\-\_\-comm\-\_\-reset\-\_\-parameters. \end{DoxyCompactList}\item 
+int \hyperlink{group__zcl__commissioning_gab653d2ac290d96d3131c894f7330fbb6}{\-\_\-zcl\-\_\-comm\-\_\-command\-\_\-send} (\hyperlink{structwpan__envelope__t}{wpan\-\_\-envelope\-\_\-t} \hyperlink{group__hal_gaef060b3456fdcc093a7210a762d5f2ed}{F\-A\-R} $\ast$envelope)
+\begin{DoxyCompactList}\small\item\em Common function used by zcl\-\_\-comm\-\_\-restart\-\_\-device and zcl\-\_\-comm\-\_\-reset\-\_\-parameters. \end{DoxyCompactList}\item 
+int \hyperlink{group__zcl__commissioning_ga891e67720dee8334b805756597a62607}{zcl\-\_\-comm\-\_\-restart\-\_\-device} (\hyperlink{structwpan__envelope__t}{wpan\-\_\-envelope\-\_\-t} \hyperlink{group__hal_gaef060b3456fdcc093a7210a762d5f2ed}{F\-A\-R} $\ast$envelope, const zcl\-\_\-comm\-\_\-restart\-\_\-device\-\_\-cmd\-\_\-t $\ast$parameters)
+\begin{DoxyCompactList}\small\item\em Send a \char`\"{}\-Restart Device\char`\"{} command to the Z\-C\-L Commissioning Cluster. \end{DoxyCompactList}\item 
+int \hyperlink{group__zcl__commissioning_ga3d73d7ef453da4940c923d7d7663f8d9}{zcl\-\_\-comm\-\_\-reset\-\_\-parameters} (\hyperlink{structwpan__envelope__t}{wpan\-\_\-envelope\-\_\-t} \hyperlink{group__hal_gaef060b3456fdcc093a7210a762d5f2ed}{F\-A\-R} $\ast$envelope, const zcl\-\_\-comm\-\_\-reset\-\_\-startup\-\_\-param\-\_\-t $\ast$parameters)
+\begin{DoxyCompactList}\small\item\em Send a \char`\"{}\-Reset Startup Parameters\char`\"{} command to the Z\-C\-L Commissioning Cluster. \end{DoxyCompactList}\item 
+\hypertarget{group__zcl__commissioning_ga54e8b0e19100923272edbfcfec798409}{int {\bfseries rand\-\_\-range} (int range)}\label{group__zcl__commissioning_ga54e8b0e19100923272edbfcfec798409}
+
+\item 
+\hyperlink{group__hal_ga04dd5074964518403bf944f2b240a5f8}{bool\-\_\-t} \hyperlink{group__zcl__commissioning_ga91a578cd65163c738bd57a4249955c05}{zcl\-\_\-comm\-\_\-sas\-\_\-is\-\_\-valid} (const \hyperlink{structzcl__comm__state__t}{zcl\-\_\-comm\-\_\-state\-\_\-t} \hyperlink{group__hal_gaef060b3456fdcc093a7210a762d5f2ed}{F\-A\-R} $\ast$comm)
+\begin{DoxyCompactList}\small\item\em Partial implementation of a function to validate a Startup Attribute Set before trying to use it. \end{DoxyCompactList}\item 
+\hypertarget{group__zcl__commissioning_ga07258712d6ad21e9ddb96069bb08c896}{int {\bfseries zcl\-\_\-comm\-\_\-clust\-\_\-handler} (const \hyperlink{structwpan__envelope__t}{wpan\-\_\-envelope\-\_\-t} \hyperlink{group__hal_gaef060b3456fdcc093a7210a762d5f2ed}{F\-A\-R} $\ast$envelope, void \hyperlink{group__hal_gaef060b3456fdcc093a7210a762d5f2ed}{F\-A\-R} $\ast$context)}\label{group__zcl__commissioning_ga07258712d6ad21e9ddb96069bb08c896}
+
+\item 
+\hypertarget{group__zcl__commissioning_gae85ac833a5eaf6f4a8cb6a5a9e6bb49e}{void {\bfseries zcl\-\_\-comm\-\_\-sas\-\_\-init} (\hyperlink{structzcl__comm__startup__param__t}{zcl\-\_\-comm\-\_\-startup\-\_\-param\-\_\-t} $\ast$p)}\label{group__zcl__commissioning_gae85ac833a5eaf6f4a8cb6a5a9e6bb49e}
+
+\item 
+void \hyperlink{group__zcl__commissioning_ga1fb799391c7d917facd792d57e3db0fe}{zcl\-\_\-comm\-\_\-factory\-\_\-reset} (\hyperlink{group__hal_ga5a8b2dc9e45a9ee81a94ef304fb62505}{uint16\-\_\-t} ms\-\_\-delay)
+\begin{DoxyCompactList}\small\item\em Perform a locally-\/triggered factory reset to default S\-A\-S. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{group__zcl__commissioning_gaf8ec8c74f3638336b9a1a23e2b88a7ba}{const \hyperlink{group__zcl__64_ga2e906cb47fc172ae60da5178075dd3c7}{zcl64\-\_\-t} {\bfseries zcl\-\_\-comm\-\_\-global\-\_\-epid} = Z\-C\-L\-\_\-\-C\-O\-M\-M\-\_\-\-G\-L\-O\-B\-A\-L\-\_\-\-E\-P\-I\-D}\label{group__zcl__commissioning_gaf8ec8c74f3638336b9a1a23e2b88a7ba}
+
+\item 
+\hypertarget{group__zcl__commissioning_ga19d5f58d61bf7ad0d29386bc11aa48ae}{\hyperlink{structzcl__comm__state__t}{zcl\-\_\-comm\-\_\-state\-\_\-t} {\bfseries zcl\-\_\-comm\-\_\-state} = \{ \{ 0 \} \}}\label{group__zcl__commissioning_ga19d5f58d61bf7ad0d29386bc11aa48ae}
+
+\item 
+\hypertarget{group__zcl__commissioning_gaa88e1b649cac11f8c31f63305ad3ca2d}{const \hyperlink{structzcl__comm__startup__attr__t}{zcl\-\_\-comm\-\_\-startup\-\_\-attr\-\_\-t} {\bfseries zcl\-\_\-comm\-\_\-startup\-\_\-attributes}}\label{group__zcl__commissioning_gaa88e1b649cac11f8c31f63305ad3ca2d}
+
+\item 
+const \hyperlink{structzcl__attribute__tree__t}{zcl\-\_\-attribute\-\_\-tree\-\_\-t} {\bfseries zcl\-\_\-comm\-\_\-startup\-\_\-attribute\-\_\-tree} \mbox{[}$\,$\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Implementation of Z\-C\-L Commissioning Cluster. For devices with limited resources (e.\-g., P\-X\-Bee), we could have a \char`\"{}minimal\char`\"{} \hyperlink{structzcl__comm__startup__param__t}{zcl\-\_\-comm\-\_\-startup\-\_\-param\-\_\-t} structure and zcl\-\_\-comm\-\_\-startup\-\_\-attributes object, similar to how we have \char`\"{}base\char`\"{} and \char`\"{}full\char`\"{} attribute types.
+
+It would be necessary to have a flag though, so either the minimal or full structure can be passed to functions that process it. 

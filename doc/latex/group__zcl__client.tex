@@ -1,0 +1,531 @@
+\hypertarget{group__zcl__client}{\section{Cluster Client support code}
+\label{group__zcl__client}\index{Cluster Client support code@{Cluster Client support code}}
+}
+\subsection*{Files}
+\begin{DoxyCompactItemize}
+\item 
+file \hyperlink{zcl__client_8c}{zcl\-\_\-client.\-c}
+\begin{DoxyCompactList}\small\item\em Code to support Z\-C\-L client clusters. \end{DoxyCompactList}\item 
+file \hyperlink{zcl__client_8h}{zcl\-\_\-client.\-h}
+\begin{DoxyCompactList}\small\item\em Code to support Z\-C\-L client clusters. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structzcl__client__read__t}{zcl\-\_\-client\-\_\-read\-\_\-t}
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{group__zcl__client_ga95a82598479d6f25720ce51aa416cccd}{typedef const char $\ast$($\ast$ {\bfseries zcl\-\_\-format\-\_\-utctime\-\_\-fn} )(char dest\mbox{[}40\mbox{]}, zcl\-\_\-utctime\-\_\-t utctime)}\label{group__zcl__client_ga95a82598479d6f25720ce51aa416cccd}
+
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+zcl\-\_\-client\-\_\-debug int \hyperlink{group__zcl__client_gae0892d22ee69940130d1111960401339}{zcl\-\_\-process\-\_\-read\-\_\-attr\-\_\-response} (\hyperlink{structzcl__command__t}{zcl\-\_\-command\-\_\-t} $\ast$zcl, const \hyperlink{structzcl__attribute__base__t}{zcl\-\_\-attribute\-\_\-base\-\_\-t} \hyperlink{group__hal_gaef060b3456fdcc093a7210a762d5f2ed}{F\-A\-R} $\ast$attr\-\_\-table)
+\begin{DoxyCompactList}\small\item\em Process a Read Attributes Response and populate the attibute values into an attribute table as if it was a Write Attributes Request. \end{DoxyCompactList}\item 
+zcl\-\_\-client\-\_\-debug int \hyperlink{group__zcl__client_ga24a7c15cdfe484aff260848694fccae2}{zcl\-\_\-client\-\_\-read\-\_\-attributes} (\hyperlink{structwpan__envelope__t}{wpan\-\_\-envelope\-\_\-t} \hyperlink{group__hal_gaef060b3456fdcc093a7210a762d5f2ed}{F\-A\-R} $\ast$envelope, const \hyperlink{structzcl__client__read__t}{zcl\-\_\-client\-\_\-read\-\_\-t} $\ast$client\-\_\-read)
+\begin{DoxyCompactList}\small\item\em Send a Read Attributes request for attributes listed in {\ttfamily client\-\_\-read}. \end{DoxyCompactList}\item 
+zcl\-\_\-client\-\_\-debug int \hyperlink{group__zcl__client_ga15f191f3166c71f3f436b2a32d108a9f}{\-\_\-zcl\-\_\-send\-\_\-read\-\_\-from\-\_\-zdo\-\_\-match} (\hyperlink{structwpan__conversation__t}{wpan\-\_\-conversation\-\_\-t} \hyperlink{group__hal_gaef060b3456fdcc093a7210a762d5f2ed}{F\-A\-R} $\ast$conversation, const \hyperlink{structwpan__envelope__t}{wpan\-\_\-envelope\-\_\-t} \hyperlink{group__hal_gaef060b3456fdcc093a7210a762d5f2ed}{F\-A\-R} $\ast$envelope)
+\item 
+zcl\-\_\-client\-\_\-debug int \hyperlink{group__zcl__client_gae673efbd325cea1f3befacda58332191}{zcl\-\_\-find\-\_\-and\-\_\-read\-\_\-attributes} (\hyperlink{structwpan__dev__t}{wpan\-\_\-dev\-\_\-t} $\ast$dev, const \hyperlink{group__hal_ga5a8b2dc9e45a9ee81a94ef304fb62505}{uint16\-\_\-t} $\ast$clusters, const \hyperlink{structzcl__client__read__t}{zcl\-\_\-client\-\_\-read\-\_\-t} \hyperlink{group__hal_gaef060b3456fdcc093a7210a762d5f2ed}{F\-A\-R} $\ast$cr)
+\begin{DoxyCompactList}\small\item\em Use Z\-D\-O Match Descriptor Requests to find devices with a given profile/cluster and then automatically send a Z\-C\-L Read Attributes request for some of that cluster's attributes. \end{DoxyCompactList}\item 
+zcl\-\_\-client\-\_\-debug int \hyperlink{group__zcl__client_ga4c75937cc0fa5c70c63f30b59a4ddebc}{zdo\-\_\-send\-\_\-match\-\_\-desc} (\hyperlink{structwpan__dev__t}{wpan\-\_\-dev\-\_\-t} $\ast$dev, const \hyperlink{group__hal_ga5a8b2dc9e45a9ee81a94ef304fb62505}{uint16\-\_\-t} $\ast$clusters, \hyperlink{group__hal_ga5a8b2dc9e45a9ee81a94ef304fb62505}{uint16\-\_\-t} profile\-\_\-id, \hyperlink{group__wpan__aps_gaffe7bb679e9ba6de49f68fdc584fbefb}{wpan\-\_\-response\-\_\-fn} callback, const void \hyperlink{group__hal_gaef060b3456fdcc093a7210a762d5f2ed}{F\-A\-R} $\ast$context)
+\begin{DoxyCompactList}\small\item\em Send a Z\-D\-O Match Descriptor request for a list of cluster I\-Ds. \end{DoxyCompactList}\item 
+zcl\-\_\-client\-\_\-debug int \hyperlink{group__zcl__client_ga11f72950e4467286ef18468fbcb4bed4}{zcl\-\_\-create\-\_\-attribute\-\_\-records} (void \hyperlink{group__hal_gaef060b3456fdcc093a7210a762d5f2ed}{F\-A\-R} $\ast$buffer, \hyperlink{group__hal_gae1affc9ca37cfb624959c866a73f83c2}{uint8\-\_\-t} bufsize, const \hyperlink{structzcl__attribute__base__t}{zcl\-\_\-attribute\-\_\-base\-\_\-t} \hyperlink{group__hal_gaef060b3456fdcc093a7210a762d5f2ed}{F\-A\-R} $\ast$$\ast$p\-\_\-attr\-\_\-list)
+\begin{DoxyCompactList}\small\item\em From a list of attributes, write I\-D (in little-\/endian byte order), type and value to a buffer as would be done in a Write Attributes Request. \end{DoxyCompactList}\item 
+zcl\-\_\-client\-\_\-debug int \hyperlink{group__zcl__client_ga98550adc25d4a19e4048ef9b251321ef}{zcl\-\_\-send\-\_\-write\-\_\-attributes} (\hyperlink{structwpan__envelope__t}{wpan\-\_\-envelope\-\_\-t} $\ast$envelope, const \hyperlink{structzcl__attribute__base__t}{zcl\-\_\-attribute\-\_\-base\-\_\-t} \hyperlink{group__hal_gaef060b3456fdcc093a7210a762d5f2ed}{F\-A\-R} $\ast$attr\-\_\-list)
+\begin{DoxyCompactList}\small\item\em Send one or more Write Attributes Requests to a node on the network. \end{DoxyCompactList}\item 
+const char $\ast$ \hyperlink{group__zcl__client_gab6b575402b7ce107943e7d7c29499559}{\-\_\-zcl\-\_\-format\-\_\-utctime} (char dest\mbox{[}40\mbox{]}, zcl\-\_\-utctime\-\_\-t utctime)
+\begin{DoxyCompactList}\small\item\em Default function for zcl\-\_\-format\-\_\-utctime function pointer. \end{DoxyCompactList}\item 
+int \hyperlink{group__zcl__client_ga4e831f4977e3c0eb5ad556a991b7da5f}{zcl\-\_\-print\-\_\-array\-\_\-value} (const void $\ast$\hyperlink{group__zcl_ga1ed5b151a90f7e99af8cca2e6875ddf4}{value}, int value\-\_\-length)
+\begin{DoxyCompactList}\small\item\em Print Read Attributes Response value of an array attribute. \end{DoxyCompactList}\item 
+int \hyperlink{group__zcl__client_gadd1b745da67ffd49ec948ff56ec218fa}{zcl\-\_\-print\-\_\-struct\-\_\-value} (const void $\ast$\hyperlink{group__zcl_ga1ed5b151a90f7e99af8cca2e6875ddf4}{value}, int value\-\_\-length)
+\begin{DoxyCompactList}\small\item\em Print Read Attributes Response value of a structure attribute. \end{DoxyCompactList}\item 
+int \hyperlink{group__zcl__client_gaa21e1a258a8cc7899586920a0247ee6d}{zcl\-\_\-print\-\_\-attribute\-\_\-value} (\hyperlink{group__hal_gae1affc9ca37cfb624959c866a73f83c2}{uint8\-\_\-t} \hyperlink{group__zcl_ga1d127017fb298b889f4ba24752d08b8e}{type}, const void $\ast$\hyperlink{group__zcl_ga1ed5b151a90f7e99af8cca2e6875ddf4}{value}, int value\-\_\-length)
+\begin{DoxyCompactList}\small\item\em Formats an attribute value and prints it to stdout. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+zcl\-\_\-format\-\_\-utctime\-\_\-fn \hyperlink{group__zcl__client_gaece15f78359a3bae016be1d24e7d9ad9}{zcl\-\_\-format\-\_\-utctime} = \hyperlink{group__zcl__client_gab6b575402b7ce107943e7d7c29499559}{\-\_\-zcl\-\_\-format\-\_\-utctime}
+\begin{DoxyCompactList}\small\item\em Pointer to function that converts a zcl\-\_\-utctime\-\_\-t value to a human-\/readable timestamp. \end{DoxyCompactList}\item 
+\hypertarget{group__zcl__client_ga459df22e40148e87ee6e57ec5cc3233a}{const \hyperlink{structwpan__endpoint__table__entry__t}{wpan\-\_\-endpoint\-\_\-table\-\_\-entry\-\_\-t} $\ast$ {\bfseries ep}}\label{group__zcl__client_ga459df22e40148e87ee6e57ec5cc3233a}
+
+\item 
+\hypertarget{group__zcl__client_ga2ca485436d30af714cc277eaac216cae}{\hyperlink{group__hal_ga5a8b2dc9e45a9ee81a94ef304fb62505}{uint16\-\_\-t} {\bfseries mfg\-\_\-id}}\label{group__zcl__client_ga2ca485436d30af714cc277eaac216cae}
+
+\item 
+\hypertarget{group__zcl__client_ga262a92f94287e77cb56350951893bae2}{\hyperlink{group__hal_ga5a8b2dc9e45a9ee81a94ef304fb62505}{uint16\-\_\-t} {\bfseries cluster\-\_\-id}}\label{group__zcl__client_ga262a92f94287e77cb56350951893bae2}
+
+\item 
+\hypertarget{group__zcl__client_ga4dc4f61b6b33cb99330d56098bb9bf2a}{const \hyperlink{group__hal_ga5a8b2dc9e45a9ee81a94ef304fb62505}{uint16\-\_\-t} \hyperlink{group__hal_gaef060b3456fdcc093a7210a762d5f2ed}{F\-A\-R} $\ast$ {\bfseries attribute\-\_\-list}}\label{group__zcl__client_ga4dc4f61b6b33cb99330d56098bb9bf2a}
+
+\item 
+zcl\-\_\-format\-\_\-utctime\-\_\-fn \hyperlink{group__zcl__client_gaece15f78359a3bae016be1d24e7d9ad9}{zcl\-\_\-format\-\_\-utctime}
+\begin{DoxyCompactList}\small\item\em Pointer to function that converts a zcl\-\_\-utctime\-\_\-t value to a human-\/readable timestamp. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+\subsection{Function Documentation}
+\hypertarget{group__zcl__client_gab6b575402b7ce107943e7d7c29499559}{\index{Cluster Client support code@{Cluster Client support code}!\-\_\-zcl\-\_\-format\-\_\-utctime@{\-\_\-zcl\-\_\-format\-\_\-utctime}}
+\index{\-\_\-zcl\-\_\-format\-\_\-utctime@{\-\_\-zcl\-\_\-format\-\_\-utctime}!Cluster Client support code@{Cluster Client support code}}
+\subsubsection[{\-\_\-zcl\-\_\-format\-\_\-utctime}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ \-\_\-zcl\-\_\-format\-\_\-utctime (
+\begin{DoxyParamCaption}
+\item[{char}]{dest\mbox{[}40\mbox{]}, }
+\item[{zcl\-\_\-utctime\-\_\-t}]{utctime}
+\end{DoxyParamCaption}
+)}}\label{group__zcl__client_gab6b575402b7ce107943e7d7c29499559}
+
+
+Default function for zcl\-\_\-format\-\_\-utctime function pointer. 
+
+
+
+References xbee\-\_\-gmtime().
+
+\hypertarget{group__zcl__client_ga15f191f3166c71f3f436b2a32d108a9f}{\index{Cluster Client support code@{Cluster Client support code}!\-\_\-zcl\-\_\-send\-\_\-read\-\_\-from\-\_\-zdo\-\_\-match@{\-\_\-zcl\-\_\-send\-\_\-read\-\_\-from\-\_\-zdo\-\_\-match}}
+\index{\-\_\-zcl\-\_\-send\-\_\-read\-\_\-from\-\_\-zdo\-\_\-match@{\-\_\-zcl\-\_\-send\-\_\-read\-\_\-from\-\_\-zdo\-\_\-match}!Cluster Client support code@{Cluster Client support code}}
+\subsubsection[{\-\_\-zcl\-\_\-send\-\_\-read\-\_\-from\-\_\-zdo\-\_\-match}]{\setlength{\rightskip}{0pt plus 5cm}int \-\_\-zcl\-\_\-send\-\_\-read\-\_\-from\-\_\-zdo\-\_\-match (
+\begin{DoxyParamCaption}
+\item[{{\bf wpan\-\_\-conversation\-\_\-t} {\bf F\-A\-R} $\ast$}]{conversation, }
+\item[{const {\bf wpan\-\_\-envelope\-\_\-t} {\bf F\-A\-R} $\ast$}]{envelope}
+\end{DoxyParamCaption}
+)}}\label{group__zcl__client_ga15f191f3166c71f3f436b2a32d108a9f}
+Process responses to Z\-D\-O Match\-\_\-\-Desc broadcast sent by \hyperlink{group__zcl__client_ga4c75937cc0fa5c70c63f30b59a4ddebc}{zdo\-\_\-send\-\_\-match\-\_\-desc()} and generate Z\-C\-L Read Attributes request for the attributes in the related conversation's context (a pointer to a \hyperlink{structzcl__client__read__t}{zcl\-\_\-client\-\_\-read\-\_\-t} object).
+
+The Read Attributes Responses are handled by the function registered to the cluster in the endpoint table.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em conversation} & matching entry in converstation table (which contains a context pointer) \\
+\hline
+\mbox{\tt in}  & {\em envelope} & envelope of response or N\-U\-L\-L if conversation timed out\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em 0} & send Z\-C\-L request for current time \\
+\hline
+{\em !0} & error sending Z\-C\-L request for current time\\
+\hline
+\end{DoxyRetVals}
+\begin{DoxyRefDesc}{Todo}
+\item[\hyperlink{todo__todo000014}{Todo}]support a flag in the client\-\_\-read object for sending Z\-C\-L request to first endpoint in list (current behavior) or all endpoints (for example, to query A\-L\-L meter endpoints on A\-L\-L radios).\end{DoxyRefDesc}
+
+
+\begin{DoxyRefDesc}{Todo}
+\item[\hyperlink{todo__todo000015}{Todo}]find a way to track whether frame came in from broadcast or unicast response -- if unicast, can return W\-P\-A\-N\-\_\-\-C\-O\-N\-V\-E\-R\-S\-A\-T\-I\-O\-N\-\_\-\-E\-N\-D \end{DoxyRefDesc}
+
+
+References wpan\-\_\-envelope\-\_\-t\-::cluster\-\_\-id, wpan\-\_\-endpoint\-\_\-table\-\_\-entry\-\_\-t\-::cluster\-\_\-table, wpan\-\_\-envelope\-\_\-t\-::dest\-\_\-endpoint, wpan\-\_\-endpoint\-\_\-table\-\_\-entry\-\_\-t\-::endpoint, endpoint, F\-A\-R, wpan\-\_\-cluster\-\_\-table\-\_\-entry\-\_\-t\-::flags, hex\-\_\-dump(), H\-E\-X\-\_\-\-D\-U\-M\-P\-\_\-\-F\-L\-A\-G\-\_\-\-T\-A\-B, le16toh, wpan\-\_\-envelope\-\_\-t\-::network\-\_\-address, P\-A\-C\-K\-E\-D\-\_\-\-S\-T\-R\-U\-C\-T, wpan\-\_\-envelope\-\_\-t\-::profile\-\_\-id, wpan\-\_\-endpoint\-\_\-table\-\_\-entry\-\_\-t\-::profile\-\_\-id, wpan\-\_\-envelope\-\_\-t\-::source\-\_\-endpoint, W\-P\-A\-N\-\_\-\-C\-L\-U\-S\-T\-\_\-\-F\-L\-A\-G\-\_\-\-C\-L\-I\-E\-N\-T, wpan\-\_\-cluster\-\_\-match(), wpan\-\_\-envelope\-\_\-reply(), zcl\-\_\-client\-\_\-read\-\_\-attributes(), and Z\-D\-O\-\_\-\-M\-A\-T\-C\-H\-\_\-\-D\-E\-S\-C\-\_\-\-R\-S\-P.
+
+
+
+Referenced by zcl\-\_\-find\-\_\-and\-\_\-read\-\_\-attributes().
+
+\hypertarget{group__zcl__client_ga24a7c15cdfe484aff260848694fccae2}{\index{Cluster Client support code@{Cluster Client support code}!zcl\-\_\-client\-\_\-read\-\_\-attributes@{zcl\-\_\-client\-\_\-read\-\_\-attributes}}
+\index{zcl\-\_\-client\-\_\-read\-\_\-attributes@{zcl\-\_\-client\-\_\-read\-\_\-attributes}!Cluster Client support code@{Cluster Client support code}}
+\subsubsection[{zcl\-\_\-client\-\_\-read\-\_\-attributes}]{\setlength{\rightskip}{0pt plus 5cm}int zcl\-\_\-client\-\_\-read\-\_\-attributes (
+\begin{DoxyParamCaption}
+\item[{{\bf wpan\-\_\-envelope\-\_\-t} {\bf F\-A\-R} $\ast$}]{envelope, }
+\item[{const {\bf zcl\-\_\-client\-\_\-read\-\_\-t} $\ast$}]{client\-\_\-read}
+\end{DoxyParamCaption}
+)}}\label{group__zcl__client_ga24a7c15cdfe484aff260848694fccae2}
+
+
+Send a Read Attributes request for attributes listed in {\ttfamily client\-\_\-read}. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in,out}  & {\em envelope} & addressing information for sending a Z\-C\-L Read Attributes request; this function fills in the {\ttfamily payload} and {\ttfamily length} \\
+\hline
+\mbox{\tt in}  & {\em client\-\_\-read} & data structure used by Z\-C\-L clients to do Z\-D\-O discovery followed by Z\-C\-L attribute reads\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em 0} & successfully sent request \\
+\hline
+{\em !0} & error sending request \\
+\hline
+\end{DoxyRetVals}
+
+
+References F\-A\-R, htole16, P\-A\-C\-K\-E\-D\-\_\-\-S\-T\-R\-U\-C\-T, wpan\-\_\-endpoint\-\_\-next\-\_\-trans(), wpan\-\_\-envelope\-\_\-dump(), wpan\-\_\-envelope\-\_\-send(), Z\-C\-L\-\_\-\-A\-T\-T\-R\-I\-B\-U\-T\-E\-\_\-\-E\-N\-D\-\_\-\-O\-F\-\_\-\-L\-I\-S\-T, Z\-C\-L\-\_\-\-C\-M\-D\-\_\-\-R\-E\-A\-D\-\_\-\-A\-T\-T\-R\-I\-B, Z\-C\-L\-\_\-\-F\-R\-A\-M\-E\-\_\-\-C\-L\-I\-E\-N\-T\-\_\-\-T\-O\-\_\-\-S\-E\-R\-V\-E\-R, Z\-C\-L\-\_\-\-F\-R\-A\-M\-E\-\_\-\-G\-E\-N\-E\-R\-A\-L, Z\-C\-L\-\_\-\-F\-R\-A\-M\-E\-\_\-\-M\-F\-G\-\_\-\-S\-P\-E\-C\-I\-F\-I\-C, and Z\-C\-L\-\_\-\-F\-R\-A\-M\-E\-\_\-\-T\-Y\-P\-E\-\_\-\-P\-R\-O\-F\-I\-L\-E.
+
+
+
+Referenced by \-\_\-zcl\-\_\-send\-\_\-read\-\_\-from\-\_\-zdo\-\_\-match().
+
+\hypertarget{group__zcl__client_ga11f72950e4467286ef18468fbcb4bed4}{\index{Cluster Client support code@{Cluster Client support code}!zcl\-\_\-create\-\_\-attribute\-\_\-records@{zcl\-\_\-create\-\_\-attribute\-\_\-records}}
+\index{zcl\-\_\-create\-\_\-attribute\-\_\-records@{zcl\-\_\-create\-\_\-attribute\-\_\-records}!Cluster Client support code@{Cluster Client support code}}
+\subsubsection[{zcl\-\_\-create\-\_\-attribute\-\_\-records}]{\setlength{\rightskip}{0pt plus 5cm}int zcl\-\_\-create\-\_\-attribute\-\_\-records (
+\begin{DoxyParamCaption}
+\item[{void {\bf F\-A\-R} $\ast$}]{buffer, }
+\item[{{\bf uint8\-\_\-t}}]{bufsize, }
+\item[{const {\bf zcl\-\_\-attribute\-\_\-base\-\_\-t} {\bf F\-A\-R} $\ast$$\ast$}]{p\-\_\-attr\-\_\-list}
+\end{DoxyParamCaption}
+)}}\label{group__zcl__client_ga11f72950e4467286ef18468fbcb4bed4}
+
+
+From a list of attributes, write I\-D (in little-\/endian byte order), type and value to a buffer as would be done in a Write Attributes Request. 
+
+The attribute list should be an array of attribute records, ending with an attribute I\-D of Z\-C\-L\-\_\-\-A\-T\-T\-R\-I\-B\-U\-T\-E\-\_\-\-E\-N\-D\-\_\-\-O\-F\-\_\-\-L\-I\-S\-T.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt out}  & {\em buffer} & buffer to write values to \\
+\hline
+\mbox{\tt in}  & {\em bufsize} & size of {\ttfamily buffer} \\
+\hline
+\mbox{\tt in,out}  & {\em p\-\_\-attr\-\_\-list} & pointer to the attribute list to encode in {\ttfamily buffer}; points to next attribute to encode if buffer is filled\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+number of bytes written to buffer 
+\end{DoxyReturn}
+
+
+References F\-A\-R, htole16, Z\-C\-L\-\_\-\-A\-T\-T\-R\-I\-B\-U\-T\-E\-\_\-\-E\-N\-D\-\_\-\-O\-F\-\_\-\-L\-I\-S\-T, zcl\-\_\-attribute\-\_\-get\-\_\-next(), and zcl\-\_\-encode\-\_\-attribute\-\_\-value().
+
+
+
+Referenced by zcl\-\_\-send\-\_\-write\-\_\-attributes().
+
+\hypertarget{group__zcl__client_gae673efbd325cea1f3befacda58332191}{\index{Cluster Client support code@{Cluster Client support code}!zcl\-\_\-find\-\_\-and\-\_\-read\-\_\-attributes@{zcl\-\_\-find\-\_\-and\-\_\-read\-\_\-attributes}}
+\index{zcl\-\_\-find\-\_\-and\-\_\-read\-\_\-attributes@{zcl\-\_\-find\-\_\-and\-\_\-read\-\_\-attributes}!Cluster Client support code@{Cluster Client support code}}
+\subsubsection[{zcl\-\_\-find\-\_\-and\-\_\-read\-\_\-attributes}]{\setlength{\rightskip}{0pt plus 5cm}int zcl\-\_\-find\-\_\-and\-\_\-read\-\_\-attributes (
+\begin{DoxyParamCaption}
+\item[{{\bf wpan\-\_\-dev\-\_\-t} $\ast$}]{dev, }
+\item[{const {\bf uint16\-\_\-t} $\ast$}]{clusters, }
+\item[{const {\bf zcl\-\_\-client\-\_\-read\-\_\-t} {\bf F\-A\-R} $\ast$}]{cr}
+\end{DoxyParamCaption}
+)}}\label{group__zcl__client_gae673efbd325cea1f3befacda58332191}
+
+
+Use Z\-D\-O Match Descriptor Requests to find devices with a given profile/cluster and then automatically send a Z\-C\-L Read Attributes request for some of that cluster's attributes. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em dev} & device to use for time request\\
+\hline
+\mbox{\tt in}  & {\em clusters} & pointer to list of server clusters to search for, must end with \hyperlink{group__wpan__aps_gacbfdff1cef70167f178c4e05b69f65fe}{W\-P\-A\-N\-\_\-\-C\-L\-U\-S\-T\-E\-R\-\_\-\-E\-N\-D\-\_\-\-O\-F\-\_\-\-L\-I\-S\-T}\\
+\hline
+\mbox{\tt in}  & {\em cr} & zcl\-\_\-client\-\_\-read record containing information on the request (endpoint, attributes, etc.); must be a static object (not an auto variable) since the Z\-D\-O responder will need to access it\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em 0} & request sent \\
+\hline
+{\em !0} & error sending request \\
+\hline
+\end{DoxyRetVals}
+
+
+References \-\_\-zcl\-\_\-send\-\_\-read\-\_\-from\-\_\-zdo\-\_\-match(), and zdo\-\_\-send\-\_\-match\-\_\-desc().
+
+
+
+Referenced by zcl\-\_\-time\-\_\-find\-\_\-servers().
+
+\hypertarget{group__zcl__client_ga4e831f4977e3c0eb5ad556a991b7da5f}{\index{Cluster Client support code@{Cluster Client support code}!zcl\-\_\-print\-\_\-array\-\_\-value@{zcl\-\_\-print\-\_\-array\-\_\-value}}
+\index{zcl\-\_\-print\-\_\-array\-\_\-value@{zcl\-\_\-print\-\_\-array\-\_\-value}!Cluster Client support code@{Cluster Client support code}}
+\subsubsection[{zcl\-\_\-print\-\_\-array\-\_\-value}]{\setlength{\rightskip}{0pt plus 5cm}int zcl\-\_\-print\-\_\-array\-\_\-value (
+\begin{DoxyParamCaption}
+\item[{const void $\ast$}]{value, }
+\item[{int}]{value\-\_\-length}
+\end{DoxyParamCaption}
+)}}\label{group__zcl__client_ga4e831f4977e3c0eb5ad556a991b7da5f}
+
+
+Print Read Attributes Response value of an array attribute. 
+
+Helper function for \hyperlink{group__zcl__client_gaa21e1a258a8cc7899586920a0247ee6d}{zcl\-\_\-print\-\_\-attribute\-\_\-value()}, takes a pointer to the \char`\"{}value\char`\"{} field of a Read Attributes Response for an array type, formats it and prints to stdout.
+
+
+\begin{DoxyCode}
+ Example:
+of 3 UNSIGNED\_8BIT
+   [0] = 0x54 = 84
+   [1] = 0x42 = 66
+   [2] = 0x43 = 67
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em value} & pointer to Z\-C\-L-\/encoded array value \\
+\hline
+\mbox{\tt in}  & {\em value\-\_\-length} & number of bytes at value\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em -\/\-E\-I\-N\-V\-A\-L} & {\ttfamily value} is N\-U\-L\-L or  is too small \\
+\hline
+{\em $>$=3} & number of bytes from {\ttfamily value} consumed by function\\
+\hline
+\end{DoxyRetVals}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{group__zcl__client_gaa21e1a258a8cc7899586920a0247ee6d}{zcl\-\_\-print\-\_\-attribute\-\_\-value}, \hyperlink{group__zcl__client_gadd1b745da67ffd49ec948ff56ec218fa}{zcl\-\_\-print\-\_\-struct\-\_\-value} 
+\end{DoxySeeAlso}
+
+
+References E\-I\-N\-V\-A\-L, type, value, zcl\-\_\-print\-\_\-attribute\-\_\-value(), and zcl\-\_\-type\-\_\-name().
+
+
+
+Referenced by zcl\-\_\-print\-\_\-attribute\-\_\-value().
+
+\hypertarget{group__zcl__client_gaa21e1a258a8cc7899586920a0247ee6d}{\index{Cluster Client support code@{Cluster Client support code}!zcl\-\_\-print\-\_\-attribute\-\_\-value@{zcl\-\_\-print\-\_\-attribute\-\_\-value}}
+\index{zcl\-\_\-print\-\_\-attribute\-\_\-value@{zcl\-\_\-print\-\_\-attribute\-\_\-value}!Cluster Client support code@{Cluster Client support code}}
+\subsubsection[{zcl\-\_\-print\-\_\-attribute\-\_\-value}]{\setlength{\rightskip}{0pt plus 5cm}int zcl\-\_\-print\-\_\-attribute\-\_\-value (
+\begin{DoxyParamCaption}
+\item[{{\bf uint8\-\_\-t}}]{type, }
+\item[{const void $\ast$}]{value, }
+\item[{int}]{value\-\_\-length}
+\end{DoxyParamCaption}
+)}}\label{group__zcl__client_gaa21e1a258a8cc7899586920a0247ee6d}
+
+
+Formats an attribute value and prints it to stdout. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em type} & Z\-C\-L datatype of attribute's value \\
+\hline
+\mbox{\tt in}  & {\em value} & pointer to the Z\-C\-L-\/encoded value \\
+\hline
+\mbox{\tt in}  & {\em value\-\_\-length} & number of bytes at value\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em -\/\-E\-I\-N\-V\-A\-L} & {\ttfamily value} is N\-U\-L\-L or  is too small \\
+\hline
+{\em $>$=2} & number of bytes from {\ttfamily value} consumed by function\\
+\hline
+\end{DoxyRetVals}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{group__zcl__client_ga4e831f4977e3c0eb5ad556a991b7da5f}{zcl\-\_\-print\-\_\-array\-\_\-value}, \hyperlink{group__zcl__client_gadd1b745da67ffd49ec948ff56ec218fa}{zcl\-\_\-print\-\_\-struct\-\_\-value} 
+\end{DoxySeeAlso}
+
+
+References addr64\-\_\-format(), E\-I\-N\-V\-A\-L, hex\-\_\-dump(), H\-E\-X\-\_\-\-D\-U\-M\-P\-\_\-\-F\-L\-A\-G\-\_\-\-T\-A\-B, memcpy\-\_\-letobe, P\-R\-Iu32, P\-R\-I\-X32, value, zcl\-\_\-format\-\_\-utctime, zcl\-\_\-print\-\_\-array\-\_\-value(), zcl\-\_\-print\-\_\-struct\-\_\-value(), zcl\-\_\-sizeof\-\_\-type(), Z\-C\-L\-\_\-\-T\-\_\-\-S\-I\-G\-N\-E\-D, Z\-C\-L\-\_\-\-T\-Y\-P\-E\-\_\-\-A\-R\-R\-A\-Y, Z\-C\-L\-\_\-\-T\-Y\-P\-E\-\_\-\-B\-A\-G, Z\-C\-L\-\_\-\-T\-Y\-P\-E\-\_\-\-I\-D\-\_\-\-A\-T\-T\-R\-I\-B, Z\-C\-L\-\_\-\-T\-Y\-P\-E\-\_\-\-I\-D\-\_\-\-C\-L\-U\-S\-T\-E\-R, Z\-C\-L\-\_\-\-T\-Y\-P\-E\-\_\-\-I\-E\-E\-E\-\_\-\-A\-D\-D\-R, zcl\-\_\-type\-\_\-info, Z\-C\-L\-\_\-\-T\-Y\-P\-E\-\_\-\-S\-E\-T, Z\-C\-L\-\_\-\-T\-Y\-P\-E\-\_\-\-S\-T\-R\-I\-N\-G\-\_\-\-C\-H\-A\-R, Z\-C\-L\-\_\-\-T\-Y\-P\-E\-\_\-\-S\-T\-R\-U\-C\-T, Z\-C\-L\-\_\-\-T\-Y\-P\-E\-\_\-\-T\-I\-M\-E\-\_\-\-U\-T\-C\-T\-I\-M\-E, and Z\-C\-L\-\_\-\-T\-Y\-P\-E\-\_\-\-U\-N\-K\-N\-O\-W\-N.
+
+
+
+Referenced by zcl\-\_\-print\-\_\-array\-\_\-value(), and zcl\-\_\-print\-\_\-struct\-\_\-value().
+
+\hypertarget{group__zcl__client_gadd1b745da67ffd49ec948ff56ec218fa}{\index{Cluster Client support code@{Cluster Client support code}!zcl\-\_\-print\-\_\-struct\-\_\-value@{zcl\-\_\-print\-\_\-struct\-\_\-value}}
+\index{zcl\-\_\-print\-\_\-struct\-\_\-value@{zcl\-\_\-print\-\_\-struct\-\_\-value}!Cluster Client support code@{Cluster Client support code}}
+\subsubsection[{zcl\-\_\-print\-\_\-struct\-\_\-value}]{\setlength{\rightskip}{0pt plus 5cm}int zcl\-\_\-print\-\_\-struct\-\_\-value (
+\begin{DoxyParamCaption}
+\item[{const void $\ast$}]{value, }
+\item[{int}]{value\-\_\-length}
+\end{DoxyParamCaption}
+)}}\label{group__zcl__client_gadd1b745da67ffd49ec948ff56ec218fa}
+
+
+Print Read Attributes Response value of a structure attribute. 
+
+Helper function for \hyperlink{group__zcl__client_gaa21e1a258a8cc7899586920a0247ee6d}{zcl\-\_\-print\-\_\-attribute\-\_\-value()}, takes a pointer to the \char`\"{}value\char`\"{} field of a Read Attributes Response for a structure type, formats it and prints to stdout.
+
+
+\begin{DoxyCode}
+ Example:
+with 3 \hyperlink{group__zcl_ga41182853b4ed09884567019cecdf9358}{elements}
+   .element0 (TIME\_UTCTIME) = 2012-01-01 00:00:00
+   .element1 (UNSIGNED\_8BIT) = 0xAA = 170
+   .element2 (SIGNED\_8BIT) = 0xAA = -86
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em value} & pointer to Z\-C\-L-\/encoded structure value \\
+\hline
+\mbox{\tt in}  & {\em value\-\_\-length} & number of bytes at value\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em -\/\-E\-I\-N\-V\-A\-L} & {\ttfamily value} is N\-U\-L\-L or  is too small \\
+\hline
+{\em $>$=2} & number of bytes from {\ttfamily value} consumed by function\\
+\hline
+\end{DoxyRetVals}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{group__zcl__client_gaa21e1a258a8cc7899586920a0247ee6d}{zcl\-\_\-print\-\_\-attribute\-\_\-value}, \hyperlink{group__zcl__client_ga4e831f4977e3c0eb5ad556a991b7da5f}{zcl\-\_\-print\-\_\-array\-\_\-value} 
+\end{DoxySeeAlso}
+
+
+References E\-I\-N\-V\-A\-L, type, value, zcl\-\_\-print\-\_\-attribute\-\_\-value(), and zcl\-\_\-type\-\_\-name().
+
+
+
+Referenced by zcl\-\_\-print\-\_\-attribute\-\_\-value().
+
+\hypertarget{group__zcl__client_gae0892d22ee69940130d1111960401339}{\index{Cluster Client support code@{Cluster Client support code}!zcl\-\_\-process\-\_\-read\-\_\-attr\-\_\-response@{zcl\-\_\-process\-\_\-read\-\_\-attr\-\_\-response}}
+\index{zcl\-\_\-process\-\_\-read\-\_\-attr\-\_\-response@{zcl\-\_\-process\-\_\-read\-\_\-attr\-\_\-response}!Cluster Client support code@{Cluster Client support code}}
+\subsubsection[{zcl\-\_\-process\-\_\-read\-\_\-attr\-\_\-response}]{\setlength{\rightskip}{0pt plus 5cm}int zcl\-\_\-process\-\_\-read\-\_\-attr\-\_\-response (
+\begin{DoxyParamCaption}
+\item[{{\bf zcl\-\_\-command\-\_\-t} $\ast$}]{zcl, }
+\item[{const {\bf zcl\-\_\-attribute\-\_\-base\-\_\-t} {\bf F\-A\-R} $\ast$}]{attr\-\_\-table}
+\end{DoxyParamCaption}
+)}}\label{group__zcl__client_gae0892d22ee69940130d1111960401339}
+
+
+Process a Read Attributes Response and populate the attibute values into an attribute table as if it was a Write Attributes Request. 
+
+Used in Z\-C\-L clients that want to read a lot of Z\-C\-L attributes. The client has a mirrored copy of the attributes on the target, and this function is used to populate that copy using the Read Attributes Responses.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em zcl} & Z\-C\-L command to process \\
+\hline
+\mbox{\tt in}  & {\em attr\-\_\-list} & start of the attribute list to use for storing attribute responses\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Z\-C\-L status value to send in a default response 
+\end{DoxyReturn}
+
+
+References zcl\-\_\-attribute\-\_\-write\-\_\-rec\-\_\-t\-::buffer, zcl\-\_\-attribute\-\_\-write\-\_\-rec\-\_\-t\-::buflen, F\-A\-R, zcl\-\_\-attribute\-\_\-write\-\_\-rec\-\_\-t\-::flags, zcl\-\_\-command\-\_\-t\-::length, zcl\-\_\-attribute\-\_\-write\-\_\-rec\-\_\-t\-::status, Z\-C\-L\-\_\-\-A\-T\-T\-R\-\_\-\-W\-R\-I\-T\-E\-\_\-\-F\-L\-A\-G\-\_\-\-A\-S\-S\-I\-G\-N, Z\-C\-L\-\_\-\-A\-T\-T\-R\-\_\-\-W\-R\-I\-T\-E\-\_\-\-F\-L\-A\-G\-\_\-\-R\-E\-A\-D\-\_\-\-R\-E\-S\-P, zcl\-\_\-parse\-\_\-attribute\-\_\-record(), and zcl\-\_\-command\-\_\-t\-::zcl\-\_\-payload.
+
+\hypertarget{group__zcl__client_ga98550adc25d4a19e4048ef9b251321ef}{\index{Cluster Client support code@{Cluster Client support code}!zcl\-\_\-send\-\_\-write\-\_\-attributes@{zcl\-\_\-send\-\_\-write\-\_\-attributes}}
+\index{zcl\-\_\-send\-\_\-write\-\_\-attributes@{zcl\-\_\-send\-\_\-write\-\_\-attributes}!Cluster Client support code@{Cluster Client support code}}
+\subsubsection[{zcl\-\_\-send\-\_\-write\-\_\-attributes}]{\setlength{\rightskip}{0pt plus 5cm}int zcl\-\_\-send\-\_\-write\-\_\-attributes (
+\begin{DoxyParamCaption}
+\item[{{\bf wpan\-\_\-envelope\-\_\-t} $\ast$}]{envelope, }
+\item[{const {\bf zcl\-\_\-attribute\-\_\-base\-\_\-t} {\bf F\-A\-R} $\ast$}]{attr\-\_\-list}
+\end{DoxyParamCaption}
+)}}\label{group__zcl__client_ga98550adc25d4a19e4048ef9b251321ef}
+
+
+Send one or more Write Attributes Requests to a node on the network. 
+
+\begin{DoxyNote}{Note}
+This function A\-P\-I and is likely to change in a future release to include a Manufacturer I\-D and flags for sending server-\/to-\/client and \char`\"{}undivided\char`\"{} write requests.
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in,out}  & {\em envelope} & envelope to use for sending request; {\ttfamily payload} and {\ttfamily length} cleared on function exit \\
+\hline
+\mbox{\tt in}  & {\em attr\-\_\-list} & attributes with values to send a Write Attributes Request for\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em -\/\-E\-I\-N\-V\-A\-L} & N\-U\-L\-L parameter passed, or couldn't find source endpoint based on envelope \\
+\hline
+{\em $<$0} & error trying to send request (for large writes, one or more requests may have been successful) \\
+\hline
+{\em 0} & request(s) sent \\
+\hline
+\end{DoxyRetVals}
+
+
+References E\-I\-N\-V\-A\-L, wpan\-\_\-envelope\-\_\-t\-::length, P\-A\-C\-K\-E\-D\-\_\-\-S\-T\-R\-U\-C\-T, payload, wpan\-\_\-envelope\-\_\-t\-::payload, wpan\-\_\-endpoint\-\_\-next\-\_\-trans(), wpan\-\_\-endpoint\-\_\-of\-\_\-envelope(), wpan\-\_\-envelope\-\_\-dump(), wpan\-\_\-envelope\-\_\-send(), Z\-C\-L\-\_\-\-A\-T\-T\-R\-I\-B\-U\-T\-E\-\_\-\-E\-N\-D\-\_\-\-O\-F\-\_\-\-L\-I\-S\-T, Z\-C\-L\-\_\-\-C\-M\-D\-\_\-\-W\-R\-I\-T\-E\-\_\-\-A\-T\-T\-R\-I\-B, zcl\-\_\-create\-\_\-attribute\-\_\-records(), Z\-C\-L\-\_\-\-F\-R\-A\-M\-E\-\_\-\-C\-L\-I\-E\-N\-T\-\_\-\-T\-O\-\_\-\-S\-E\-R\-V\-E\-R, Z\-C\-L\-\_\-\-F\-R\-A\-M\-E\-\_\-\-D\-I\-S\-A\-B\-L\-E\-\_\-\-D\-E\-F\-\_\-\-R\-E\-S\-P, Z\-C\-L\-\_\-\-F\-R\-A\-M\-E\-\_\-\-G\-E\-N\-E\-R\-A\-L, and Z\-C\-L\-\_\-\-F\-R\-A\-M\-E\-\_\-\-T\-Y\-P\-E\-\_\-\-P\-R\-O\-F\-I\-L\-E.
+
+\hypertarget{group__zcl__client_ga4c75937cc0fa5c70c63f30b59a4ddebc}{\index{Cluster Client support code@{Cluster Client support code}!zdo\-\_\-send\-\_\-match\-\_\-desc@{zdo\-\_\-send\-\_\-match\-\_\-desc}}
+\index{zdo\-\_\-send\-\_\-match\-\_\-desc@{zdo\-\_\-send\-\_\-match\-\_\-desc}!Cluster Client support code@{Cluster Client support code}}
+\subsubsection[{zdo\-\_\-send\-\_\-match\-\_\-desc}]{\setlength{\rightskip}{0pt plus 5cm}int zdo\-\_\-send\-\_\-match\-\_\-desc (
+\begin{DoxyParamCaption}
+\item[{{\bf wpan\-\_\-dev\-\_\-t} $\ast$}]{dev, }
+\item[{const {\bf uint16\-\_\-t} $\ast$}]{clusters, }
+\item[{{\bf uint16\-\_\-t}}]{profile\-\_\-id, }
+\item[{{\bf wpan\-\_\-response\-\_\-fn}}]{callback, }
+\item[{const void {\bf F\-A\-R} $\ast$}]{context}
+\end{DoxyParamCaption}
+)}}\label{group__zcl__client_ga4c75937cc0fa5c70c63f30b59a4ddebc}
+
+
+Send a Z\-D\-O Match Descriptor request for a list of cluster I\-Ds. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em dev} & device to use for time request \\
+\hline
+\mbox{\tt in}  & {\em clusters} & pointer to list of server clusters to search for, must end with \hyperlink{group__wpan__aps_gacbfdff1cef70167f178c4e05b69f65fe}{W\-P\-A\-N\-\_\-\-C\-L\-U\-S\-T\-E\-R\-\_\-\-E\-N\-D\-\_\-\-O\-F\-\_\-\-L\-I\-S\-T} \\
+\hline
+\mbox{\tt in}  & {\em profile\-\_\-id} & profile I\-D associated with the cluster I\-Ds (cannot be W\-P\-A\-N\-\_\-\-A\-P\-S\-\_\-\-P\-R\-O\-F\-I\-L\-E\-\_\-\-A\-N\-Y) \\
+\hline
+\mbox{\tt in}  & {\em callback} & function that will process the Z\-D\-O Match Descriptor responses; see wpan\-\_\-response\-\_\-fn for the callback's A\-P\-I \\
+\hline
+\mbox{\tt in}  & {\em context} & context to pass to {\ttfamily callback} in the \hyperlink{structwpan__conversation__t}{wpan\-\_\-conversation\-\_\-t} structure\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em 0} & request sent \\
+\hline
+{\em !0} & error sending request\\
+\hline
+\end{DoxyRetVals}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{group__zcl__client_gae673efbd325cea1f3befacda58332191}{zcl\-\_\-find\-\_\-and\-\_\-read\-\_\-attributes()}
+\end{DoxySeeAlso}
+\begin{DoxyRefDesc}{Todo}
+\item[\hyperlink{todo__todo000016}{Todo}]update A\-P\-I to allow for unicast request in addition to broadcast \end{DoxyRefDesc}
+
+
+References \-\_\-\-W\-P\-A\-N\-\_\-\-I\-E\-E\-E\-\_\-\-A\-D\-D\-R\-\_\-\-B\-R\-O\-A\-D\-C\-A\-S\-T, wpan\-\_\-envelope\-\_\-t\-::cluster\-\_\-id, wpan\-\_\-envelope\-\_\-t\-::dev, E\-I\-N\-V\-A\-L, wpan\-\_\-envelope\-\_\-t\-::ieee\-\_\-address, wpan\-\_\-envelope\-\_\-t\-::length, wpan\-\_\-envelope\-\_\-t\-::network\-\_\-address, wpan\-\_\-envelope\-\_\-t\-::payload, wpan\-\_\-conversation\-\_\-register(), wpan\-\_\-envelope\-\_\-dump(), wpan\-\_\-envelope\-\_\-send(), W\-P\-A\-N\-\_\-\-N\-E\-T\-\_\-\-A\-D\-D\-R\-\_\-\-B\-C\-A\-S\-T\-\_\-\-N\-O\-T\-\_\-\-A\-S\-L\-E\-E\-P, W\-P\-A\-N\-\_\-\-N\-E\-T\-\_\-\-A\-D\-D\-R\-\_\-\-U\-N\-D\-E\-F\-I\-N\-E\-D, zdo\-\_\-endpoint\-\_\-state(), Z\-D\-O\-\_\-\-M\-A\-T\-C\-H\-\_\-\-D\-E\-S\-C\-\_\-\-R\-E\-Q, and zdo\-\_\-match\-\_\-desc\-\_\-request().
+
+
+
+Referenced by zcl\-\_\-find\-\_\-and\-\_\-read\-\_\-attributes().
+
+
+
+\subsection{Variable Documentation}
+\hypertarget{group__zcl__client_gaece15f78359a3bae016be1d24e7d9ad9}{\index{Cluster Client support code@{Cluster Client support code}!zcl\-\_\-format\-\_\-utctime@{zcl\-\_\-format\-\_\-utctime}}
+\index{zcl\-\_\-format\-\_\-utctime@{zcl\-\_\-format\-\_\-utctime}!Cluster Client support code@{Cluster Client support code}}
+\subsubsection[{zcl\-\_\-format\-\_\-utctime}]{\setlength{\rightskip}{0pt plus 5cm}zcl\-\_\-format\-\_\-utctime\-\_\-fn zcl\-\_\-format\-\_\-utctime}}\label{group__zcl__client_gaece15f78359a3bae016be1d24e7d9ad9}
+
+
+Pointer to function that converts a zcl\-\_\-utctime\-\_\-t value to a human-\/readable timestamp. 
+
+Defaults to a function that formats timestamps as \char`\"{}\-Y\-Y\-Y\-Y-\/\-M\-M-\/\-D\-D H\-H\-:\-M\-M\-:\-S\-S U\-T\-C\char`\"{} or "\mbox{[}Invalid Timestamp\mbox{]} if {\ttfamily utctime} is 0x\-F\-F\-F\-F\-F\-F\-F\-F. Can be overriden by the user program to a function that uses another format. Strings must be limited to 40 characters.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt out}  & {\em dest} & buffer to hold the formatted string \\
+\hline
+\mbox{\tt in}  & {\em utctime} & time value to format\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Value of parameter {\ttfamily dest}. 
+\end{DoxyReturn}
+
+
+Referenced by zcl\-\_\-print\-\_\-attribute\-\_\-value().
+
+\hypertarget{group__zcl__client_gaece15f78359a3bae016be1d24e7d9ad9}{\index{Cluster Client support code@{Cluster Client support code}!zcl\-\_\-format\-\_\-utctime@{zcl\-\_\-format\-\_\-utctime}}
+\index{zcl\-\_\-format\-\_\-utctime@{zcl\-\_\-format\-\_\-utctime}!Cluster Client support code@{Cluster Client support code}}
+\subsubsection[{zcl\-\_\-format\-\_\-utctime}]{\setlength{\rightskip}{0pt plus 5cm}zcl\-\_\-format\-\_\-utctime\-\_\-fn zcl\-\_\-format\-\_\-utctime = {\bf \-\_\-zcl\-\_\-format\-\_\-utctime}}}\label{group__zcl__client_gaece15f78359a3bae016be1d24e7d9ad9}
+
+
+Pointer to function that converts a zcl\-\_\-utctime\-\_\-t value to a human-\/readable timestamp. 
+
+Defaults to a function that formats timestamps as \char`\"{}\-Y\-Y\-Y\-Y-\/\-M\-M-\/\-D\-D H\-H\-:\-M\-M\-:\-S\-S U\-T\-C\char`\"{} or "\mbox{[}Invalid Timestamp\mbox{]} if {\ttfamily utctime} is 0x\-F\-F\-F\-F\-F\-F\-F\-F. Can be overriden by the user program to a function that uses another format. Strings must be limited to 40 characters.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt out}  & {\em dest} & buffer to hold the formatted string \\
+\hline
+\mbox{\tt in}  & {\em utctime} & time value to format\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Value of parameter {\ttfamily dest}. 
+\end{DoxyReturn}
+
+
+Referenced by zcl\-\_\-print\-\_\-attribute\-\_\-value().
+

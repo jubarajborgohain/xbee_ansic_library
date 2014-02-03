@@ -1,0 +1,42 @@
+\hypertarget{ota__client_8h}{\section{include/xbee/ota\-\_\-client.h File Reference}
+\label{ota__client_8h}\index{include/xbee/ota\-\_\-client.\-h@{include/xbee/ota\-\_\-client.\-h}}
+}
+
+
+Support code for over-\/the-\/air (O\-T\-A) firmware updates of application code on Programmable X\-Bee target.  
+
+
+{\ttfamily \#include \char`\"{}xbee/platform.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}xbee/xmodem.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}wpan/aps.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}xbee/cbuf.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}xbee/transparent\-\_\-serial.\-h\char`\"{}}\\*
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structxbee__ota__t}{xbee\-\_\-ota\-\_\-t}
+\begin{DoxyCompactList}\small\item\em Structure for tracking state of over-\/the-\/air update. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{group__xbee__ota__client_gabdc98be69226a7bbd2eb8dc231948688}{\#define {\bfseries X\-B\-E\-E\-\_\-\-O\-T\-A\-\_\-\-M\-A\-X\-\_\-\-A\-U\-T\-H\-\_\-\-L\-E\-N\-G\-T\-H}~64}\label{group__xbee__ota__client_gabdc98be69226a7bbd2eb8dc231948688}
+
+\item 
+\hypertarget{group__xbee__ota__client_ga2febaa0d599fc4f6fd94fbcf232f8d09}{\#define \hyperlink{group__xbee__ota__client_ga2febaa0d599fc4f6fd94fbcf232f8d09}{X\-B\-E\-E\-\_\-\-O\-T\-A\-\_\-\-F\-L\-A\-G\-\_\-\-A\-P\-S\-\_\-\-E\-N\-C\-R\-Y\-P\-T}~0x0001}\label{group__xbee__ota__client_ga2febaa0d599fc4f6fd94fbcf232f8d09}
+
+\begin{DoxyCompactList}\small\item\em Send data with A\-P\-S encryption. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__xbee__ota__client_ga35fda0f9b1d07269c75d0407f3b26425}{X\-B\-E\-E\-\_\-\-O\-T\-A\-\_\-\-D\-A\-T\-A\-\_\-\-C\-L\-I\-E\-N\-T\-\_\-\-C\-L\-U\-S\-T\-\_\-\-E\-N\-T\-R\-Y}(ota, flags)
+\begin{DoxyCompactList}\small\item\em Macro for adding the O\-T\-A receive cluster (Digi Transparent Serial) to the cluster list for W\-P\-A\-N\-\_\-\-E\-N\-D\-P\-O\-I\-N\-T\-\_\-\-D\-I\-G\-I\-\_\-\-D\-A\-T\-A. \end{DoxyCompactList}\item 
+\#define {\bfseries X\-B\-E\-E\-\_\-\-O\-T\-A\-\_\-\-C\-M\-D\-\_\-\-C\-L\-I\-E\-N\-T\-\_\-\-C\-L\-U\-S\-T\-\_\-\-E\-N\-T\-R\-Y}(handler, context, flag)
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{group__xbee__ota__client_ga4805b029d840b86133ef62d64866c6af}{xbee\-\_\-ota\-\_\-init} (\hyperlink{structxbee__ota__t}{xbee\-\_\-ota\-\_\-t} $\ast$ota, \hyperlink{structwpan__dev__t}{wpan\-\_\-dev\-\_\-t} $\ast$dev, const \hyperlink{unionaddr64}{addr64} $\ast$target)
+\begin{DoxyCompactList}\small\item\em Initialize an \hyperlink{structxbee__ota__t}{xbee\-\_\-ota\-\_\-t} structure to send firmware updates to {\ttfamily target} using {\ttfamily dev}. \end{DoxyCompactList}\item 
+int \hyperlink{group__xbee__ota__client_ga8d196639e5234b3a56eb5c00ae730261}{\-\_\-xbee\-\_\-ota\-\_\-transparent\-\_\-rx} (const \hyperlink{structwpan__envelope__t}{wpan\-\_\-envelope\-\_\-t} \hyperlink{group__hal_gaef060b3456fdcc093a7210a762d5f2ed}{F\-A\-R} $\ast$envelope, void \hyperlink{group__hal_gaef060b3456fdcc093a7210a762d5f2ed}{F\-A\-R} $\ast$context)
+\begin{DoxyCompactList}\small\item\em Cluster handler for \char`\"{}\-Digi Transparent Serial\char`\"{} cluster. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Support code for over-\/the-\/air (O\-T\-A) firmware updates of application code on Programmable X\-Bee target. 

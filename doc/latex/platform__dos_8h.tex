@@ -1,0 +1,134 @@
+\hypertarget{platform__dos_8h}{\section{include/xbee/platform\-\_\-dos.h File Reference}
+\label{platform__dos_8h}\index{include/xbee/platform\-\_\-dos.\-h@{include/xbee/platform\-\_\-dos.\-h}}
+}
+
+
+Header for D\-O\-S platform (using Watcom C cross compiler).  
+
+
+{\ttfamily \#include $<$time.\-h$>$}\\*
+{\ttfamily \#include $<$dos.\-h$>$}\\*
+{\ttfamily \#include $<$conio.\-h$>$}\\*
+{\ttfamily \#include $<$stddef.\-h$>$}\\*
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structxbee__serial__t}{xbee\-\_\-serial\-\_\-t}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{group__hal__dos_gafa9179779c676eed926a35c4ab5fe5b5}{\#define {\bfseries P\-A\-C\-K\-E\-D\-\_\-\-S\-T\-R\-U\-C\-T}~\-\_\-\-Packed struct}\label{group__hal__dos_gafa9179779c676eed926a35c4ab5fe5b5}
+
+\item 
+\hypertarget{group__hal__dos_ga3ee5b5bde5321e97420753cf13ce9c1b}{\#define {\bfseries \-\_\-f\-\_\-memcpy}~memcpy}\label{group__hal__dos_ga3ee5b5bde5321e97420753cf13ce9c1b}
+
+\item 
+\hypertarget{group__hal__dos_ga210604a4d70c1421599afca049c8dc55}{\#define {\bfseries \-\_\-f\-\_\-memset}~memset}\label{group__hal__dos_ga210604a4d70c1421599afca049c8dc55}
+
+\item 
+\hypertarget{group__hal__dos_ga828bb1dfda1afd67ca795075903d227d}{\#define {\bfseries \-\_\-\-\_\-\-F\-U\-N\-C\-T\-I\-O\-N\-\_\-\-\_\-}~\char`\"{}\char`\"{}}\label{group__hal__dos_ga828bb1dfda1afd67ca795075903d227d}
+
+\item 
+\hypertarget{group__hal__dos_ga8782a401fbf55261460863fc2f8df1ce}{\#define {\bfseries L\-I\-T\-T\-L\-E\-\_\-\-E\-N\-D\-I\-A\-N}~1234}\label{group__hal__dos_ga8782a401fbf55261460863fc2f8df1ce}
+
+\item 
+\hypertarget{group__hal__dos_ga23eb5e058a210efdde3d64e69679fafa}{\#define {\bfseries B\-I\-G\-\_\-\-E\-N\-D\-I\-A\-N}~4321}\label{group__hal__dos_ga23eb5e058a210efdde3d64e69679fafa}
+
+\item 
+\hypertarget{group__hal__dos_ga1771b7fb65ee640524d0052f229768c3}{\#define {\bfseries B\-Y\-T\-E\-\_\-\-O\-R\-D\-E\-R}~L\-I\-T\-T\-L\-E\-\_\-\-E\-N\-D\-I\-A\-N}\label{group__hal__dos_ga1771b7fb65ee640524d0052f229768c3}
+
+\item 
+\hypertarget{group__hal__dos_gaef060b3456fdcc093a7210a762d5f2ed}{\#define {\bfseries F\-A\-R}}\label{group__hal__dos_gaef060b3456fdcc093a7210a762d5f2ed}
+
+\item 
+\hypertarget{group__hal__dos_gacf43057fc38f77d20456c074909ba772}{\#define {\bfseries I\-N\-T\-E\-R\-R\-U\-P\-T\-\_\-\-E\-N\-A\-B\-L\-E}~\-\_\-enable()}\label{group__hal__dos_gacf43057fc38f77d20456c074909ba772}
+
+\item 
+\hypertarget{group__hal__dos_ga658c3ad175b50000ac44b3b9ea836d1a}{\#define {\bfseries I\-N\-T\-E\-R\-R\-U\-P\-T\-\_\-\-D\-I\-S\-A\-B\-L\-E}~\-\_\-disable()}\label{group__hal__dos_ga658c3ad175b50000ac44b3b9ea836d1a}
+
+\item 
+\hypertarget{group__hal__dos_gac0bb5dfc7862723940463fc4f534a2c6}{\#define {\bfseries X\-S\-T\-\_\-\-I\-N\-I\-T\-\_\-\-O\-K}~0x0001}\label{group__hal__dos_gac0bb5dfc7862723940463fc4f534a2c6}
+
+\item 
+\hypertarget{group__hal__dos_ga4a10627ecbaf4dd77aae7f9edb4a54f4}{\#define {\bfseries X\-S\-T\-\_\-\-M\-A\-S\-K\-\_\-\-D\-R}~0x01}\label{group__hal__dos_ga4a10627ecbaf4dd77aae7f9edb4a54f4}
+
+\item 
+\hypertarget{group__hal__dos_gaacce3cb69756eab817972ff8facdda96}{\#define {\bfseries X\-S\-T\-\_\-\-M\-A\-S\-K\-\_\-\-O\-E}~0x02}\label{group__hal__dos_gaacce3cb69756eab817972ff8facdda96}
+
+\item 
+\hypertarget{group__hal__dos_gab800504524b4de7eea0d273db77f6156}{\#define {\bfseries X\-S\-T\-\_\-\-M\-A\-S\-K\-\_\-\-P\-E}~0x04}\label{group__hal__dos_gab800504524b4de7eea0d273db77f6156}
+
+\item 
+\hypertarget{group__hal__dos_gaff4d8f56c8de5ecfdba8ded318c2717e}{\#define {\bfseries X\-S\-T\-\_\-\-M\-A\-S\-K\-\_\-\-F\-E}~0x08}\label{group__hal__dos_gaff4d8f56c8de5ecfdba8ded318c2717e}
+
+\item 
+\hypertarget{group__hal__dos_ga0ca1fda9d4b7f78e3e5a6d4cc3f6ae85}{\#define {\bfseries X\-S\-T\-\_\-\-M\-A\-S\-K\-\_\-\-B\-I}~0x10}\label{group__hal__dos_ga0ca1fda9d4b7f78e3e5a6d4cc3f6ae85}
+
+\item 
+\hypertarget{group__hal__dos_ga50f54b3db3391cfe1d6eced271e265e9}{\#define {\bfseries X\-S\-T\-\_\-\-M\-A\-S\-K\-\_\-\-T\-H\-R\-E}~0x20}\label{group__hal__dos_ga50f54b3db3391cfe1d6eced271e265e9}
+
+\item 
+\hypertarget{group__hal__dos_ga82f8805477291e063bd3f555f9916cba}{\#define {\bfseries X\-S\-T\-\_\-\-M\-A\-S\-K\-\_\-\-T\-E\-M\-T}~0x40}\label{group__hal__dos_ga82f8805477291e063bd3f555f9916cba}
+
+\item 
+\hypertarget{group__hal__dos_ga646ea2f68b9f1418a33cd38384576cc9}{\#define {\bfseries X\-S\-T\-\_\-\-M\-A\-S\-K\-\_\-\-F\-I\-F\-O\-E}~0x80}\label{group__hal__dos_ga646ea2f68b9f1418a33cd38384576cc9}
+
+\item 
+\hypertarget{group__hal__dos_ga503caf44f78cc52dc196c413cd6c78ab}{\#define {\bfseries Z\-C\-L\-\_\-\-T\-I\-M\-E\-\_\-\-E\-P\-O\-C\-H\-\_\-\-D\-E\-L\-T\-A}~\hyperlink{group__hal_ga735b0974380a73e9d7a12a1f199a5921}{Z\-C\-L\-\_\-\-T\-I\-M\-E\-\_\-\-E\-P\-O\-C\-H\-\_\-\-D\-E\-L\-T\-A\-\_\-1970}}\label{group__hal__dos_ga503caf44f78cc52dc196c413cd6c78ab}
+
+\item 
+\hypertarget{group__hal__dos_ga5cbeea4d9344138b657f78ad38813584}{\#define {\bfseries X\-B\-E\-E\-\_\-\-M\-S\-\_\-\-T\-I\-M\-E\-R\-\_\-\-R\-E\-S\-O\-L\-U\-T\-I\-O\-N}~(1000 / C\-L\-O\-C\-K\-S\-\_\-\-P\-E\-R\-\_\-\-S\-E\-C)}\label{group__hal__dos_ga5cbeea4d9344138b657f78ad38813584}
+
+\item 
+\hypertarget{group__hal__dos_gae34b1efc8ba99add17fcd767852197d4}{\#define {\bfseries W\-P\-A\-N\-\_\-\-M\-A\-X\-\_\-\-C\-O\-N\-V\-E\-R\-S\-A\-T\-I\-O\-N\-S}~6}\label{group__hal__dos_gae34b1efc8ba99add17fcd767852197d4}
+
+\item 
+\hypertarget{group__hal__dos_gaaa330f432d7a6bccdb393a656ddfe4d3}{\#define {\bfseries W\-P\-A\-N\-\_\-\-C\-O\-N\-V\-E\-R\-S\-A\-T\-I\-O\-N\-\_\-\-T\-I\-M\-E\-O\-U\-T}~15}\label{group__hal__dos_gaaa330f432d7a6bccdb393a656ddfe4d3}
+
+\item 
+\hypertarget{group__hal__dos_ga47eb4ad5b4e00af034717327c7fa909d}{\#define {\bfseries gotoxy00}(x, y)~gotoxy((x)+1, (y)+1)}\label{group__hal__dos_ga47eb4ad5b4e00af034717327c7fa909d}
+
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{group__hal__dos_ga09a1e304d66d35dd47daffee9731edaa}{typedef unsigned long \hyperlink{group__hal__dos_ga09a1e304d66d35dd47daffee9731edaa}{uint32\-\_\-t}}\label{group__hal__dos_ga09a1e304d66d35dd47daffee9731edaa}
+
+\begin{DoxyCompactList}\small\item\em 32-\/bit unsigned integer \end{DoxyCompactList}\item 
+\hypertarget{group__hal__dos_gacce279dbc21c640ea1412e405c569887}{typedef unsigned short {\bfseries uint\-\_\-fast8\-\_\-t}}\label{group__hal__dos_gacce279dbc21c640ea1412e405c569887}
+
+\item 
+\hypertarget{group__hal__dos_gaa301edfd56a74118dc796a2f1aa67f20}{typedef signed short {\bfseries int\-\_\-fast8\-\_\-t}}\label{group__hal__dos_gaa301edfd56a74118dc796a2f1aa67f20}
+
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{group__hal__dos_gaf18bb6d8ede135a0bc5c13b7737be755}{void {\bfseries gotoxy\-\_\-ansi} (int col, int row)}\label{group__hal__dos_gaf18bb6d8ede135a0bc5c13b7737be755}
+
+\item 
+\hypertarget{group__hal__dos_gacb897f5c3c3f8fc84b84851f496371a6}{void {\bfseries clrscr\-\_\-ansi} (void)}\label{group__hal__dos_gacb897f5c3c3f8fc84b84851f496371a6}
+
+\end{DoxyCompactItemize}
+\subsection*{platform\-\_\-stdint}
+\label{_amgrpd25616584cb4ee40080d217a7b385214}%
+Types typically defined in $<$stdint.\-h$>$, define manually if stdint.\-h is not available on this platform. \begin{DoxyCompactItemize}
+\item 
+typedef signed char \hyperlink{group__hal_ga20c38cc5aac7cc6b0a3c6ab05428436d}{int8\-\_\-t}
+\begin{DoxyCompactList}\small\item\em 8-\/bit signed integer \end{DoxyCompactList}\item 
+typedef unsigned char \hyperlink{group__hal_gae1affc9ca37cfb624959c866a73f83c2}{uint8\-\_\-t}
+\begin{DoxyCompactList}\small\item\em 8-\/bit unsigned integer \end{DoxyCompactList}\item 
+typedef short \hyperlink{group__hal_ga2140805d08462d474b82ddc8d1c2f3e6}{int16\-\_\-t}
+\begin{DoxyCompactList}\small\item\em 16-\/bit signed integer \end{DoxyCompactList}\item 
+typedef unsigned short \hyperlink{group__hal_ga5a8b2dc9e45a9ee81a94ef304fb62505}{uint16\-\_\-t}
+\begin{DoxyCompactList}\small\item\em 16-\/bit unsigned integer \end{DoxyCompactList}\item 
+typedef long \hyperlink{group__hal_gafd12020da5a235dfcf0c3c748fb5baed}{int32\-\_\-t}
+\begin{DoxyCompactList}\small\item\em 32-\/bit signed integer \end{DoxyCompactList}\item 
+\hypertarget{group__hal_ga04dd5074964518403bf944f2b240a5f8}{typedef int \hyperlink{group__hal_ga04dd5074964518403bf944f2b240a5f8}{bool\-\_\-t}}\label{group__hal_ga04dd5074964518403bf944f2b240a5f8}
+
+\begin{DoxyCompactList}\small\item\em Variable that can hold 0 or 1, may be an {\ttfamily int} for speed purporses or {\ttfamily uint8\-\_\-t} for size optimization. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Header for D\-O\-S platform (using Watcom C cross compiler). This file is automatically included by \hyperlink{platform_8h}{xbee/platform.\-h}. 

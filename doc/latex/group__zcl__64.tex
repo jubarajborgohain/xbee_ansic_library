@@ -1,0 +1,1031 @@
+\hypertarget{group__zcl__64}{\section{64-\/bit integer support}
+\label{group__zcl__64}\index{64-\/bit integer support@{64-\/bit integer support}}
+}
+\subsection*{Files}
+\begin{DoxyCompactItemize}
+\item 
+file \hyperlink{jslong_8c}{jslong.\-c}
+\item 
+file \hyperlink{zcl64_8h}{zcl64.\-h}
+\begin{DoxyCompactList}\small\item\em Macros for working with 64-\/bit integers via the zcl64\-\_\-t datatype. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{group__zcl__64_ga82d69c4b59ebfde1f784f7d30246e575}{\#define {\bfseries jslo16}(a)~((a) \& 0x0000\-F\-F\-F\-F)}\label{group__zcl__64_ga82d69c4b59ebfde1f784f7d30246e575}
+
+\item 
+\hypertarget{group__zcl__64_ga50ea98cec1c7c8393b65115d0bd756f9}{\#define {\bfseries jshi16}(a)~((\hyperlink{group__hal__dos_ga09a1e304d66d35dd47daffee9731edaa}{uint32\-\_\-t})(a) $>$$>$ 16)}\label{group__zcl__64_ga50ea98cec1c7c8393b65115d0bd756f9}
+
+\item 
+\#define \hyperlink{group__zcl__64_ga8e855e53988a32f4428ceacce4f9870c}{Z\-C\-L64\-\_\-\-I\-N\-I\-T}(hi, lo)~J\-S\-L\-L\-\_\-\-I\-N\-I\-T(hi, lo)
+\begin{DoxyCompactList}\small\item\em Initialize a zcl64\-\_\-t variable with two literal 32-\/bit values. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__zcl__64_ga899413577d0a7e9b641cc5c309b08aeb}{Z\-C\-L64\-\_\-\-L\-O\-A\-D}(r, hi32, lo32)~((r).hi = (hi32), (r).lo = (lo32))
+\begin{DoxyCompactList}\small\item\em Load a zcl64\-\_\-t variable with two 32-\/bit values (high and low). \end{DoxyCompactList}\item 
+\#define \hyperlink{group__zcl__64_gad0e4c484d689dee3c5f1302fc80aef3e}{Z\-C\-L64\-\_\-\-I\-S\-\_\-\-Z\-E\-R\-O}(a)~J\-S\-L\-L\-\_\-\-I\-S\-\_\-\-Z\-E\-R\-O(a)
+\begin{DoxyCompactList}\small\item\em Compare a zcl64\-\_\-t variable to zero. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__zcl__64_ga329900843c1e59c30b4bdff95ee594bd}{Z\-C\-L64\-\_\-\-E\-Q}(a, b)~J\-S\-L\-L\-\_\-\-E\-Q(a, b)
+\begin{DoxyCompactList}\small\item\em Compare two zcl64\-\_\-t variables for equality. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__zcl__64_gaffa76b2bdfb8bc021db06efe331a2e5f}{Z\-C\-L64\-\_\-\-N\-E}(a, b)~J\-S\-L\-L\-\_\-\-N\-E(a, b)
+\begin{DoxyCompactList}\small\item\em Compare two zcl64\-\_\-t variables for inequality. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__zcl__64_ga524b42ba2596f4c0392780c540f5d5b6}{Z\-C\-L64\-\_\-\-G\-E\-\_\-\-Z\-E\-R\-O}(a)~J\-S\-L\-L\-\_\-\-G\-E\-\_\-\-Z\-E\-R\-O(a)
+\begin{DoxyCompactList}\small\item\em Compare a signed zcl64\-\_\-t variable to 0. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__zcl__64_ga3ec91495319f42f4ba341768a10a77b7}{Z\-C\-L64\-\_\-\-L\-T}(a, b)~J\-S\-L\-L\-\_\-\-R\-E\-A\-L\-\_\-\-C\-M\-P(a, $<$, b)
+\begin{DoxyCompactList}\small\item\em Compare two zcl64\-\_\-t variables (signed less-\/than comparison) \end{DoxyCompactList}\item 
+\#define \hyperlink{group__zcl__64_gaa6db62833f3681442d99ef64ef0ab61e}{Z\-C\-L64\-\_\-\-L\-T\-U}(a, b)~J\-S\-L\-L\-\_\-\-R\-E\-A\-L\-\_\-\-U\-C\-M\-P(a, $<$, b)
+\begin{DoxyCompactList}\small\item\em Compare two zcl64\-\_\-t variables (unsigned less-\/than comparison) \end{DoxyCompactList}\item 
+\#define \hyperlink{group__zcl__64_ga6f960291ee8e41a8a45421b0b27b62b9}{Z\-C\-L64\-\_\-\-A\-N\-D}(r, a, b)~J\-S\-L\-L\-\_\-\-A\-N\-D(r, a, b)
+\begin{DoxyCompactList}\small\item\em Perform a bitwise A\-N\-D of two zcl64\-\_\-t variables. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__zcl__64_gaa6e4aa82c20efd4b30cf9af31672d867}{Z\-C\-L64\-\_\-\-O\-R}(r, a, b)~J\-S\-L\-L\-\_\-\-O\-R(r, a, b)
+\begin{DoxyCompactList}\small\item\em Perform a bitwise O\-R of two zcl64\-\_\-t variables. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__zcl__64_gaa6a22393c0d8c9d674b8a90d316413d3}{Z\-C\-L64\-\_\-\-X\-O\-R}(r, a, b)~J\-S\-L\-L\-\_\-\-X\-O\-R(r, a, b)
+\begin{DoxyCompactList}\small\item\em Perform a bitwise X\-O\-R of two zcl64\-\_\-t variables. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__zcl__64_ga181c9c94509aa64c1c3c3ed74d6d3c0e}{Z\-C\-L64\-\_\-\-N\-O\-T}(r, a)~J\-S\-L\-L\-\_\-\-N\-O\-T(r, a)
+\begin{DoxyCompactList}\small\item\em Perform a bitwise N\-O\-T of a zcl64\-\_\-t variable. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__zcl__64_gab197c8668c0287b8190982177e03a257}{Z\-C\-L64\-\_\-\-N\-E\-G}(r, a)~J\-S\-L\-L\-\_\-\-N\-E\-G(r, a)
+\begin{DoxyCompactList}\small\item\em Negate a zcl64\-\_\-t variable. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__zcl__64_gaa0b854087abee42e1bf908a133385f8d}{Z\-C\-L64\-\_\-\-A\-D\-D}(r, a, b)~J\-S\-L\-L\-\_\-\-A\-D\-D(r, a, b)
+\begin{DoxyCompactList}\small\item\em Add two zcl64\-\_\-t variables. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__zcl__64_ga949d0b35ec1e4bf3a9e8a422b0eae4e5}{Z\-C\-L64\-\_\-\-S\-U\-B}(r, a, b)~J\-S\-L\-L\-\_\-\-S\-U\-B(r, a, b)
+\begin{DoxyCompactList}\small\item\em Subtract two zcl64\-\_\-t variables. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__zcl__64_ga3f163bcb1ecddc543b3a4f3bdbc1d413}{Z\-C\-L64\-\_\-\-M\-U\-L}(r, a, b)~J\-S\-L\-L\-\_\-\-M\-U\-L(r, a, b)
+\begin{DoxyCompactList}\small\item\em Multiply two zcl64\-\_\-t variables. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__zcl__64_gadb0e1566e403716d94868b45bb8c63bb}{Z\-C\-L64\-\_\-\-M\-U\-L32}(r, a, b)~J\-S\-L\-L\-\_\-\-M\-U\-L32(r, a, b)
+\begin{DoxyCompactList}\small\item\em Multiply two 32-\/bit variables (int32\-\_\-t or uint32\-\_\-t) and store the result in a zcl64\-\_\-t variable. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__zcl__64_ga6d2d3e13f94ca7fba869dbc6479ae0e1}{Z\-C\-L64\-\_\-\-U\-D\-I\-V\-M\-O\-D}(qp, rp, a, b)~J\-S\-L\-L\-\_\-\-U\-D\-I\-V\-M\-O\-D(qp, rp, a, b)
+\begin{DoxyCompactList}\small\item\em Divide an unsigned zcl64\-\_\-t variable by another unsigned zcl64\-\_\-t variable and store the 64-\/bit quotient and remainder. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__zcl__64_gada2c215933ee366c11da80a44c2b27c7}{Z\-C\-L64\-\_\-\-D\-I\-V}(r, a, b)~J\-S\-L\-L\-\_\-\-D\-I\-V(r, a, b)
+\begin{DoxyCompactList}\small\item\em Perform signed division of two zcl64\-\_\-t variables and store the quotient. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__zcl__64_ga8137418ffd91d5aae3b41a0143d27070}{Z\-C\-L64\-\_\-\-M\-O\-D}(r, a, b)~J\-S\-L\-L\-\_\-\-M\-O\-D(r, a, b)
+\begin{DoxyCompactList}\small\item\em Perform signed division of two zcl64\-\_\-t variables and store the remainder. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__zcl__64_ga1a1bb5cd5b871acf8dd49621073cbd41}{Z\-C\-L64\-\_\-\-A\-S\-L}(r, a, b)~J\-S\-L\-L\-\_\-\-S\-H\-L(r, a, b)
+\begin{DoxyCompactList}\small\item\em Arithmetic Shift Left of a zcl64\-\_\-t variable. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__zcl__64_ga6cc9903e90f4c3e3af0d5e4eef7c89a4}{Z\-C\-L64\-\_\-\-L\-S\-L}(r, a, b)~Z\-C\-L64\-\_\-\-S\-L\-A(r, a, b)
+\begin{DoxyCompactList}\small\item\em Logical Shift Left of a zcl64\-\_\-t variable. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__zcl__64_gaffe142c28a6ecbe29416c4e0ba5f6a04}{Z\-C\-L64\-\_\-\-A\-S\-R}(r, a, b)~J\-S\-L\-L\-\_\-\-S\-H\-R(r, a, b)
+\begin{DoxyCompactList}\small\item\em Arithmetic Shift Right of a signed zcl64\-\_\-t variable. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__zcl__64_ga389dd5298bd8f8574f55aa6a687f41a8}{Z\-C\-L64\-\_\-\-L\-S\-R}(r, a, b)~J\-S\-L\-L\-\_\-\-U\-S\-H\-R(r, a, b)
+\begin{DoxyCompactList}\small\item\em Logical Shift Right of an unsigned zcl64\-\_\-t variable. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__zcl__64_gaceb8fdf41f4dc532f6028bab90521d3e}{Z\-C\-L64\-\_\-\-T\-O\-\_\-\-I\-N\-T32}(i32, i64)~J\-S\-L\-L\-\_\-\-L2\-I(i32, i64)
+\begin{DoxyCompactList}\small\item\em Cast a signed zcl64\-\_\-t variable down to a signed 32-\/bit integer. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__zcl__64_ga628915c271405b5eaeb673089f0df6ba}{Z\-C\-L64\-\_\-\-T\-O\-\_\-\-U\-I\-N\-T32}(u32, u64)~J\-S\-L\-L\-\_\-\-L2\-U\-I(u32, u64)
+\begin{DoxyCompactList}\small\item\em Cast an unsigned zcl64\-\_\-t variable down to an unsigned 32-\/bit integer. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__zcl__64_gafa2d05dfa497827d3f232698f5f47c2b}{Z\-C\-L64\-\_\-\-L\-O\-W32}(u64)~((u64).lo)
+\begin{DoxyCompactList}\small\item\em The lower-\/32 bits of a Z\-C\-L64 value. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__zcl__64_ga6a24898481f0fe419858c8b51cafda3e}{Z\-C\-L64\-\_\-\-H\-I\-G\-H32}(u64)~((u64).hi)
+\begin{DoxyCompactList}\small\item\em The upper-\/32 bits of a Z\-C\-L64 value. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__zcl__64_ga3f09d28af6abe1a4a5c427ea93686ea1}{Z\-C\-L64\-\_\-\-T\-O\-\_\-\-F\-L\-O\-A\-T}(f, i64)~J\-S\-L\-L\-\_\-\-L2\-F(f, i64)
+\begin{DoxyCompactList}\small\item\em Cast a signed zcl64\-\_\-t variable to a {\ttfamily float}. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__zcl__64_ga3cca4ebbc7fafb30919421d7cd0a2d73}{Z\-C\-L64\-\_\-\-T\-O\-\_\-\-D\-O\-U\-B\-L\-E}(d, i64)~J\-S\-L\-L\-\_\-\-L2\-D(d, i64)
+\begin{DoxyCompactList}\small\item\em Cast a signed zcl64\-\_\-t variable to a {\ttfamily double}. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__zcl__64_gafe6c7cf76cbba5ac7fb5329fd0801278}{Z\-C\-L64\-\_\-\-F\-R\-O\-M\-\_\-\-I\-N\-T32}(i64, i32)~J\-S\-L\-L\-\_\-\-I2\-L(i64, i32)
+\begin{DoxyCompactList}\small\item\em Cast a signed 32-\/bit integer up to a zcl64\-\_\-t variable. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__zcl__64_gaae113edcbf898afca39e88d742c27f8d}{Z\-C\-L64\-\_\-\-F\-R\-O\-M\-\_\-\-U\-I\-N\-T32}(u64, u32)~J\-S\-L\-L\-\_\-\-U\-I2\-L(u64, u32)
+\begin{DoxyCompactList}\small\item\em Cast an unsigned 32-\/bit integer up to a zcl64\-\_\-t variable. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__zcl__64_gaae1ff05a93a54da4e06bbca682d2c548}{Z\-C\-L64\-\_\-\-F\-R\-O\-M\-\_\-\-F\-L\-O\-A\-T}(i64, f)~J\-S\-L\-L\-\_\-\-F2\-L(i64, f)
+\begin{DoxyCompactList}\small\item\em Cast a {\ttfamily double} into a signed zcl64\-\_\-t variable. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__zcl__64_ga1899e4fdd99e7f07bf5044997a40e248}{Z\-C\-L64\-\_\-\-F\-R\-O\-M\-\_\-\-D\-O\-U\-B\-L\-E}(i64, d)~J\-S\-L\-L\-\_\-\-D2\-L(i64, d)
+\begin{DoxyCompactList}\small\item\em Cast a {\ttfamily float} into a signed zcl64\-\_\-t variable. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__zcl__64_ga24b0de907d96815f51558733e99792d3}{Z\-C\-L64\-\_\-\-T\-O\-\_\-\-H\-E\-X\-S\-T\-R}(buffer, var)~J\-S\-L\-L\-\_\-\-H\-E\-X\-S\-T\-R(buffer, var)
+\begin{DoxyCompactList}\small\item\em Convert a zcl64\-\_\-t variable to a 16-\/character printable hexadecimal string. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__zcl__64_gae93bf21431b64dcc3d9bcd67296ff0ed}{Z\-C\-L64\-\_\-\-T\-O\-\_\-\-D\-E\-C\-S\-T\-R}(buffer, var)~J\-S\-L\-L\-\_\-\-D\-E\-C\-S\-T\-R(buffer, var)
+\begin{DoxyCompactList}\small\item\em Convert a signed zcl64\-\_\-t variable to a 20-\/character printable decimal string. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__zcl__64_gae094f7c19dcfd18917b426a9e43aa427}{Z\-C\-L64\-\_\-\-T\-O\-\_\-\-U\-D\-E\-C\-S\-T\-R}(buffer, var)~J\-S\-L\-L\-\_\-\-U\-D\-E\-C\-S\-T\-R(buffer, var)
+\begin{DoxyCompactList}\small\item\em Convert an unsigned zcl64\-\_\-t variable to a 20-\/character printable decimal string. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef \hyperlink{struct_j_s_int64}{J\-S\-Uint64} \hyperlink{group__zcl__64_ga2e906cb47fc172ae60da5178075dd3c7}{zcl64\-\_\-t}
+\begin{DoxyCompactList}\small\item\em 64-\/bit integer in host-\/byte-\/order Use for 56-\/bit values as well -- Z\-C\-L layer will make sure top byte is sign-\/extended. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{group__zcl__64_ga09e45168abb5ea8e6d487514eae102c8}{void {\bfseries jsll\-\_\-mul} (\hyperlink{struct_j_s_int64}{J\-S\-Uint64} $\ast$rp, \hyperlink{struct_j_s_int64}{J\-S\-Uint64} a, \hyperlink{struct_j_s_int64}{J\-S\-Uint64} b)}\label{group__zcl__64_ga09e45168abb5ea8e6d487514eae102c8}
+
+\item 
+\hypertarget{group__zcl__64_ga0b4ed4198b603054301a4c9147e5f060}{void {\bfseries jsll\-\_\-mul32} (\hyperlink{struct_j_s_int64}{J\-S\-Uint64} $\ast$rp, J\-S\-Uint32 a, J\-S\-Uint32 b)}\label{group__zcl__64_ga0b4ed4198b603054301a4c9147e5f060}
+
+\item 
+\hypertarget{group__zcl__64_ga26cb84da9083907cc41db0edf95b1b96}{void {\bfseries jsll\-\_\-udivmod} (\hyperlink{struct_j_s_int64}{J\-S\-Uint64} $\ast$qp, \hyperlink{struct_j_s_int64}{J\-S\-Uint64} $\ast$rp, \hyperlink{struct_j_s_int64}{J\-S\-Uint64} a, \hyperlink{struct_j_s_int64}{J\-S\-Uint64} b)}\label{group__zcl__64_ga26cb84da9083907cc41db0edf95b1b96}
+
+\item 
+\hypertarget{group__zcl__64_gaf40c23a4a3872380497dae260ea58554}{void {\bfseries jsll\-\_\-div} (\hyperlink{struct_j_s_int64}{J\-S\-Uint64} $\ast$r, const \hyperlink{struct_j_s_int64}{J\-S\-Uint64} $\ast$a, const \hyperlink{struct_j_s_int64}{J\-S\-Uint64} $\ast$b)}\label{group__zcl__64_gaf40c23a4a3872380497dae260ea58554}
+
+\item 
+\hypertarget{group__zcl__64_gaecddfb7e3ca39fa5313632c47a47f20c}{void {\bfseries jsll\-\_\-mod} (\hyperlink{struct_j_s_int64}{J\-S\-Uint64} $\ast$r, const \hyperlink{struct_j_s_int64}{J\-S\-Uint64} $\ast$a, const \hyperlink{struct_j_s_int64}{J\-S\-Uint64} $\ast$b)}\label{group__zcl__64_gaecddfb7e3ca39fa5313632c47a47f20c}
+
+\item 
+\hypertarget{group__zcl__64_gadbc8463d4ec9862cbb621cdd5f7297fa}{void {\bfseries jsll\-\_\-shl} (\hyperlink{struct_j_s_int64}{J\-S\-Uint64} $\ast$r, \hyperlink{struct_j_s_int64}{J\-S\-Uint64} a, uint\-\_\-fast8\-\_\-t b)}\label{group__zcl__64_gadbc8463d4ec9862cbb621cdd5f7297fa}
+
+\item 
+\hypertarget{group__zcl__64_gab406a00beab4086e1f29bfa6c98e0e6d}{void {\bfseries jsll\-\_\-shr} (\hyperlink{struct_j_s_int64}{J\-S\-Int64} $\ast$r, \hyperlink{struct_j_s_int64}{J\-S\-Int64} a, uint\-\_\-fast8\-\_\-t b)}\label{group__zcl__64_gab406a00beab4086e1f29bfa6c98e0e6d}
+
+\item 
+\hypertarget{group__zcl__64_gaab6291a66e18f75aa28dd777cb66d49b}{void {\bfseries jsll\-\_\-ushr} (\hyperlink{struct_j_s_int64}{J\-S\-Int64} $\ast$r, \hyperlink{struct_j_s_int64}{J\-S\-Int64} a, uint\-\_\-fast8\-\_\-t b)}\label{group__zcl__64_gaab6291a66e18f75aa28dd777cb66d49b}
+
+\item 
+\hypertarget{group__zcl__64_gaaeb3f577d08fb658090c74ce03da319a}{int {\bfseries jsll\-\_\-decstr} (char $\ast$buffer, const \hyperlink{struct_j_s_int64}{J\-S\-Int64} $\ast$v)}\label{group__zcl__64_gaaeb3f577d08fb658090c74ce03da319a}
+
+\item 
+\hypertarget{group__zcl__64_gaf41ea39427421502a4c90a5cd5f62cb7}{int {\bfseries jsll\-\_\-udecstr} (char $\ast$buffer, const \hyperlink{struct_j_s_int64}{J\-S\-Uint64} $\ast$v)}\label{group__zcl__64_gaf41ea39427421502a4c90a5cd5f62cb7}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{group__zcl__64_gaa0b854087abee42e1bf908a133385f8d}{\index{64-\/bit integer support@{64-\/bit integer support}!Z\-C\-L64\-\_\-\-A\-D\-D@{Z\-C\-L64\-\_\-\-A\-D\-D}}
+\index{Z\-C\-L64\-\_\-\-A\-D\-D@{Z\-C\-L64\-\_\-\-A\-D\-D}!64-bit integer support@{64-\/bit integer support}}
+\subsubsection[{Z\-C\-L64\-\_\-\-A\-D\-D}]{\setlength{\rightskip}{0pt plus 5cm}\#define Z\-C\-L64\-\_\-\-A\-D\-D(
+\begin{DoxyParamCaption}
+\item[{}]{r, }
+\item[{}]{a, }
+\item[{}]{b}
+\end{DoxyParamCaption}
+)~J\-S\-L\-L\-\_\-\-A\-D\-D(r, a, b)}}\label{group__zcl__64_gaa0b854087abee42e1bf908a133385f8d}
+
+
+Add two zcl64\-\_\-t variables. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt out}  & {\em r} & zcl64\-\_\-t variable to assign (a + b) to \\
+\hline
+\mbox{\tt in}  & {\em a} & zcl64\-\_\-t variable \\
+\hline
+\mbox{\tt in}  & {\em b} & zcl64\-\_\-t variable\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{group__zcl__64_ga949d0b35ec1e4bf3a9e8a422b0eae4e5}{Z\-C\-L64\-\_\-\-S\-U\-B}, \hyperlink{group__zcl__64_ga3f163bcb1ecddc543b3a4f3bdbc1d413}{Z\-C\-L64\-\_\-\-M\-U\-L}, \hyperlink{group__zcl__64_gadb0e1566e403716d94868b45bb8c63bb}{Z\-C\-L64\-\_\-\-M\-U\-L32}, \hyperlink{group__zcl__64_ga6d2d3e13f94ca7fba869dbc6479ae0e1}{Z\-C\-L64\-\_\-\-U\-D\-I\-V\-M\-O\-D}, \hyperlink{group__zcl__64_gada2c215933ee366c11da80a44c2b27c7}{Z\-C\-L64\-\_\-\-D\-I\-V}, \hyperlink{group__zcl__64_ga8137418ffd91d5aae3b41a0143d27070}{Z\-C\-L64\-\_\-\-M\-O\-D} 
+\end{DoxySeeAlso}
+\hypertarget{group__zcl__64_ga6f960291ee8e41a8a45421b0b27b62b9}{\index{64-\/bit integer support@{64-\/bit integer support}!Z\-C\-L64\-\_\-\-A\-N\-D@{Z\-C\-L64\-\_\-\-A\-N\-D}}
+\index{Z\-C\-L64\-\_\-\-A\-N\-D@{Z\-C\-L64\-\_\-\-A\-N\-D}!64-bit integer support@{64-\/bit integer support}}
+\subsubsection[{Z\-C\-L64\-\_\-\-A\-N\-D}]{\setlength{\rightskip}{0pt plus 5cm}\#define Z\-C\-L64\-\_\-\-A\-N\-D(
+\begin{DoxyParamCaption}
+\item[{}]{r, }
+\item[{}]{a, }
+\item[{}]{b}
+\end{DoxyParamCaption}
+)~J\-S\-L\-L\-\_\-\-A\-N\-D(r, a, b)}}\label{group__zcl__64_ga6f960291ee8e41a8a45421b0b27b62b9}
+
+
+Perform a bitwise A\-N\-D of two zcl64\-\_\-t variables. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt out}  & {\em r} & zcl64\-\_\-t variable to assign (a \& b) to \\
+\hline
+\mbox{\tt in}  & {\em a} & zcl64\-\_\-t variable \\
+\hline
+\mbox{\tt in}  & {\em b} & zcl64\-\_\-t variable\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{group__zcl__64_gaa6e4aa82c20efd4b30cf9af31672d867}{Z\-C\-L64\-\_\-\-O\-R}, \hyperlink{group__zcl__64_gaa6a22393c0d8c9d674b8a90d316413d3}{Z\-C\-L64\-\_\-\-X\-O\-R}, \hyperlink{group__zcl__64_ga181c9c94509aa64c1c3c3ed74d6d3c0e}{Z\-C\-L64\-\_\-\-N\-O\-T}, \hyperlink{group__zcl__64_gab197c8668c0287b8190982177e03a257}{Z\-C\-L64\-\_\-\-N\-E\-G} 
+\end{DoxySeeAlso}
+\hypertarget{group__zcl__64_ga1a1bb5cd5b871acf8dd49621073cbd41}{\index{64-\/bit integer support@{64-\/bit integer support}!Z\-C\-L64\-\_\-\-A\-S\-L@{Z\-C\-L64\-\_\-\-A\-S\-L}}
+\index{Z\-C\-L64\-\_\-\-A\-S\-L@{Z\-C\-L64\-\_\-\-A\-S\-L}!64-bit integer support@{64-\/bit integer support}}
+\subsubsection[{Z\-C\-L64\-\_\-\-A\-S\-L}]{\setlength{\rightskip}{0pt plus 5cm}\#define Z\-C\-L64\-\_\-\-A\-S\-L(
+\begin{DoxyParamCaption}
+\item[{}]{r, }
+\item[{}]{a, }
+\item[{}]{b}
+\end{DoxyParamCaption}
+)~J\-S\-L\-L\-\_\-\-S\-H\-L(r, a, b)}}\label{group__zcl__64_ga1a1bb5cd5b871acf8dd49621073cbd41}
+
+
+Arithmetic Shift Left of a zcl64\-\_\-t variable. 
+
+Shifts bits of {\ttfamily a} left by {\bfseries positions}, inserting zeros on the right. Equivalent to Z\-C\-L64\-\_\-\-L\-S\-L. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt out}  & {\em r} & zcl64\-\_\-t variable to assign (a $<$$<$ b) to \\
+\hline
+\mbox{\tt in}  & {\em a} & zcl64\-\_\-t variable \\
+\hline
+\mbox{\tt in}  & {\em b} & integral value from 0 to 63\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{group__zcl__64_ga6cc9903e90f4c3e3af0d5e4eef7c89a4}{Z\-C\-L64\-\_\-\-L\-S\-L}, \hyperlink{group__zcl__64_gaffe142c28a6ecbe29416c4e0ba5f6a04}{Z\-C\-L64\-\_\-\-A\-S\-R}, \hyperlink{group__zcl__64_ga389dd5298bd8f8574f55aa6a687f41a8}{Z\-C\-L64\-\_\-\-L\-S\-R} 
+\end{DoxySeeAlso}
+\hypertarget{group__zcl__64_gaffe142c28a6ecbe29416c4e0ba5f6a04}{\index{64-\/bit integer support@{64-\/bit integer support}!Z\-C\-L64\-\_\-\-A\-S\-R@{Z\-C\-L64\-\_\-\-A\-S\-R}}
+\index{Z\-C\-L64\-\_\-\-A\-S\-R@{Z\-C\-L64\-\_\-\-A\-S\-R}!64-bit integer support@{64-\/bit integer support}}
+\subsubsection[{Z\-C\-L64\-\_\-\-A\-S\-R}]{\setlength{\rightskip}{0pt plus 5cm}\#define Z\-C\-L64\-\_\-\-A\-S\-R(
+\begin{DoxyParamCaption}
+\item[{}]{r, }
+\item[{}]{a, }
+\item[{}]{b}
+\end{DoxyParamCaption}
+)~J\-S\-L\-L\-\_\-\-S\-H\-R(r, a, b)}}\label{group__zcl__64_gaffe142c28a6ecbe29416c4e0ba5f6a04}
+
+
+Arithmetic Shift Right of a signed zcl64\-\_\-t variable. 
+
+Shifts bits of {\ttfamily a} right by {\bfseries positions}, extending the sign bit on the left. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt out}  & {\em r} & signed zcl64\-\_\-t variable to assign (a $>$$>$ b) to \\
+\hline
+\mbox{\tt in}  & {\em a} & signed zcl64\-\_\-t variable \\
+\hline
+\mbox{\tt in}  & {\em b} & integral value from 0 to 63\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{group__zcl__64_ga1a1bb5cd5b871acf8dd49621073cbd41}{Z\-C\-L64\-\_\-\-A\-S\-L}, \hyperlink{group__zcl__64_ga6cc9903e90f4c3e3af0d5e4eef7c89a4}{Z\-C\-L64\-\_\-\-L\-S\-L}, \hyperlink{group__zcl__64_ga389dd5298bd8f8574f55aa6a687f41a8}{Z\-C\-L64\-\_\-\-L\-S\-R} 
+\end{DoxySeeAlso}
+\hypertarget{group__zcl__64_gada2c215933ee366c11da80a44c2b27c7}{\index{64-\/bit integer support@{64-\/bit integer support}!Z\-C\-L64\-\_\-\-D\-I\-V@{Z\-C\-L64\-\_\-\-D\-I\-V}}
+\index{Z\-C\-L64\-\_\-\-D\-I\-V@{Z\-C\-L64\-\_\-\-D\-I\-V}!64-bit integer support@{64-\/bit integer support}}
+\subsubsection[{Z\-C\-L64\-\_\-\-D\-I\-V}]{\setlength{\rightskip}{0pt plus 5cm}\#define Z\-C\-L64\-\_\-\-D\-I\-V(
+\begin{DoxyParamCaption}
+\item[{}]{r, }
+\item[{}]{a, }
+\item[{}]{b}
+\end{DoxyParamCaption}
+)~J\-S\-L\-L\-\_\-\-D\-I\-V(r, a, b)}}\label{group__zcl__64_gada2c215933ee366c11da80a44c2b27c7}
+
+
+Perform signed division of two zcl64\-\_\-t variables and store the quotient. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt out}  & {\em r} & signed zcl64\-\_\-t variable to assign (a / b) to \\
+\hline
+\mbox{\tt in}  & {\em a} & signed zcl64\-\_\-t variable \\
+\hline
+\mbox{\tt in}  & {\em b} & signed zcl64\-\_\-t variable\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{group__zcl__64_gaa0b854087abee42e1bf908a133385f8d}{Z\-C\-L64\-\_\-\-A\-D\-D}, \hyperlink{group__zcl__64_ga949d0b35ec1e4bf3a9e8a422b0eae4e5}{Z\-C\-L64\-\_\-\-S\-U\-B}, \hyperlink{group__zcl__64_ga3f163bcb1ecddc543b3a4f3bdbc1d413}{Z\-C\-L64\-\_\-\-M\-U\-L}, \hyperlink{group__zcl__64_gadb0e1566e403716d94868b45bb8c63bb}{Z\-C\-L64\-\_\-\-M\-U\-L32}, \hyperlink{group__zcl__64_ga6d2d3e13f94ca7fba869dbc6479ae0e1}{Z\-C\-L64\-\_\-\-U\-D\-I\-V\-M\-O\-D}, \hyperlink{group__zcl__64_ga8137418ffd91d5aae3b41a0143d27070}{Z\-C\-L64\-\_\-\-M\-O\-D} 
+\end{DoxySeeAlso}
+\hypertarget{group__zcl__64_ga329900843c1e59c30b4bdff95ee594bd}{\index{64-\/bit integer support@{64-\/bit integer support}!Z\-C\-L64\-\_\-\-E\-Q@{Z\-C\-L64\-\_\-\-E\-Q}}
+\index{Z\-C\-L64\-\_\-\-E\-Q@{Z\-C\-L64\-\_\-\-E\-Q}!64-bit integer support@{64-\/bit integer support}}
+\subsubsection[{Z\-C\-L64\-\_\-\-E\-Q}]{\setlength{\rightskip}{0pt plus 5cm}\#define Z\-C\-L64\-\_\-\-E\-Q(
+\begin{DoxyParamCaption}
+\item[{}]{a, }
+\item[{}]{b}
+\end{DoxyParamCaption}
+)~J\-S\-L\-L\-\_\-\-E\-Q(a, b)}}\label{group__zcl__64_ga329900843c1e59c30b4bdff95ee594bd}
+
+
+Compare two zcl64\-\_\-t variables for equality. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em a} & zcl64\-\_\-t variable \\
+\hline
+\mbox{\tt in}  & {\em b} & zcl64\-\_\-t variable\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+(a == b)
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{group__zcl__64_gad0e4c484d689dee3c5f1302fc80aef3e}{Z\-C\-L64\-\_\-\-I\-S\-\_\-\-Z\-E\-R\-O}, \hyperlink{group__zcl__64_gaffa76b2bdfb8bc021db06efe331a2e5f}{Z\-C\-L64\-\_\-\-N\-E}, \hyperlink{group__zcl__64_ga524b42ba2596f4c0392780c540f5d5b6}{Z\-C\-L64\-\_\-\-G\-E\-\_\-\-Z\-E\-R\-O}, Z\-C\-L64\-\_\-\-C\-M\-P, Z\-C\-L64\-\_\-\-U\-C\-M\-P 
+\end{DoxySeeAlso}
+\hypertarget{group__zcl__64_ga1899e4fdd99e7f07bf5044997a40e248}{\index{64-\/bit integer support@{64-\/bit integer support}!Z\-C\-L64\-\_\-\-F\-R\-O\-M\-\_\-\-D\-O\-U\-B\-L\-E@{Z\-C\-L64\-\_\-\-F\-R\-O\-M\-\_\-\-D\-O\-U\-B\-L\-E}}
+\index{Z\-C\-L64\-\_\-\-F\-R\-O\-M\-\_\-\-D\-O\-U\-B\-L\-E@{Z\-C\-L64\-\_\-\-F\-R\-O\-M\-\_\-\-D\-O\-U\-B\-L\-E}!64-bit integer support@{64-\/bit integer support}}
+\subsubsection[{Z\-C\-L64\-\_\-\-F\-R\-O\-M\-\_\-\-D\-O\-U\-B\-L\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define Z\-C\-L64\-\_\-\-F\-R\-O\-M\-\_\-\-D\-O\-U\-B\-L\-E(
+\begin{DoxyParamCaption}
+\item[{}]{i64, }
+\item[{}]{d}
+\end{DoxyParamCaption}
+)~J\-S\-L\-L\-\_\-\-D2\-L(i64, d)}}\label{group__zcl__64_ga1899e4fdd99e7f07bf5044997a40e248}
+
+
+Cast a {\ttfamily float} into a signed zcl64\-\_\-t variable. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt out}  & {\em i64} & signed zcl64\-\_\-t variable to cast {\ttfamily d} into \\
+\hline
+\mbox{\tt in}  & {\em d} & double variable/value\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{group__zcl__64_gaceb8fdf41f4dc532f6028bab90521d3e}{Z\-C\-L64\-\_\-\-T\-O\-\_\-\-I\-N\-T32}, \hyperlink{group__zcl__64_ga628915c271405b5eaeb673089f0df6ba}{Z\-C\-L64\-\_\-\-T\-O\-\_\-\-U\-I\-N\-T32}, \hyperlink{group__zcl__64_ga3f09d28af6abe1a4a5c427ea93686ea1}{Z\-C\-L64\-\_\-\-T\-O\-\_\-\-F\-L\-O\-A\-T}, \hyperlink{group__zcl__64_ga3cca4ebbc7fafb30919421d7cd0a2d73}{Z\-C\-L64\-\_\-\-T\-O\-\_\-\-D\-O\-U\-B\-L\-E}, \hyperlink{group__zcl__64_gafe6c7cf76cbba5ac7fb5329fd0801278}{Z\-C\-L64\-\_\-\-F\-R\-O\-M\-\_\-\-I\-N\-T32}, \hyperlink{group__zcl__64_gaae113edcbf898afca39e88d742c27f8d}{Z\-C\-L64\-\_\-\-F\-R\-O\-M\-\_\-\-U\-I\-N\-T32}, \hyperlink{group__zcl__64_gaae1ff05a93a54da4e06bbca682d2c548}{Z\-C\-L64\-\_\-\-F\-R\-O\-M\-\_\-\-F\-L\-O\-A\-T} 
+\end{DoxySeeAlso}
+\hypertarget{group__zcl__64_gaae1ff05a93a54da4e06bbca682d2c548}{\index{64-\/bit integer support@{64-\/bit integer support}!Z\-C\-L64\-\_\-\-F\-R\-O\-M\-\_\-\-F\-L\-O\-A\-T@{Z\-C\-L64\-\_\-\-F\-R\-O\-M\-\_\-\-F\-L\-O\-A\-T}}
+\index{Z\-C\-L64\-\_\-\-F\-R\-O\-M\-\_\-\-F\-L\-O\-A\-T@{Z\-C\-L64\-\_\-\-F\-R\-O\-M\-\_\-\-F\-L\-O\-A\-T}!64-bit integer support@{64-\/bit integer support}}
+\subsubsection[{Z\-C\-L64\-\_\-\-F\-R\-O\-M\-\_\-\-F\-L\-O\-A\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define Z\-C\-L64\-\_\-\-F\-R\-O\-M\-\_\-\-F\-L\-O\-A\-T(
+\begin{DoxyParamCaption}
+\item[{}]{i64, }
+\item[{}]{f}
+\end{DoxyParamCaption}
+)~J\-S\-L\-L\-\_\-\-F2\-L(i64, f)}}\label{group__zcl__64_gaae1ff05a93a54da4e06bbca682d2c548}
+
+
+Cast a {\ttfamily double} into a signed zcl64\-\_\-t variable. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt out}  & {\em i64} & signed zcl64\-\_\-t variable to cast {\ttfamily f} into \\
+\hline
+\mbox{\tt in}  & {\em f} & float variable/value\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{group__zcl__64_gaceb8fdf41f4dc532f6028bab90521d3e}{Z\-C\-L64\-\_\-\-T\-O\-\_\-\-I\-N\-T32}, \hyperlink{group__zcl__64_ga628915c271405b5eaeb673089f0df6ba}{Z\-C\-L64\-\_\-\-T\-O\-\_\-\-U\-I\-N\-T32}, \hyperlink{group__zcl__64_ga3f09d28af6abe1a4a5c427ea93686ea1}{Z\-C\-L64\-\_\-\-T\-O\-\_\-\-F\-L\-O\-A\-T}, \hyperlink{group__zcl__64_ga3cca4ebbc7fafb30919421d7cd0a2d73}{Z\-C\-L64\-\_\-\-T\-O\-\_\-\-D\-O\-U\-B\-L\-E}, \hyperlink{group__zcl__64_gafe6c7cf76cbba5ac7fb5329fd0801278}{Z\-C\-L64\-\_\-\-F\-R\-O\-M\-\_\-\-I\-N\-T32}, \hyperlink{group__zcl__64_gaae113edcbf898afca39e88d742c27f8d}{Z\-C\-L64\-\_\-\-F\-R\-O\-M\-\_\-\-U\-I\-N\-T32}, \hyperlink{group__zcl__64_ga1899e4fdd99e7f07bf5044997a40e248}{Z\-C\-L64\-\_\-\-F\-R\-O\-M\-\_\-\-D\-O\-U\-B\-L\-E} 
+\end{DoxySeeAlso}
+\hypertarget{group__zcl__64_gafe6c7cf76cbba5ac7fb5329fd0801278}{\index{64-\/bit integer support@{64-\/bit integer support}!Z\-C\-L64\-\_\-\-F\-R\-O\-M\-\_\-\-I\-N\-T32@{Z\-C\-L64\-\_\-\-F\-R\-O\-M\-\_\-\-I\-N\-T32}}
+\index{Z\-C\-L64\-\_\-\-F\-R\-O\-M\-\_\-\-I\-N\-T32@{Z\-C\-L64\-\_\-\-F\-R\-O\-M\-\_\-\-I\-N\-T32}!64-bit integer support@{64-\/bit integer support}}
+\subsubsection[{Z\-C\-L64\-\_\-\-F\-R\-O\-M\-\_\-\-I\-N\-T32}]{\setlength{\rightskip}{0pt plus 5cm}\#define Z\-C\-L64\-\_\-\-F\-R\-O\-M\-\_\-\-I\-N\-T32(
+\begin{DoxyParamCaption}
+\item[{}]{i64, }
+\item[{}]{i32}
+\end{DoxyParamCaption}
+)~J\-S\-L\-L\-\_\-\-I2\-L(i64, i32)}}\label{group__zcl__64_gafe6c7cf76cbba5ac7fb5329fd0801278}
+
+
+Cast a signed 32-\/bit integer up to a zcl64\-\_\-t variable. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt out}  & {\em i64} & signed zcl64\-\_\-t variable to cast {\ttfamily i32} into \\
+\hline
+\mbox{\tt in}  & {\em i32} & int32\-\_\-t variable\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{group__zcl__64_gaceb8fdf41f4dc532f6028bab90521d3e}{Z\-C\-L64\-\_\-\-T\-O\-\_\-\-I\-N\-T32}, \hyperlink{group__zcl__64_ga628915c271405b5eaeb673089f0df6ba}{Z\-C\-L64\-\_\-\-T\-O\-\_\-\-U\-I\-N\-T32}, \hyperlink{group__zcl__64_ga3f09d28af6abe1a4a5c427ea93686ea1}{Z\-C\-L64\-\_\-\-T\-O\-\_\-\-F\-L\-O\-A\-T}, \hyperlink{group__zcl__64_ga3cca4ebbc7fafb30919421d7cd0a2d73}{Z\-C\-L64\-\_\-\-T\-O\-\_\-\-D\-O\-U\-B\-L\-E}, \hyperlink{group__zcl__64_gaae113edcbf898afca39e88d742c27f8d}{Z\-C\-L64\-\_\-\-F\-R\-O\-M\-\_\-\-U\-I\-N\-T32}, \hyperlink{group__zcl__64_gaae1ff05a93a54da4e06bbca682d2c548}{Z\-C\-L64\-\_\-\-F\-R\-O\-M\-\_\-\-F\-L\-O\-A\-T}, \hyperlink{group__zcl__64_ga1899e4fdd99e7f07bf5044997a40e248}{Z\-C\-L64\-\_\-\-F\-R\-O\-M\-\_\-\-D\-O\-U\-B\-L\-E} 
+\end{DoxySeeAlso}
+\hypertarget{group__zcl__64_gaae113edcbf898afca39e88d742c27f8d}{\index{64-\/bit integer support@{64-\/bit integer support}!Z\-C\-L64\-\_\-\-F\-R\-O\-M\-\_\-\-U\-I\-N\-T32@{Z\-C\-L64\-\_\-\-F\-R\-O\-M\-\_\-\-U\-I\-N\-T32}}
+\index{Z\-C\-L64\-\_\-\-F\-R\-O\-M\-\_\-\-U\-I\-N\-T32@{Z\-C\-L64\-\_\-\-F\-R\-O\-M\-\_\-\-U\-I\-N\-T32}!64-bit integer support@{64-\/bit integer support}}
+\subsubsection[{Z\-C\-L64\-\_\-\-F\-R\-O\-M\-\_\-\-U\-I\-N\-T32}]{\setlength{\rightskip}{0pt plus 5cm}\#define Z\-C\-L64\-\_\-\-F\-R\-O\-M\-\_\-\-U\-I\-N\-T32(
+\begin{DoxyParamCaption}
+\item[{}]{u64, }
+\item[{}]{u32}
+\end{DoxyParamCaption}
+)~J\-S\-L\-L\-\_\-\-U\-I2\-L(u64, u32)}}\label{group__zcl__64_gaae113edcbf898afca39e88d742c27f8d}
+
+
+Cast an unsigned 32-\/bit integer up to a zcl64\-\_\-t variable. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt out}  & {\em u64} & unsigned zcl64\-\_\-t variable to cast {\ttfamily u32} into \\
+\hline
+\mbox{\tt in}  & {\em u32} & uint32\-\_\-t variable\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{group__zcl__64_gaceb8fdf41f4dc532f6028bab90521d3e}{Z\-C\-L64\-\_\-\-T\-O\-\_\-\-I\-N\-T32}, \hyperlink{group__zcl__64_ga628915c271405b5eaeb673089f0df6ba}{Z\-C\-L64\-\_\-\-T\-O\-\_\-\-U\-I\-N\-T32}, \hyperlink{group__zcl__64_ga3f09d28af6abe1a4a5c427ea93686ea1}{Z\-C\-L64\-\_\-\-T\-O\-\_\-\-F\-L\-O\-A\-T}, \hyperlink{group__zcl__64_ga3cca4ebbc7fafb30919421d7cd0a2d73}{Z\-C\-L64\-\_\-\-T\-O\-\_\-\-D\-O\-U\-B\-L\-E}, \hyperlink{group__zcl__64_gafe6c7cf76cbba5ac7fb5329fd0801278}{Z\-C\-L64\-\_\-\-F\-R\-O\-M\-\_\-\-I\-N\-T32}, \hyperlink{group__zcl__64_gaae1ff05a93a54da4e06bbca682d2c548}{Z\-C\-L64\-\_\-\-F\-R\-O\-M\-\_\-\-F\-L\-O\-A\-T}, \hyperlink{group__zcl__64_ga1899e4fdd99e7f07bf5044997a40e248}{Z\-C\-L64\-\_\-\-F\-R\-O\-M\-\_\-\-D\-O\-U\-B\-L\-E} 
+\end{DoxySeeAlso}
+\hypertarget{group__zcl__64_ga524b42ba2596f4c0392780c540f5d5b6}{\index{64-\/bit integer support@{64-\/bit integer support}!Z\-C\-L64\-\_\-\-G\-E\-\_\-\-Z\-E\-R\-O@{Z\-C\-L64\-\_\-\-G\-E\-\_\-\-Z\-E\-R\-O}}
+\index{Z\-C\-L64\-\_\-\-G\-E\-\_\-\-Z\-E\-R\-O@{Z\-C\-L64\-\_\-\-G\-E\-\_\-\-Z\-E\-R\-O}!64-bit integer support@{64-\/bit integer support}}
+\subsubsection[{Z\-C\-L64\-\_\-\-G\-E\-\_\-\-Z\-E\-R\-O}]{\setlength{\rightskip}{0pt plus 5cm}\#define Z\-C\-L64\-\_\-\-G\-E\-\_\-\-Z\-E\-R\-O(
+\begin{DoxyParamCaption}
+\item[{}]{a}
+\end{DoxyParamCaption}
+)~J\-S\-L\-L\-\_\-\-G\-E\-\_\-\-Z\-E\-R\-O(a)}}\label{group__zcl__64_ga524b42ba2596f4c0392780c540f5d5b6}
+
+
+Compare a signed zcl64\-\_\-t variable to 0. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em a} & signed zcl64\-\_\-t variable\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+(a $>$= 0)
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{group__zcl__64_gad0e4c484d689dee3c5f1302fc80aef3e}{Z\-C\-L64\-\_\-\-I\-S\-\_\-\-Z\-E\-R\-O}, \hyperlink{group__zcl__64_ga329900843c1e59c30b4bdff95ee594bd}{Z\-C\-L64\-\_\-\-E\-Q}, \hyperlink{group__zcl__64_gaffa76b2bdfb8bc021db06efe331a2e5f}{Z\-C\-L64\-\_\-\-N\-E}, Z\-C\-L64\-\_\-\-C\-M\-P, Z\-C\-L64\-\_\-\-U\-C\-M\-P 
+\end{DoxySeeAlso}
+\hypertarget{group__zcl__64_ga6a24898481f0fe419858c8b51cafda3e}{\index{64-\/bit integer support@{64-\/bit integer support}!Z\-C\-L64\-\_\-\-H\-I\-G\-H32@{Z\-C\-L64\-\_\-\-H\-I\-G\-H32}}
+\index{Z\-C\-L64\-\_\-\-H\-I\-G\-H32@{Z\-C\-L64\-\_\-\-H\-I\-G\-H32}!64-bit integer support@{64-\/bit integer support}}
+\subsubsection[{Z\-C\-L64\-\_\-\-H\-I\-G\-H32}]{\setlength{\rightskip}{0pt plus 5cm}\#define Z\-C\-L64\-\_\-\-H\-I\-G\-H32(
+\begin{DoxyParamCaption}
+\item[{}]{u64}
+\end{DoxyParamCaption}
+)~((u64).hi)}}\label{group__zcl__64_ga6a24898481f0fe419858c8b51cafda3e}
+
+
+The upper-\/32 bits of a Z\-C\-L64 value. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em u64} & unsigned zcl64\-\_\-t variable \\
+\hline
+\end{DoxyParams}
+\hypertarget{group__zcl__64_ga8e855e53988a32f4428ceacce4f9870c}{\index{64-\/bit integer support@{64-\/bit integer support}!Z\-C\-L64\-\_\-\-I\-N\-I\-T@{Z\-C\-L64\-\_\-\-I\-N\-I\-T}}
+\index{Z\-C\-L64\-\_\-\-I\-N\-I\-T@{Z\-C\-L64\-\_\-\-I\-N\-I\-T}!64-bit integer support@{64-\/bit integer support}}
+\subsubsection[{Z\-C\-L64\-\_\-\-I\-N\-I\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define Z\-C\-L64\-\_\-\-I\-N\-I\-T(
+\begin{DoxyParamCaption}
+\item[{}]{hi, }
+\item[{}]{lo}
+\end{DoxyParamCaption}
+)~J\-S\-L\-L\-\_\-\-I\-N\-I\-T(hi, lo)}}\label{group__zcl__64_ga8e855e53988a32f4428ceacce4f9870c}
+
+
+Initialize a zcl64\-\_\-t variable with two literal 32-\/bit values. 
+
+Note that this macro is only valid as an initializer in a variable declaration. Use Z\-C\-L64\-\_\-\-L\-O\-A\-D in general program statements.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em hi} & upper 32 bits \\
+\hline
+\mbox{\tt in}  & {\em lo} & lower 32 bits\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+an initializer for a zcl64\-\_\-t variable
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{group__zcl__64_ga899413577d0a7e9b641cc5c309b08aeb}{Z\-C\-L64\-\_\-\-L\-O\-A\-D} 
+\end{DoxySeeAlso}
+\hypertarget{group__zcl__64_gad0e4c484d689dee3c5f1302fc80aef3e}{\index{64-\/bit integer support@{64-\/bit integer support}!Z\-C\-L64\-\_\-\-I\-S\-\_\-\-Z\-E\-R\-O@{Z\-C\-L64\-\_\-\-I\-S\-\_\-\-Z\-E\-R\-O}}
+\index{Z\-C\-L64\-\_\-\-I\-S\-\_\-\-Z\-E\-R\-O@{Z\-C\-L64\-\_\-\-I\-S\-\_\-\-Z\-E\-R\-O}!64-bit integer support@{64-\/bit integer support}}
+\subsubsection[{Z\-C\-L64\-\_\-\-I\-S\-\_\-\-Z\-E\-R\-O}]{\setlength{\rightskip}{0pt plus 5cm}\#define Z\-C\-L64\-\_\-\-I\-S\-\_\-\-Z\-E\-R\-O(
+\begin{DoxyParamCaption}
+\item[{}]{a}
+\end{DoxyParamCaption}
+)~J\-S\-L\-L\-\_\-\-I\-S\-\_\-\-Z\-E\-R\-O(a)}}\label{group__zcl__64_gad0e4c484d689dee3c5f1302fc80aef3e}
+
+
+Compare a zcl64\-\_\-t variable to zero. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em a} & zcl64\-\_\-t variable\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+(a == 0)
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{group__zcl__64_ga329900843c1e59c30b4bdff95ee594bd}{Z\-C\-L64\-\_\-\-E\-Q}, \hyperlink{group__zcl__64_gaffa76b2bdfb8bc021db06efe331a2e5f}{Z\-C\-L64\-\_\-\-N\-E}, \hyperlink{group__zcl__64_ga524b42ba2596f4c0392780c540f5d5b6}{Z\-C\-L64\-\_\-\-G\-E\-\_\-\-Z\-E\-R\-O}, Z\-C\-L64\-\_\-\-C\-M\-P, Z\-C\-L64\-\_\-\-U\-C\-M\-P 
+\end{DoxySeeAlso}
+\hypertarget{group__zcl__64_ga899413577d0a7e9b641cc5c309b08aeb}{\index{64-\/bit integer support@{64-\/bit integer support}!Z\-C\-L64\-\_\-\-L\-O\-A\-D@{Z\-C\-L64\-\_\-\-L\-O\-A\-D}}
+\index{Z\-C\-L64\-\_\-\-L\-O\-A\-D@{Z\-C\-L64\-\_\-\-L\-O\-A\-D}!64-bit integer support@{64-\/bit integer support}}
+\subsubsection[{Z\-C\-L64\-\_\-\-L\-O\-A\-D}]{\setlength{\rightskip}{0pt plus 5cm}\#define Z\-C\-L64\-\_\-\-L\-O\-A\-D(
+\begin{DoxyParamCaption}
+\item[{}]{r, }
+\item[{}]{hi32, }
+\item[{}]{lo32}
+\end{DoxyParamCaption}
+)~((r).hi = (hi32), (r).lo = (lo32))}}\label{group__zcl__64_ga899413577d0a7e9b641cc5c309b08aeb}
+
+
+Load a zcl64\-\_\-t variable with two 32-\/bit values (high and low). 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt out}  & {\em r} & zcl64\-\_\-t variable to assign (hi $<$$<$ 32 + lo) to \\
+\hline
+\mbox{\tt in}  & {\em hi32} & upper 32 bits to load into \\
+\hline
+ & {\em r} & \\
+\hline
+\mbox{\tt in}  & {\em lo32} & lower 32 bits to load into \\
+\hline
+ & {\em r} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{group__zcl__64_ga8e855e53988a32f4428ceacce4f9870c}{Z\-C\-L64\-\_\-\-I\-N\-I\-T} 
+\end{DoxySeeAlso}
+\hypertarget{group__zcl__64_gafa2d05dfa497827d3f232698f5f47c2b}{\index{64-\/bit integer support@{64-\/bit integer support}!Z\-C\-L64\-\_\-\-L\-O\-W32@{Z\-C\-L64\-\_\-\-L\-O\-W32}}
+\index{Z\-C\-L64\-\_\-\-L\-O\-W32@{Z\-C\-L64\-\_\-\-L\-O\-W32}!64-bit integer support@{64-\/bit integer support}}
+\subsubsection[{Z\-C\-L64\-\_\-\-L\-O\-W32}]{\setlength{\rightskip}{0pt plus 5cm}\#define Z\-C\-L64\-\_\-\-L\-O\-W32(
+\begin{DoxyParamCaption}
+\item[{}]{u64}
+\end{DoxyParamCaption}
+)~((u64).lo)}}\label{group__zcl__64_gafa2d05dfa497827d3f232698f5f47c2b}
+
+
+The lower-\/32 bits of a Z\-C\-L64 value. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em u64} & unsigned zcl64\-\_\-t variable \\
+\hline
+\end{DoxyParams}
+\hypertarget{group__zcl__64_ga6cc9903e90f4c3e3af0d5e4eef7c89a4}{\index{64-\/bit integer support@{64-\/bit integer support}!Z\-C\-L64\-\_\-\-L\-S\-L@{Z\-C\-L64\-\_\-\-L\-S\-L}}
+\index{Z\-C\-L64\-\_\-\-L\-S\-L@{Z\-C\-L64\-\_\-\-L\-S\-L}!64-bit integer support@{64-\/bit integer support}}
+\subsubsection[{Z\-C\-L64\-\_\-\-L\-S\-L}]{\setlength{\rightskip}{0pt plus 5cm}\#define Z\-C\-L64\-\_\-\-L\-S\-L(
+\begin{DoxyParamCaption}
+\item[{}]{r, }
+\item[{}]{a, }
+\item[{}]{b}
+\end{DoxyParamCaption}
+)~Z\-C\-L64\-\_\-\-S\-L\-A(r, a, b)}}\label{group__zcl__64_ga6cc9903e90f4c3e3af0d5e4eef7c89a4}
+
+
+Logical Shift Left of a zcl64\-\_\-t variable. 
+
+Shifts bits of {\ttfamily a} left by {\bfseries positions}, inserting zeros on the right. Equivalent to Z\-C\-L64\-\_\-\-A\-S\-L. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt out}  & {\em r} & zcl64\-\_\-t variable to assign (a $<$$<$ b) to \\
+\hline
+\mbox{\tt in}  & {\em a} & zcl64\-\_\-t variable \\
+\hline
+\mbox{\tt in}  & {\em b} & integral value from 0 to 63\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{group__zcl__64_ga1a1bb5cd5b871acf8dd49621073cbd41}{Z\-C\-L64\-\_\-\-A\-S\-L}, \hyperlink{group__zcl__64_gaffe142c28a6ecbe29416c4e0ba5f6a04}{Z\-C\-L64\-\_\-\-A\-S\-R}, \hyperlink{group__zcl__64_ga389dd5298bd8f8574f55aa6a687f41a8}{Z\-C\-L64\-\_\-\-L\-S\-R} 
+\end{DoxySeeAlso}
+\hypertarget{group__zcl__64_ga389dd5298bd8f8574f55aa6a687f41a8}{\index{64-\/bit integer support@{64-\/bit integer support}!Z\-C\-L64\-\_\-\-L\-S\-R@{Z\-C\-L64\-\_\-\-L\-S\-R}}
+\index{Z\-C\-L64\-\_\-\-L\-S\-R@{Z\-C\-L64\-\_\-\-L\-S\-R}!64-bit integer support@{64-\/bit integer support}}
+\subsubsection[{Z\-C\-L64\-\_\-\-L\-S\-R}]{\setlength{\rightskip}{0pt plus 5cm}\#define Z\-C\-L64\-\_\-\-L\-S\-R(
+\begin{DoxyParamCaption}
+\item[{}]{r, }
+\item[{}]{a, }
+\item[{}]{b}
+\end{DoxyParamCaption}
+)~J\-S\-L\-L\-\_\-\-U\-S\-H\-R(r, a, b)}}\label{group__zcl__64_ga389dd5298bd8f8574f55aa6a687f41a8}
+
+
+Logical Shift Right of an unsigned zcl64\-\_\-t variable. 
+
+Shifts bits of {\ttfamily a} right by {\bfseries positions}, inserting zeros on the left. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt out}  & {\em r} & unsigned zcl64\-\_\-t variable to assign (a $>$$>$ b) to \\
+\hline
+\mbox{\tt in}  & {\em a} & unsigned zcl64\-\_\-t variable \\
+\hline
+\mbox{\tt in}  & {\em b} & integral value from 0 to 63\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{group__zcl__64_ga1a1bb5cd5b871acf8dd49621073cbd41}{Z\-C\-L64\-\_\-\-A\-S\-L}, \hyperlink{group__zcl__64_ga6cc9903e90f4c3e3af0d5e4eef7c89a4}{Z\-C\-L64\-\_\-\-L\-S\-L}, \hyperlink{group__zcl__64_gaffe142c28a6ecbe29416c4e0ba5f6a04}{Z\-C\-L64\-\_\-\-A\-S\-R} 
+\end{DoxySeeAlso}
+\hypertarget{group__zcl__64_ga3ec91495319f42f4ba341768a10a77b7}{\index{64-\/bit integer support@{64-\/bit integer support}!Z\-C\-L64\-\_\-\-L\-T@{Z\-C\-L64\-\_\-\-L\-T}}
+\index{Z\-C\-L64\-\_\-\-L\-T@{Z\-C\-L64\-\_\-\-L\-T}!64-bit integer support@{64-\/bit integer support}}
+\subsubsection[{Z\-C\-L64\-\_\-\-L\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define Z\-C\-L64\-\_\-\-L\-T(
+\begin{DoxyParamCaption}
+\item[{}]{a, }
+\item[{}]{b}
+\end{DoxyParamCaption}
+)~J\-S\-L\-L\-\_\-\-R\-E\-A\-L\-\_\-\-C\-M\-P(a, $<$, b)}}\label{group__zcl__64_ga3ec91495319f42f4ba341768a10a77b7}
+
+
+Compare two zcl64\-\_\-t variables (signed less-\/than comparison) 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em a} & signed zcl64\-\_\-t variable \\
+\hline
+\mbox{\tt in}  & {\em b} & signed zcl64\-\_\-t variable\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+(a $<$ b)
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{group__zcl__64_gad0e4c484d689dee3c5f1302fc80aef3e}{Z\-C\-L64\-\_\-\-I\-S\-\_\-\-Z\-E\-R\-O}, \hyperlink{group__zcl__64_ga329900843c1e59c30b4bdff95ee594bd}{Z\-C\-L64\-\_\-\-E\-Q}, \hyperlink{group__zcl__64_gaffa76b2bdfb8bc021db06efe331a2e5f}{Z\-C\-L64\-\_\-\-N\-E}, \hyperlink{group__zcl__64_ga524b42ba2596f4c0392780c540f5d5b6}{Z\-C\-L64\-\_\-\-G\-E\-\_\-\-Z\-E\-R\-O}, \hyperlink{group__zcl__64_ga3ec91495319f42f4ba341768a10a77b7}{Z\-C\-L64\-\_\-\-L\-T} 
+\end{DoxySeeAlso}
+\hypertarget{group__zcl__64_gaa6db62833f3681442d99ef64ef0ab61e}{\index{64-\/bit integer support@{64-\/bit integer support}!Z\-C\-L64\-\_\-\-L\-T\-U@{Z\-C\-L64\-\_\-\-L\-T\-U}}
+\index{Z\-C\-L64\-\_\-\-L\-T\-U@{Z\-C\-L64\-\_\-\-L\-T\-U}!64-bit integer support@{64-\/bit integer support}}
+\subsubsection[{Z\-C\-L64\-\_\-\-L\-T\-U}]{\setlength{\rightskip}{0pt plus 5cm}\#define Z\-C\-L64\-\_\-\-L\-T\-U(
+\begin{DoxyParamCaption}
+\item[{}]{a, }
+\item[{}]{b}
+\end{DoxyParamCaption}
+)~J\-S\-L\-L\-\_\-\-R\-E\-A\-L\-\_\-\-U\-C\-M\-P(a, $<$, b)}}\label{group__zcl__64_gaa6db62833f3681442d99ef64ef0ab61e}
+
+
+Compare two zcl64\-\_\-t variables (unsigned less-\/than comparison) 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em a} & unsigned zcl64\-\_\-t variable \\
+\hline
+\mbox{\tt in}  & {\em b} & unsigned zcl64\-\_\-t variable\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+(a $<$ b)
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{group__zcl__64_gad0e4c484d689dee3c5f1302fc80aef3e}{Z\-C\-L64\-\_\-\-I\-S\-\_\-\-Z\-E\-R\-O}, \hyperlink{group__zcl__64_ga329900843c1e59c30b4bdff95ee594bd}{Z\-C\-L64\-\_\-\-E\-Q}, \hyperlink{group__zcl__64_gaffa76b2bdfb8bc021db06efe331a2e5f}{Z\-C\-L64\-\_\-\-N\-E}, \hyperlink{group__zcl__64_ga524b42ba2596f4c0392780c540f5d5b6}{Z\-C\-L64\-\_\-\-G\-E\-\_\-\-Z\-E\-R\-O}, \hyperlink{group__zcl__64_gaa6db62833f3681442d99ef64ef0ab61e}{Z\-C\-L64\-\_\-\-L\-T\-U} 
+\end{DoxySeeAlso}
+\hypertarget{group__zcl__64_ga8137418ffd91d5aae3b41a0143d27070}{\index{64-\/bit integer support@{64-\/bit integer support}!Z\-C\-L64\-\_\-\-M\-O\-D@{Z\-C\-L64\-\_\-\-M\-O\-D}}
+\index{Z\-C\-L64\-\_\-\-M\-O\-D@{Z\-C\-L64\-\_\-\-M\-O\-D}!64-bit integer support@{64-\/bit integer support}}
+\subsubsection[{Z\-C\-L64\-\_\-\-M\-O\-D}]{\setlength{\rightskip}{0pt plus 5cm}\#define Z\-C\-L64\-\_\-\-M\-O\-D(
+\begin{DoxyParamCaption}
+\item[{}]{r, }
+\item[{}]{a, }
+\item[{}]{b}
+\end{DoxyParamCaption}
+)~J\-S\-L\-L\-\_\-\-M\-O\-D(r, a, b)}}\label{group__zcl__64_ga8137418ffd91d5aae3b41a0143d27070}
+
+
+Perform signed division of two zcl64\-\_\-t variables and store the remainder. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt out}  & {\em r} & zcl64\-\_\-t variable to assign (a + b) to \\
+\hline
+\mbox{\tt in}  & {\em a} & zcl64\-\_\-t variable \\
+\hline
+\mbox{\tt in}  & {\em b} & zcl64\-\_\-t variable\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{group__zcl__64_gaa0b854087abee42e1bf908a133385f8d}{Z\-C\-L64\-\_\-\-A\-D\-D}, \hyperlink{group__zcl__64_ga949d0b35ec1e4bf3a9e8a422b0eae4e5}{Z\-C\-L64\-\_\-\-S\-U\-B}, \hyperlink{group__zcl__64_ga3f163bcb1ecddc543b3a4f3bdbc1d413}{Z\-C\-L64\-\_\-\-M\-U\-L}, \hyperlink{group__zcl__64_gadb0e1566e403716d94868b45bb8c63bb}{Z\-C\-L64\-\_\-\-M\-U\-L32}, \hyperlink{group__zcl__64_ga6d2d3e13f94ca7fba869dbc6479ae0e1}{Z\-C\-L64\-\_\-\-U\-D\-I\-V\-M\-O\-D}, \hyperlink{group__zcl__64_gada2c215933ee366c11da80a44c2b27c7}{Z\-C\-L64\-\_\-\-D\-I\-V} 
+\end{DoxySeeAlso}
+\hypertarget{group__zcl__64_ga3f163bcb1ecddc543b3a4f3bdbc1d413}{\index{64-\/bit integer support@{64-\/bit integer support}!Z\-C\-L64\-\_\-\-M\-U\-L@{Z\-C\-L64\-\_\-\-M\-U\-L}}
+\index{Z\-C\-L64\-\_\-\-M\-U\-L@{Z\-C\-L64\-\_\-\-M\-U\-L}!64-bit integer support@{64-\/bit integer support}}
+\subsubsection[{Z\-C\-L64\-\_\-\-M\-U\-L}]{\setlength{\rightskip}{0pt plus 5cm}\#define Z\-C\-L64\-\_\-\-M\-U\-L(
+\begin{DoxyParamCaption}
+\item[{}]{r, }
+\item[{}]{a, }
+\item[{}]{b}
+\end{DoxyParamCaption}
+)~J\-S\-L\-L\-\_\-\-M\-U\-L(r, a, b)}}\label{group__zcl__64_ga3f163bcb1ecddc543b3a4f3bdbc1d413}
+
+
+Multiply two zcl64\-\_\-t variables. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt out}  & {\em r} & zcl64\-\_\-t variable to assign (a $\ast$ b) to \\
+\hline
+\mbox{\tt in}  & {\em a} & zcl64\-\_\-t variable \\
+\hline
+\mbox{\tt in}  & {\em b} & zcl64\-\_\-t variable\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{group__zcl__64_gaa0b854087abee42e1bf908a133385f8d}{Z\-C\-L64\-\_\-\-A\-D\-D}, \hyperlink{group__zcl__64_ga949d0b35ec1e4bf3a9e8a422b0eae4e5}{Z\-C\-L64\-\_\-\-S\-U\-B}, \hyperlink{group__zcl__64_gadb0e1566e403716d94868b45bb8c63bb}{Z\-C\-L64\-\_\-\-M\-U\-L32}, \hyperlink{group__zcl__64_ga6d2d3e13f94ca7fba869dbc6479ae0e1}{Z\-C\-L64\-\_\-\-U\-D\-I\-V\-M\-O\-D}, \hyperlink{group__zcl__64_gada2c215933ee366c11da80a44c2b27c7}{Z\-C\-L64\-\_\-\-D\-I\-V}, \hyperlink{group__zcl__64_ga8137418ffd91d5aae3b41a0143d27070}{Z\-C\-L64\-\_\-\-M\-O\-D} 
+\end{DoxySeeAlso}
+\hypertarget{group__zcl__64_gadb0e1566e403716d94868b45bb8c63bb}{\index{64-\/bit integer support@{64-\/bit integer support}!Z\-C\-L64\-\_\-\-M\-U\-L32@{Z\-C\-L64\-\_\-\-M\-U\-L32}}
+\index{Z\-C\-L64\-\_\-\-M\-U\-L32@{Z\-C\-L64\-\_\-\-M\-U\-L32}!64-bit integer support@{64-\/bit integer support}}
+\subsubsection[{Z\-C\-L64\-\_\-\-M\-U\-L32}]{\setlength{\rightskip}{0pt plus 5cm}\#define Z\-C\-L64\-\_\-\-M\-U\-L32(
+\begin{DoxyParamCaption}
+\item[{}]{r, }
+\item[{}]{a, }
+\item[{}]{b}
+\end{DoxyParamCaption}
+)~J\-S\-L\-L\-\_\-\-M\-U\-L32(r, a, b)}}\label{group__zcl__64_gadb0e1566e403716d94868b45bb8c63bb}
+
+
+Multiply two 32-\/bit variables (int32\-\_\-t or uint32\-\_\-t) and store the result in a zcl64\-\_\-t variable. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt out}  & {\em r} & zcl64\-\_\-t variable to assign (a $\ast$ b) to \\
+\hline
+\mbox{\tt in}  & {\em a} & uint32\-\_\-t variable \\
+\hline
+\mbox{\tt in}  & {\em b} & uint32\-\_\-t variable\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{group__zcl__64_gaa0b854087abee42e1bf908a133385f8d}{Z\-C\-L64\-\_\-\-A\-D\-D}, \hyperlink{group__zcl__64_ga949d0b35ec1e4bf3a9e8a422b0eae4e5}{Z\-C\-L64\-\_\-\-S\-U\-B}, \hyperlink{group__zcl__64_ga3f163bcb1ecddc543b3a4f3bdbc1d413}{Z\-C\-L64\-\_\-\-M\-U\-L}, \hyperlink{group__zcl__64_ga6d2d3e13f94ca7fba869dbc6479ae0e1}{Z\-C\-L64\-\_\-\-U\-D\-I\-V\-M\-O\-D}, \hyperlink{group__zcl__64_gada2c215933ee366c11da80a44c2b27c7}{Z\-C\-L64\-\_\-\-D\-I\-V}, \hyperlink{group__zcl__64_ga8137418ffd91d5aae3b41a0143d27070}{Z\-C\-L64\-\_\-\-M\-O\-D} 
+\end{DoxySeeAlso}
+\hypertarget{group__zcl__64_gaffa76b2bdfb8bc021db06efe331a2e5f}{\index{64-\/bit integer support@{64-\/bit integer support}!Z\-C\-L64\-\_\-\-N\-E@{Z\-C\-L64\-\_\-\-N\-E}}
+\index{Z\-C\-L64\-\_\-\-N\-E@{Z\-C\-L64\-\_\-\-N\-E}!64-bit integer support@{64-\/bit integer support}}
+\subsubsection[{Z\-C\-L64\-\_\-\-N\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define Z\-C\-L64\-\_\-\-N\-E(
+\begin{DoxyParamCaption}
+\item[{}]{a, }
+\item[{}]{b}
+\end{DoxyParamCaption}
+)~J\-S\-L\-L\-\_\-\-N\-E(a, b)}}\label{group__zcl__64_gaffa76b2bdfb8bc021db06efe331a2e5f}
+
+
+Compare two zcl64\-\_\-t variables for inequality. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em a} & zcl64\-\_\-t variable \\
+\hline
+\mbox{\tt in}  & {\em b} & zcl64\-\_\-t variable\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+(a != b)
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{group__zcl__64_gad0e4c484d689dee3c5f1302fc80aef3e}{Z\-C\-L64\-\_\-\-I\-S\-\_\-\-Z\-E\-R\-O}, \hyperlink{group__zcl__64_ga329900843c1e59c30b4bdff95ee594bd}{Z\-C\-L64\-\_\-\-E\-Q}, \hyperlink{group__zcl__64_ga524b42ba2596f4c0392780c540f5d5b6}{Z\-C\-L64\-\_\-\-G\-E\-\_\-\-Z\-E\-R\-O}, Z\-C\-L64\-\_\-\-C\-M\-P, Z\-C\-L64\-\_\-\-U\-C\-M\-P 
+\end{DoxySeeAlso}
+\hypertarget{group__zcl__64_gab197c8668c0287b8190982177e03a257}{\index{64-\/bit integer support@{64-\/bit integer support}!Z\-C\-L64\-\_\-\-N\-E\-G@{Z\-C\-L64\-\_\-\-N\-E\-G}}
+\index{Z\-C\-L64\-\_\-\-N\-E\-G@{Z\-C\-L64\-\_\-\-N\-E\-G}!64-bit integer support@{64-\/bit integer support}}
+\subsubsection[{Z\-C\-L64\-\_\-\-N\-E\-G}]{\setlength{\rightskip}{0pt plus 5cm}\#define Z\-C\-L64\-\_\-\-N\-E\-G(
+\begin{DoxyParamCaption}
+\item[{}]{r, }
+\item[{}]{a}
+\end{DoxyParamCaption}
+)~J\-S\-L\-L\-\_\-\-N\-E\-G(r, a)}}\label{group__zcl__64_gab197c8668c0287b8190982177e03a257}
+
+
+Negate a zcl64\-\_\-t variable. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt out}  & {\em r} & zcl64\-\_\-t variable to assign (-\/a) to \\
+\hline
+\mbox{\tt in}  & {\em a} & zcl64\-\_\-t variable\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{group__zcl__64_ga6f960291ee8e41a8a45421b0b27b62b9}{Z\-C\-L64\-\_\-\-A\-N\-D}, \hyperlink{group__zcl__64_gaa6e4aa82c20efd4b30cf9af31672d867}{Z\-C\-L64\-\_\-\-O\-R}, \hyperlink{group__zcl__64_gaa6a22393c0d8c9d674b8a90d316413d3}{Z\-C\-L64\-\_\-\-X\-O\-R}, \hyperlink{group__zcl__64_ga181c9c94509aa64c1c3c3ed74d6d3c0e}{Z\-C\-L64\-\_\-\-N\-O\-T} 
+\end{DoxySeeAlso}
+\hypertarget{group__zcl__64_ga181c9c94509aa64c1c3c3ed74d6d3c0e}{\index{64-\/bit integer support@{64-\/bit integer support}!Z\-C\-L64\-\_\-\-N\-O\-T@{Z\-C\-L64\-\_\-\-N\-O\-T}}
+\index{Z\-C\-L64\-\_\-\-N\-O\-T@{Z\-C\-L64\-\_\-\-N\-O\-T}!64-bit integer support@{64-\/bit integer support}}
+\subsubsection[{Z\-C\-L64\-\_\-\-N\-O\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define Z\-C\-L64\-\_\-\-N\-O\-T(
+\begin{DoxyParamCaption}
+\item[{}]{r, }
+\item[{}]{a}
+\end{DoxyParamCaption}
+)~J\-S\-L\-L\-\_\-\-N\-O\-T(r, a)}}\label{group__zcl__64_ga181c9c94509aa64c1c3c3ed74d6d3c0e}
+
+
+Perform a bitwise N\-O\-T of a zcl64\-\_\-t variable. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt out}  & {\em r} & zcl64\-\_\-t variable to assign ($\sim$a) to \\
+\hline
+\mbox{\tt in}  & {\em a} & zcl64\-\_\-t variable\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{group__zcl__64_ga6f960291ee8e41a8a45421b0b27b62b9}{Z\-C\-L64\-\_\-\-A\-N\-D}, \hyperlink{group__zcl__64_gaa6e4aa82c20efd4b30cf9af31672d867}{Z\-C\-L64\-\_\-\-O\-R}, \hyperlink{group__zcl__64_gaa6a22393c0d8c9d674b8a90d316413d3}{Z\-C\-L64\-\_\-\-X\-O\-R}, \hyperlink{group__zcl__64_gab197c8668c0287b8190982177e03a257}{Z\-C\-L64\-\_\-\-N\-E\-G} 
+\end{DoxySeeAlso}
+\hypertarget{group__zcl__64_gaa6e4aa82c20efd4b30cf9af31672d867}{\index{64-\/bit integer support@{64-\/bit integer support}!Z\-C\-L64\-\_\-\-O\-R@{Z\-C\-L64\-\_\-\-O\-R}}
+\index{Z\-C\-L64\-\_\-\-O\-R@{Z\-C\-L64\-\_\-\-O\-R}!64-bit integer support@{64-\/bit integer support}}
+\subsubsection[{Z\-C\-L64\-\_\-\-O\-R}]{\setlength{\rightskip}{0pt plus 5cm}\#define Z\-C\-L64\-\_\-\-O\-R(
+\begin{DoxyParamCaption}
+\item[{}]{r, }
+\item[{}]{a, }
+\item[{}]{b}
+\end{DoxyParamCaption}
+)~J\-S\-L\-L\-\_\-\-O\-R(r, a, b)}}\label{group__zcl__64_gaa6e4aa82c20efd4b30cf9af31672d867}
+
+
+Perform a bitwise O\-R of two zcl64\-\_\-t variables. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt out}  & {\em r} & zcl64\-\_\-t variable to assign (a $|$ b) to \\
+\hline
+\mbox{\tt in}  & {\em a} & zcl64\-\_\-t variable \\
+\hline
+\mbox{\tt in}  & {\em b} & zcl64\-\_\-t variable\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{group__zcl__64_ga6f960291ee8e41a8a45421b0b27b62b9}{Z\-C\-L64\-\_\-\-A\-N\-D}, \hyperlink{group__zcl__64_gaa6a22393c0d8c9d674b8a90d316413d3}{Z\-C\-L64\-\_\-\-X\-O\-R}, \hyperlink{group__zcl__64_ga181c9c94509aa64c1c3c3ed74d6d3c0e}{Z\-C\-L64\-\_\-\-N\-O\-T}, \hyperlink{group__zcl__64_gab197c8668c0287b8190982177e03a257}{Z\-C\-L64\-\_\-\-N\-E\-G} 
+\end{DoxySeeAlso}
+\hypertarget{group__zcl__64_ga949d0b35ec1e4bf3a9e8a422b0eae4e5}{\index{64-\/bit integer support@{64-\/bit integer support}!Z\-C\-L64\-\_\-\-S\-U\-B@{Z\-C\-L64\-\_\-\-S\-U\-B}}
+\index{Z\-C\-L64\-\_\-\-S\-U\-B@{Z\-C\-L64\-\_\-\-S\-U\-B}!64-bit integer support@{64-\/bit integer support}}
+\subsubsection[{Z\-C\-L64\-\_\-\-S\-U\-B}]{\setlength{\rightskip}{0pt plus 5cm}\#define Z\-C\-L64\-\_\-\-S\-U\-B(
+\begin{DoxyParamCaption}
+\item[{}]{r, }
+\item[{}]{a, }
+\item[{}]{b}
+\end{DoxyParamCaption}
+)~J\-S\-L\-L\-\_\-\-S\-U\-B(r, a, b)}}\label{group__zcl__64_ga949d0b35ec1e4bf3a9e8a422b0eae4e5}
+
+
+Subtract two zcl64\-\_\-t variables. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt out}  & {\em r} & zcl64\-\_\-t variable to assign (a -\/ b) to \\
+\hline
+\mbox{\tt in}  & {\em a} & zcl64\-\_\-t variable \\
+\hline
+\mbox{\tt in}  & {\em b} & zcl64\-\_\-t variable\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{group__zcl__64_gaa0b854087abee42e1bf908a133385f8d}{Z\-C\-L64\-\_\-\-A\-D\-D}, \hyperlink{group__zcl__64_ga3f163bcb1ecddc543b3a4f3bdbc1d413}{Z\-C\-L64\-\_\-\-M\-U\-L}, \hyperlink{group__zcl__64_gadb0e1566e403716d94868b45bb8c63bb}{Z\-C\-L64\-\_\-\-M\-U\-L32}, \hyperlink{group__zcl__64_ga6d2d3e13f94ca7fba869dbc6479ae0e1}{Z\-C\-L64\-\_\-\-U\-D\-I\-V\-M\-O\-D}, \hyperlink{group__zcl__64_gada2c215933ee366c11da80a44c2b27c7}{Z\-C\-L64\-\_\-\-D\-I\-V}, \hyperlink{group__zcl__64_ga8137418ffd91d5aae3b41a0143d27070}{Z\-C\-L64\-\_\-\-M\-O\-D} 
+\end{DoxySeeAlso}
+\hypertarget{group__zcl__64_gae93bf21431b64dcc3d9bcd67296ff0ed}{\index{64-\/bit integer support@{64-\/bit integer support}!Z\-C\-L64\-\_\-\-T\-O\-\_\-\-D\-E\-C\-S\-T\-R@{Z\-C\-L64\-\_\-\-T\-O\-\_\-\-D\-E\-C\-S\-T\-R}}
+\index{Z\-C\-L64\-\_\-\-T\-O\-\_\-\-D\-E\-C\-S\-T\-R@{Z\-C\-L64\-\_\-\-T\-O\-\_\-\-D\-E\-C\-S\-T\-R}!64-bit integer support@{64-\/bit integer support}}
+\subsubsection[{Z\-C\-L64\-\_\-\-T\-O\-\_\-\-D\-E\-C\-S\-T\-R}]{\setlength{\rightskip}{0pt plus 5cm}\#define Z\-C\-L64\-\_\-\-T\-O\-\_\-\-D\-E\-C\-S\-T\-R(
+\begin{DoxyParamCaption}
+\item[{}]{buffer, }
+\item[{}]{var}
+\end{DoxyParamCaption}
+)~J\-S\-L\-L\-\_\-\-D\-E\-C\-S\-T\-R(buffer, var)}}\label{group__zcl__64_gae93bf21431b64dcc3d9bcd67296ff0ed}
+
+
+Convert a signed zcl64\-\_\-t variable to a 20-\/character printable decimal string. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt out}  & {\em buffer} & 21-\/character buffer to hold hexadecimal string \\
+\hline
+\mbox{\tt in}  & {\em var} & signed zcl64\-\_\-t variable to stringify\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+number of characters written to {\ttfamily buffer} (1 to 20), in addition to the null terminator
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{group__zcl__64_ga24b0de907d96815f51558733e99792d3}{Z\-C\-L64\-\_\-\-T\-O\-\_\-\-H\-E\-X\-S\-T\-R}, \hyperlink{group__zcl__64_gae094f7c19dcfd18917b426a9e43aa427}{Z\-C\-L64\-\_\-\-T\-O\-\_\-\-U\-D\-E\-C\-S\-T\-R} 
+\end{DoxySeeAlso}
+\hypertarget{group__zcl__64_ga3cca4ebbc7fafb30919421d7cd0a2d73}{\index{64-\/bit integer support@{64-\/bit integer support}!Z\-C\-L64\-\_\-\-T\-O\-\_\-\-D\-O\-U\-B\-L\-E@{Z\-C\-L64\-\_\-\-T\-O\-\_\-\-D\-O\-U\-B\-L\-E}}
+\index{Z\-C\-L64\-\_\-\-T\-O\-\_\-\-D\-O\-U\-B\-L\-E@{Z\-C\-L64\-\_\-\-T\-O\-\_\-\-D\-O\-U\-B\-L\-E}!64-bit integer support@{64-\/bit integer support}}
+\subsubsection[{Z\-C\-L64\-\_\-\-T\-O\-\_\-\-D\-O\-U\-B\-L\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define Z\-C\-L64\-\_\-\-T\-O\-\_\-\-D\-O\-U\-B\-L\-E(
+\begin{DoxyParamCaption}
+\item[{}]{d, }
+\item[{}]{i64}
+\end{DoxyParamCaption}
+)~J\-S\-L\-L\-\_\-\-L2\-D(d, i64)}}\label{group__zcl__64_ga3cca4ebbc7fafb30919421d7cd0a2d73}
+
+
+Cast a signed zcl64\-\_\-t variable to a {\ttfamily double}. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt out}  & {\em d} & double variable to cast {\ttfamily i64} into \\
+\hline
+\mbox{\tt in}  & {\em i64} & signed zcl64\-\_\-t variable\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{group__zcl__64_gaceb8fdf41f4dc532f6028bab90521d3e}{Z\-C\-L64\-\_\-\-T\-O\-\_\-\-I\-N\-T32}, \hyperlink{group__zcl__64_ga628915c271405b5eaeb673089f0df6ba}{Z\-C\-L64\-\_\-\-T\-O\-\_\-\-U\-I\-N\-T32}, \hyperlink{group__zcl__64_ga3f09d28af6abe1a4a5c427ea93686ea1}{Z\-C\-L64\-\_\-\-T\-O\-\_\-\-F\-L\-O\-A\-T}, \hyperlink{group__zcl__64_gafe6c7cf76cbba5ac7fb5329fd0801278}{Z\-C\-L64\-\_\-\-F\-R\-O\-M\-\_\-\-I\-N\-T32}, \hyperlink{group__zcl__64_gaae113edcbf898afca39e88d742c27f8d}{Z\-C\-L64\-\_\-\-F\-R\-O\-M\-\_\-\-U\-I\-N\-T32}, \hyperlink{group__zcl__64_gaae1ff05a93a54da4e06bbca682d2c548}{Z\-C\-L64\-\_\-\-F\-R\-O\-M\-\_\-\-F\-L\-O\-A\-T}, \hyperlink{group__zcl__64_ga1899e4fdd99e7f07bf5044997a40e248}{Z\-C\-L64\-\_\-\-F\-R\-O\-M\-\_\-\-D\-O\-U\-B\-L\-E} 
+\end{DoxySeeAlso}
+\hypertarget{group__zcl__64_ga3f09d28af6abe1a4a5c427ea93686ea1}{\index{64-\/bit integer support@{64-\/bit integer support}!Z\-C\-L64\-\_\-\-T\-O\-\_\-\-F\-L\-O\-A\-T@{Z\-C\-L64\-\_\-\-T\-O\-\_\-\-F\-L\-O\-A\-T}}
+\index{Z\-C\-L64\-\_\-\-T\-O\-\_\-\-F\-L\-O\-A\-T@{Z\-C\-L64\-\_\-\-T\-O\-\_\-\-F\-L\-O\-A\-T}!64-bit integer support@{64-\/bit integer support}}
+\subsubsection[{Z\-C\-L64\-\_\-\-T\-O\-\_\-\-F\-L\-O\-A\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define Z\-C\-L64\-\_\-\-T\-O\-\_\-\-F\-L\-O\-A\-T(
+\begin{DoxyParamCaption}
+\item[{}]{f, }
+\item[{}]{i64}
+\end{DoxyParamCaption}
+)~J\-S\-L\-L\-\_\-\-L2\-F(f, i64)}}\label{group__zcl__64_ga3f09d28af6abe1a4a5c427ea93686ea1}
+
+
+Cast a signed zcl64\-\_\-t variable to a {\ttfamily float}. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt out}  & {\em f} & float variable to cast {\ttfamily i64} into \\
+\hline
+\mbox{\tt in}  & {\em i64} & signed zcl64\-\_\-t variable\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{group__zcl__64_gaceb8fdf41f4dc532f6028bab90521d3e}{Z\-C\-L64\-\_\-\-T\-O\-\_\-\-I\-N\-T32}, \hyperlink{group__zcl__64_ga628915c271405b5eaeb673089f0df6ba}{Z\-C\-L64\-\_\-\-T\-O\-\_\-\-U\-I\-N\-T32}, \hyperlink{group__zcl__64_ga3cca4ebbc7fafb30919421d7cd0a2d73}{Z\-C\-L64\-\_\-\-T\-O\-\_\-\-D\-O\-U\-B\-L\-E}, \hyperlink{group__zcl__64_gafe6c7cf76cbba5ac7fb5329fd0801278}{Z\-C\-L64\-\_\-\-F\-R\-O\-M\-\_\-\-I\-N\-T32}, \hyperlink{group__zcl__64_gaae113edcbf898afca39e88d742c27f8d}{Z\-C\-L64\-\_\-\-F\-R\-O\-M\-\_\-\-U\-I\-N\-T32}, \hyperlink{group__zcl__64_gaae1ff05a93a54da4e06bbca682d2c548}{Z\-C\-L64\-\_\-\-F\-R\-O\-M\-\_\-\-F\-L\-O\-A\-T}, \hyperlink{group__zcl__64_ga1899e4fdd99e7f07bf5044997a40e248}{Z\-C\-L64\-\_\-\-F\-R\-O\-M\-\_\-\-D\-O\-U\-B\-L\-E}, 
+\end{DoxySeeAlso}
+\hypertarget{group__zcl__64_ga24b0de907d96815f51558733e99792d3}{\index{64-\/bit integer support@{64-\/bit integer support}!Z\-C\-L64\-\_\-\-T\-O\-\_\-\-H\-E\-X\-S\-T\-R@{Z\-C\-L64\-\_\-\-T\-O\-\_\-\-H\-E\-X\-S\-T\-R}}
+\index{Z\-C\-L64\-\_\-\-T\-O\-\_\-\-H\-E\-X\-S\-T\-R@{Z\-C\-L64\-\_\-\-T\-O\-\_\-\-H\-E\-X\-S\-T\-R}!64-bit integer support@{64-\/bit integer support}}
+\subsubsection[{Z\-C\-L64\-\_\-\-T\-O\-\_\-\-H\-E\-X\-S\-T\-R}]{\setlength{\rightskip}{0pt plus 5cm}\#define Z\-C\-L64\-\_\-\-T\-O\-\_\-\-H\-E\-X\-S\-T\-R(
+\begin{DoxyParamCaption}
+\item[{}]{buffer, }
+\item[{}]{var}
+\end{DoxyParamCaption}
+)~J\-S\-L\-L\-\_\-\-H\-E\-X\-S\-T\-R(buffer, var)}}\label{group__zcl__64_ga24b0de907d96815f51558733e99792d3}
+
+
+Convert a zcl64\-\_\-t variable to a 16-\/character printable hexadecimal string. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt out}  & {\em buffer} & 17-\/character buffer to hold hexadecimal string \\
+\hline
+\mbox{\tt in}  & {\em var} & zcl64\-\_\-t variable to stringify\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em 16} & this function always returns 16, the number of characters written to {\ttfamily buffer} (in addition to the null terminator)\\
+\hline
+\end{DoxyRetVals}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{group__zcl__64_gae93bf21431b64dcc3d9bcd67296ff0ed}{Z\-C\-L64\-\_\-\-T\-O\-\_\-\-D\-E\-C\-S\-T\-R}, \hyperlink{group__zcl__64_gae094f7c19dcfd18917b426a9e43aa427}{Z\-C\-L64\-\_\-\-T\-O\-\_\-\-U\-D\-E\-C\-S\-T\-R} 
+\end{DoxySeeAlso}
+\hypertarget{group__zcl__64_gaceb8fdf41f4dc532f6028bab90521d3e}{\index{64-\/bit integer support@{64-\/bit integer support}!Z\-C\-L64\-\_\-\-T\-O\-\_\-\-I\-N\-T32@{Z\-C\-L64\-\_\-\-T\-O\-\_\-\-I\-N\-T32}}
+\index{Z\-C\-L64\-\_\-\-T\-O\-\_\-\-I\-N\-T32@{Z\-C\-L64\-\_\-\-T\-O\-\_\-\-I\-N\-T32}!64-bit integer support@{64-\/bit integer support}}
+\subsubsection[{Z\-C\-L64\-\_\-\-T\-O\-\_\-\-I\-N\-T32}]{\setlength{\rightskip}{0pt plus 5cm}\#define Z\-C\-L64\-\_\-\-T\-O\-\_\-\-I\-N\-T32(
+\begin{DoxyParamCaption}
+\item[{}]{i32, }
+\item[{}]{i64}
+\end{DoxyParamCaption}
+)~J\-S\-L\-L\-\_\-\-L2\-I(i32, i64)}}\label{group__zcl__64_gaceb8fdf41f4dc532f6028bab90521d3e}
+
+
+Cast a signed zcl64\-\_\-t variable down to a signed 32-\/bit integer. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt out}  & {\em i32} & int32\-\_\-t variable to cast {\ttfamily i64} into \\
+\hline
+\mbox{\tt in}  & {\em i64} & signed zcl64\-\_\-t variable\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{group__zcl__64_ga628915c271405b5eaeb673089f0df6ba}{Z\-C\-L64\-\_\-\-T\-O\-\_\-\-U\-I\-N\-T32}, \hyperlink{group__zcl__64_ga3f09d28af6abe1a4a5c427ea93686ea1}{Z\-C\-L64\-\_\-\-T\-O\-\_\-\-F\-L\-O\-A\-T}, \hyperlink{group__zcl__64_ga3cca4ebbc7fafb30919421d7cd0a2d73}{Z\-C\-L64\-\_\-\-T\-O\-\_\-\-D\-O\-U\-B\-L\-E}, \hyperlink{group__zcl__64_gafe6c7cf76cbba5ac7fb5329fd0801278}{Z\-C\-L64\-\_\-\-F\-R\-O\-M\-\_\-\-I\-N\-T32}, \hyperlink{group__zcl__64_gaae113edcbf898afca39e88d742c27f8d}{Z\-C\-L64\-\_\-\-F\-R\-O\-M\-\_\-\-U\-I\-N\-T32}, \hyperlink{group__zcl__64_gaae1ff05a93a54da4e06bbca682d2c548}{Z\-C\-L64\-\_\-\-F\-R\-O\-M\-\_\-\-F\-L\-O\-A\-T}, \hyperlink{group__zcl__64_ga1899e4fdd99e7f07bf5044997a40e248}{Z\-C\-L64\-\_\-\-F\-R\-O\-M\-\_\-\-D\-O\-U\-B\-L\-E} 
+\end{DoxySeeAlso}
+\hypertarget{group__zcl__64_gae094f7c19dcfd18917b426a9e43aa427}{\index{64-\/bit integer support@{64-\/bit integer support}!Z\-C\-L64\-\_\-\-T\-O\-\_\-\-U\-D\-E\-C\-S\-T\-R@{Z\-C\-L64\-\_\-\-T\-O\-\_\-\-U\-D\-E\-C\-S\-T\-R}}
+\index{Z\-C\-L64\-\_\-\-T\-O\-\_\-\-U\-D\-E\-C\-S\-T\-R@{Z\-C\-L64\-\_\-\-T\-O\-\_\-\-U\-D\-E\-C\-S\-T\-R}!64-bit integer support@{64-\/bit integer support}}
+\subsubsection[{Z\-C\-L64\-\_\-\-T\-O\-\_\-\-U\-D\-E\-C\-S\-T\-R}]{\setlength{\rightskip}{0pt plus 5cm}\#define Z\-C\-L64\-\_\-\-T\-O\-\_\-\-U\-D\-E\-C\-S\-T\-R(
+\begin{DoxyParamCaption}
+\item[{}]{buffer, }
+\item[{}]{var}
+\end{DoxyParamCaption}
+)~J\-S\-L\-L\-\_\-\-U\-D\-E\-C\-S\-T\-R(buffer, var)}}\label{group__zcl__64_gae094f7c19dcfd18917b426a9e43aa427}
+
+
+Convert an unsigned zcl64\-\_\-t variable to a 20-\/character printable decimal string. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt out}  & {\em buffer} & 21-\/character buffer to hold hexadecimal string \\
+\hline
+\mbox{\tt in}  & {\em var} & unsigned zcl64\-\_\-t variable to stringify\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+number of characters written to {\ttfamily buffer} (1 to 20), in addition to the null terminator
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{group__zcl__64_ga24b0de907d96815f51558733e99792d3}{Z\-C\-L64\-\_\-\-T\-O\-\_\-\-H\-E\-X\-S\-T\-R}, \hyperlink{group__zcl__64_gae93bf21431b64dcc3d9bcd67296ff0ed}{Z\-C\-L64\-\_\-\-T\-O\-\_\-\-D\-E\-C\-S\-T\-R} 
+\end{DoxySeeAlso}
+\hypertarget{group__zcl__64_ga628915c271405b5eaeb673089f0df6ba}{\index{64-\/bit integer support@{64-\/bit integer support}!Z\-C\-L64\-\_\-\-T\-O\-\_\-\-U\-I\-N\-T32@{Z\-C\-L64\-\_\-\-T\-O\-\_\-\-U\-I\-N\-T32}}
+\index{Z\-C\-L64\-\_\-\-T\-O\-\_\-\-U\-I\-N\-T32@{Z\-C\-L64\-\_\-\-T\-O\-\_\-\-U\-I\-N\-T32}!64-bit integer support@{64-\/bit integer support}}
+\subsubsection[{Z\-C\-L64\-\_\-\-T\-O\-\_\-\-U\-I\-N\-T32}]{\setlength{\rightskip}{0pt plus 5cm}\#define Z\-C\-L64\-\_\-\-T\-O\-\_\-\-U\-I\-N\-T32(
+\begin{DoxyParamCaption}
+\item[{}]{u32, }
+\item[{}]{u64}
+\end{DoxyParamCaption}
+)~J\-S\-L\-L\-\_\-\-L2\-U\-I(u32, u64)}}\label{group__zcl__64_ga628915c271405b5eaeb673089f0df6ba}
+
+
+Cast an unsigned zcl64\-\_\-t variable down to an unsigned 32-\/bit integer. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt out}  & {\em u32} & uint32\-\_\-t variable to cast {\ttfamily u64} into \\
+\hline
+\mbox{\tt in}  & {\em u64} & unsigned zcl64\-\_\-t variable\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{group__zcl__64_gaceb8fdf41f4dc532f6028bab90521d3e}{Z\-C\-L64\-\_\-\-T\-O\-\_\-\-I\-N\-T32}, \hyperlink{group__zcl__64_ga3f09d28af6abe1a4a5c427ea93686ea1}{Z\-C\-L64\-\_\-\-T\-O\-\_\-\-F\-L\-O\-A\-T}, \hyperlink{group__zcl__64_ga3cca4ebbc7fafb30919421d7cd0a2d73}{Z\-C\-L64\-\_\-\-T\-O\-\_\-\-D\-O\-U\-B\-L\-E}, \hyperlink{group__zcl__64_gafe6c7cf76cbba5ac7fb5329fd0801278}{Z\-C\-L64\-\_\-\-F\-R\-O\-M\-\_\-\-I\-N\-T32}, \hyperlink{group__zcl__64_gaae113edcbf898afca39e88d742c27f8d}{Z\-C\-L64\-\_\-\-F\-R\-O\-M\-\_\-\-U\-I\-N\-T32}, \hyperlink{group__zcl__64_gaae1ff05a93a54da4e06bbca682d2c548}{Z\-C\-L64\-\_\-\-F\-R\-O\-M\-\_\-\-F\-L\-O\-A\-T}, \hyperlink{group__zcl__64_ga1899e4fdd99e7f07bf5044997a40e248}{Z\-C\-L64\-\_\-\-F\-R\-O\-M\-\_\-\-D\-O\-U\-B\-L\-E} 
+\end{DoxySeeAlso}
+\hypertarget{group__zcl__64_ga6d2d3e13f94ca7fba869dbc6479ae0e1}{\index{64-\/bit integer support@{64-\/bit integer support}!Z\-C\-L64\-\_\-\-U\-D\-I\-V\-M\-O\-D@{Z\-C\-L64\-\_\-\-U\-D\-I\-V\-M\-O\-D}}
+\index{Z\-C\-L64\-\_\-\-U\-D\-I\-V\-M\-O\-D@{Z\-C\-L64\-\_\-\-U\-D\-I\-V\-M\-O\-D}!64-bit integer support@{64-\/bit integer support}}
+\subsubsection[{Z\-C\-L64\-\_\-\-U\-D\-I\-V\-M\-O\-D}]{\setlength{\rightskip}{0pt plus 5cm}\#define Z\-C\-L64\-\_\-\-U\-D\-I\-V\-M\-O\-D(
+\begin{DoxyParamCaption}
+\item[{}]{qp, }
+\item[{}]{rp, }
+\item[{}]{a, }
+\item[{}]{b}
+\end{DoxyParamCaption}
+)~J\-S\-L\-L\-\_\-\-U\-D\-I\-V\-M\-O\-D(qp, rp, a, b)}}\label{group__zcl__64_ga6d2d3e13f94ca7fba869dbc6479ae0e1}
+
+
+Divide an unsigned zcl64\-\_\-t variable by another unsigned zcl64\-\_\-t variable and store the 64-\/bit quotient and remainder. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt out}  & {\em qp} & N\-U\-L\-L to ignore the quotient, or address of a zcl64\-\_\-t variable to assign (a / b) to \\
+\hline
+\mbox{\tt out}  & {\em rp} & N\-U\-L\-L to ignore the remainder, or address of a zcl64\-\_\-t variable to assign (a \% b) to \\
+\hline
+\mbox{\tt in}  & {\em a} & zcl64\-\_\-t variable \\
+\hline
+\mbox{\tt in}  & {\em b} & zcl64\-\_\-t variable\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{group__zcl__64_gaa0b854087abee42e1bf908a133385f8d}{Z\-C\-L64\-\_\-\-A\-D\-D}, \hyperlink{group__zcl__64_ga949d0b35ec1e4bf3a9e8a422b0eae4e5}{Z\-C\-L64\-\_\-\-S\-U\-B}, \hyperlink{group__zcl__64_ga3f163bcb1ecddc543b3a4f3bdbc1d413}{Z\-C\-L64\-\_\-\-M\-U\-L}, \hyperlink{group__zcl__64_gadb0e1566e403716d94868b45bb8c63bb}{Z\-C\-L64\-\_\-\-M\-U\-L32}, \hyperlink{group__zcl__64_gada2c215933ee366c11da80a44c2b27c7}{Z\-C\-L64\-\_\-\-D\-I\-V}, \hyperlink{group__zcl__64_ga8137418ffd91d5aae3b41a0143d27070}{Z\-C\-L64\-\_\-\-M\-O\-D} 
+\end{DoxySeeAlso}
+\hypertarget{group__zcl__64_gaa6a22393c0d8c9d674b8a90d316413d3}{\index{64-\/bit integer support@{64-\/bit integer support}!Z\-C\-L64\-\_\-\-X\-O\-R@{Z\-C\-L64\-\_\-\-X\-O\-R}}
+\index{Z\-C\-L64\-\_\-\-X\-O\-R@{Z\-C\-L64\-\_\-\-X\-O\-R}!64-bit integer support@{64-\/bit integer support}}
+\subsubsection[{Z\-C\-L64\-\_\-\-X\-O\-R}]{\setlength{\rightskip}{0pt plus 5cm}\#define Z\-C\-L64\-\_\-\-X\-O\-R(
+\begin{DoxyParamCaption}
+\item[{}]{r, }
+\item[{}]{a, }
+\item[{}]{b}
+\end{DoxyParamCaption}
+)~J\-S\-L\-L\-\_\-\-X\-O\-R(r, a, b)}}\label{group__zcl__64_gaa6a22393c0d8c9d674b8a90d316413d3}
+
+
+Perform a bitwise X\-O\-R of two zcl64\-\_\-t variables. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt out}  & {\em r} & zcl64\-\_\-t variable to assign (a $^\wedge$ b) to \\
+\hline
+\mbox{\tt in}  & {\em a} & zcl64\-\_\-t variable \\
+\hline
+\mbox{\tt in}  & {\em b} & zcl64\-\_\-t variable\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{group__zcl__64_ga6f960291ee8e41a8a45421b0b27b62b9}{Z\-C\-L64\-\_\-\-A\-N\-D}, \hyperlink{group__zcl__64_gaa6e4aa82c20efd4b30cf9af31672d867}{Z\-C\-L64\-\_\-\-O\-R}, \hyperlink{group__zcl__64_ga181c9c94509aa64c1c3c3ed74d6d3c0e}{Z\-C\-L64\-\_\-\-N\-O\-T}, \hyperlink{group__zcl__64_gab197c8668c0287b8190982177e03a257}{Z\-C\-L64\-\_\-\-N\-E\-G} 
+\end{DoxySeeAlso}
+
+
+\subsection{Typedef Documentation}
+\hypertarget{group__zcl__64_ga2e906cb47fc172ae60da5178075dd3c7}{\index{64-\/bit integer support@{64-\/bit integer support}!zcl64\-\_\-t@{zcl64\-\_\-t}}
+\index{zcl64\-\_\-t@{zcl64\-\_\-t}!64-bit integer support@{64-\/bit integer support}}
+\subsubsection[{zcl64\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf J\-S\-Uint64} {\bf zcl64\-\_\-t}}}\label{group__zcl__64_ga2e906cb47fc172ae60da5178075dd3c7}
+
+
+64-\/bit integer in host-\/byte-\/order Use for 56-\/bit values as well -- Z\-C\-L layer will make sure top byte is sign-\/extended. 
+
+\begin{DoxyRefDesc}{Todo}
+\item[\hyperlink{todo__todo000033}{Todo}]Actually code up support for 56-\/bit values like we did for 24 bit. \end{DoxyRefDesc}

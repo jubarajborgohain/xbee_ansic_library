@@ -1,0 +1,97 @@
+\hypertarget{xbee__commissioning_8c}{\section{src/xbee/xbee\-\_\-commissioning.c File Reference}
+\label{xbee__commissioning_8c}\index{src/xbee/xbee\-\_\-commissioning.\-c@{src/xbee/xbee\-\_\-commissioning.\-c}}
+}
+
+
+X\-Bee-\/specific hardware support for Z\-C\-L Commissioning Cluster.  
+
+
+{\ttfamily \#include $<$stdio.\-h$>$}\\*
+{\ttfamily \#include \char`\"{}xbee/platform.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}zigbee/zcl\-\_\-commissioning.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}xbee/atcmd.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}xbee/commissioning.\-h\char`\"{}}\\*
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structxbee__comm__reg__t}{xbee\-\_\-comm\-\_\-reg\-\_\-t}
+\item 
+struct \hyperlink{structxbee__comm__dl__t}{xbee\-\_\-comm\-\_\-dl\-\_\-t}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define {\bfseries \-\_\-set\-\_\-param\-\_\-bytes}(req, \hyperlink{group__xbee__io_gac5955aa1e44ff234e6d78a19cf68f25c}{data}, len)
+\item 
+\hypertarget{xbee__commissioning_8c_a33f5de5d27098876f1f90ffc3495c682}{\#define {\bfseries \-\_\-hex\-\_\-dump}(\hyperlink{group__xbee__io_gac5955aa1e44ff234e6d78a19cf68f25c}{data}, len)~\hyperlink{group__hal_gaa321236a0cb6f4e0dad592fdf1b550d2}{hex\-\_\-dump}( buffer, len, \hyperlink{group__hal_gae60f842ae8bc3cc952cdeece611670d5}{H\-E\-X\-\_\-\-D\-U\-M\-P\-\_\-\-F\-L\-A\-G\-\_\-\-N\-O\-N\-E})}\label{xbee__commissioning_8c_a33f5de5d27098876f1f90ffc3495c682}
+
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{group__xbee__commissioning_ga058bf8d748fd13105e0daed46699412c}{typedef void($\ast$ {\bfseries xbee\-\_\-comm\-\_\-fn} )(\hyperlink{structzcl__comm__startup__param__t}{zcl\-\_\-comm\-\_\-startup\-\_\-param\-\_\-t} \hyperlink{group__hal_gaef060b3456fdcc093a7210a762d5f2ed}{F\-A\-R} $\ast$p, const void \hyperlink{group__hal_gaef060b3456fdcc093a7210a762d5f2ed}{F\-A\-R} $\ast$value\-\_\-be)}\label{group__xbee__commissioning_ga058bf8d748fd13105e0daed46699412c}
+
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{group__xbee__commissioning_ga886012f757de4a74d0c992d3ab04a373}{xbee\-\_\-comm\-\_\-\-S\-C} (\hyperlink{structzcl__comm__startup__param__t}{zcl\-\_\-comm\-\_\-startup\-\_\-param\-\_\-t} \hyperlink{group__hal_gaef060b3456fdcc093a7210a762d5f2ed}{F\-A\-R} $\ast$p, const void \hyperlink{group__hal_gaef060b3456fdcc093a7210a762d5f2ed}{F\-A\-R} $\ast$value\-\_\-be)
+\item 
+\hypertarget{group__xbee__commissioning_ga38cdf15db91d2b0d3afc7288c4f4205a}{void {\bfseries xbee\-\_\-comm\-\_\-\-O\-P} (\hyperlink{structzcl__comm__startup__param__t}{zcl\-\_\-comm\-\_\-startup\-\_\-param\-\_\-t} \hyperlink{group__hal_gaef060b3456fdcc093a7210a762d5f2ed}{F\-A\-R} $\ast$p, const void \hyperlink{group__hal_gaef060b3456fdcc093a7210a762d5f2ed}{F\-A\-R} $\ast$value\-\_\-be)}\label{group__xbee__commissioning_ga38cdf15db91d2b0d3afc7288c4f4205a}
+
+\item 
+\hypertarget{group__xbee__commissioning_ga9b5ced283d3e0d514a28b676935a3b95}{void {\bfseries xbee\-\_\-comm\-\_\-\-O\-I} (\hyperlink{structzcl__comm__startup__param__t}{zcl\-\_\-comm\-\_\-startup\-\_\-param\-\_\-t} \hyperlink{group__hal_gaef060b3456fdcc093a7210a762d5f2ed}{F\-A\-R} $\ast$p, const void \hyperlink{group__hal_gaef060b3456fdcc093a7210a762d5f2ed}{F\-A\-R} $\ast$value\-\_\-be)}\label{group__xbee__commissioning_ga9b5ced283d3e0d514a28b676935a3b95}
+
+\item 
+\hypertarget{group__xbee__commissioning_gaa49a8990f5c4b47e2000f49b2258fc2c}{void {\bfseries xbee\-\_\-comm\-\_\-\-A\-R} (\hyperlink{structzcl__comm__startup__param__t}{zcl\-\_\-comm\-\_\-startup\-\_\-param\-\_\-t} \hyperlink{group__hal_gaef060b3456fdcc093a7210a762d5f2ed}{F\-A\-R} $\ast$p, const void \hyperlink{group__hal_gaef060b3456fdcc093a7210a762d5f2ed}{F\-A\-R} $\ast$value\-\_\-be)}\label{group__xbee__commissioning_gaa49a8990f5c4b47e2000f49b2258fc2c}
+
+\item 
+\hypertarget{group__xbee__commissioning_gae214f43be9de8be54815b9351935202f}{void {\bfseries xbee\-\_\-comm\-\_\-\-B\-H} (\hyperlink{structzcl__comm__startup__param__t}{zcl\-\_\-comm\-\_\-startup\-\_\-param\-\_\-t} \hyperlink{group__hal_gaef060b3456fdcc093a7210a762d5f2ed}{F\-A\-R} $\ast$p, const void \hyperlink{group__hal_gaef060b3456fdcc093a7210a762d5f2ed}{F\-A\-R} $\ast$value\-\_\-be)}\label{group__xbee__commissioning_gae214f43be9de8be54815b9351935202f}
+
+\item 
+\hypertarget{group__xbee__commissioning_ga337f66d75fea43d5a792ffd534e2f65c}{void {\bfseries xbee\-\_\-comm\-\_\-\-D\-L} (\hyperlink{structzcl__comm__startup__param__t}{zcl\-\_\-comm\-\_\-startup\-\_\-param\-\_\-t} \hyperlink{group__hal_gaef060b3456fdcc093a7210a762d5f2ed}{F\-A\-R} $\ast$p, const void \hyperlink{group__hal_gaef060b3456fdcc093a7210a762d5f2ed}{F\-A\-R} $\ast$value\-\_\-be)}\label{group__xbee__commissioning_ga337f66d75fea43d5a792ffd534e2f65c}
+
+\item 
+\hypertarget{group__xbee__commissioning_ga22b333ec115d26b72abc100fc5d3c431}{void {\bfseries xbee\-\_\-comm\-\_\-\-E\-O} (\hyperlink{structzcl__comm__startup__param__t}{zcl\-\_\-comm\-\_\-startup\-\_\-param\-\_\-t} \hyperlink{group__hal_gaef060b3456fdcc093a7210a762d5f2ed}{F\-A\-R} $\ast$p, const void \hyperlink{group__hal_gaef060b3456fdcc093a7210a762d5f2ed}{F\-A\-R} $\ast$value\-\_\-be)}\label{group__xbee__commissioning_ga22b333ec115d26b72abc100fc5d3c431}
+
+\item 
+\hypertarget{group__xbee__commissioning_gaec84ef238a638e643c6f8b363630d636}{int {\bfseries xbee\-\_\-comm\-\_\-reg\-\_\-callback} (const \hyperlink{structxbee__cmd__response__t}{xbee\-\_\-cmd\-\_\-response\-\_\-t} \hyperlink{group__hal_gaef060b3456fdcc093a7210a762d5f2ed}{F\-A\-R} $\ast$response)}\label{group__xbee__commissioning_gaec84ef238a638e643c6f8b363630d636}
+
+\item 
+\hypertarget{group__xbee__commissioning_ga4927f3fc029f50dbbd1ec3e0292e873b}{int {\bfseries xbee\-\_\-commissioning\-\_\-query} (\hyperlink{structzcl__comm__state__t}{zcl\-\_\-comm\-\_\-state\-\_\-t} $\ast$comm, \hyperlink{structxbee__dev__t}{xbee\-\_\-dev\-\_\-t} $\ast$xbee, const char \hyperlink{group__hal_gaef060b3456fdcc093a7210a762d5f2ed}{F\-A\-R} $\ast$reg)}\label{group__xbee__commissioning_ga4927f3fc029f50dbbd1ec3e0292e873b}
+
+\item 
+\hypertarget{group__xbee__commissioning_ga9c6e11a80f7544775d5e0d855f840334}{int {\bfseries xbee\-\_\-commissioning\-\_\-init} (\hyperlink{structzcl__comm__state__t}{zcl\-\_\-comm\-\_\-state\-\_\-t} $\ast$comm, \hyperlink{structxbee__dev__t}{xbee\-\_\-dev\-\_\-t} $\ast$xbee)}\label{group__xbee__commissioning_ga9c6e11a80f7544775d5e0d855f840334}
+
+\item 
+\hypertarget{group__xbee__commissioning_ga6fb796928aa5ff990ca4b62c4893bc2c}{int {\bfseries xbee\-\_\-commissioning\-\_\-set} (\hyperlink{structxbee__dev__t}{xbee\-\_\-dev\-\_\-t} $\ast$xbee, \hyperlink{structzcl__comm__startup__param__t}{zcl\-\_\-comm\-\_\-startup\-\_\-param\-\_\-t} $\ast$sas)}\label{group__xbee__commissioning_ga6fb796928aa5ff990ca4b62c4893bc2c}
+
+\item 
+\hypertarget{group__xbee__commissioning_gadd6acaa6c6403e9371358da445f3f194}{void {\bfseries xbee\-\_\-commissioning\-\_\-tick} (\hyperlink{structxbee__dev__t}{xbee\-\_\-dev\-\_\-t} $\ast$xbee, \hyperlink{structzcl__comm__state__t}{zcl\-\_\-comm\-\_\-state\-\_\-t} $\ast$comm)}\label{group__xbee__commissioning_gadd6acaa6c6403e9371358da445f3f194}
+
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const \hyperlink{structxbee__comm__reg__t}{xbee\-\_\-comm\-\_\-reg\-\_\-t} {\bfseries xbee\-\_\-comm\-\_\-regs} \mbox{[}$\,$\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+X\-Bee-\/specific hardware support for Z\-C\-L Commissioning Cluster. 
+
+\subsection{Macro Definition Documentation}
+\hypertarget{xbee__commissioning_8c_ac9fe9907ad4d47dd27a9185365422af2}{\index{xbee\-\_\-commissioning.\-c@{xbee\-\_\-commissioning.\-c}!\-\_\-set\-\_\-param\-\_\-bytes@{\-\_\-set\-\_\-param\-\_\-bytes}}
+\index{\-\_\-set\-\_\-param\-\_\-bytes@{\-\_\-set\-\_\-param\-\_\-bytes}!xbee_commissioning.c@{xbee\-\_\-commissioning.\-c}}
+\subsubsection[{\-\_\-set\-\_\-param\-\_\-bytes}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-\_\-set\-\_\-param\-\_\-bytes(
+\begin{DoxyParamCaption}
+\item[{}]{req, }
+\item[{}]{{\bf data}, }
+\item[{}]{len}
+\end{DoxyParamCaption}
+)}}\label{xbee__commissioning_8c_ac9fe9907ad4d47dd27a9185365422af2}
+{\bfseries Value\-:}
+\begin{DoxyCode}
+(  \hyperlink{group__util__byteorder_gaf0f22982f04251ea70fba1fb30d55ef5}{memcpy\_htobe}( buffer, \hyperlink{group__xbee__io_gac5955aa1e44ff234e6d78a19cf68f25c}{data}, len),  \(\backslash\)
+            xbee\_cmd\_set\_param\_bytes( req, buffer, len) )
+\end{DoxyCode}

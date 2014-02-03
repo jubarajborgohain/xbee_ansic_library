@@ -1,0 +1,14 @@
+\hypertarget{xbee__atmode_8c}{\section{src/xbee/xbee\-\_\-atmode.c File Reference}
+\label{xbee__atmode_8c}\index{src/xbee/xbee\-\_\-atmode.\-c@{src/xbee/xbee\-\_\-atmode.\-c}}
+}
+
+
+Code for working with X\-Bee modules in A\-T command mode instead of A\-P\-I mode.  
+
+
+
+
+\subsection{Detailed Description}
+Code for working with X\-Bee modules in A\-T command mode instead of A\-P\-I mode. For Digi\-Mesh 900 modules, this is necessary when doing firmware updates (even when module is using A\-P\-I-\/mode firmware).
+
+Note that this mode is not very robust. Once it A\-T mode, the X\-Bee will return to idle mode after some amount of time (value of C\-T register $\ast$ 100ms). If our calculation of that idle time doesn't match the X\-Bee module's, our state machine won't match the actual state. It may be possible to add some extra time on either end of that timeout to be certain, and it's always possible re-\/enter command mode just to send the command to exit (A\-T\-C\-N) and be sure we're out of it. 

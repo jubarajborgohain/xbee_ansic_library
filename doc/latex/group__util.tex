@@ -1,0 +1,71 @@
+\hypertarget{group__util}{\section{Utility/\-Support Code}
+\label{group__util}\index{Utility/\-Support Code@{Utility/\-Support Code}}
+}
+\subsection*{Modules}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{group__util__cbuf}{Circular Buffer}
+\item 
+\hyperlink{group__util__byteorder}{Byte-\/swapping functions}
+\item 
+\hyperlink{group__util__xmodem}{X\-M\-O\-D\-E\-M code used by the firmware update process}
+\end{DoxyCompactItemize}
+\subsection*{Files}
+\begin{DoxyCompactItemize}
+\item 
+file \hyperlink{hexdump_8c}{hexdump.\-c}
+\begin{DoxyCompactList}\small\item\em A\-N\-S\-I C \hyperlink{group__util_gaa321236a0cb6f4e0dad592fdf1b550d2}{hex\-\_\-dump()} implementation if not available natively on a given platform. \end{DoxyCompactList}\item 
+file \hyperlink{hexstrtobyte_8c}{hexstrtobyte.\-c}
+\begin{DoxyCompactList}\small\item\em A\-N\-S\-I C \hyperlink{group__hal_ga519e5ae2049b59689a474a8c48fee353}{hexstrtobyte()} implementation if not available natively on a given platform. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{group__util_gaa321236a0cb6f4e0dad592fdf1b550d2}{hex\-\_\-dump} (const void \hyperlink{group__hal_gaef060b3456fdcc093a7210a762d5f2ed}{F\-A\-R} $\ast$address, \hyperlink{group__hal_ga5a8b2dc9e45a9ee81a94ef304fb62505}{uint16\-\_\-t} \hyperlink{group__zdo_gab2b3adeb2a67e656ff030b56727fd0ac}{length}, \hyperlink{group__hal_ga5a8b2dc9e45a9ee81a94ef304fb62505}{uint16\-\_\-t} flags)
+\begin{DoxyCompactList}\small\item\em Helper function for printing a hex dump of memory to stdout. \end{DoxyCompactList}\item 
+\hypertarget{group__util_ga7ef9d8eaba1a5730261c557b1cb0a36b}{int {\bfseries hexstrtobyte} (const char $\ast$p)}\label{group__util_ga7ef9d8eaba1a5730261c557b1cb0a36b}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+\subsection{Function Documentation}
+\hypertarget{group__util_gaa321236a0cb6f4e0dad592fdf1b550d2}{\index{Utility/\-Support Code@{Utility/\-Support Code}!hex\-\_\-dump@{hex\-\_\-dump}}
+\index{hex\-\_\-dump@{hex\-\_\-dump}!Utility/Support Code@{Utility/\-Support Code}}
+\subsubsection[{hex\-\_\-dump}]{\setlength{\rightskip}{0pt plus 5cm}void hex\-\_\-dump (
+\begin{DoxyParamCaption}
+\item[{const void {\bf F\-A\-R} $\ast$}]{address, }
+\item[{{\bf uint16\-\_\-t}}]{length, }
+\item[{{\bf uint16\-\_\-t}}]{flags}
+\end{DoxyParamCaption}
+)}}\label{group__util_gaa321236a0cb6f4e0dad592fdf1b550d2}
+
+
+Helper function for printing a hex dump of memory to stdout. 
+
+A reference implementation is provided in as \hyperlink{hexdump_8c}{util/hexdump.\-c}. Dumps data in hex/printable format, 16 bytes to a line, to stdout.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em address} & Address of data to dump.\\
+\hline
+\mbox{\tt in}  & {\em length} & Number of bytes to dump.\\
+\hline
+\mbox{\tt in}  & {\em flags} & One of
+\begin{DoxyItemize}
+\item \hyperlink{group__hal_gae60f842ae8bc3cc952cdeece611670d5}{H\-E\-X\-\_\-\-D\-U\-M\-P\-\_\-\-F\-L\-A\-G\-\_\-\-N\-O\-N\-E}
+\item \hyperlink{group__hal_gaec79525addd1a70fda55b1ea11534832}{H\-E\-X\-\_\-\-D\-U\-M\-P\-\_\-\-F\-L\-A\-G\-\_\-\-O\-F\-F\-S\-E\-T}
+\item \hyperlink{group__hal_ga967137c51c026d68d03d1668402ec12b}{H\-E\-X\-\_\-\-D\-U\-M\-P\-\_\-\-F\-L\-A\-G\-\_\-\-A\-D\-D\-R\-E\-S\-S}
+\item \hyperlink{group__hal_ga696f6553e33cbd20eda34e220ec9939a}{H\-E\-X\-\_\-\-D\-U\-M\-P\-\_\-\-F\-L\-A\-G\-\_\-\-T\-A\-B} 
+\end{DoxyItemize}\\
+\hline
+\end{DoxyParams}
+
+
+References data, F\-A\-R, H\-E\-X\-\_\-\-D\-U\-M\-P\-\_\-\-F\-L\-A\-G\-\_\-\-A\-D\-D\-R\-E\-S\-S, H\-E\-X\-\_\-\-D\-U\-M\-P\-\_\-\-F\-L\-A\-G\-\_\-\-O\-F\-F\-S\-E\-T, H\-E\-X\-\_\-\-D\-U\-M\-P\-\_\-\-F\-L\-A\-G\-\_\-\-T\-A\-B, length, and P\-R\-Ip\-F\-A\-R.
+
+
+
+Referenced by \-\_\-sxa\-\_\-disc\-\_\-process\-\_\-node\-\_\-data(), \-\_\-sxa\-\_\-io\-\_\-process\-\_\-response(), \-\_\-xbee\-\_\-frame\-\_\-dispatch(), \-\_\-xbee\-\_\-frame\-\_\-load(), \-\_\-xbee\-\_\-ota\-\_\-transparent\-\_\-rx(), \-\_\-zcl\-\_\-send\-\_\-read\-\_\-from\-\_\-zdo\-\_\-match(), \-\_\-zcl\-\_\-write\-\_\-attributes(), \-\_\-zdo\-\_\-active\-\_\-ep\-\_\-respond(), \-\_\-zdo\-\_\-match\-\_\-desc\-\_\-respond(), wpan\-\_\-envelope\-\_\-dump(), xbee\-\_\-cmd\-\_\-send(), xbee\-\_\-ser\-\_\-read(), xbee\-\_\-ser\-\_\-write(), zcl\-\_\-command\-\_\-dump(), zcl\-\_\-envelope\-\_\-payload\-\_\-dump(), zcl\-\_\-general\-\_\-command(), zcl\-\_\-identify\-\_\-command(), zcl\-\_\-print\-\_\-attribute\-\_\-value(), zcl\-\_\-time\-\_\-client(), zdo\-\_\-handler(), and zdo\-\_\-send\-\_\-response().
+

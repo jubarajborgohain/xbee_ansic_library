@@ -1,0 +1,354 @@
+\hypertarget{zcl__types_8h}{\section{include/zigbee/zcl\-\_\-types.h File Reference}
+\label{zcl__types_8h}\index{include/zigbee/zcl\-\_\-types.\-h@{include/zigbee/zcl\-\_\-types.\-h}}
+}
+
+
+Macros and structures related to the Z\-C\-L datatypes.  
+
+
+{\ttfamily \#include \char`\"{}xbee/platform.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}xbee/byteorder.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}zigbee/zcl64.\-h\char`\"{}}\\*
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+union \hyperlink{unionzcl40__t}{zcl40\-\_\-t}
+\begin{DoxyCompactList}\small\item\em 40-\/bit unsigned in host-\/byte-\/order \end{DoxyCompactList}\item 
+union \hyperlink{unionzcl48__t}{zcl48\-\_\-t}
+\begin{DoxyCompactList}\small\item\em 48-\/bit unsigned in host-\/byte-\/order \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{group__zcl__types_ga615c98b6baffcb91fa19285f2557845a}{\#define {\bfseries Z\-C\-L\-\_\-\-U\-T\-C\-T\-I\-M\-E\-\_\-\-I\-N\-V\-A\-L\-I\-D}~0x\-F\-F\-F\-F\-F\-F\-F\-F}\label{group__zcl__types_ga615c98b6baffcb91fa19285f2557845a}
+
+\item 
+\hypertarget{group__zcl__types_ga6e143abd16187cc59cdad352c1fde4bf}{\#define \hyperlink{group__zcl__types_ga6e143abd16187cc59cdad352c1fde4bf}{Z\-C\-L\-\_\-\-T\-Y\-P\-E\-\_\-\-I\-S\-\_\-\-A\-N\-A\-L\-O\-G}(t)~(\hyperlink{group__zcl__types_ga0f5737f60f1f37fb3b375e9fd5fe664d}{zcl\-\_\-type\-\_\-info}\mbox{[}t\mbox{]} \& \hyperlink{group__zcl__types_ga7b609984d4662f83a2248d1f485fd4ad}{Z\-C\-L\-\_\-\-T\-\_\-\-A\-N\-A\-L\-O\-G})}\label{group__zcl__types_ga6e143abd16187cc59cdad352c1fde4bf}
+
+\begin{DoxyCompactList}\small\item\em Z\-C\-L data type {\itshape t} is an analog type. \end{DoxyCompactList}\item 
+\hypertarget{group__zcl__types_gafac9417148b2a7a3fbd64d84baf98cf7}{\#define \hyperlink{group__zcl__types_gafac9417148b2a7a3fbd64d84baf98cf7}{Z\-C\-L\-\_\-\-T\-Y\-P\-E\-\_\-\-I\-S\-\_\-\-D\-I\-S\-C\-R\-E\-T\-E}(t)~(\hyperlink{group__zcl__types_ga0f5737f60f1f37fb3b375e9fd5fe664d}{zcl\-\_\-type\-\_\-info}\mbox{[}t\mbox{]} \& \hyperlink{group__zcl__types_ga3e9bf95af4f58a0c9c5c34639b0dda29}{Z\-C\-L\-\_\-\-T\-\_\-\-D\-I\-S\-C\-R\-E\-T\-E})}\label{group__zcl__types_gafac9417148b2a7a3fbd64d84baf98cf7}
+
+\begin{DoxyCompactList}\small\item\em Z\-C\-L data type {\itshape t} is a discrete type. \end{DoxyCompactList}\item 
+\hypertarget{group__zcl__types_ga9114be7b872a013b27e06e4aa437318f}{\#define \hyperlink{group__zcl__types_ga9114be7b872a013b27e06e4aa437318f}{Z\-C\-L\-\_\-\-T\-Y\-P\-E\-\_\-\-I\-S\-\_\-\-S\-I\-G\-N\-E\-D}(t)~(\hyperlink{group__zcl__types_ga0f5737f60f1f37fb3b375e9fd5fe664d}{zcl\-\_\-type\-\_\-info}\mbox{[}t\mbox{]} \& \hyperlink{group__zcl__types_gaacf8dcd439ce0388d90681aec545e4e3}{Z\-C\-L\-\_\-\-T\-\_\-\-S\-I\-G\-N\-E\-D})}\label{group__zcl__types_ga9114be7b872a013b27e06e4aa437318f}
+
+\begin{DoxyCompactList}\small\item\em Z\-C\-L data type {\itshape t} is a signed type. \end{DoxyCompactList}\item 
+\hypertarget{group__zcl__types_ga665e39b52fa49df456f3e218dbb3c3e0}{\#define \hyperlink{group__zcl__types_ga665e39b52fa49df456f3e218dbb3c3e0}{Z\-C\-L\-\_\-\-T\-Y\-P\-E\-\_\-\-I\-S\-\_\-\-R\-E\-P\-O\-R\-T\-A\-B\-L\-E}(t)~(\hyperlink{group__zcl__types_ga0f5737f60f1f37fb3b375e9fd5fe664d}{zcl\-\_\-type\-\_\-info}\mbox{[}t\mbox{]} \& \hyperlink{group__zcl__types_gab0e5c23a0877c17fde12043c85728c29}{Z\-C\-L\-\_\-\-T\-\_\-\-R\-E\-P\-O\-R\-T\-A\-B\-L\-E})}\label{group__zcl__types_ga665e39b52fa49df456f3e218dbb3c3e0}
+
+\begin{DoxyCompactList}\small\item\em Z\-C\-L data type {\itshape t} is a reportable type. \end{DoxyCompactList}\item 
+\hypertarget{group__zcl__types_ga639712ec7549d1bb6a5bcb05097386e2}{\#define \hyperlink{group__zcl__types_ga639712ec7549d1bb6a5bcb05097386e2}{Z\-C\-L\-\_\-\-T\-Y\-P\-E\-\_\-\-I\-S\-\_\-\-I\-N\-V\-A\-L\-I\-D}(t)~(\hyperlink{group__zcl__types_ga0f5737f60f1f37fb3b375e9fd5fe664d}{zcl\-\_\-type\-\_\-info}\mbox{[}t\mbox{]} == \hyperlink{group__zcl__types_ga7609ed68cf4399cb2c09799ecedfdbe0}{Z\-C\-L\-\_\-\-T\-\_\-\-I\-N\-V\-A\-L\-I\-D})}\label{group__zcl__types_ga639712ec7549d1bb6a5bcb05097386e2}
+
+\begin{DoxyCompactList}\small\item\em Z\-C\-L data type {\itshape t} is an invalid (unsupported/unrecognized) type. \end{DoxyCompactList}\item 
+\hypertarget{group__zcl__types_ga755a7e3f73663a35fc1f702956dfca85}{\#define {\bfseries Z\-C\-L\-\_\-\-S\-I\-Z\-E\-\_\-\-S\-H\-O\-R\-T}~-\/1}\label{group__zcl__types_ga755a7e3f73663a35fc1f702956dfca85}
+
+\item 
+\hypertarget{group__zcl__types_ga74ee31f6a58ad03535546050d04a0de1}{\#define {\bfseries Z\-C\-L\-\_\-\-S\-I\-Z\-E\-\_\-\-L\-O\-N\-G}~-\/2}\label{group__zcl__types_ga74ee31f6a58ad03535546050d04a0de1}
+
+\item 
+\hypertarget{group__zcl__types_ga8b41a3880f93b53bbae1e241aac4bdb2}{\#define {\bfseries Z\-C\-L\-\_\-\-S\-I\-Z\-E\-\_\-\-V\-A\-R\-I\-A\-B\-L\-E}~-\/3}\label{group__zcl__types_ga8b41a3880f93b53bbae1e241aac4bdb2}
+
+\item 
+\hypertarget{group__zcl__types_ga18098b4db5dd09f98fdcb5db15cff375}{\#define {\bfseries Z\-C\-L\-\_\-\-S\-I\-Z\-E\-\_\-\-I\-N\-V\-A\-L\-I\-D}~-\/127}\label{group__zcl__types_ga18098b4db5dd09f98fdcb5db15cff375}
+
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{group__zcl__types_gadd8ad64f3ae1ee581114f9ca39f3621f}{typedef \hyperlink{group__hal__dos_ga09a1e304d66d35dd47daffee9731edaa}{uint32\-\_\-t} {\bfseries zcl\-\_\-utctime\-\_\-t}}\label{group__zcl__types_gadd8ad64f3ae1ee581114f9ca39f3621f}
+
+\item 
+typedef \hyperlink{group___s_x_a_ga4233297bd31be5c273d4fb0758cc54d7}{P\-A\-C\-K\-E\-D\-\_\-\-S\-T\-R\-U\-C\-T} \hyperlink{group__zcl__types_gafa65aea1347d7c84cd0019a7e013b8f5}{zcl\-\_\-timeofday\-\_\-t}
+\begin{DoxyCompactList}\small\item\em Time of Day (for \#\-Z\-C\-L\-\_\-\-T\-Y\-P\-E\-\_\-\-T\-I\-M\-E\-\_\-\-T\-O\-D Data Type) \end{DoxyCompactList}\item 
+typedef \hyperlink{group___s_x_a_ga4233297bd31be5c273d4fb0758cc54d7}{P\-A\-C\-K\-E\-D\-\_\-\-S\-T\-R\-U\-C\-T} \hyperlink{group__zcl__types_ga9ea8f9ebe25e922be76329748b8398b5}{zcl\-\_\-date\-\_\-t}
+\begin{DoxyCompactList}\small\item\em Date (for \hyperlink{group__zcl__types_gad5552b0825d941f0ccd7b1d797dc091b}{Z\-C\-L\-\_\-\-T\-Y\-P\-E\-\_\-\-T\-I\-M\-E\-\_\-\-D\-A\-T\-E} Data Type) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+zcl\-\_\-types\-\_\-debug int \hyperlink{group__zcl__types_ga6134ab27d38abd300d008345e21fe560}{zcl\-\_\-sizeof\-\_\-type} (\hyperlink{group__hal_gae1affc9ca37cfb624959c866a73f83c2}{uint8\-\_\-t} \hyperlink{group__zcl_ga1d127017fb298b889f4ba24752d08b8e}{type})
+\begin{DoxyCompactList}\small\item\em Return the number of octets used by a given Z\-C\-L datatype. \end{DoxyCompactList}\item 
+zcl\-\_\-types\-\_\-debug const char $\ast$ \hyperlink{group__zcl__types_ga798e87a8b8f240a33706b7bc37c9ede1}{zcl\-\_\-type\-\_\-name} (\hyperlink{group__hal_gae1affc9ca37cfb624959c866a73f83c2}{uint8\-\_\-t} \hyperlink{group__zcl_ga1d127017fb298b889f4ba24752d08b8e}{type})
+\begin{DoxyCompactList}\small\item\em Return a descriptive string for a given Z\-C\-L attribute type. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{group__zcl__types_ga7acca8be0094a19be6e308ac05924c4f}{\hyperlink{group__hal_gae1affc9ca37cfb624959c866a73f83c2}{uint8\-\_\-t} \hyperlink{group__zcl__types_ga7acca8be0094a19be6e308ac05924c4f}{minutes}}\label{group__zcl__types_ga7acca8be0094a19be6e308ac05924c4f}
+
+\begin{DoxyCompactList}\small\item\em 0-\/59 or 0xff for unused \end{DoxyCompactList}\item 
+\hypertarget{group__zcl__types_ga46729a903be1a03cdb248fb48d84d4f5}{\hyperlink{group__hal_gae1affc9ca37cfb624959c866a73f83c2}{uint8\-\_\-t} \hyperlink{group__zcl__types_ga46729a903be1a03cdb248fb48d84d4f5}{seconds}}\label{group__zcl__types_ga46729a903be1a03cdb248fb48d84d4f5}
+
+\begin{DoxyCompactList}\small\item\em 0-\/59 or 0xff for unused \end{DoxyCompactList}\item 
+\hypertarget{group__zcl__types_gaa9acbdd2fcf00f83919be503371fc8a2}{\hyperlink{group__hal_gae1affc9ca37cfb624959c866a73f83c2}{uint8\-\_\-t} \hyperlink{group__zcl__types_gaa9acbdd2fcf00f83919be503371fc8a2}{hundredths}}\label{group__zcl__types_gaa9acbdd2fcf00f83919be503371fc8a2}
+
+\begin{DoxyCompactList}\small\item\em 0-\/99 or 0xff for unused \end{DoxyCompactList}\item 
+\hypertarget{group__zcl__types_ga3e00faf7fbf9805e9ec4d2edd6339050}{\hyperlink{group__hal_gae1affc9ca37cfb624959c866a73f83c2}{uint8\-\_\-t} \hyperlink{group__zcl__types_ga3e00faf7fbf9805e9ec4d2edd6339050}{month}}\label{group__zcl__types_ga3e00faf7fbf9805e9ec4d2edd6339050}
+
+\begin{DoxyCompactList}\small\item\em 1-\/12 or 0xff for unused \end{DoxyCompactList}\item 
+\hypertarget{group__zcl__types_ga72369a1087b2aeffe374bb054cb97c12}{\hyperlink{group__hal_gae1affc9ca37cfb624959c866a73f83c2}{uint8\-\_\-t} \hyperlink{group__zcl__types_ga72369a1087b2aeffe374bb054cb97c12}{day}}\label{group__zcl__types_ga72369a1087b2aeffe374bb054cb97c12}
+
+\begin{DoxyCompactList}\small\item\em 1-\/31 or 0xff for unused \end{DoxyCompactList}\item 
+\hypertarget{group__zcl__types_gaf19fd1d4c2d4e9354c68c3b5546b7d41}{\hyperlink{group__hal_gae1affc9ca37cfb624959c866a73f83c2}{uint8\-\_\-t} \hyperlink{group__zcl__types_gaf19fd1d4c2d4e9354c68c3b5546b7d41}{dayofweek}}\label{group__zcl__types_gaf19fd1d4c2d4e9354c68c3b5546b7d41}
+
+\begin{DoxyCompactList}\small\item\em 1-\/7 (1 = Monday, 7 = Sunday) or 0xff for unused \end{DoxyCompactList}\item 
+const \hyperlink{group__hal_gae1affc9ca37cfb624959c866a73f83c2}{uint8\-\_\-t} \hyperlink{group__zcl__types_ga0f5737f60f1f37fb3b375e9fd5fe664d}{zcl\-\_\-type\-\_\-info} \mbox{[}256\mbox{]}
+\begin{DoxyCompactList}\small\item\em Table to store information on each Z\-C\-L datatype. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Z\-C\-L Null Types}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{group__zcl__types_ga6f933afd1ace68cae2aec5373a960a72}{\#define {\bfseries Z\-C\-L\-\_\-\-T\-Y\-P\-E\-\_\-\-N\-O\-\_\-\-D\-A\-T\-A}~0x00}\label{group__zcl__types_ga6f933afd1ace68cae2aec5373a960a72}
+
+\end{DoxyCompactItemize}
+\subsection*{Z\-C\-L General Data (discrete) Types}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{group__zcl__types_gacde7d69b6b6930a192a03dd95548a402}{\#define {\bfseries Z\-C\-L\-\_\-\-T\-Y\-P\-E\-\_\-\-G\-E\-N\-E\-R\-A\-L\-\_\-8\-B\-I\-T}~0x08}\label{group__zcl__types_gacde7d69b6b6930a192a03dd95548a402}
+
+\item 
+\hypertarget{group__zcl__types_ga9eba3bb33af0080097578430a8b49fc3}{\#define {\bfseries Z\-C\-L\-\_\-\-T\-Y\-P\-E\-\_\-\-G\-E\-N\-E\-R\-A\-L\-\_\-16\-B\-I\-T}~0x09}\label{group__zcl__types_ga9eba3bb33af0080097578430a8b49fc3}
+
+\item 
+\hypertarget{group__zcl__types_gae5e7ea67aa04595d9d73da5f64f71a52}{\#define {\bfseries Z\-C\-L\-\_\-\-T\-Y\-P\-E\-\_\-\-G\-E\-N\-E\-R\-A\-L\-\_\-24\-B\-I\-T}~0x0a}\label{group__zcl__types_gae5e7ea67aa04595d9d73da5f64f71a52}
+
+\item 
+\hypertarget{group__zcl__types_ga63038284c953826853ba8747a82baa91}{\#define {\bfseries Z\-C\-L\-\_\-\-T\-Y\-P\-E\-\_\-\-G\-E\-N\-E\-R\-A\-L\-\_\-32\-B\-I\-T}~0x0b}\label{group__zcl__types_ga63038284c953826853ba8747a82baa91}
+
+\item 
+\hypertarget{group__zcl__types_gab9b38a5f9e53db715ce6da47fee7982e}{\#define {\bfseries Z\-C\-L\-\_\-\-T\-Y\-P\-E\-\_\-\-G\-E\-N\-E\-R\-A\-L\-\_\-40\-B\-I\-T}~0x0c}\label{group__zcl__types_gab9b38a5f9e53db715ce6da47fee7982e}
+
+\item 
+\hypertarget{group__zcl__types_ga11e0d3943fb5db53a13a8612a9ac99a8}{\#define {\bfseries Z\-C\-L\-\_\-\-T\-Y\-P\-E\-\_\-\-G\-E\-N\-E\-R\-A\-L\-\_\-48\-B\-I\-T}~0x0d}\label{group__zcl__types_ga11e0d3943fb5db53a13a8612a9ac99a8}
+
+\item 
+\hypertarget{group__zcl__types_ga320d8cfb4b5674d25770ae6e7181b0fb}{\#define {\bfseries Z\-C\-L\-\_\-\-T\-Y\-P\-E\-\_\-\-G\-E\-N\-E\-R\-A\-L\-\_\-56\-B\-I\-T}~0x0e}\label{group__zcl__types_ga320d8cfb4b5674d25770ae6e7181b0fb}
+
+\item 
+\hypertarget{group__zcl__types_ga09599455943165aa8436142254c798da}{\#define {\bfseries Z\-C\-L\-\_\-\-T\-Y\-P\-E\-\_\-\-G\-E\-N\-E\-R\-A\-L\-\_\-64\-B\-I\-T}~0x0f}\label{group__zcl__types_ga09599455943165aa8436142254c798da}
+
+\end{DoxyCompactItemize}
+\subsection*{Z\-C\-L Logical (discrete) Types}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{group__zcl__types_gaf53d04b9e7617803f30ec7cea3539056}{\#define {\bfseries Z\-C\-L\-\_\-\-T\-Y\-P\-E\-\_\-\-L\-O\-G\-I\-C\-A\-L\-\_\-\-B\-O\-O\-L\-E\-A\-N}~0x10}\label{group__zcl__types_gaf53d04b9e7617803f30ec7cea3539056}
+
+\end{DoxyCompactItemize}
+\subsection*{Values for \#Z\-C\-L\-\_\-\-T\-Y\-P\-E\-\_\-\-L\-O\-G\-I\-C\-A\-L\-\_\-\-B\-O\-O\-L\-E\-A\-N}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{group__zcl__types_ga415c6e6b5f1ee8afa117a28e9dbbaf91}{\#define {\bfseries Z\-C\-L\-\_\-\-B\-O\-O\-L\-\_\-\-F\-A\-L\-S\-E}~0x00}\label{group__zcl__types_ga415c6e6b5f1ee8afa117a28e9dbbaf91}
+
+\item 
+\hypertarget{group__zcl__types_ga10619c77a809e680384955e6173e3512}{\#define {\bfseries Z\-C\-L\-\_\-\-B\-O\-O\-L\-\_\-\-T\-R\-U\-E}~0x01}\label{group__zcl__types_ga10619c77a809e680384955e6173e3512}
+
+\item 
+\hypertarget{group__zcl__types_gaa605ed8ffc1519c222f5cf380967dd54}{\#define {\bfseries Z\-C\-L\-\_\-\-B\-O\-O\-L\-\_\-\-I\-N\-V\-A\-L\-I\-D}~0xff}\label{group__zcl__types_gaa605ed8ffc1519c222f5cf380967dd54}
+
+\end{DoxyCompactItemize}
+\subsection*{Z\-C\-L Bitmap (discrete) Types}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{group__zcl__types_ga7db6654381619b6523ad087ad614d988}{\#define {\bfseries Z\-C\-L\-\_\-\-T\-Y\-P\-E\-\_\-\-B\-I\-T\-M\-A\-P\-\_\-8\-B\-I\-T}~0x18}\label{group__zcl__types_ga7db6654381619b6523ad087ad614d988}
+
+\item 
+\hypertarget{group__zcl__types_ga7f886220f979f20cda20f09f964add37}{\#define {\bfseries Z\-C\-L\-\_\-\-T\-Y\-P\-E\-\_\-\-B\-I\-T\-M\-A\-P\-\_\-16\-B\-I\-T}~0x19}\label{group__zcl__types_ga7f886220f979f20cda20f09f964add37}
+
+\item 
+\hypertarget{group__zcl__types_gab977574080a1b9109cbedeb50a8231ac}{\#define {\bfseries Z\-C\-L\-\_\-\-T\-Y\-P\-E\-\_\-\-B\-I\-T\-M\-A\-P\-\_\-24\-B\-I\-T}~0x1a}\label{group__zcl__types_gab977574080a1b9109cbedeb50a8231ac}
+
+\item 
+\hypertarget{group__zcl__types_gac8c24fce4d0c613af9f391c9752f4bc8}{\#define {\bfseries Z\-C\-L\-\_\-\-T\-Y\-P\-E\-\_\-\-B\-I\-T\-M\-A\-P\-\_\-32\-B\-I\-T}~0x1b}\label{group__zcl__types_gac8c24fce4d0c613af9f391c9752f4bc8}
+
+\item 
+\hypertarget{group__zcl__types_ga353d00de31faa429445b5d810db284d9}{\#define {\bfseries Z\-C\-L\-\_\-\-T\-Y\-P\-E\-\_\-\-B\-I\-T\-M\-A\-P\-\_\-40\-B\-I\-T}~0x1c}\label{group__zcl__types_ga353d00de31faa429445b5d810db284d9}
+
+\item 
+\hypertarget{group__zcl__types_ga0e677ca1f39270eb85ddc76661003b93}{\#define {\bfseries Z\-C\-L\-\_\-\-T\-Y\-P\-E\-\_\-\-B\-I\-T\-M\-A\-P\-\_\-48\-B\-I\-T}~0x1d}\label{group__zcl__types_ga0e677ca1f39270eb85ddc76661003b93}
+
+\item 
+\hypertarget{group__zcl__types_gace8326adb7b2c3547039391c137b9656}{\#define {\bfseries Z\-C\-L\-\_\-\-T\-Y\-P\-E\-\_\-\-B\-I\-T\-M\-A\-P\-\_\-56\-B\-I\-T}~0x1e}\label{group__zcl__types_gace8326adb7b2c3547039391c137b9656}
+
+\item 
+\hypertarget{group__zcl__types_gad4df5246a0d9037921bbae054f5e249c}{\#define {\bfseries Z\-C\-L\-\_\-\-T\-Y\-P\-E\-\_\-\-B\-I\-T\-M\-A\-P\-\_\-64\-B\-I\-T}~0x1f}\label{group__zcl__types_gad4df5246a0d9037921bbae054f5e249c}
+
+\end{DoxyCompactItemize}
+\subsection*{Z\-C\-L Unsigned integer (analog) Types}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{group__zcl__types_ga75582ab15d44904f07a44dc8a8e3b717}{\#define {\bfseries Z\-C\-L\-\_\-\-T\-Y\-P\-E\-\_\-\-U\-N\-S\-I\-G\-N\-E\-D\-\_\-8\-B\-I\-T}~0x20}\label{group__zcl__types_ga75582ab15d44904f07a44dc8a8e3b717}
+
+\item 
+\hypertarget{group__zcl__types_ga9045340841bc9478061ce8f87b4840da}{\#define {\bfseries Z\-C\-L\-\_\-\-T\-Y\-P\-E\-\_\-\-U\-N\-S\-I\-G\-N\-E\-D\-\_\-16\-B\-I\-T}~0x21}\label{group__zcl__types_ga9045340841bc9478061ce8f87b4840da}
+
+\item 
+\hypertarget{group__zcl__types_gaec9a6cd5a981c98207fa270670d7d777}{\#define {\bfseries Z\-C\-L\-\_\-\-T\-Y\-P\-E\-\_\-\-U\-N\-S\-I\-G\-N\-E\-D\-\_\-24\-B\-I\-T}~0x22}\label{group__zcl__types_gaec9a6cd5a981c98207fa270670d7d777}
+
+\item 
+\hypertarget{group__zcl__types_gab04603be22c673ef9c2fc3a2d2fcc837}{\#define {\bfseries Z\-C\-L\-\_\-\-T\-Y\-P\-E\-\_\-\-U\-N\-S\-I\-G\-N\-E\-D\-\_\-32\-B\-I\-T}~0x23}\label{group__zcl__types_gab04603be22c673ef9c2fc3a2d2fcc837}
+
+\item 
+\hypertarget{group__zcl__types_gacd1861149c2b59749b5642737adf5195}{\#define {\bfseries Z\-C\-L\-\_\-\-T\-Y\-P\-E\-\_\-\-U\-N\-S\-I\-G\-N\-E\-D\-\_\-40\-B\-I\-T}~0x24}\label{group__zcl__types_gacd1861149c2b59749b5642737adf5195}
+
+\item 
+\hypertarget{group__zcl__types_gaa7f4db744263603cc5405b69ade288df}{\#define {\bfseries Z\-C\-L\-\_\-\-T\-Y\-P\-E\-\_\-\-U\-N\-S\-I\-G\-N\-E\-D\-\_\-48\-B\-I\-T}~0x25}\label{group__zcl__types_gaa7f4db744263603cc5405b69ade288df}
+
+\item 
+\hypertarget{group__zcl__types_gaad5c0f4102ddb54ecd2c0f740faecd8a}{\#define {\bfseries Z\-C\-L\-\_\-\-T\-Y\-P\-E\-\_\-\-U\-N\-S\-I\-G\-N\-E\-D\-\_\-56\-B\-I\-T}~0x26}\label{group__zcl__types_gaad5c0f4102ddb54ecd2c0f740faecd8a}
+
+\item 
+\hypertarget{group__zcl__types_ga712121c9bf4ad400b2c08ba200538ee8}{\#define {\bfseries Z\-C\-L\-\_\-\-T\-Y\-P\-E\-\_\-\-U\-N\-S\-I\-G\-N\-E\-D\-\_\-64\-B\-I\-T}~0x27}\label{group__zcl__types_ga712121c9bf4ad400b2c08ba200538ee8}
+
+\end{DoxyCompactItemize}
+\subsection*{Z\-C\-L Signed integer (analog) Types}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{group__zcl__types_ga8df1144075b3c768717e38f750ff4d2d}{\#define {\bfseries Z\-C\-L\-\_\-\-T\-Y\-P\-E\-\_\-\-S\-I\-G\-N\-E\-D\-\_\-8\-B\-I\-T}~0x28}\label{group__zcl__types_ga8df1144075b3c768717e38f750ff4d2d}
+
+\item 
+\hypertarget{group__zcl__types_ga8ee8ec849fb738d70b81ce4b4af8ea93}{\#define {\bfseries Z\-C\-L\-\_\-\-T\-Y\-P\-E\-\_\-\-S\-I\-G\-N\-E\-D\-\_\-16\-B\-I\-T}~0x29}\label{group__zcl__types_ga8ee8ec849fb738d70b81ce4b4af8ea93}
+
+\item 
+\hypertarget{group__zcl__types_ga5d2c6473dec5ef0620e49a064e1b5040}{\#define {\bfseries Z\-C\-L\-\_\-\-T\-Y\-P\-E\-\_\-\-S\-I\-G\-N\-E\-D\-\_\-24\-B\-I\-T}~0x2a}\label{group__zcl__types_ga5d2c6473dec5ef0620e49a064e1b5040}
+
+\item 
+\hypertarget{group__zcl__types_gadb5ed867f966c7d280a59abd421004a9}{\#define {\bfseries Z\-C\-L\-\_\-\-T\-Y\-P\-E\-\_\-\-S\-I\-G\-N\-E\-D\-\_\-32\-B\-I\-T}~0x2b}\label{group__zcl__types_gadb5ed867f966c7d280a59abd421004a9}
+
+\item 
+\hypertarget{group__zcl__types_ga194ccd242604887fbaa41cd427088643}{\#define {\bfseries Z\-C\-L\-\_\-\-T\-Y\-P\-E\-\_\-\-S\-I\-G\-N\-E\-D\-\_\-40\-B\-I\-T}~0x2c}\label{group__zcl__types_ga194ccd242604887fbaa41cd427088643}
+
+\item 
+\hypertarget{group__zcl__types_gad6d48bb79a8dc729807f137924d26920}{\#define {\bfseries Z\-C\-L\-\_\-\-T\-Y\-P\-E\-\_\-\-S\-I\-G\-N\-E\-D\-\_\-48\-B\-I\-T}~0x2d}\label{group__zcl__types_gad6d48bb79a8dc729807f137924d26920}
+
+\item 
+\hypertarget{group__zcl__types_ga56a4716c3e4b5e8fd3b9bc4d944c5533}{\#define {\bfseries Z\-C\-L\-\_\-\-T\-Y\-P\-E\-\_\-\-S\-I\-G\-N\-E\-D\-\_\-56\-B\-I\-T}~0x2e}\label{group__zcl__types_ga56a4716c3e4b5e8fd3b9bc4d944c5533}
+
+\item 
+\hypertarget{group__zcl__types_ga05040382bcbb409fdc93d7130057e3c6}{\#define {\bfseries Z\-C\-L\-\_\-\-T\-Y\-P\-E\-\_\-\-S\-I\-G\-N\-E\-D\-\_\-64\-B\-I\-T}~0x2f}\label{group__zcl__types_ga05040382bcbb409fdc93d7130057e3c6}
+
+\end{DoxyCompactItemize}
+\subsection*{Z\-C\-L Enumeration (discrete) Types}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{group__zcl__types_ga941ea2cc51c3a17d4ae9e095ae3a864f}{\#define {\bfseries Z\-C\-L\-\_\-\-T\-Y\-P\-E\-\_\-\-E\-N\-U\-M\-\_\-8\-B\-I\-T}~0x30}\label{group__zcl__types_ga941ea2cc51c3a17d4ae9e095ae3a864f}
+
+\item 
+\hypertarget{group__zcl__types_ga6688181319502f973473d2cdf17e6260}{\#define {\bfseries Z\-C\-L\-\_\-\-T\-Y\-P\-E\-\_\-\-E\-N\-U\-M\-\_\-16\-B\-I\-T}~0x31}\label{group__zcl__types_ga6688181319502f973473d2cdf17e6260}
+
+\end{DoxyCompactItemize}
+\subsection*{Z\-C\-L Floating point (analog) Types}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{group__zcl__types_ga8b1e3e1ec66f72995346c295e8ba3fe7}{\#define \hyperlink{group__zcl__types_ga8b1e3e1ec66f72995346c295e8ba3fe7}{Z\-C\-L\-\_\-\-T\-Y\-P\-E\-\_\-\-F\-L\-O\-A\-T\-\_\-\-S\-E\-M\-I}~0x38}\label{group__zcl__types_ga8b1e3e1ec66f72995346c295e8ba3fe7}
+
+\begin{DoxyCompactList}\small\item\em semi-\/precision (16-\/bit) floating point (unsupported) \end{DoxyCompactList}\item 
+\hypertarget{group__zcl__types_ga4b22fe5da2b5395e0cbd178054702602}{\#define \hyperlink{group__zcl__types_ga4b22fe5da2b5395e0cbd178054702602}{Z\-C\-L\-\_\-\-T\-Y\-P\-E\-\_\-\-F\-L\-O\-A\-T\-\_\-\-S\-I\-N\-G\-L\-E}~0x39}\label{group__zcl__types_ga4b22fe5da2b5395e0cbd178054702602}
+
+\begin{DoxyCompactList}\small\item\em single-\/precision (32-\/bit) I\-E\-E\-E 754 floating point \end{DoxyCompactList}\item 
+\hypertarget{group__zcl__types_ga447b33931d4cb320761a0e5034f494b2}{\#define \hyperlink{group__zcl__types_ga447b33931d4cb320761a0e5034f494b2}{Z\-C\-L\-\_\-\-T\-Y\-P\-E\-\_\-\-F\-L\-O\-A\-T\-\_\-\-D\-O\-U\-B\-L\-E}~0x3a}\label{group__zcl__types_ga447b33931d4cb320761a0e5034f494b2}
+
+\begin{DoxyCompactList}\small\item\em double-\/precision (64-\/bit) I\-E\-E\-E 754 floating point \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Z\-C\-L String (discrete) Types}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{group__zcl__types_ga7cd063b0a77ca0286b0dcc177e4251c5}{\#define \hyperlink{group__zcl__types_ga7cd063b0a77ca0286b0dcc177e4251c5}{Z\-C\-L\-\_\-\-T\-Y\-P\-E\-\_\-\-S\-T\-R\-I\-N\-G\-\_\-\-O\-C\-T\-E\-T}~0x41}\label{group__zcl__types_ga7cd063b0a77ca0286b0dcc177e4251c5}
+
+\begin{DoxyCompactList}\small\item\em First octet is number of bytes in string or 0xff for invalid. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__zcl__types_ga64286e0c69e0ed344a6eb8756ac81f95}{Z\-C\-L\-\_\-\-T\-Y\-P\-E\-\_\-\-S\-T\-R\-I\-N\-G\-\_\-\-C\-H\-A\-R}~0x42
+\begin{DoxyCompactList}\small\item\em First octet is number of characters in string or 0xff for invalid. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__zcl__types_ga567563a365e2dddaced101de02fd9128}{Z\-C\-L\-\_\-\-T\-Y\-P\-E\-\_\-\-S\-T\-R\-I\-N\-G\-\_\-\-L\-O\-N\-G\-\_\-\-O\-C\-T\-E\-T}~0x43
+\begin{DoxyCompactList}\small\item\em First two octets are number of bytes in string or 0xffff for invalid. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__zcl__types_gabb23537eaae74cc55233355c6ce5979e}{Z\-C\-L\-\_\-\-T\-Y\-P\-E\-\_\-\-S\-T\-R\-I\-N\-G\-\_\-\-L\-O\-N\-G\-\_\-\-C\-H\-A\-R}~0x44
+\begin{DoxyCompactList}\small\item\em First two octets are number of characters in string or 0xffff for invalid. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Z\-C\-L Ordered Sequence (discrete) Types}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{group__zcl__types_ga5f609d45e4eb91ae4187bf912e4f870b}{\#define \hyperlink{group__zcl__types_ga5f609d45e4eb91ae4187bf912e4f870b}{Z\-C\-L\-\_\-\-T\-Y\-P\-E\-\_\-\-A\-R\-R\-A\-Y}~0x48}\label{group__zcl__types_ga5f609d45e4eb91ae4187bf912e4f870b}
+
+\begin{DoxyCompactList}\small\item\em Z\-C\-L Array (unsupported) \end{DoxyCompactList}\item 
+\hypertarget{group__zcl__types_ga2d94a79998fd3cdd13a2cd9ed25b88cb}{\#define \hyperlink{group__zcl__types_ga2d94a79998fd3cdd13a2cd9ed25b88cb}{Z\-C\-L\-\_\-\-T\-Y\-P\-E\-\_\-\-S\-T\-R\-U\-C\-T}~0x4\-C}\label{group__zcl__types_ga2d94a79998fd3cdd13a2cd9ed25b88cb}
+
+\begin{DoxyCompactList}\small\item\em Z\-C\-L Struct (unsupported) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Z\-C\-L Collection (discrete) Types}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{group__zcl__types_ga21ab004d25434d25e1e17865e895f1a7}{\#define \hyperlink{group__zcl__types_ga21ab004d25434d25e1e17865e895f1a7}{Z\-C\-L\-\_\-\-T\-Y\-P\-E\-\_\-\-S\-E\-T}~0x50}\label{group__zcl__types_ga21ab004d25434d25e1e17865e895f1a7}
+
+\begin{DoxyCompactList}\small\item\em Z\-C\-L Set (unsupported) \end{DoxyCompactList}\item 
+\hypertarget{group__zcl__types_gacd6bd1e469abc59bab04e247bc85997b}{\#define \hyperlink{group__zcl__types_gacd6bd1e469abc59bab04e247bc85997b}{Z\-C\-L\-\_\-\-T\-Y\-P\-E\-\_\-\-B\-A\-G}~0x51}\label{group__zcl__types_gacd6bd1e469abc59bab04e247bc85997b}
+
+\begin{DoxyCompactList}\small\item\em Z\-C\-L Bag (unsupported) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Z\-C\-L Time (analog) Types}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{group__zcl__types_gaa6fdd0dcc77890280046eb1db9f79516}{\#define \hyperlink{group__zcl__types_gaa6fdd0dcc77890280046eb1db9f79516}{Z\-C\-L\-\_\-\-T\-Y\-P\-E\-\_\-\-T\-I\-M\-E\-\_\-\-T\-I\-M\-E\-O\-F\-D\-A\-Y}~0x\-E0}\label{group__zcl__types_gaa6fdd0dcc77890280046eb1db9f79516}
+
+\begin{DoxyCompactList}\small\item\em see zcl\-\_\-timeofday\-\_\-t \end{DoxyCompactList}\item 
+\hypertarget{group__zcl__types_gad5552b0825d941f0ccd7b1d797dc091b}{\#define \hyperlink{group__zcl__types_gad5552b0825d941f0ccd7b1d797dc091b}{Z\-C\-L\-\_\-\-T\-Y\-P\-E\-\_\-\-T\-I\-M\-E\-\_\-\-D\-A\-T\-E}~0x\-E1}\label{group__zcl__types_gad5552b0825d941f0ccd7b1d797dc091b}
+
+\begin{DoxyCompactList}\small\item\em see zcl\-\_\-date\-\_\-t \end{DoxyCompactList}\item 
+\hypertarget{group__zcl__types_ga8f678e97557cb052c0df4be97e9f1e82}{\#define \hyperlink{group__zcl__types_ga8f678e97557cb052c0df4be97e9f1e82}{Z\-C\-L\-\_\-\-T\-Y\-P\-E\-\_\-\-T\-I\-M\-E\-\_\-\-U\-T\-C\-T\-I\-M\-E}~0x\-E2}\label{group__zcl__types_ga8f678e97557cb052c0df4be97e9f1e82}
+
+\begin{DoxyCompactList}\small\item\em number of seconds (stored in uint32\-\_\-t) since Midnight on 1/1/2000 U\-T\-C \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Z\-C\-L Identifier (discrete) Types}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{group__zcl__types_gabf44aa40c12655d86c012c551bb6834e}{\#define \hyperlink{group__zcl__types_gabf44aa40c12655d86c012c551bb6834e}{Z\-C\-L\-\_\-\-T\-Y\-P\-E\-\_\-\-I\-D\-\_\-\-C\-L\-U\-S\-T\-E\-R}~0x\-E8}\label{group__zcl__types_gabf44aa40c12655d86c012c551bb6834e}
+
+\begin{DoxyCompactList}\small\item\em 16-\/bit cluster I\-D \end{DoxyCompactList}\item 
+\hypertarget{group__zcl__types_ga1dc09447fe0d1f047c4554975a11b3fa}{\#define \hyperlink{group__zcl__types_ga1dc09447fe0d1f047c4554975a11b3fa}{Z\-C\-L\-\_\-\-T\-Y\-P\-E\-\_\-\-I\-D\-\_\-\-A\-T\-T\-R\-I\-B}~0x\-E9}\label{group__zcl__types_ga1dc09447fe0d1f047c4554975a11b3fa}
+
+\begin{DoxyCompactList}\small\item\em 16-\/bit attribute I\-D \end{DoxyCompactList}\item 
+\hypertarget{group__zcl__types_ga59fe9efad9f60ec8176a13c0ab1019ac}{\#define \hyperlink{group__zcl__types_ga59fe9efad9f60ec8176a13c0ab1019ac}{Z\-C\-L\-\_\-\-T\-Y\-P\-E\-\_\-\-I\-D\-\_\-\-B\-A\-C\-N\-E\-T\-\_\-\-O\-I\-D}~0x\-E\-A}\label{group__zcl__types_ga59fe9efad9f60ec8176a13c0ab1019ac}
+
+\begin{DoxyCompactList}\small\item\em 32-\/bit B\-A\-Cnet O\-I\-D \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Z\-C\-L Miscellaneous Types}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{group__zcl__types_ga13bc9499fe6127a5ce30c31f3ccae2df}{\#define \hyperlink{group__zcl__types_ga13bc9499fe6127a5ce30c31f3ccae2df}{Z\-C\-L\-\_\-\-T\-Y\-P\-E\-\_\-\-I\-E\-E\-E\-\_\-\-A\-D\-D\-R}~0x\-F0}\label{group__zcl__types_ga13bc9499fe6127a5ce30c31f3ccae2df}
+
+\begin{DoxyCompactList}\small\item\em 64-\/bit I\-E\-E\-E address \end{DoxyCompactList}\item 
+\hypertarget{group__zcl__types_gaa430fee3f4e5e09767b9fc969f73cf2f}{\#define \hyperlink{group__zcl__types_gaa430fee3f4e5e09767b9fc969f73cf2f}{Z\-C\-L\-\_\-\-T\-Y\-P\-E\-\_\-\-S\-E\-C\-U\-R\-I\-T\-Y\-\_\-\-K\-E\-Y}~0x\-F1}\label{group__zcl__types_gaa430fee3f4e5e09767b9fc969f73cf2f}
+
+\begin{DoxyCompactList}\small\item\em 128-\/bit security key \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Z\-C\-L Unknown Type}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{group__zcl__types_ga856105c2b5037b8406a294b668dfe755}{\#define \hyperlink{group__zcl__types_ga856105c2b5037b8406a294b668dfe755}{Z\-C\-L\-\_\-\-T\-Y\-P\-E\-\_\-\-U\-N\-K\-N\-O\-W\-N}~0x\-F\-F}\label{group__zcl__types_ga856105c2b5037b8406a294b668dfe755}
+
+\begin{DoxyCompactList}\small\item\em Unknown Z\-C\-L Type. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Settings for zcl\-\_\-type\-\_\-info\mbox{[}\mbox{]}}
+\label{_amgrpc5b79f6c3ee6519b88128e632fa3f35f}%
+These bitfields should only be used internally by the library, and should be exposed to user code via public A\-P\-Is. \begin{DoxyCompactItemize}
+\item 
+\hypertarget{group__zcl__types_ga7609ed68cf4399cb2c09799ecedfdbe0}{\#define \hyperlink{group__zcl__types_ga7609ed68cf4399cb2c09799ecedfdbe0}{Z\-C\-L\-\_\-\-T\-\_\-\-I\-N\-V\-A\-L\-I\-D}~0x0\-F}\label{group__zcl__types_ga7609ed68cf4399cb2c09799ecedfdbe0}
+
+\begin{DoxyCompactList}\small\item\em Not a valid Z\-C\-L type. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__zcl__types_ga3e9bf95af4f58a0c9c5c34639b0dda29}{Z\-C\-L\-\_\-\-T\-\_\-\-D\-I\-S\-C\-R\-E\-T\-E}~0x80
+\begin{DoxyCompactList}\small\item\em Discrete values (bitmap, enum, etc.) that can't be added/subtracted or (if reportable) have a reportable change. \end{DoxyCompactList}\item 
+\hypertarget{group__zcl__types_ga7b609984d4662f83a2248d1f485fd4ad}{\#define \hyperlink{group__zcl__types_ga7b609984d4662f83a2248d1f485fd4ad}{Z\-C\-L\-\_\-\-T\-\_\-\-A\-N\-A\-L\-O\-G}~0x20}\label{group__zcl__types_ga7b609984d4662f83a2248d1f485fd4ad}
+
+\begin{DoxyCompactList}\small\item\em If an attribute isn't discrete, it's analog (signed, unsigned, float, etc.) \end{DoxyCompactList}\item 
+\hypertarget{group__zcl__types_gaacf8dcd439ce0388d90681aec545e4e3}{\#define \hyperlink{group__zcl__types_gaacf8dcd439ce0388d90681aec545e4e3}{Z\-C\-L\-\_\-\-T\-\_\-\-S\-I\-G\-N\-E\-D}~0x40}\label{group__zcl__types_gaacf8dcd439ce0388d90681aec545e4e3}
+
+\begin{DoxyCompactList}\small\item\em Type is signed (default is unsigned). Only analog types can be signed. \end{DoxyCompactList}\item 
+\hypertarget{group__zcl__types_gaad99789b034d1ed0a2825e075bba62af}{\#define \hyperlink{group__zcl__types_gaad99789b034d1ed0a2825e075bba62af}{Z\-C\-L\-\_\-\-T\-\_\-\-F\-L\-O\-A\-T}~0x10}\label{group__zcl__types_gaad99789b034d1ed0a2825e075bba62af}
+
+\begin{DoxyCompactList}\small\item\em Type is floating point (single, double or semi-\/precision). \end{DoxyCompactList}\item 
+\#define \hyperlink{group__zcl__types_gab0e5c23a0877c17fde12043c85728c29}{Z\-C\-L\-\_\-\-T\-\_\-\-R\-E\-P\-O\-R\-T\-A\-B\-L\-E}~(\hyperlink{group__zcl__types_ga7b609984d4662f83a2248d1f485fd4ad}{Z\-C\-L\-\_\-\-T\-\_\-\-A\-N\-A\-L\-O\-G} $|$ \hyperlink{group__zcl__types_ga3e9bf95af4f58a0c9c5c34639b0dda29}{Z\-C\-L\-\_\-\-T\-\_\-\-D\-I\-S\-C\-R\-E\-T\-E})
+\begin{DoxyCompactList}\small\item\em Type is reportable. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__zcl__types_gaa49518f03f9632a55b3e1c4d4c68b60c}{Z\-C\-L\-\_\-\-T\-\_\-\-S\-I\-Z\-E\-\_\-\-M\-A\-S\-K}~0x0\-F
+\begin{DoxyCompactList}\small\item\em 0x00 to 0x08 represent 0 to 8 bytes; 0x0\-C is 16 bytes; 0x0\-D is two-\/octet size prefix, 0x0\-E is one-\/octet size prefix; 0x0\-F is invalid; 0x09, 0x0\-A and 0x0\-B are still available to encode special size information. \end{DoxyCompactList}\item 
+\hypertarget{group__zcl__types_ga5f381526f4ac9adac8cb07b7135e737d}{\#define \hyperlink{group__zcl__types_ga5f381526f4ac9adac8cb07b7135e737d}{Z\-C\-L\-\_\-\-T\-\_\-\-S\-I\-Z\-E\-\_\-\-I\-N\-V\-A\-L\-I\-D}~(\hyperlink{group__zcl__types_ga7609ed68cf4399cb2c09799ecedfdbe0}{Z\-C\-L\-\_\-\-T\-\_\-\-I\-N\-V\-A\-L\-I\-D} \& \hyperlink{group__zcl__types_gaa49518f03f9632a55b3e1c4d4c68b60c}{Z\-C\-L\-\_\-\-T\-\_\-\-S\-I\-Z\-E\-\_\-\-M\-A\-S\-K})}\label{group__zcl__types_ga5f381526f4ac9adac8cb07b7135e737d}
+
+\begin{DoxyCompactList}\small\item\em Macro used when type is invalid or doesn't have a known size. \end{DoxyCompactList}\item 
+\hypertarget{group__zcl__types_ga5121bb1f631a19b8a50980325ee67c26}{\#define \hyperlink{group__zcl__types_ga5121bb1f631a19b8a50980325ee67c26}{Z\-C\-L\-\_\-\-T\-\_\-\-S\-I\-Z\-E\-\_\-\-S\-H\-O\-R\-T}~0x0\-E}\label{group__zcl__types_ga5121bb1f631a19b8a50980325ee67c26}
+
+\begin{DoxyCompactList}\small\item\em First octet of attribute's value is its size. \end{DoxyCompactList}\item 
+\hypertarget{group__zcl__types_gaeee15697985458060bf5f85c00c15a41}{\#define \hyperlink{group__zcl__types_gaeee15697985458060bf5f85c00c15a41}{Z\-C\-L\-\_\-\-T\-\_\-\-S\-I\-Z\-E\-\_\-\-L\-O\-N\-G}~0x0\-D}\label{group__zcl__types_gaeee15697985458060bf5f85c00c15a41}
+
+\begin{DoxyCompactList}\small\item\em First two octets of attribute's value are its size. \end{DoxyCompactList}\item 
+\hypertarget{group__zcl__types_gad7a8d44d98b6872f187b1e0748ec7417}{\#define \hyperlink{group__zcl__types_gad7a8d44d98b6872f187b1e0748ec7417}{Z\-C\-L\-\_\-\-T\-\_\-\-S\-I\-Z\-E\-\_\-128\-B\-I\-T}~0x0\-C}\label{group__zcl__types_gad7a8d44d98b6872f187b1e0748ec7417}
+
+\begin{DoxyCompactList}\small\item\em 128-\/bit (16-\/byte) value \end{DoxyCompactList}\item 
+\hypertarget{group__zcl__types_ga7691965c8c435fdafe30025c05817cf9}{\#define \hyperlink{group__zcl__types_ga7691965c8c435fdafe30025c05817cf9}{Z\-C\-L\-\_\-\-T\-\_\-\-S\-I\-Z\-E\-\_\-\-V\-A\-R\-I\-A\-B\-L\-E}~0x0\-B}\label{group__zcl__types_ga7691965c8c435fdafe30025c05817cf9}
+
+\begin{DoxyCompactList}\small\item\em variable-\/length value (array, set, bag, struct) \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Macros and structures related to the Z\-C\-L datatypes. All multi-\/byte types are little-\/endian. 

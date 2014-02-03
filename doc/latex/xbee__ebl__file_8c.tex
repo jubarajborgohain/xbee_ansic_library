@@ -1,0 +1,183 @@
+\hypertarget{xbee__ebl__file_8c}{\section{src/xbee/xbee\-\_\-ebl\-\_\-file.c File Reference}
+\label{xbee__ebl__file_8c}\index{src/xbee/xbee\-\_\-ebl\-\_\-file.\-c@{src/xbee/xbee\-\_\-ebl\-\_\-file.\-c}}
+}
+
+
+Code for decoding headers from Ember firmware images (.E\-B\-L files).  
+
+
+{\ttfamily \#include $<$stdio.\-h$>$}\\*
+{\ttfamily \#include $<$time.\-h$>$}\\*
+{\ttfamily \#include \char`\"{}xbee/byteorder.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}xbee/ebl\-\_\-file.\-h\char`\"{}}\\*
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+const char $\ast$ \hyperlink{xbee__ebl__file_8c_ab49eaa8fe613ec3a2af9b1ccbc3384ac}{ebl\-\_\-target\-\_\-desc} (\hyperlink{group__hal_gae1affc9ca37cfb624959c866a73f83c2}{uint8\-\_\-t} plat\-\_\-info, \hyperlink{group__hal_gae1affc9ca37cfb624959c866a73f83c2}{uint8\-\_\-t} micro\-\_\-info)
+\begin{DoxyCompactList}\small\item\em Returns a description of the platform based on the plat\-\_\-info and micro\-\_\-info fields in the \hyperlink{structem3xx__header__t}{em3xx\-\_\-header\-\_\-t} structure. \end{DoxyCompactList}\item 
+const char $\ast$ \hyperlink{xbee__ebl__file_8c_abc16929ba18cdba12557acb5d41edb74}{ebl\-\_\-phy\-\_\-desc} (\hyperlink{group__hal_gae1affc9ca37cfb624959c866a73f83c2}{uint8\-\_\-t} phy\-\_\-info)
+\begin{DoxyCompactList}\small\item\em Returns a description of the P\-H\-Y based on the phy\-\_\-info field in the \hyperlink{structem3xx__header__t}{em3xx\-\_\-header\-\_\-t} structure. \end{DoxyCompactList}\item 
+\hypertarget{xbee__ebl__file_8c_a56551782258aa80b5cd3fba01f0d8756}{void {\bfseries ebl\-\_\-header\-\_\-dump\-\_\-em2xx} (const \hyperlink{structem2xx__header__t}{em2xx\-\_\-header\-\_\-t} $\ast$ebl, \hyperlink{group__hal_ga5a8b2dc9e45a9ee81a94ef304fb62505}{uint16\-\_\-t} flags)}\label{xbee__ebl__file_8c_a56551782258aa80b5cd3fba01f0d8756}
+
+\item 
+\hypertarget{xbee__ebl__file_8c_aa7014243a056d8c7803afa1f7d5c5a55}{void {\bfseries ebl\-\_\-header\-\_\-dump\-\_\-em3xx} (const \hyperlink{structem3xx__header__t}{em3xx\-\_\-header\-\_\-t} $\ast$ebl, \hyperlink{group__hal_ga5a8b2dc9e45a9ee81a94ef304fb62505}{uint16\-\_\-t} flags)}\label{xbee__ebl__file_8c_aa7014243a056d8c7803afa1f7d5c5a55}
+
+\item 
+int \hyperlink{xbee__ebl__file_8c_a4c6f1be2b49287396a96ed667f3963d5}{ebl\-\_\-header\-\_\-dump} (const void $\ast$buffer, \hyperlink{group__hal_ga5a8b2dc9e45a9ee81a94ef304fb62505}{uint16\-\_\-t} flags)
+\begin{DoxyCompactList}\small\item\em Prints a description of the .E\-B\-L file header. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const \hyperlink{structmicro__info__t}{micro\-\_\-info\-\_\-t} {\bfseries platform\-\_\-avr} \mbox{[}$\,$\mbox{]}
+\item 
+const \hyperlink{structmicro__info__t}{micro\-\_\-info\-\_\-t} {\bfseries platform\-\_\-xap2b} \mbox{[}$\,$\mbox{]}
+\item 
+const \hyperlink{structmicro__info__t}{micro\-\_\-info\-\_\-t} {\bfseries platform\-\_\-cortex\-\_\-m3} \mbox{[}$\,$\mbox{]}
+\item 
+const \hyperlink{structplatform__info__t}{platform\-\_\-info\-\_\-t} \hyperlink{xbee__ebl__file_8c_af85d30c72e504e8335d881bd864609e2}{platform\-\_\-info} \mbox{[}$\,$\mbox{]}
+\begin{DoxyCompactList}\small\item\em Table of tables used to decode plat\-\_\-info and micro\-\_\-info fields from .E\-B\-L file header. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Code for decoding headers from Ember firmware images (.E\-B\-L files). Documented in \hyperlink{ebl__file_8h}{xbee/ebl\-\_\-file.\-h}. 
+
+\subsection{Function Documentation}
+\hypertarget{xbee__ebl__file_8c_a4c6f1be2b49287396a96ed667f3963d5}{\index{xbee\-\_\-ebl\-\_\-file.\-c@{xbee\-\_\-ebl\-\_\-file.\-c}!ebl\-\_\-header\-\_\-dump@{ebl\-\_\-header\-\_\-dump}}
+\index{ebl\-\_\-header\-\_\-dump@{ebl\-\_\-header\-\_\-dump}!xbee_ebl_file.c@{xbee\-\_\-ebl\-\_\-file.\-c}}
+\subsubsection[{ebl\-\_\-header\-\_\-dump}]{\setlength{\rightskip}{0pt plus 5cm}int ebl\-\_\-header\-\_\-dump (
+\begin{DoxyParamCaption}
+\item[{const void $\ast$}]{buffer, }
+\item[{{\bf uint16\-\_\-t}}]{flags}
+\end{DoxyParamCaption}
+)}}\label{xbee__ebl__file_8c_a4c6f1be2b49287396a96ed667f3963d5}
+
+
+Prints a description of the .E\-B\-L file header. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em buffer} & buffer with first 128 bytes of .E\-B\-L file \\
+\hline
+\mbox{\tt in}  & {\em flags} & combination of the following macros\-:
+\begin{DoxyItemize}
+\item \#\-E\-B\-L\-\_\-\-H\-E\-A\-D\-E\-R\-\_\-\-D\-U\-M\-P\-\_\-\-T\-A\-R\-G\-E\-T\-\_\-\-D\-E\-S\-C -\/ target description (E\-M3\-X\-X only)
+\item \#\-E\-B\-L\-\_\-\-H\-E\-A\-D\-E\-R\-\_\-\-D\-U\-M\-P\-\_\-\-P\-H\-Y\-\_\-\-D\-E\-S\-C -\/ P\-H\-Y description (E\-M3\-X\-X only)
+\item \#\-E\-B\-L\-\_\-\-H\-E\-A\-D\-E\-R\-\_\-\-D\-U\-M\-P\-\_\-\-E\-M\-B\-E\-R\-\_\-\-V\-E\-R -\/ Ember stack version (E\-M3\-X\-X only)
+\item \#\-E\-B\-L\-\_\-\-H\-E\-A\-D\-E\-R\-\_\-\-D\-U\-M\-P\-\_\-\-T\-I\-M\-E\-S\-T\-A\-M\-P -\/ build date/timestamp
+\item \#\-E\-B\-L\-\_\-\-H\-E\-A\-D\-E\-R\-\_\-\-D\-U\-M\-P\-\_\-\-I\-M\-A\-G\-E\-\_\-\-I\-N\-F\-O -\/ \char`\"{}image info\char`\"{} string
+\item \#\-E\-B\-L\-\_\-\-H\-E\-A\-D\-E\-R\-\_\-\-D\-U\-M\-P\-\_\-\-E\-V\-E\-R\-Y\-T\-H\-I\-N\-G -\/ information on all possible fields
+\end{DoxyItemize}\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em -\/\-E\-I\-N\-V\-A\-L} & invalid parameter passed to function \\
+\hline
+{\em -\/\-E\-I\-L\-S\-E\-Q} & not a valid E\-B\-L file header \\
+\hline
+{\em 0} & parsed header and printed info \\
+\hline
+\end{DoxyRetVals}
+
+
+References be16toh, ebl\-\_\-file\-\_\-header\-\_\-t\-::common, ebl\-\_\-file\-\_\-header\-\_\-t\-::ebltag\-\_\-be, E\-I\-L\-S\-E\-Q, E\-I\-N\-V\-A\-L, I\-M\-A\-G\-E\-\_\-\-S\-I\-G\-N\-A\-T\-U\-R\-E\-\_\-\-E\-M250, I\-M\-A\-G\-E\-\_\-\-S\-I\-G\-N\-A\-T\-U\-R\-E\-\_\-\-E\-M260, I\-M\-A\-G\-E\-\_\-\-S\-I\-G\-N\-A\-T\-U\-R\-E\-\_\-\-E\-M350, and ebl\-\_\-file\-\_\-header\-\_\-t\-::signature\-\_\-be.
+
+\hypertarget{xbee__ebl__file_8c_abc16929ba18cdba12557acb5d41edb74}{\index{xbee\-\_\-ebl\-\_\-file.\-c@{xbee\-\_\-ebl\-\_\-file.\-c}!ebl\-\_\-phy\-\_\-desc@{ebl\-\_\-phy\-\_\-desc}}
+\index{ebl\-\_\-phy\-\_\-desc@{ebl\-\_\-phy\-\_\-desc}!xbee_ebl_file.c@{xbee\-\_\-ebl\-\_\-file.\-c}}
+\subsubsection[{ebl\-\_\-phy\-\_\-desc}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ ebl\-\_\-phy\-\_\-desc (
+\begin{DoxyParamCaption}
+\item[{{\bf uint8\-\_\-t}}]{phy\-\_\-info}
+\end{DoxyParamCaption}
+)}}\label{xbee__ebl__file_8c_abc16929ba18cdba12557acb5d41edb74}
+
+
+Returns a description of the P\-H\-Y based on the phy\-\_\-info field in the \hyperlink{structem3xx__header__t}{em3xx\-\_\-header\-\_\-t} structure. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em phy\-\_\-info} & phy\-\_\-info field from E\-M3xx file header\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+String describing P\-H\-Y or, for uknown values, \char`\"{}\-P\-H\-Y X\-X\char`\"{} where X\-X is phy\-\_\-info in hex. 
+\end{DoxyReturn}
+\hypertarget{xbee__ebl__file_8c_ab49eaa8fe613ec3a2af9b1ccbc3384ac}{\index{xbee\-\_\-ebl\-\_\-file.\-c@{xbee\-\_\-ebl\-\_\-file.\-c}!ebl\-\_\-target\-\_\-desc@{ebl\-\_\-target\-\_\-desc}}
+\index{ebl\-\_\-target\-\_\-desc@{ebl\-\_\-target\-\_\-desc}!xbee_ebl_file.c@{xbee\-\_\-ebl\-\_\-file.\-c}}
+\subsubsection[{ebl\-\_\-target\-\_\-desc}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ ebl\-\_\-target\-\_\-desc (
+\begin{DoxyParamCaption}
+\item[{{\bf uint8\-\_\-t}}]{plat\-\_\-info, }
+\item[{{\bf uint8\-\_\-t}}]{micro\-\_\-info}
+\end{DoxyParamCaption}
+)}}\label{xbee__ebl__file_8c_ab49eaa8fe613ec3a2af9b1ccbc3384ac}
+
+
+Returns a description of the platform based on the plat\-\_\-info and micro\-\_\-info fields in the \hyperlink{structem3xx__header__t}{em3xx\-\_\-header\-\_\-t} structure. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em plat\-\_\-info} & plat\-\_\-info field from E\-M3xx file header \\
+\hline
+\mbox{\tt in}  & {\em micro\-\_\-info} & micro\-\_\-info field from E\-M3xx file header\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+String describing platform or, for unknown combinations, \char`\"{}\-P\-:\-X\-X M\-:\-Y\-Y\char`\"{} where X\-X is plat\-\_\-info in hex and Y\-Y is micro\-\_\-info in hex. 
+\end{DoxyReturn}
+
+
+\subsection{Variable Documentation}
+\hypertarget{xbee__ebl__file_8c_ae87b332f7f557ea90ab9f2eea587a9be}{\index{xbee\-\_\-ebl\-\_\-file.\-c@{xbee\-\_\-ebl\-\_\-file.\-c}!platform\-\_\-avr@{platform\-\_\-avr}}
+\index{platform\-\_\-avr@{platform\-\_\-avr}!xbee_ebl_file.c@{xbee\-\_\-ebl\-\_\-file.\-c}}
+\subsubsection[{platform\-\_\-avr}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf micro\-\_\-info\-\_\-t} platform\-\_\-avr\mbox{[}$\,$\mbox{]}}}\label{xbee__ebl__file_8c_ae87b332f7f557ea90ab9f2eea587a9be}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+= \{
+   \{ 1, \textcolor{stringliteral}{"AVR ATMega 64"} \},
+   \{ 2, \textcolor{stringliteral}{"AVR ATMega 128"} \},
+   \{ 3, \textcolor{stringliteral}{"AVR ATMega 32"} \},
+   MICRO\_INFO\_END
+\}
+\end{DoxyCode}
+\hypertarget{xbee__ebl__file_8c_a8c99ef40fc61251e34a6e2d43a901228}{\index{xbee\-\_\-ebl\-\_\-file.\-c@{xbee\-\_\-ebl\-\_\-file.\-c}!platform\-\_\-cortex\-\_\-m3@{platform\-\_\-cortex\-\_\-m3}}
+\index{platform\-\_\-cortex\-\_\-m3@{platform\-\_\-cortex\-\_\-m3}!xbee_ebl_file.c@{xbee\-\_\-ebl\-\_\-file.\-c}}
+\subsubsection[{platform\-\_\-cortex\-\_\-m3}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf micro\-\_\-info\-\_\-t} platform\-\_\-cortex\-\_\-m3\mbox{[}$\,$\mbox{]}}}\label{xbee__ebl__file_8c_a8c99ef40fc61251e34a6e2d43a901228}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+= \{
+   \{ 1, \textcolor{stringliteral}{"EM350"} \},
+   \{ 2, \textcolor{stringliteral}{"EM360"} \},
+   \{ 3, \textcolor{stringliteral}{"EM357"} \},
+   \{ 4, \textcolor{stringliteral}{"EM367"} \},
+   \{ 5, \textcolor{stringliteral}{"EM351"} \},
+   \{ 6, \textcolor{stringliteral}{"EM35x"} \},
+   \{ 7, \textcolor{stringliteral}{"STM32W108"} \},
+   MICRO\_INFO\_END
+\}
+\end{DoxyCode}
+\hypertarget{xbee__ebl__file_8c_af85d30c72e504e8335d881bd864609e2}{\index{xbee\-\_\-ebl\-\_\-file.\-c@{xbee\-\_\-ebl\-\_\-file.\-c}!platform\-\_\-info@{platform\-\_\-info}}
+\index{platform\-\_\-info@{platform\-\_\-info}!xbee_ebl_file.c@{xbee\-\_\-ebl\-\_\-file.\-c}}
+\subsubsection[{platform\-\_\-info}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf platform\-\_\-info\-\_\-t} platform\-\_\-info\mbox{[}$\,$\mbox{]}}}\label{xbee__ebl__file_8c_af85d30c72e504e8335d881bd864609e2}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+= \{
+   \{ 1, platform\_avr \},
+   \{ 2, platform\_xap2b \},
+   \{ 4, platform\_cortex\_m3 \},
+   PLATFORM\_INFO\_END
+\}
+\end{DoxyCode}
+
+
+Table of tables used to decode plat\-\_\-info and micro\-\_\-info fields from .E\-B\-L file header. 
+
+See \hyperlink{xbee__ebl__file_8c_ab49eaa8fe613ec3a2af9b1ccbc3384ac}{ebl\-\_\-target\-\_\-desc()} \hypertarget{xbee__ebl__file_8c_a3e3077ff002f737acf6096eecb084f87}{\index{xbee\-\_\-ebl\-\_\-file.\-c@{xbee\-\_\-ebl\-\_\-file.\-c}!platform\-\_\-xap2b@{platform\-\_\-xap2b}}
+\index{platform\-\_\-xap2b@{platform\-\_\-xap2b}!xbee_ebl_file.c@{xbee\-\_\-ebl\-\_\-file.\-c}}
+\subsubsection[{platform\-\_\-xap2b}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf micro\-\_\-info\-\_\-t} platform\-\_\-xap2b\mbox{[}$\,$\mbox{]}}}\label{xbee__ebl__file_8c_a3e3077ff002f737acf6096eecb084f87}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+= \{
+   \{ 1, \textcolor{stringliteral}{"EM250"} \},
+   \{ 2, \textcolor{stringliteral}{"EM260"} \},
+   MICRO\_INFO\_END
+\}
+\end{DoxyCode}

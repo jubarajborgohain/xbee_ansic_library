@@ -1,0 +1,50 @@
+\hypertarget{structxbee__fw__source__t}{\section{xbee\-\_\-fw\-\_\-source\-\_\-t Struct Reference}
+\label{structxbee__fw__source__t}\index{xbee\-\_\-fw\-\_\-source\-\_\-t@{xbee\-\_\-fw\-\_\-source\-\_\-t}}
+}
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{group__xbee__firmware_ga79f0c368a2efd172b3779a2ef3a26706}{\hyperlink{structxbee__dev__t}{xbee\-\_\-dev\-\_\-t} $\ast$ {\bfseries xbee}}\label{group__xbee__firmware_ga79f0c368a2efd172b3779a2ef3a26706}
+
+\item 
+\hypertarget{group__xbee__firmware_ga89f234133d3efe315836311cbf21c64b}{int {\bfseries state}}\label{group__xbee__firmware_ga89f234133d3efe315836311cbf21c64b}
+
+\item 
+\hypertarget{group__xbee__firmware_gac0c302bc97f010b7f5965faa07b00354}{int {\bfseries next\-\_\-state}}\label{group__xbee__firmware_gac0c302bc97f010b7f5965faa07b00354}
+
+\item 
+\hypertarget{group__xbee__firmware_ga04cecf6708b77deed43900afdf14e8d9}{int {\bfseries tries}}\label{group__xbee__firmware_ga04cecf6708b77deed43900afdf14e8d9}
+
+\item 
+\hypertarget{group__xbee__firmware_ga95a0af7504758aa320186c647c2f1602}{char {\bfseries bootloader\-\_\-cmd}}\label{group__xbee__firmware_ga95a0af7504758aa320186c647c2f1602}
+
+\item 
+\hypertarget{group__xbee__firmware_ga0d88807102c8d96e37cb4751f0d5a7d3}{\hyperlink{group__hal__dos_ga09a1e304d66d35dd47daffee9731edaa}{uint32\-\_\-t} {\bfseries timer}}\label{group__xbee__firmware_ga0d88807102c8d96e37cb4751f0d5a7d3}
+
+\item 
+\hypertarget{group__xbee__firmware_ga6c2fd23dccaff7ddb24daa9daeef8bbb}{\begin{tabbing}
+xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=\kill
+union \{\\
+\>\hyperlink{structxbee__xmodem__state__t}{xbee\_xmodem\_state\_t} {\bfseries xbxm}\\
+\>\hyperlink{structxbee__fw__oem__state__t}{xbee\_fw\_oem\_state\_t} {\bfseries oem}\\
+\} {\bfseries u}}\label{group__xbee__firmware_ga6c2fd23dccaff7ddb24daa9daeef8bbb}
+\\
+
+\end{tabbing}\item 
+\hypertarget{group__xbee__firmware_gac45b1c32b0ad4fba20266476ed30eba8}{char {\bfseries buffer} \mbox{[}128+5\mbox{]}}\label{group__xbee__firmware_gac45b1c32b0ad4fba20266476ed30eba8}
+
+\item 
+\hypertarget{group__xbee__firmware_ga3272319dc6281e255350d0a99fd21510}{int($\ast$ {\bfseries seek} )(void \hyperlink{group__hal_gaef060b3456fdcc093a7210a762d5f2ed}{F\-A\-R} $\ast$context, \hyperlink{group__hal__dos_ga09a1e304d66d35dd47daffee9731edaa}{uint32\-\_\-t} offset)}\label{group__xbee__firmware_ga3272319dc6281e255350d0a99fd21510}
+
+\item 
+\hypertarget{group__xbee__firmware_ga4ae4c0398b661e2a214f9212e547df72}{int($\ast$ {\bfseries read} )(void \hyperlink{group__hal_gaef060b3456fdcc093a7210a762d5f2ed}{F\-A\-R} $\ast$context, void \hyperlink{group__hal_gaef060b3456fdcc093a7210a762d5f2ed}{F\-A\-R} $\ast$buffer, \hyperlink{group__hal_ga2140805d08462d474b82ddc8d1c2f3e6}{int16\-\_\-t} bytes)}\label{group__xbee__firmware_ga4ae4c0398b661e2a214f9212e547df72}
+
+\item 
+\hypertarget{group__xbee__firmware_gaa91f8e864e06077c354e5f5216547758}{void \hyperlink{group__hal_gaef060b3456fdcc093a7210a762d5f2ed}{F\-A\-R} $\ast$ {\bfseries context}}\label{group__xbee__firmware_gaa91f8e864e06077c354e5f5216547758}
+
+\end{DoxyCompactItemize}
+
+
+The documentation for this struct was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+include/xbee/\hyperlink{firmware_8h}{firmware.\-h}\end{DoxyCompactItemize}

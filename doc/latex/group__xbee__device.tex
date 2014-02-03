@@ -1,0 +1,1212 @@
+\hypertarget{group__xbee__device}{\section{Device Interface}
+\label{group__xbee__device}\index{Device Interface@{Device Interface}}
+}
+
+
+This layer provides a frame-\/based interface to the X\-Bee module.  
+
+
+\subsection*{Files}
+\begin{DoxyCompactItemize}
+\item 
+file \hyperlink{xbee__device_8c}{xbee\-\_\-device.\-c}
+\begin{DoxyCompactList}\small\item\em Code related to processing X\-Bee Frames. \end{DoxyCompactList}\item 
+file \hyperlink{device_8h}{device.\-h}
+\begin{DoxyCompactList}\small\item\em Device layer for X\-Bee module interface. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structxbee__dispatch__table__entry__t}{xbee\-\_\-dispatch\-\_\-table\-\_\-entry\-\_\-t}
+\item 
+struct \hyperlink{structxbee__dev__t}{xbee\-\_\-dev\-\_\-t}
+\item 
+struct \hyperlink{structxbee__dev__t_1_1rx}{xbee\-\_\-dev\-\_\-t\-::rx}
+\begin{DoxyCompactList}\small\item\em Buffer and state variables used for receiving a frame. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{group__xbee__device_ga86812c9b592261c600106f7b9afe26a1}{\#define {\bfseries \-\_\-xbee\-\_\-device\-\_\-debug}}\label{group__xbee__device_ga86812c9b592261c600106f7b9afe26a1}
+
+\item 
+\#define \hyperlink{group__xbee__device_gaece12bbe1dd3135e51f714b485ed0cf2}{xbee\-\_\-zcl\-\_\-identify}(xbee)~\hyperlink{group__xbee__device_ga42768d8f8aa841ed4f42396cff2815aa}{xbee\-\_\-identify}( xbee, \hyperlink{group__zcl__identify_ga95b00d55b861c1ea6033c16794ae818d}{zcl\-\_\-identify\-\_\-isactive}() $>$ 0)
+\begin{DoxyCompactList}\small\item\em Programs with the Z\-C\-L Identify Server Cluster can call this macro in their main loop to have the X\-Bee module's association L\-E\-D flash fast (100ms cycle) when in Identify Mode. \end{DoxyCompactList}\item 
+\hypertarget{group__xbee__device_gaeaab23929fe74420e519d21bba8008e6}{\#define \hyperlink{group__xbee__device_gaeaab23929fe74420e519d21bba8008e6}{X\-B\-E\-E\-\_\-\-D\-E\-V\-\_\-\-M\-A\-X\-\_\-\-D\-I\-S\-P\-A\-T\-C\-H\-\_\-\-P\-E\-R\-\_\-\-T\-I\-C\-K}~5}\label{group__xbee__device_gaeaab23929fe74420e519d21bba8008e6}
+
+\begin{DoxyCompactList}\small\item\em Maximum number of frames to dispatch per call to xbee\-\_\-tick(). \end{DoxyCompactList}\item 
+\#define \hyperlink{group__xbee__device_gaea0dcde46961aae6f1cf5949be02d1a6}{X\-B\-E\-E\-\_\-\-M\-A\-X\-\_\-\-R\-F\-P\-A\-Y\-L\-O\-A\-D}~128
+\begin{DoxyCompactList}\small\item\em Max payload for all supported X\-Bee types is 256 bytes. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__xbee__device_gad842f3c5f8d2264a99ab67a01054323a}{X\-B\-E\-E\-\_\-\-M\-A\-X\-\_\-\-F\-R\-A\-M\-E\-\_\-\-L\-E\-N}~(\hyperlink{group__xbee__device_gaea0dcde46961aae6f1cf5949be02d1a6}{X\-B\-E\-E\-\_\-\-M\-A\-X\-\_\-\-R\-F\-P\-A\-Y\-L\-O\-A\-D} + 18)
+\begin{DoxyCompactList}\small\item\em Max Frame Size, including type, is for 0x91, Receive Explicit. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__xbee__device_ga3379d057739746b5365e74c53a5b11e9}{X\-B\-E\-E\-\_\-\-D\-E\-V\-\_\-\-S\-T\-A\-C\-K\-\_\-\-V\-E\-R\-S\-I\-O\-N\-\_\-\-A\-D\-D\-R}(x)~((\hyperlink{group__hal_gae1affc9ca37cfb624959c866a73f83c2}{uint8\-\_\-t} $\ast$)\&(x).firmware\-\_\-version + 3)
+\begin{DoxyCompactList}\small\item\em Macro function to get a pointer to the L\-S\-B of the radio's firmware version. \end{DoxyCompactList}\item 
+\hypertarget{group__xbee__device_gac81604781dcb36ca33af03ec44a6077a}{\#define {\bfseries X\-B\-E\-E\-\_\-\-F\-R\-A\-M\-E\-\_\-\-T\-A\-B\-L\-E\-\_\-\-E\-N\-D}~\{ 0x\-F\-F, 0, N\-U\-L\-L, N\-U\-L\-L \}}\label{group__xbee__device_gac81604781dcb36ca33af03ec44a6077a}
+
+\item 
+\hypertarget{group__xbee__device_ga3ac470bd616105be9ab7de9265c2b43b}{\#define {\bfseries X\-B\-E\-E\-\_\-\-D\-E\-V\-\_\-\-D\-U\-M\-P\-\_\-\-F\-L\-A\-G\-\_\-\-N\-O\-N\-E}~0x0000}\label{group__xbee__device_ga3ac470bd616105be9ab7de9265c2b43b}
+
+\item 
+\hypertarget{group__xbee__device_ga00403b13f32a981d18df79f31504b90a}{\#define {\bfseries X\-B\-E\-E\-\_\-\-D\-E\-V\-\_\-\-D\-U\-M\-P\-\_\-\-F\-L\-A\-G\-\_\-\-D\-E\-F\-A\-U\-L\-T}~X\-B\-E\-E\-\_\-\-D\-E\-V\-\_\-\-D\-U\-M\-P\-\_\-\-F\-L\-A\-G\-\_\-\-N\-O\-N\-E}\label{group__xbee__device_ga00403b13f32a981d18df79f31504b90a}
+
+\item 
+\hypertarget{group__xbee__device_ga932b739da0b735b4d9ad229b4869cfc3}{\#define {\bfseries X\-B\-E\-E\-\_\-\-W\-R\-I\-T\-E\-\_\-\-F\-L\-A\-G\-\_\-\-N\-O\-N\-E}~0x0000}\label{group__xbee__device_ga932b739da0b735b4d9ad229b4869cfc3}
+
+\item 
+\hypertarget{group__xbee__device_gabeb9dfc3097d684df3fd9284021085f6}{\#define \hyperlink{group__xbee__device_gabeb9dfc3097d684df3fd9284021085f6}{X\-B\-E\-E\-\_\-\-F\-R\-A\-M\-E\-\_\-\-M\-O\-D\-E\-M\-\_\-\-S\-T\-A\-T\-U\-S\-\_\-\-D\-E\-B\-U\-G}~\{ \hyperlink{group__xbee__device_gga7753bbebaf00d6d64942f64b6ae9b7b9adff71d45371cf6b933688c43994b7f81}{X\-B\-E\-E\-\_\-\-F\-R\-A\-M\-E\-\_\-\-M\-O\-D\-E\-M\-\_\-\-S\-T\-A\-T\-U\-S}, 0, \hyperlink{group__xbee__device_gae54cdc832021172ae535a449856450b7}{xbee\-\_\-frame\-\_\-dump\-\_\-modem\-\_\-status}, N\-U\-L\-L \}}\label{group__xbee__device_gabeb9dfc3097d684df3fd9284021085f6}
+
+\begin{DoxyCompactList}\small\item\em Add this macro to the list of X\-Bee frame handlers to have modem status changes dumped to S\-T\-D\-O\-U\-T. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef \hyperlink{group___s_x_a_ga4233297bd31be5c273d4fb0758cc54d7}{P\-A\-C\-K\-E\-D\-\_\-\-S\-T\-R\-U\-C\-T} {\bfseries xbee\-\_\-frame\-\_\-modem\-\_\-status\-\_\-t}
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{group__xbee__device_ga7753bbebaf00d6d64942f64b6ae9b7b9}{xbee\-\_\-frame\-\_\-type} \{ \\*
+\hyperlink{group__xbee__device_gga7753bbebaf00d6d64942f64b6ae9b7b9a540fdafbf3dbb8b5d07be5888e3573ee}{X\-B\-E\-E\-\_\-\-F\-R\-A\-M\-E\-\_\-\-L\-O\-C\-A\-L\-\_\-\-A\-T\-\_\-\-C\-M\-D} = 0x08, 
+\hyperlink{group__xbee__device_gga7753bbebaf00d6d64942f64b6ae9b7b9a4dccc9c3f9859247218c0d0a93e2582a}{X\-B\-E\-E\-\_\-\-F\-R\-A\-M\-E\-\_\-\-L\-O\-C\-A\-L\-\_\-\-A\-T\-\_\-\-C\-M\-D\-\_\-\-Q} = 0x09, 
+\hyperlink{group__xbee__device_gga7753bbebaf00d6d64942f64b6ae9b7b9a5215c258e8db6c292b9e52ca26011ed1}{X\-B\-E\-E\-\_\-\-F\-R\-A\-M\-E\-\_\-\-T\-R\-A\-N\-S\-M\-I\-T} = 0x10, 
+\hyperlink{group__xbee__device_gga7753bbebaf00d6d64942f64b6ae9b7b9aa673474f9f3597929def38ad4cf7d63e}{X\-B\-E\-E\-\_\-\-F\-R\-A\-M\-E\-\_\-\-T\-R\-A\-N\-S\-M\-I\-T\-\_\-\-E\-X\-P\-L\-I\-C\-I\-T} = 0x11, 
+\\*
+\hyperlink{group__xbee__device_gga7753bbebaf00d6d64942f64b6ae9b7b9a44cc0afd79605edfc1f4d5cbb7ed62a2}{X\-B\-E\-E\-\_\-\-F\-R\-A\-M\-E\-\_\-\-R\-E\-M\-O\-T\-E\-\_\-\-A\-T\-\_\-\-C\-M\-D} = 0x17, 
+\hyperlink{group__xbee__device_gga7753bbebaf00d6d64942f64b6ae9b7b9ab2c4deb1aaaab5b5edb54e701d3a3bbe}{X\-B\-E\-E\-\_\-\-F\-R\-A\-M\-E\-\_\-\-C\-R\-E\-A\-T\-E\-\_\-\-S\-R\-C\-\_\-\-R\-O\-U\-T\-E} = 0x21, 
+\hyperlink{group__xbee__device_gga7753bbebaf00d6d64942f64b6ae9b7b9a54fd913d2de57592155023c3a742d85c}{X\-B\-E\-E\-\_\-\-F\-R\-A\-M\-E\-\_\-\-R\-E\-G\-\_\-\-J\-O\-I\-N\-I\-N\-G\-\_\-\-D\-E\-V} = 0x24, 
+\hyperlink{group__xbee__device_gga7753bbebaf00d6d64942f64b6ae9b7b9ae66771334070219cd098c8201936cf4a}{X\-B\-E\-E\-\_\-\-F\-R\-A\-M\-E\-\_\-\-L\-O\-C\-A\-L\-\_\-\-A\-T\-\_\-\-R\-E\-S\-P\-O\-N\-S\-E} = 0x88, 
+\\*
+\hyperlink{group__xbee__device_gga7753bbebaf00d6d64942f64b6ae9b7b9adff71d45371cf6b933688c43994b7f81}{X\-B\-E\-E\-\_\-\-F\-R\-A\-M\-E\-\_\-\-M\-O\-D\-E\-M\-\_\-\-S\-T\-A\-T\-U\-S} = 0x8\-A, 
+\hyperlink{group__xbee__device_gga7753bbebaf00d6d64942f64b6ae9b7b9aab7dc62b855e81a5be4cd5515e5f75bb}{X\-B\-E\-E\-\_\-\-F\-R\-A\-M\-E\-\_\-\-T\-R\-A\-N\-S\-M\-I\-T\-\_\-\-S\-T\-A\-T\-U\-S} = 0x8\-B, 
+\hyperlink{group__xbee__device_gga7753bbebaf00d6d64942f64b6ae9b7b9a3efa07f955a3591615319eff03f70e2d}{X\-B\-E\-E\-\_\-\-F\-R\-A\-M\-E\-\_\-\-R\-O\-U\-T\-E\-\_\-\-I\-N\-F\-O\-R\-M\-A\-T\-I\-O\-N} = 0x8\-D, 
+\hyperlink{group__xbee__device_gga7753bbebaf00d6d64942f64b6ae9b7b9a19e510f8124f73788e27f8140a2ae842}{X\-B\-E\-E\-\_\-\-F\-R\-A\-M\-E\-\_\-\-A\-G\-G\-R\-E\-G\-A\-T\-E\-\_\-\-A\-D\-D\-R\-E\-S\-S\-I\-N\-G} = 0x8\-E, 
+\\*
+\hyperlink{group__xbee__device_gga7753bbebaf00d6d64942f64b6ae9b7b9ab6fa3650abecfac4645c5d4ccdf857fd}{X\-B\-E\-E\-\_\-\-F\-R\-A\-M\-E\-\_\-\-R\-E\-C\-E\-I\-V\-E} = 0x90, 
+\hyperlink{group__xbee__device_gga7753bbebaf00d6d64942f64b6ae9b7b9a8f80b5fa338b8bf34888ffcbfd260a54}{X\-B\-E\-E\-\_\-\-F\-R\-A\-M\-E\-\_\-\-R\-E\-C\-E\-I\-V\-E\-\_\-\-E\-X\-P\-L\-I\-C\-I\-T} = 0x91, 
+\hyperlink{group__xbee__device_gga7753bbebaf00d6d64942f64b6ae9b7b9abd1291a130de887d7b01cae0f5adbe25}{X\-B\-E\-E\-\_\-\-F\-R\-A\-M\-E\-\_\-\-I\-O\-\_\-\-R\-E\-S\-P\-O\-N\-S\-E} = 0x92, 
+\hyperlink{group__xbee__device_gga7753bbebaf00d6d64942f64b6ae9b7b9a936c8e1ddf949674a96fed5a401e11de}{X\-B\-E\-E\-\_\-\-F\-R\-A\-M\-E\-\_\-\-S\-E\-N\-D\-O\-R\-\_\-\-R\-E\-A\-D} = 0x94, 
+\\*
+\hyperlink{group__xbee__device_gga7753bbebaf00d6d64942f64b6ae9b7b9a5b572839c3123f1059ec2ced643cf5d2}{X\-B\-E\-E\-\_\-\-F\-R\-A\-M\-E\-\_\-\-N\-O\-D\-E\-\_\-\-I\-D} = 0x95, 
+\hyperlink{group__xbee__device_gga7753bbebaf00d6d64942f64b6ae9b7b9a3cd726459592fab4cdc9b5e6bbecb79f}{X\-B\-E\-E\-\_\-\-F\-R\-A\-M\-E\-\_\-\-R\-E\-M\-O\-T\-E\-\_\-\-A\-T\-\_\-\-R\-E\-S\-P\-O\-N\-S\-E} = 0x97, 
+\hyperlink{group__xbee__device_gga7753bbebaf00d6d64942f64b6ae9b7b9a112bc9f0765ac60738788d27307e9661}{X\-B\-E\-E\-\_\-\-F\-R\-A\-M\-E\-\_\-\-F\-W\-\_\-\-U\-P\-D\-A\-T\-E\-\_\-\-S\-T\-A\-T\-U\-S} = 0x\-A0, 
+\hyperlink{group__xbee__device_gga7753bbebaf00d6d64942f64b6ae9b7b9ac43ff037a293ded12fb3099f5895d68e}{X\-B\-E\-E\-\_\-\-F\-R\-A\-M\-E\-\_\-\-R\-O\-U\-T\-E\-\_\-\-R\-E\-C\-O\-R\-D} = 0x\-A1, 
+\\*
+\hyperlink{group__xbee__device_gga7753bbebaf00d6d64942f64b6ae9b7b9a29c721efe06b771d6b93dbb52097dbdc}{X\-B\-E\-E\-\_\-\-F\-R\-A\-M\-E\-\_\-\-D\-E\-V\-I\-C\-E\-\_\-\-A\-U\-T\-H\-E\-N\-T\-I\-C\-A\-T\-E\-D} = 0x\-A2, 
+\hyperlink{group__xbee__device_gga7753bbebaf00d6d64942f64b6ae9b7b9a18e3955e47db5a81317a79886777600a}{X\-B\-E\-E\-\_\-\-F\-R\-A\-M\-E\-\_\-\-R\-O\-U\-T\-E\-\_\-\-R\-E\-Q\-U\-E\-S\-T\-\_\-\-I\-N\-D\-I\-C\-A\-T\-O\-R} = 0x\-A3, 
+\hyperlink{group__xbee__device_gga7753bbebaf00d6d64942f64b6ae9b7b9ab3db489c51e8c7dd65be0b454f281953}{X\-B\-E\-E\-\_\-\-F\-R\-A\-M\-E\-\_\-\-R\-E\-G\-\_\-\-J\-O\-I\-N\-I\-N\-G\-\_\-\-D\-E\-V\-\_\-\-S\-T\-A\-T\-U\-S} = 0x\-A4, 
+\hyperlink{group__xbee__device_gga7753bbebaf00d6d64942f64b6ae9b7b9a7c62b1f46ca384f2e605632ab0f73214}{X\-B\-E\-E\-\_\-\-F\-R\-A\-M\-E\-\_\-\-J\-O\-I\-N\-\_\-\-N\-O\-T\-I\-F\-I\-C\-A\-T\-I\-O\-N\-\_\-\-S\-T\-A\-T\-U\-S} = 0x\-A5
+ \}
+\begin{DoxyCompactList}\small\item\em Possible values for the {\ttfamily frame\-\_\-type} field of frames sent to and from the X\-Bee module. \end{DoxyCompactList}\item 
+enum \hyperlink{group__xbee__device_ga30374ada0aff261c5da7557882fd09de}{xbee\-\_\-dev\-\_\-rx\-\_\-state} \{ \hyperlink{group__xbee__device_gga30374ada0aff261c5da7557882fd09deae0a149adbaecdd2c5d84a1ed006e01a3}{X\-B\-E\-E\-\_\-\-R\-X\-\_\-\-S\-T\-A\-T\-E\-\_\-\-W\-A\-I\-T\-S\-T\-A\-R\-T} = 0, 
+\hyperlink{group__xbee__device_gga30374ada0aff261c5da7557882fd09dea641dccc2bf7a54d9108a7d3a1aa94dfc}{X\-B\-E\-E\-\_\-\-R\-X\-\_\-\-S\-T\-A\-T\-E\-\_\-\-L\-E\-N\-G\-T\-H\-\_\-\-M\-S\-B}, 
+\hyperlink{group__xbee__device_gga30374ada0aff261c5da7557882fd09deafc90aadcdd6ea17637198aadd9d85efd}{X\-B\-E\-E\-\_\-\-R\-X\-\_\-\-S\-T\-A\-T\-E\-\_\-\-L\-E\-N\-G\-T\-H\-\_\-\-L\-S\-B}, 
+\hyperlink{group__xbee__device_gga30374ada0aff261c5da7557882fd09deae7792cb93b09dde7b061947daffcb35a}{X\-B\-E\-E\-\_\-\-R\-X\-\_\-\-S\-T\-A\-T\-E\-\_\-\-R\-X\-F\-R\-A\-M\-E}
+ \}
+\item 
+enum \hyperlink{group__xbee__device_ga80478d6b87ebdf34b5ec06e5ca6f309e}{xbee\-\_\-dev\-\_\-flags} \{ \\*
+\hyperlink{group__xbee__device_gga80478d6b87ebdf34b5ec06e5ca6f309ea7227a8ae75aa792a17e24d20f1a5a4a8}{X\-B\-E\-E\-\_\-\-D\-E\-V\-\_\-\-F\-L\-A\-G\-\_\-\-C\-M\-D\-\_\-\-I\-N\-I\-T} = 0x0001, 
+\hyperlink{group__xbee__device_gga80478d6b87ebdf34b5ec06e5ca6f309ea28b7d1589252302b80f10a627656a6c5}{X\-B\-E\-E\-\_\-\-D\-E\-V\-\_\-\-F\-L\-A\-G\-\_\-\-Q\-U\-E\-R\-Y\-\_\-\-B\-E\-G\-I\-N} = 0x0002, 
+\hyperlink{group__xbee__device_gga80478d6b87ebdf34b5ec06e5ca6f309ead04b8cb5ede9e940335559b26aa5399f}{X\-B\-E\-E\-\_\-\-D\-E\-V\-\_\-\-F\-L\-A\-G\-\_\-\-Q\-U\-E\-R\-Y\-\_\-\-D\-O\-N\-E} = 0x0004, 
+\hyperlink{group__xbee__device_gga80478d6b87ebdf34b5ec06e5ca6f309ea7dbd64bc34a6a405582cc92d6460921a}{X\-B\-E\-E\-\_\-\-D\-E\-V\-\_\-\-F\-L\-A\-G\-\_\-\-Q\-U\-E\-R\-Y\-\_\-\-E\-R\-R\-O\-R} = 0x0008, 
+\\*
+\hyperlink{group__xbee__device_gga80478d6b87ebdf34b5ec06e5ca6f309ea08b02fa597f36fd613370d28ab5a0e81}{X\-B\-E\-E\-\_\-\-D\-E\-V\-\_\-\-F\-L\-A\-G\-\_\-\-Q\-U\-E\-R\-Y\-\_\-\-R\-E\-F\-R\-E\-S\-H} = 0x0010, 
+\hyperlink{group__xbee__device_gga80478d6b87ebdf34b5ec06e5ca6f309ea5f1d6c0ecfad680a292b57e8b078e357}{X\-B\-E\-E\-\_\-\-D\-E\-V\-\_\-\-F\-L\-A\-G\-\_\-\-Q\-U\-E\-R\-Y\-\_\-\-I\-N\-P\-R\-O\-G\-R\-E\-S\-S} = 0x0020, 
+\hyperlink{group__xbee__device_gga80478d6b87ebdf34b5ec06e5ca6f309ea87374abf657f1ed82b4eafdb287cbb11}{X\-B\-E\-E\-\_\-\-D\-E\-V\-\_\-\-F\-L\-A\-G\-\_\-\-I\-N\-\_\-\-T\-I\-C\-K} = 0x0080, 
+\hyperlink{group__xbee__device_gga80478d6b87ebdf34b5ec06e5ca6f309eaeb56279696e50227507ac864ab9ac0ec}{X\-B\-E\-E\-\_\-\-D\-E\-V\-\_\-\-F\-L\-A\-G\-\_\-\-C\-O\-O\-R\-D\-I\-N\-A\-T\-O\-R} = 0x0100, 
+\\*
+\hyperlink{group__xbee__device_gga80478d6b87ebdf34b5ec06e5ca6f309ea1c75931e456c18105376472a4de0abd5}{X\-B\-E\-E\-\_\-\-D\-E\-V\-\_\-\-F\-L\-A\-G\-\_\-\-R\-O\-U\-T\-E\-R} = 0x0200, 
+\hyperlink{group__xbee__device_gga80478d6b87ebdf34b5ec06e5ca6f309ea8aadac61e98e3876795b213fe1e124df}{X\-B\-E\-E\-\_\-\-D\-E\-V\-\_\-\-F\-L\-A\-G\-\_\-\-E\-N\-D\-D\-E\-V} = 0x0400, 
+\hyperlink{group__xbee__device_gga80478d6b87ebdf34b5ec06e5ca6f309ea0162b7d193e6a7b2df66c854f8d1e6da}{X\-B\-E\-E\-\_\-\-D\-E\-V\-\_\-\-F\-L\-A\-G\-\_\-\-Z\-N\-E\-T} = 0x0800, 
+\hyperlink{group__xbee__device_gga80478d6b87ebdf34b5ec06e5ca6f309ead4776798a97f943819304f84f7f16bf3}{X\-B\-E\-E\-\_\-\-D\-E\-V\-\_\-\-F\-L\-A\-G\-\_\-\-Z\-I\-G\-B\-E\-E} = 0x1000, 
+\\*
+\hyperlink{group__xbee__device_gga80478d6b87ebdf34b5ec06e5ca6f309ea03185dfb6292bc0e4fc2b6e0372a0644}{X\-B\-E\-E\-\_\-\-D\-E\-V\-\_\-\-F\-L\-A\-G\-\_\-\-D\-I\-G\-I\-M\-E\-S\-H} = 0x2000, 
+\hyperlink{group__xbee__device_gga80478d6b87ebdf34b5ec06e5ca6f309ea09be9866c594c873c75532e1dfd411b6}{X\-B\-E\-E\-\_\-\-D\-E\-V\-\_\-\-F\-L\-A\-G\-\_\-\-U\-S\-E\-\_\-\-F\-L\-O\-W\-C\-O\-N\-T\-R\-O\-L} = (int)0x8000
+ \}
+\item 
+enum \hyperlink{group__xbee__device_ga5015540d81fda839a15651ddb3fb411e}{xbee\-\_\-dev\-\_\-mode} \{ \\*
+\hyperlink{group__xbee__device_gga5015540d81fda839a15651ddb3fb411eaf350ed60e69fcdaa6f966c76c8e6b27c}{X\-B\-E\-E\-\_\-\-M\-O\-D\-E\-\_\-\-U\-N\-K\-N\-O\-W\-N} = 0, 
+\hyperlink{group__xbee__device_gga5015540d81fda839a15651ddb3fb411ea09797cbe6ff6ca64b5f7a70749141d1f}{X\-B\-E\-E\-\_\-\-M\-O\-D\-E\-\_\-\-B\-O\-O\-T\-L\-O\-A\-D\-E\-R}, 
+\hyperlink{group__xbee__device_gga5015540d81fda839a15651ddb3fb411ead7770acc4f26137e5c0c196eb3971a55}{X\-B\-E\-E\-\_\-\-M\-O\-D\-E\-\_\-\-A\-P\-I}, 
+\hyperlink{group__xbee__device_gga5015540d81fda839a15651ddb3fb411eadd83df98ece1787bd0ddb19d28e319f5}{X\-B\-E\-E\-\_\-\-M\-O\-D\-E\-\_\-\-I\-D\-L\-E}, 
+\\*
+\hyperlink{group__xbee__device_gga5015540d81fda839a15651ddb3fb411ea6291fcc5f3aca7d3c48d816cc4fc5d60}{X\-B\-E\-E\-\_\-\-M\-O\-D\-E\-\_\-\-P\-R\-E\-\_\-\-E\-S\-C\-A\-P\-E}, 
+\hyperlink{group__xbee__device_gga5015540d81fda839a15651ddb3fb411eafd910da7a43596621a12dcbce8410ffd}{X\-B\-E\-E\-\_\-\-M\-O\-D\-E\-\_\-\-P\-O\-S\-T\-\_\-\-E\-S\-C\-A\-P\-E}, 
+\hyperlink{group__xbee__device_gga5015540d81fda839a15651ddb3fb411eaaa62d524055898fb85100bd2363a5802}{X\-B\-E\-E\-\_\-\-M\-O\-D\-E\-\_\-\-C\-O\-M\-M\-A\-N\-D}, 
+\hyperlink{group__xbee__device_gga5015540d81fda839a15651ddb3fb411ea4fdf81a02970e7d090a88e16e32f8c3a}{X\-B\-E\-E\-\_\-\-M\-O\-D\-E\-\_\-\-W\-A\-I\-T\-\_\-\-I\-D\-L\-E}, 
+\\*
+\hyperlink{group__xbee__device_gga5015540d81fda839a15651ddb3fb411eaabd85cf9e660bddbe0782fb96d1b831b}{X\-B\-E\-E\-\_\-\-M\-O\-D\-E\-\_\-\-W\-A\-I\-T\-\_\-\-R\-E\-S\-P\-O\-N\-S\-E}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{group__hal_gae1affc9ca37cfb624959c866a73f83c2}{uint8\-\_\-t} \hyperlink{group__xbee__device_ga9faca10d7a960dcd3c0c3ad9c0d59cab}{xbee\-\_\-next\-\_\-frame\-\_\-id} (\hyperlink{structxbee__dev__t}{xbee\-\_\-dev\-\_\-t} $\ast$xbee)
+\begin{DoxyCompactList}\small\item\em Increment and return current frame I\-D for a given X\-Bee device. \end{DoxyCompactList}\item 
+int \hyperlink{group__xbee__device_ga550d7c865e75d3fc1df0e64cb880cf3d}{xbee\-\_\-dev\-\_\-init} (\hyperlink{structxbee__dev__t}{xbee\-\_\-dev\-\_\-t} $\ast$xbee, const \hyperlink{structxbee__serial__t}{xbee\-\_\-serial\-\_\-t} $\ast$serport, \hyperlink{group__xbee__device_gace56b1c8dd7dc5a23f6fa01878d45b09}{xbee\-\_\-is\-\_\-awake\-\_\-fn} is\-\_\-awake, \hyperlink{group__xbee__device_ga7f2f41997c6215582cf3491c984b31ea}{xbee\-\_\-reset\-\_\-fn} reset)
+\begin{DoxyCompactList}\small\item\em Initialize the X\-Bee device structure and open a serial connection to a local, serially-\/attached X\-Bee module. \end{DoxyCompactList}\item 
+void \hyperlink{group__xbee__device_ga75bfe1292b8af0588e0e322a42d3d2dc}{xbee\-\_\-dev\-\_\-flowcontrol} (\hyperlink{structxbee__dev__t}{xbee\-\_\-dev\-\_\-t} $\ast$xbee, \hyperlink{group__hal_ga04dd5074964518403bf944f2b240a5f8}{bool\-\_\-t} enabled)
+\begin{DoxyCompactList}\small\item\em Control whether \hyperlink{group__xbee__device_ga51f281b72bffcc99eec0e8c7f65a5f3f}{xbee\-\_\-frame\-\_\-write()} checks the X\-Bee C\-T\-S signal before sending frames. \end{DoxyCompactList}\item 
+void \hyperlink{group__xbee__device_ga96267a6b36d9a1b1d59b16cc60a2b09a}{xbee\-\_\-dev\-\_\-dump\-\_\-settings} (\hyperlink{structxbee__dev__t}{xbee\-\_\-dev\-\_\-t} $\ast$xbee, \hyperlink{group__hal_ga5a8b2dc9e45a9ee81a94ef304fb62505}{uint16\-\_\-t} flags)
+\begin{DoxyCompactList}\small\item\em Print information to stdout about the X\-Bee device. \end{DoxyCompactList}\item 
+int \hyperlink{group__xbee__device_gad312efa700cca7ca044cddf364cc51f5}{xbee\-\_\-dev\-\_\-reset} (\hyperlink{structxbee__dev__t}{xbee\-\_\-dev\-\_\-t} $\ast$xbee)
+\begin{DoxyCompactList}\small\item\em Toggles the reset line of the X\-Bee device. \end{DoxyCompactList}\item 
+int \hyperlink{group__xbee__device_gaf16e8e532b1eb587794b60222c3a0cce}{xbee\-\_\-dev\-\_\-tick} (\hyperlink{structxbee__dev__t}{xbee\-\_\-dev\-\_\-t} $\ast$xbee)
+\begin{DoxyCompactList}\small\item\em Check for newly received frames on an X\-Bee device and dispatch them to registered frame handlers. \end{DoxyCompactList}\item 
+void \hyperlink{group__xbee__device_gac7c192386ffce72242c2c8494b261491}{\-\_\-xbee\-\_\-dispatch\-\_\-table\-\_\-dump} (const \hyperlink{structxbee__dev__t}{xbee\-\_\-dev\-\_\-t} $\ast$xbee)
+\item 
+\hyperlink{group__hal_gae1affc9ca37cfb624959c866a73f83c2}{uint8\-\_\-t}() \hyperlink{group__xbee__device_gac80e0cc51e69ec00731528a04ba8d667}{\-\_\-xbee\-\_\-checksum} (const void \hyperlink{group__hal_gaef060b3456fdcc093a7210a762d5f2ed}{F\-A\-R} $\ast$bytes, uint\-\_\-fast8\-\_\-t \hyperlink{group__zdo_gab2b3adeb2a67e656ff030b56727fd0ac}{length}, uint\-\_\-fast8\-\_\-t initial)
+\begin{DoxyCompactList}\small\item\em Calculate the checksum for an X\-Bee frame. \end{DoxyCompactList}\item 
+int \hyperlink{group__xbee__device_ga51f281b72bffcc99eec0e8c7f65a5f3f}{xbee\-\_\-frame\-\_\-write} (\hyperlink{structxbee__dev__t}{xbee\-\_\-dev\-\_\-t} $\ast$xbee, const void \hyperlink{group__hal_gaef060b3456fdcc093a7210a762d5f2ed}{F\-A\-R} $\ast$header, \hyperlink{group__hal_ga5a8b2dc9e45a9ee81a94ef304fb62505}{uint16\-\_\-t} headerlen, const void \hyperlink{group__hal_gaef060b3456fdcc093a7210a762d5f2ed}{F\-A\-R} $\ast$\hyperlink{group__xbee__io_gac5955aa1e44ff234e6d78a19cf68f25c}{data}, \hyperlink{group__hal_ga5a8b2dc9e45a9ee81a94ef304fb62505}{uint16\-\_\-t} datalen, \hyperlink{group__hal_ga5a8b2dc9e45a9ee81a94ef304fb62505}{uint16\-\_\-t} flags)
+\begin{DoxyCompactList}\small\item\em Copies a frame into the transmit serial buffer to send to an X\-Bee module. \end{DoxyCompactList}\item 
+int \hyperlink{group__xbee__device_gac0874f9422c6588062a4b6205e989fc6}{\-\_\-xbee\-\_\-frame\-\_\-load} (\hyperlink{structxbee__dev__t}{xbee\-\_\-dev\-\_\-t} $\ast$xbee)
+\begin{DoxyCompactList}\small\item\em Check X\-Bee's serial buffer for complete frames and pass them off to the dispatcher. \end{DoxyCompactList}\item 
+void \hyperlink{group__xbee__device_gaa9c3bed7ca20dbb2cf4646811c59fe97}{\-\_\-xbee\-\_\-dev\-\_\-modem\-\_\-status} (\hyperlink{structwpan__dev__t}{wpan\-\_\-dev\-\_\-t} $\ast$wpan, uint\-\_\-fast8\-\_\-t \hyperlink{group__xbee__atcmd_gade818037fd6c985038ff29656089758d}{status})
+\begin{DoxyCompactList}\small\item\em Receive modem status frames and update flags/state of \hyperlink{structwpan__dev__t}{wpan\-\_\-dev\-\_\-t}. \end{DoxyCompactList}\item 
+int \hyperlink{group__xbee__device_gab386cd9e1afe784ab79b3139fe8fc5c8}{\-\_\-xbee\-\_\-frame\-\_\-dispatch} (\hyperlink{structxbee__dev__t}{xbee\-\_\-dev\-\_\-t} $\ast$xbee, const void \hyperlink{group__hal_gaef060b3456fdcc093a7210a762d5f2ed}{F\-A\-R} $\ast$frame, \hyperlink{group__hal_ga5a8b2dc9e45a9ee81a94ef304fb62505}{uint16\-\_\-t} \hyperlink{group__zdo_gab2b3adeb2a67e656ff030b56727fd0ac}{length})
+\begin{DoxyCompactList}\small\item\em Function called by \hyperlink{group__xbee__device_gac0874f9422c6588062a4b6205e989fc6}{\-\_\-xbee\-\_\-frame\-\_\-load()} to dispatch any frames read. \end{DoxyCompactList}\item 
+int \hyperlink{group__xbee__device_gae54cdc832021172ae535a449856450b7}{xbee\-\_\-frame\-\_\-dump\-\_\-modem\-\_\-status} (\hyperlink{structxbee__dev__t}{xbee\-\_\-dev\-\_\-t} $\ast$xbee, const void \hyperlink{group__hal_gaef060b3456fdcc093a7210a762d5f2ed}{F\-A\-R} $\ast$frame, \hyperlink{group__hal_ga5a8b2dc9e45a9ee81a94ef304fb62505}{uint16\-\_\-t} \hyperlink{group__zdo_gab2b3adeb2a67e656ff030b56727fd0ac}{length}, void \hyperlink{group__hal_gaef060b3456fdcc093a7210a762d5f2ed}{F\-A\-R} $\ast$context)
+\begin{DoxyCompactList}\small\item\em Frame handler for 0x8\-A (X\-B\-E\-E\-\_\-\-F\-R\-A\-M\-E\-\_\-\-M\-O\-D\-E\-M\-\_\-\-S\-T\-A\-T\-U\-S) frames -- dumps modem status to S\-T\-D\-O\-U\-T for debugging purposes. \end{DoxyCompactList}\item 
+void \hyperlink{group__xbee__device_ga42768d8f8aa841ed4f42396cff2815aa}{xbee\-\_\-identify} (\hyperlink{structxbee__dev__t}{xbee\-\_\-dev\-\_\-t} $\ast$xbee, \hyperlink{group__hal_ga04dd5074964518403bf944f2b240a5f8}{bool\-\_\-t} identify)
+\begin{DoxyCompactList}\small\item\em Programs with the Z\-C\-L Identify Server Cluster can call this function in their main loop to have the X\-Bee module's association L\-E\-D flash fast (100ms cycle) when in Identify Mode. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{group__xbee__device_gafa34d393db5fa915716b483011415ddc}{\hyperlink{group__hal_gae1affc9ca37cfb624959c866a73f83c2}{uint8\-\_\-t} \hyperlink{group__xbee__device_gafa34d393db5fa915716b483011415ddc}{frame\-\_\-type}}\label{group__xbee__device_gafa34d393db5fa915716b483011415ddc}
+
+\begin{DoxyCompactList}\small\item\em if 0, match all frames \end{DoxyCompactList}\item 
+\hypertarget{group__xbee__device_ga03c1016ac46b9df250b994f242cf956a}{\hyperlink{group__hal_gae1affc9ca37cfb624959c866a73f83c2}{uint8\-\_\-t} \hyperlink{group__xbee__device_ga03c1016ac46b9df250b994f242cf956a}{frame\-\_\-id}}\label{group__xbee__device_ga03c1016ac46b9df250b994f242cf956a}
+
+\begin{DoxyCompactList}\small\item\em if 0, match all frames of this type \end{DoxyCompactList}\item 
+\hypertarget{group__xbee__device_gacae6128cc991ffaa526063adc6dd9fe8}{\hyperlink{group__xbee__device_ga3d8f20fa50d6f72eaf03f0cdd4c9832b}{xbee\-\_\-frame\-\_\-handler\-\_\-fn} {\bfseries handler}}\label{group__xbee__device_gacae6128cc991ffaa526063adc6dd9fe8}
+
+\item 
+\hypertarget{group__xbee__device_gaa91f8e864e06077c354e5f5216547758}{void \hyperlink{group__hal_gaef060b3456fdcc093a7210a762d5f2ed}{F\-A\-R} $\ast$ {\bfseries context}}\label{group__xbee__device_gaa91f8e864e06077c354e5f5216547758}
+
+\item 
+\hypertarget{group__xbee__device_ga8547395da056b57ba7c6b26c0c0f6ccf}{\hyperlink{structwpan__dev__t}{wpan\-\_\-dev\-\_\-t} \hyperlink{group__xbee__device_ga8547395da056b57ba7c6b26c0c0f6ccf}{wpan\-\_\-dev}}\label{group__xbee__device_ga8547395da056b57ba7c6b26c0c0f6ccf}
+
+\begin{DoxyCompactList}\small\item\em Generic W\-P\-A\-N device required by the \hyperlink{group__zigbee}{Zig\-Bee Networking} layers of the A\-P\-I. \end{DoxyCompactList}\item 
+\hypertarget{group__xbee__device_ga3145a7888ffabfc3f10e8e85ced0c686}{\hyperlink{structxbee__serial__t}{xbee\-\_\-serial\-\_\-t} \hyperlink{group__xbee__device_ga3145a7888ffabfc3f10e8e85ced0c686}{serport}}\label{group__xbee__device_ga3145a7888ffabfc3f10e8e85ced0c686}
+
+\begin{DoxyCompactList}\small\item\em Platform-\/specific structure required by xbee\-\_\-serial.\-c. \end{DoxyCompactList}\item 
+\hypertarget{group__xbee__device_ga1f3cf44cb21be8f101d33062a9d2cf97}{\hyperlink{group__xbee__device_ga7f2f41997c6215582cf3491c984b31ea}{xbee\-\_\-reset\-\_\-fn} \hyperlink{group__xbee__device_ga1f3cf44cb21be8f101d33062a9d2cf97}{reset}}\label{group__xbee__device_ga1f3cf44cb21be8f101d33062a9d2cf97}
+
+\begin{DoxyCompactList}\small\item\em Optional function to control reset pin. \end{DoxyCompactList}\item 
+\hypertarget{group__xbee__device_gaf17bb63b8639d0278a2d0ad259865930}{\hyperlink{group__xbee__device_gace56b1c8dd7dc5a23f6fa01878d45b09}{xbee\-\_\-is\-\_\-awake\-\_\-fn} \hyperlink{group__xbee__device_gaf17bb63b8639d0278a2d0ad259865930}{is\-\_\-awake}}\label{group__xbee__device_gaf17bb63b8639d0278a2d0ad259865930}
+
+\begin{DoxyCompactList}\small\item\em Optional function to read A\-W\-A\-K\-E pin. \end{DoxyCompactList}\item 
+\hypertarget{group__xbee__device_ga4952189ed8b46b133b5298b4fce75ab8}{\hyperlink{group__xbee__device_ga55de36532265a72bffa969d5353800d7}{xbee\-\_\-disc\-\_\-node\-\_\-id\-\_\-fn} \hyperlink{group__xbee__device_ga4952189ed8b46b133b5298b4fce75ab8}{node\-\_\-id\-\_\-handler}}\label{group__xbee__device_ga4952189ed8b46b133b5298b4fce75ab8}
+
+\begin{DoxyCompactList}\small\item\em Optional function to receive parsed Node I\-D messages. \end{DoxyCompactList}\item 
+\hypertarget{group__xbee__device_gad4c7c16c071f95965e2e506752b450fe}{\hyperlink{group__hal_ga5a8b2dc9e45a9ee81a94ef304fb62505}{uint16\-\_\-t} \hyperlink{group__xbee__device_gad4c7c16c071f95965e2e506752b450fe}{hardware\-\_\-version}}\label{group__xbee__device_gad4c7c16c071f95965e2e506752b450fe}
+
+\begin{DoxyCompactList}\small\item\em Value of X\-Bee module's H\-V register. \end{DoxyCompactList}\item 
+\hypertarget{group__xbee__device_gac8e0f35fdeff288dd1a7b4f49754c9b2}{\hyperlink{group__hal__dos_ga09a1e304d66d35dd47daffee9731edaa}{uint32\-\_\-t} \hyperlink{group__xbee__device_gac8e0f35fdeff288dd1a7b4f49754c9b2}{firmware\-\_\-version}}\label{group__xbee__device_gac8e0f35fdeff288dd1a7b4f49754c9b2}
+
+\begin{DoxyCompactList}\small\item\em Value of X\-Bee module's V\-R register (4-\/bytes on some devices) \end{DoxyCompactList}\item 
+\hypertarget{group__xbee__device_ga9ac684521a8154bddc272049a7a61b73}{enum \hyperlink{group__xbee__device_ga80478d6b87ebdf34b5ec06e5ca6f309e}{xbee\-\_\-dev\-\_\-flags} \hyperlink{group__xbee__device_ga9ac684521a8154bddc272049a7a61b73}{flags}}\label{group__xbee__device_ga9ac684521a8154bddc272049a7a61b73}
+
+\begin{DoxyCompactList}\small\item\em Multi-\/purpose flags for tracking information about this device. \end{DoxyCompactList}\item 
+\hypertarget{group__xbee__device_ga758a79cfaf819f091728c06474466321}{enum \hyperlink{group__xbee__device_ga30374ada0aff261c5da7557882fd09de}{xbee\-\_\-dev\-\_\-rx\-\_\-state} \hyperlink{group__xbee__device_ga758a79cfaf819f091728c06474466321}{state}}\label{group__xbee__device_ga758a79cfaf819f091728c06474466321}
+
+\begin{DoxyCompactList}\small\item\em current state of receiving a frame \end{DoxyCompactList}\item 
+\hypertarget{group__xbee__device_ga1048ca0eb1adc5759a0df48ae8ae740a}{\hyperlink{group__hal_ga5a8b2dc9e45a9ee81a94ef304fb62505}{uint16\-\_\-t} \hyperlink{group__xbee__device_ga1048ca0eb1adc5759a0df48ae8ae740a}{bytes\-\_\-in\-\_\-frame}}\label{group__xbee__device_ga1048ca0eb1adc5759a0df48ae8ae740a}
+
+\begin{DoxyCompactList}\small\item\em bytes in frame being read; does not include checksum byte \end{DoxyCompactList}\item 
+\hypertarget{group__xbee__device_gad7b2ae5814cb8706ab662a5d67e4837a}{\hyperlink{group__hal_ga5a8b2dc9e45a9ee81a94ef304fb62505}{uint16\-\_\-t} \hyperlink{group__xbee__device_gad7b2ae5814cb8706ab662a5d67e4837a}{bytes\-\_\-read}}\label{group__xbee__device_gad7b2ae5814cb8706ab662a5d67e4837a}
+
+\begin{DoxyCompactList}\small\item\em bytes read so far \end{DoxyCompactList}\item 
+\hypertarget{group__xbee__device_gaa172073584adf9e2f74034489f9cd2a4}{\hyperlink{group__hal_gae1affc9ca37cfb624959c866a73f83c2}{uint8\-\_\-t} \hyperlink{group__xbee__device_gaa172073584adf9e2f74034489f9cd2a4}{frame\-\_\-data} \mbox{[}\hyperlink{group__xbee__device_gad842f3c5f8d2264a99ab67a01054323a}{X\-B\-E\-E\-\_\-\-M\-A\-X\-\_\-\-F\-R\-A\-M\-E\-\_\-\-L\-E\-N}+1\mbox{]}}\label{group__xbee__device_gaa172073584adf9e2f74034489f9cd2a4}
+
+\begin{DoxyCompactList}\small\item\em bytes received, starting with frame\-\_\-type, +1 is for checksum \end{DoxyCompactList}\item 
+\hypertarget{group__xbee__device_ga43dd406313bf0281f9a7b9a6c1555fc6}{struct \hyperlink{structxbee__dev__t_1_1rx}{xbee\-\_\-dev\-\_\-t\-::rx} {\bfseries rx}}\label{group__xbee__device_ga43dd406313bf0281f9a7b9a6c1555fc6}
+
+\item 
+\hypertarget{group__xbee__device_ga03c1016ac46b9df250b994f242cf956a}{\hyperlink{group__hal_gae1affc9ca37cfb624959c866a73f83c2}{uint8\-\_\-t} \hyperlink{group__xbee__device_ga03c1016ac46b9df250b994f242cf956a}{frame\-\_\-id}}\label{group__xbee__device_ga03c1016ac46b9df250b994f242cf956a}
+
+\begin{DoxyCompactList}\small\item\em last frame\-\_\-id used for sending \end{DoxyCompactList}\item 
+const \hyperlink{structxbee__dispatch__table__entry__t}{xbee\-\_\-dispatch\-\_\-table\-\_\-entry\-\_\-t} \hyperlink{group__xbee__device_ga1a91a1dc6e99737715fbf882842872c5}{xbee\-\_\-frame\-\_\-handlers} \mbox{[}$\,$\mbox{]}
+\begin{DoxyCompactList}\small\item\em Static table used for dispatching frames. \end{DoxyCompactList}\item 
+\hypertarget{group__xbee__device_gade818037fd6c985038ff29656089758d}{\hyperlink{group__hal_gae1affc9ca37cfb624959c866a73f83c2}{uint8\-\_\-t} {\bfseries status}}\label{group__xbee__device_gade818037fd6c985038ff29656089758d}
+
+\end{DoxyCompactItemize}
+\label{_amgrp01747264fe7bf50731df0522c351974e}%
+Flags used by functions in this module. \begin{DoxyCompactItemize}
+\item 
+\hypertarget{group__xbee__device_ga77bd15823a544f1241a6733e74044785}{\#define {\bfseries X\-B\-E\-E\-\_\-\-D\-E\-V\-\_\-\-F\-L\-A\-G\-\_\-\-N\-O\-N\-E}~0x0000}\label{group__xbee__device_ga77bd15823a544f1241a6733e74044785}
+
+\end{DoxyCompactItemize}
+\label{_amgrp01747264fe7bf50731df0522c351974e}%
+Values for the {\ttfamily options} field of many receive frame types. \begin{DoxyCompactItemize}
+\item 
+\hypertarget{group__xbee__device_gad401ef2f8d1d95e09d607bf3ee0fdb06}{\#define \hyperlink{group__xbee__device_gad401ef2f8d1d95e09d607bf3ee0fdb06}{X\-B\-E\-E\-\_\-\-R\-X\-\_\-\-O\-P\-T\-\_\-\-A\-C\-K\-N\-O\-W\-L\-E\-D\-G\-E\-D}~0x01}\label{group__xbee__device_gad401ef2f8d1d95e09d607bf3ee0fdb06}
+
+\begin{DoxyCompactList}\small\item\em X\-Bee Receive Options\-: packet was acknowledged \mbox{[}Zig\-Bee, Digi\-Mesh\mbox{]}. \end{DoxyCompactList}\item 
+\hypertarget{group__xbee__device_ga6f9c28f688c7f59b8df18f660fb94961}{\#define \hyperlink{group__xbee__device_ga6f9c28f688c7f59b8df18f660fb94961}{X\-B\-E\-E\-\_\-\-R\-X\-\_\-\-O\-P\-T\-\_\-\-B\-R\-O\-A\-D\-C\-A\-S\-T}~0x02}\label{group__xbee__device_ga6f9c28f688c7f59b8df18f660fb94961}
+
+\begin{DoxyCompactList}\small\item\em X\-Bee Receive Options\-: broadcast packet \mbox{[}Zig\-Bee, Digi\-Mesh\mbox{]}. \end{DoxyCompactList}\item 
+\hypertarget{group__xbee__device_gafcd6165b6fd733dea9704d79c5ecc671}{\#define \hyperlink{group__xbee__device_gafcd6165b6fd733dea9704d79c5ecc671}{X\-B\-E\-E\-\_\-\-R\-X\-\_\-\-O\-P\-T\-\_\-\-A\-P\-S\-\_\-\-E\-N\-C\-R\-Y\-P\-T}~0x20}\label{group__xbee__device_gafcd6165b6fd733dea9704d79c5ecc671}
+
+\begin{DoxyCompactList}\small\item\em X\-Bee Receive Options\-: A\-P\-S-\/encrypted packet \mbox{[}Zig\-Bee\mbox{]}. \end{DoxyCompactList}\item 
+\hypertarget{group__xbee__device_gaed8a550b168aa09686266454a2da2a2d}{\#define \hyperlink{group__xbee__device_gaed8a550b168aa09686266454a2da2a2d}{X\-B\-E\-E\-\_\-\-R\-X\-\_\-\-O\-P\-T\-\_\-\-F\-R\-O\-M\-\_\-\-E\-N\-D\-\_\-\-D\-E\-V\-I\-C\-E}~0x40}\label{group__xbee__device_gaed8a550b168aa09686266454a2da2a2d}
+
+\begin{DoxyCompactList}\small\item\em X\-Bee Receive Options\-: packet from end device (if known) \mbox{[}Zig\-Bee\mbox{]}. \end{DoxyCompactList}\item 
+\hypertarget{group__xbee__device_ga79f154b39bb259ad7898783eebd1242c}{\#define \hyperlink{group__xbee__device_ga79f154b39bb259ad7898783eebd1242c}{X\-B\-E\-E\-\_\-\-R\-X\-\_\-\-O\-P\-T\-\_\-\-M\-O\-D\-E\-\_\-\-M\-A\-S\-K}~0x\-C0}\label{group__xbee__device_ga79f154b39bb259ad7898783eebd1242c}
+
+\begin{DoxyCompactList}\small\item\em X\-Bee Receive Options\-: Mask for transmission mode \mbox{[}Digi\-Mesh\mbox{]}. \end{DoxyCompactList}\item 
+\hypertarget{group__xbee__device_gaad601da5df374a25c456fbc3df93a253}{\#define \hyperlink{group__xbee__device_gaad601da5df374a25c456fbc3df93a253}{X\-B\-E\-E\-\_\-\-R\-X\-\_\-\-O\-P\-T\-\_\-\-M\-O\-D\-E\-\_\-\-N\-O\-N\-E}~(0)}\label{group__xbee__device_gaad601da5df374a25c456fbc3df93a253}
+
+\begin{DoxyCompactList}\small\item\em X\-Bee Receive Options\-: Mode not specified \mbox{[}Digi\-Mesh\mbox{]}. \end{DoxyCompactList}\item 
+\hypertarget{group__xbee__device_ga6465ba8e665a2614ee4479608c2ac3fc}{\#define \hyperlink{group__xbee__device_ga6465ba8e665a2614ee4479608c2ac3fc}{X\-B\-E\-E\-\_\-\-R\-X\-\_\-\-O\-P\-T\-\_\-\-M\-O\-D\-E\-\_\-\-P\-O\-I\-N\-T\-\_\-\-M\-U\-L\-T\-I\-P\-O\-I\-N\-T}~(1$<$$<$6)}\label{group__xbee__device_ga6465ba8e665a2614ee4479608c2ac3fc}
+
+\begin{DoxyCompactList}\small\item\em X\-Bee Receive Options\-: Point-\/\-Multipoint \mbox{[}Digi\-Mesh\mbox{]}. \end{DoxyCompactList}\item 
+\hypertarget{group__xbee__device_ga93f4b2a84bb3d00a3bfaa1b2c3497c2e}{\#define \hyperlink{group__xbee__device_ga93f4b2a84bb3d00a3bfaa1b2c3497c2e}{X\-B\-E\-E\-\_\-\-R\-X\-\_\-\-O\-P\-T\-\_\-\-M\-O\-D\-E\-\_\-\-R\-E\-P\-E\-A\-T\-E\-R}~(2$<$$<$6)}\label{group__xbee__device_ga93f4b2a84bb3d00a3bfaa1b2c3497c2e}
+
+\begin{DoxyCompactList}\small\item\em X\-Bee Receive Options\-: Repeater Mode \mbox{[}Digi\-Mesh\mbox{]}. \end{DoxyCompactList}\item 
+\hypertarget{group__xbee__device_ga052c6bbe1695b3cbf9f75fe7bbcaa1d5}{\#define \hyperlink{group__xbee__device_ga052c6bbe1695b3cbf9f75fe7bbcaa1d5}{X\-B\-E\-E\-\_\-\-R\-X\-\_\-\-O\-P\-T\-\_\-\-M\-O\-D\-E\-\_\-\-D\-I\-G\-I\-M\-E\-S\-H}~(3$<$$<$6)}\label{group__xbee__device_ga052c6bbe1695b3cbf9f75fe7bbcaa1d5}
+
+\begin{DoxyCompactList}\small\item\em X\-Bee Receive Options\-: Digi\-Mesh (not available on 10k product) \mbox{[}Digi\-Mesh\mbox{]}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Function Pointer Prototypes}
+\label{_amgrp2f5754cb0cad19832264f831971ef24c}%
+Function pointer prototypes, forward declaration using \char`\"{}struct xbee\-\_\-dev\-\_\-t\char`\"{} instead of \char`\"{}xbee\-\_\-dev\-\_\-t\char`\"{} since we use the types in the \hyperlink{structxbee__dev__t}{xbee\-\_\-dev\-\_\-t} definition. \begin{DoxyCompactItemize}
+\item 
+typedef int($\ast$ \hyperlink{group__xbee__device_ga3d8f20fa50d6f72eaf03f0cdd4c9832b}{xbee\-\_\-frame\-\_\-handler\-\_\-fn} )(struct \hyperlink{structxbee__dev__t}{xbee\-\_\-dev\-\_\-t} $\ast$xbee, const void \hyperlink{group__hal_gaef060b3456fdcc093a7210a762d5f2ed}{F\-A\-R} $\ast$frame, \hyperlink{group__hal_ga5a8b2dc9e45a9ee81a94ef304fb62505}{uint16\-\_\-t} \hyperlink{group__zdo_gab2b3adeb2a67e656ff030b56727fd0ac}{length}, void \hyperlink{group__hal_gaef060b3456fdcc093a7210a762d5f2ed}{F\-A\-R} $\ast$context)
+\begin{DoxyCompactList}\small\item\em Standard A\-P\-I for an X\-Bee frame handler in xbee\-\_\-frame\-\_\-handlers global. \end{DoxyCompactList}\item 
+typedef int($\ast$ \hyperlink{group__xbee__device_gace56b1c8dd7dc5a23f6fa01878d45b09}{xbee\-\_\-is\-\_\-awake\-\_\-fn} )(struct \hyperlink{structxbee__dev__t}{xbee\-\_\-dev\-\_\-t} $\ast$xbee)
+\begin{DoxyCompactList}\small\item\em Function to check the X\-Bee device's A\-W\-A\-K\-E pin to see if it is awake. \end{DoxyCompactList}\item 
+typedef void($\ast$ \hyperlink{group__xbee__device_ga7f2f41997c6215582cf3491c984b31ea}{xbee\-\_\-reset\-\_\-fn} )(struct \hyperlink{structxbee__dev__t}{xbee\-\_\-dev\-\_\-t} $\ast$xbee, \hyperlink{group__hal_ga04dd5074964518403bf944f2b240a5f8}{bool\-\_\-t} asserted)
+\begin{DoxyCompactList}\small\item\em Function to toggle the /\-R\-E\-S\-E\-T pin to the X\-Bee device. \end{DoxyCompactList}\item 
+typedef void($\ast$ \hyperlink{group__xbee__device_ga55de36532265a72bffa969d5353800d7}{xbee\-\_\-disc\-\_\-node\-\_\-id\-\_\-fn} )(struct \hyperlink{structxbee__dev__t}{xbee\-\_\-dev\-\_\-t} $\ast$xbee, const struct \hyperlink{structxbee__node__id__t}{xbee\-\_\-node\-\_\-id\-\_\-t} $\ast$rec)
+\begin{DoxyCompactList}\small\item\em Function to process parsed Node I\-D messages. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\label{_amgrp01747264fe7bf50731df0522c351974e}%
+Values for {\ttfamily status} member of xbee\-\_\-frame\-\_\-modem\-\_\-status\-\_\-t. \begin{DoxyCompactItemize}
+\item 
+\hypertarget{group__xbee__device_ga28583d00e888ab4f17206ee70767aafa}{\#define \hyperlink{group__xbee__device_ga28583d00e888ab4f17206ee70767aafa}{X\-B\-E\-E\-\_\-\-M\-O\-D\-E\-M\-\_\-\-S\-T\-A\-T\-U\-S\-\_\-\-H\-W\-\_\-\-R\-E\-S\-E\-T}~0x00}\label{group__xbee__device_ga28583d00e888ab4f17206ee70767aafa}
+
+\begin{DoxyCompactList}\small\item\em X\-Bee Modem Status\-: Hardware reset \mbox{[}Zig\-Bee and Digi\-Mesh\mbox{]}. \end{DoxyCompactList}\item 
+\hypertarget{group__xbee__device_gadb8d81ed3b25a11945a7a39a84255d72}{\#define \hyperlink{group__xbee__device_gadb8d81ed3b25a11945a7a39a84255d72}{X\-B\-E\-E\-\_\-\-M\-O\-D\-E\-M\-\_\-\-S\-T\-A\-T\-U\-S\-\_\-\-W\-A\-T\-C\-H\-D\-O\-G}~0x01}\label{group__xbee__device_gadb8d81ed3b25a11945a7a39a84255d72}
+
+\begin{DoxyCompactList}\small\item\em X\-Bee Modem Status\-: Watchdog timer reset \mbox{[}Zig\-Bee and Digi\-Mesh\mbox{]}. \end{DoxyCompactList}\item 
+\hypertarget{group__xbee__device_ga2e3f5ffd01da92dd4a25257d8bc005bc}{\#define \hyperlink{group__xbee__device_ga2e3f5ffd01da92dd4a25257d8bc005bc}{X\-B\-E\-E\-\_\-\-M\-O\-D\-E\-M\-\_\-\-S\-T\-A\-T\-U\-S\-\_\-\-J\-O\-I\-N\-E\-D}~0x02}\label{group__xbee__device_ga2e3f5ffd01da92dd4a25257d8bc005bc}
+
+\begin{DoxyCompactList}\small\item\em X\-Bee Modem Status\-: Joined network (routers and end devices) \mbox{[}Zig\-Bee\mbox{]}. \end{DoxyCompactList}\item 
+\hypertarget{group__xbee__device_ga5a5b4041876231e1516ccd621bc298db}{\#define \hyperlink{group__xbee__device_ga5a5b4041876231e1516ccd621bc298db}{X\-B\-E\-E\-\_\-\-M\-O\-D\-E\-M\-\_\-\-S\-T\-A\-T\-U\-S\-\_\-\-D\-I\-S\-A\-S\-S\-O\-C}~0x03}\label{group__xbee__device_ga5a5b4041876231e1516ccd621bc298db}
+
+\begin{DoxyCompactList}\small\item\em X\-Bee Modem Status\-: Disassociated (left network) \mbox{[}Zig\-Bee\mbox{]}. \end{DoxyCompactList}\item 
+\hypertarget{group__xbee__device_ga057ed15b292ea3e48a138c6737fb0339}{\#define \hyperlink{group__xbee__device_ga057ed15b292ea3e48a138c6737fb0339}{X\-B\-E\-E\-\_\-\-M\-O\-D\-E\-M\-\_\-\-S\-T\-A\-T\-U\-S\-\_\-\-C\-O\-O\-R\-D\-\_\-\-S\-T\-A\-R\-T}~0x06}\label{group__xbee__device_ga057ed15b292ea3e48a138c6737fb0339}
+
+\begin{DoxyCompactList}\small\item\em X\-Bee Modem Status\-: Coordinator started \mbox{[}Zig\-Bee\mbox{]}. \end{DoxyCompactList}\item 
+\hypertarget{group__xbee__device_ga465cfa03dffba6584345938283b1c200}{\#define \hyperlink{group__xbee__device_ga465cfa03dffba6584345938283b1c200}{X\-B\-E\-E\-\_\-\-M\-O\-D\-E\-M\-\_\-\-S\-T\-A\-T\-U\-S\-\_\-\-N\-E\-T\-W\-O\-R\-K\-\_\-\-K\-E\-Y\-\_\-\-U\-P\-D\-A\-T\-E\-D}~0x07}\label{group__xbee__device_ga465cfa03dffba6584345938283b1c200}
+
+\begin{DoxyCompactList}\small\item\em X\-Bee Modem Status\-: Network security key was updated \mbox{[}Zig\-Bee\mbox{]}. \end{DoxyCompactList}\item 
+\hypertarget{group__xbee__device_gafdc21028c63554f391dc8f88e9fb82ef}{\#define \hyperlink{group__xbee__device_gafdc21028c63554f391dc8f88e9fb82ef}{X\-B\-E\-E\-\_\-\-M\-O\-D\-E\-M\-\_\-\-S\-T\-A\-T\-U\-S\-\_\-\-W\-O\-K\-E\-\_\-\-U\-P}~0x0\-B}\label{group__xbee__device_gafdc21028c63554f391dc8f88e9fb82ef}
+
+\begin{DoxyCompactList}\small\item\em X\-Bee Modem Status\-: Network Woke Up \mbox{[}Digi\-Mesh\mbox{]}. \end{DoxyCompactList}\item 
+\hypertarget{group__xbee__device_ga1a7c823908fa0c74b692665b9a76ac99}{\#define \hyperlink{group__xbee__device_ga1a7c823908fa0c74b692665b9a76ac99}{X\-B\-E\-E\-\_\-\-M\-O\-D\-E\-M\-\_\-\-S\-T\-A\-T\-U\-S\-\_\-\-S\-L\-E\-E\-P\-I\-N\-G}~0x0\-C}\label{group__xbee__device_ga1a7c823908fa0c74b692665b9a76ac99}
+
+\begin{DoxyCompactList}\small\item\em X\-Bee Modem Status\-: Network Went To Sleep \mbox{[}Digi\-Mesh\mbox{]}. \end{DoxyCompactList}\item 
+\hypertarget{group__xbee__device_ga94ea3df8c78c7789b55cfa9784ee3dc4}{\#define \hyperlink{group__xbee__device_ga94ea3df8c78c7789b55cfa9784ee3dc4}{X\-B\-E\-E\-\_\-\-M\-O\-D\-E\-M\-\_\-\-S\-T\-A\-T\-U\-S\-\_\-\-O\-V\-E\-R\-V\-O\-L\-T\-A\-G\-E}~0x0\-D}\label{group__xbee__device_ga94ea3df8c78c7789b55cfa9784ee3dc4}
+
+\begin{DoxyCompactList}\small\item\em X\-Bee Modem Status\-: Voltage supply limit exceeded (X\-Bee-\/\-P\-R\-O only) \mbox{[}Zig\-Bee\mbox{]}. \end{DoxyCompactList}\item 
+\hypertarget{group__xbee__device_ga190661653f541a9b694103dbd27fd284}{\#define \hyperlink{group__xbee__device_ga190661653f541a9b694103dbd27fd284}{X\-B\-E\-E\-\_\-\-M\-O\-D\-E\-M\-\_\-\-S\-T\-A\-T\-U\-S\-\_\-\-K\-E\-Y\-\_\-\-E\-S\-T\-A\-B\-L\-I\-S\-H\-E\-D}~0x10}\label{group__xbee__device_ga190661653f541a9b694103dbd27fd284}
+
+\begin{DoxyCompactList}\small\item\em X\-Bee Modem Status\-: Key establishment complete \mbox{[}Smart Energy\mbox{]}. \end{DoxyCompactList}\item 
+\hypertarget{group__xbee__device_ga0e952a93b4cabed4b442f92ebe1b3066}{\#define \hyperlink{group__xbee__device_ga0e952a93b4cabed4b442f92ebe1b3066}{X\-B\-E\-E\-\_\-\-M\-O\-D\-E\-M\-\_\-\-S\-T\-A\-T\-U\-S\-\_\-\-C\-O\-N\-F\-I\-G\-\_\-\-C\-H\-A\-N\-G\-E\-\_\-\-I\-N\-\_\-\-J\-O\-I\-N}~0x11}\label{group__xbee__device_ga0e952a93b4cabed4b442f92ebe1b3066}
+
+\begin{DoxyCompactList}\small\item\em X\-Bee Modem Status\-: Modem config changed while join in progress \mbox{[}Zig\-Bee\mbox{]}. \end{DoxyCompactList}\item 
+\hypertarget{group__xbee__device_gae6c193c6ae6c9ed32dc9375fdf24abcb}{\#define \hyperlink{group__xbee__device_gae6c193c6ae6c9ed32dc9375fdf24abcb}{X\-B\-E\-E\-\_\-\-M\-O\-D\-E\-M\-\_\-\-S\-T\-A\-T\-U\-S\-\_\-\-S\-T\-A\-C\-K\-\_\-\-E\-R\-R\-O\-R}~0x80}\label{group__xbee__device_gae6c193c6ae6c9ed32dc9375fdf24abcb}
+
+\begin{DoxyCompactList}\small\item\em X\-Bee Modem Status\-: Network stack error \mbox{[}Zig\-Bee\mbox{]}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\label{_amgrp01747264fe7bf50731df0522c351974e}%
+Macros related to the {\ttfamily hardware\-\_\-version} field of \hyperlink{structxbee__dev__t}{xbee\-\_\-dev\-\_\-t}. \begin{DoxyCompactItemize}
+\item 
+\hypertarget{group__xbee__device_ga30868ac420d74847abdb02bb3b53f0ca}{\#define {\bfseries X\-B\-E\-E\-\_\-\-H\-A\-R\-D\-W\-A\-R\-E\-\_\-\-M\-A\-S\-K}~0x\-F\-F00}\label{group__xbee__device_ga30868ac420d74847abdb02bb3b53f0ca}
+
+\item 
+\hypertarget{group__xbee__device_ga619703ca20c7f3cafe06387c97960f97}{\#define {\bfseries X\-B\-E\-E\-\_\-\-H\-A\-R\-D\-W\-A\-R\-E\-\_\-\-S1}~0x1700}\label{group__xbee__device_ga619703ca20c7f3cafe06387c97960f97}
+
+\item 
+\hypertarget{group__xbee__device_gaa71ee41dab497b298098f09c078389bf}{\#define {\bfseries X\-B\-E\-E\-\_\-\-H\-A\-R\-D\-W\-A\-R\-E\-\_\-\-S1\-\_\-\-P\-R\-O}~0x1800}\label{group__xbee__device_gaa71ee41dab497b298098f09c078389bf}
+
+\item 
+\hypertarget{group__xbee__device_ga77c2abc2a2b981882611bcd2304b04b9}{\#define {\bfseries X\-B\-E\-E\-\_\-\-H\-A\-R\-D\-W\-A\-R\-E\-\_\-\-S2}~0x1900}\label{group__xbee__device_ga77c2abc2a2b981882611bcd2304b04b9}
+
+\item 
+\hypertarget{group__xbee__device_ga7ac5ee1f16299178b097d77f6090c426}{\#define {\bfseries X\-B\-E\-E\-\_\-\-H\-A\-R\-D\-W\-A\-R\-E\-\_\-\-S2\-\_\-\-P\-R\-O}~0x1\-A00}\label{group__xbee__device_ga7ac5ee1f16299178b097d77f6090c426}
+
+\item 
+\hypertarget{group__xbee__device_gad02abeef1b5630075c6f9b1f8d9ebe6e}{\#define {\bfseries X\-B\-E\-E\-\_\-\-H\-A\-R\-D\-W\-A\-R\-E\-\_\-900\-\_\-\-P\-R\-O}~0x1\-B00}\label{group__xbee__device_gad02abeef1b5630075c6f9b1f8d9ebe6e}
+
+\item 
+\hypertarget{group__xbee__device_ga0bd900693a71cd8b6f9a26b730791712}{\#define {\bfseries X\-B\-E\-E\-\_\-\-H\-A\-R\-D\-W\-A\-R\-E\-\_\-868\-\_\-\-P\-R\-O}~0x1\-D00}\label{group__xbee__device_ga0bd900693a71cd8b6f9a26b730791712}
+
+\item 
+\hypertarget{group__xbee__device_gabe497a567ff238bd15cfd0f1d8e87a80}{\#define {\bfseries X\-B\-E\-E\-\_\-\-H\-A\-R\-D\-W\-A\-R\-E\-\_\-\-S2\-B\-\_\-\-P\-R\-O}~0x1\-E00}\label{group__xbee__device_gabe497a567ff238bd15cfd0f1d8e87a80}
+
+\item 
+\hypertarget{group__xbee__device_ga5b54a06757ceed4579394de8b630864d}{\#define {\bfseries X\-B\-E\-E\-\_\-\-H\-A\-R\-D\-W\-A\-R\-E\-\_\-\-S2\-C\-\_\-\-P\-R\-O}~0x2100}\label{group__xbee__device_ga5b54a06757ceed4579394de8b630864d}
+
+\item 
+\hypertarget{group__xbee__device_ga01dbbdc8a6feaee9a33b130c6daaef2e}{\#define {\bfseries X\-B\-E\-E\-\_\-\-H\-A\-R\-D\-W\-A\-R\-E\-\_\-\-S2\-C}~0x2200}\label{group__xbee__device_ga01dbbdc8a6feaee9a33b130c6daaef2e}
+
+\item 
+\hypertarget{group__xbee__device_gad5820f837dffbf253ffb2d2ce8b37578}{\#define {\bfseries X\-B\-E\-E\-\_\-\-H\-A\-R\-D\-W\-A\-R\-E\-\_\-\-S3\-B}~0x2300}\label{group__xbee__device_gad5820f837dffbf253ffb2d2ce8b37578}
+
+\item 
+\hypertarget{group__xbee__device_ga681b09d8416068ab9a9afedd303bfefa}{\#define {\bfseries X\-B\-E\-E\-\_\-\-H\-A\-R\-D\-W\-A\-R\-E\-\_\-\-S8}~0x2400}\label{group__xbee__device_ga681b09d8416068ab9a9afedd303bfefa}
+
+\end{DoxyCompactItemize}
+\label{_amgrp01747264fe7bf50731df0522c351974e}%
+Macros related to the {\ttfamily firmware\-\_\-version} field of \hyperlink{structxbee__dev__t}{xbee\-\_\-dev\-\_\-t}. \begin{DoxyCompactItemize}
+\item 
+\hypertarget{group__xbee__device_gacf47336da3a62c0f6c035ae5ef694f6a}{\#define {\bfseries X\-B\-E\-E\-\_\-\-P\-R\-O\-T\-O\-C\-O\-L\-\_\-\-M\-A\-S\-K}~0x\-F000}\label{group__xbee__device_gacf47336da3a62c0f6c035ae5ef694f6a}
+
+\item 
+\hypertarget{group__xbee__device_gaba2301cd1c684d8297b252ccf0a56e48}{\#define {\bfseries X\-B\-E\-E\-\_\-\-P\-R\-O\-T\-O\-C\-O\-L\-\_\-\-Z\-N\-E\-T}~0x1000}\label{group__xbee__device_gaba2301cd1c684d8297b252ccf0a56e48}
+
+\item 
+\hypertarget{group__xbee__device_ga6da8b301ac3fe5a6325c7fa9862aa42f}{\#define {\bfseries X\-B\-E\-E\-\_\-\-P\-R\-O\-T\-O\-C\-O\-L\-\_\-\-Z\-B}~0x2000}\label{group__xbee__device_ga6da8b301ac3fe5a6325c7fa9862aa42f}
+
+\item 
+\hypertarget{group__xbee__device_ga90c85cf78fb81cf3a82106f0723a0130}{\#define {\bfseries X\-B\-E\-E\-\_\-\-P\-R\-O\-T\-O\-C\-O\-L\-\_\-\-S\-M\-A\-R\-T\-E\-N\-E\-R\-G\-Y}~0x3000}\label{group__xbee__device_ga90c85cf78fb81cf3a82106f0723a0130}
+
+\item 
+\hypertarget{group__xbee__device_ga0ebb580d372ba39e2cf878b163cd2a53}{\#define {\bfseries X\-B\-E\-E\-\_\-\-P\-R\-O\-T\-O\-C\-O\-L\-\_\-\-Z\-B\-\_\-\-S2\-C}~0x4000}\label{group__xbee__device_ga0ebb580d372ba39e2cf878b163cd2a53}
+
+\item 
+\hypertarget{group__xbee__device_gad111f22d8c5e8c8b9e62e791f49098c3}{\#define {\bfseries X\-B\-E\-E\-\_\-\-P\-R\-O\-T\-O\-C\-O\-L\-\_\-\-S\-E\-\_\-\-S2\-C}~0x5000}\label{group__xbee__device_gad111f22d8c5e8c8b9e62e791f49098c3}
+
+\item 
+\hypertarget{group__xbee__device_gabc8f957da9c61e7dd5385a013c4bace2}{\#define {\bfseries X\-B\-E\-E\-\_\-\-P\-R\-O\-T\-O\-C\-O\-L\-\_\-\-M\-E\-S\-H\-L\-E\-S\-S}~0x1000}\label{group__xbee__device_gabc8f957da9c61e7dd5385a013c4bace2}
+
+\item 
+\hypertarget{group__xbee__device_ga640e6dc87a7153317adc2bc1b758109f}{\#define {\bfseries X\-B\-E\-E\-\_\-\-P\-R\-O\-T\-O\-C\-O\-L\-\_\-\-D\-I\-G\-I\-M\-E\-S\-H}~0x8000}\label{group__xbee__device_ga640e6dc87a7153317adc2bc1b758109f}
+
+\item 
+\hypertarget{group__xbee__device_gaa3f98fbceafbcefe7339af9998f171fb}{\#define {\bfseries X\-B\-E\-E\-\_\-\-N\-O\-D\-E\-T\-Y\-P\-E\-\_\-\-M\-A\-S\-K}~0x0\-F00}\label{group__xbee__device_gaa3f98fbceafbcefe7339af9998f171fb}
+
+\item 
+\hypertarget{group__xbee__device_ga0b1b4e6d88d920cd78d1c1e20ebadbc4}{\#define {\bfseries X\-B\-E\-E\-\_\-\-N\-O\-D\-E\-T\-Y\-P\-E\-\_\-\-C\-O\-O\-R\-D}~0x0100}\label{group__xbee__device_ga0b1b4e6d88d920cd78d1c1e20ebadbc4}
+
+\item 
+\hypertarget{group__xbee__device_gadbb9bbb8eef4c71289a17afa838fc4b2}{\#define {\bfseries X\-B\-E\-E\-\_\-\-N\-O\-D\-E\-T\-Y\-P\-E\-\_\-\-R\-O\-U\-T\-E\-R}~0x0300}\label{group__xbee__device_gadbb9bbb8eef4c71289a17afa838fc4b2}
+
+\item 
+\hypertarget{group__xbee__device_gabd59770cb721778fdfbae96d0e4e953b}{\#define {\bfseries X\-B\-E\-E\-\_\-\-N\-O\-D\-E\-T\-Y\-P\-E\-\_\-\-E\-N\-D\-D\-E\-V}~0x0900}\label{group__xbee__device_gabd59770cb721778fdfbae96d0e4e953b}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This layer provides a frame-\/based interface to the X\-Bee module. It uses a table of frame handlers to dispatch complete frames to higher layers of the A\-P\-I. If built with a dynamic 
+
+\subsection{Macro Definition Documentation}
+\hypertarget{group__xbee__device_ga3379d057739746b5365e74c53a5b11e9}{\index{Device Interface@{Device Interface}!X\-B\-E\-E\-\_\-\-D\-E\-V\-\_\-\-S\-T\-A\-C\-K\-\_\-\-V\-E\-R\-S\-I\-O\-N\-\_\-\-A\-D\-D\-R@{X\-B\-E\-E\-\_\-\-D\-E\-V\-\_\-\-S\-T\-A\-C\-K\-\_\-\-V\-E\-R\-S\-I\-O\-N\-\_\-\-A\-D\-D\-R}}
+\index{X\-B\-E\-E\-\_\-\-D\-E\-V\-\_\-\-S\-T\-A\-C\-K\-\_\-\-V\-E\-R\-S\-I\-O\-N\-\_\-\-A\-D\-D\-R@{X\-B\-E\-E\-\_\-\-D\-E\-V\-\_\-\-S\-T\-A\-C\-K\-\_\-\-V\-E\-R\-S\-I\-O\-N\-\_\-\-A\-D\-D\-R}!Device Interface@{Device Interface}}
+\subsubsection[{X\-B\-E\-E\-\_\-\-D\-E\-V\-\_\-\-S\-T\-A\-C\-K\-\_\-\-V\-E\-R\-S\-I\-O\-N\-\_\-\-A\-D\-D\-R}]{\setlength{\rightskip}{0pt plus 5cm}\#define X\-B\-E\-E\-\_\-\-D\-E\-V\-\_\-\-S\-T\-A\-C\-K\-\_\-\-V\-E\-R\-S\-I\-O\-N\-\_\-\-A\-D\-D\-R(
+\begin{DoxyParamCaption}
+\item[{}]{x}
+\end{DoxyParamCaption}
+)~(({\bf uint8\-\_\-t} $\ast$)\&(x).firmware\-\_\-version + 3)}}\label{group__xbee__device_ga3379d057739746b5365e74c53a5b11e9}
+
+
+Macro function to get a pointer to the L\-S\-B of the radio's firmware version. 
+
+Typically used to define Z\-C\-L\-\_\-\-S\-T\-A\-C\-K\-\_\-\-V\-E\-R\-S\-I\-O\-N\-\_\-\-A\-D\-D\-R for the Basic cluster.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em x} & name of \hyperlink{structxbee__dev__t}{xbee\-\_\-dev\-\_\-t} to reference {\ttfamily firmware\-\_\-version} from.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+address of the low byte of the firmware version, taking the processor's endian-\/ness into account 
+\end{DoxyReturn}
+\hypertarget{group__xbee__device_gad842f3c5f8d2264a99ab67a01054323a}{\index{Device Interface@{Device Interface}!X\-B\-E\-E\-\_\-\-M\-A\-X\-\_\-\-F\-R\-A\-M\-E\-\_\-\-L\-E\-N@{X\-B\-E\-E\-\_\-\-M\-A\-X\-\_\-\-F\-R\-A\-M\-E\-\_\-\-L\-E\-N}}
+\index{X\-B\-E\-E\-\_\-\-M\-A\-X\-\_\-\-F\-R\-A\-M\-E\-\_\-\-L\-E\-N@{X\-B\-E\-E\-\_\-\-M\-A\-X\-\_\-\-F\-R\-A\-M\-E\-\_\-\-L\-E\-N}!Device Interface@{Device Interface}}
+\subsubsection[{X\-B\-E\-E\-\_\-\-M\-A\-X\-\_\-\-F\-R\-A\-M\-E\-\_\-\-L\-E\-N}]{\setlength{\rightskip}{0pt plus 5cm}\#define X\-B\-E\-E\-\_\-\-M\-A\-X\-\_\-\-F\-R\-A\-M\-E\-\_\-\-L\-E\-N~({\bf X\-B\-E\-E\-\_\-\-M\-A\-X\-\_\-\-R\-F\-P\-A\-Y\-L\-O\-A\-D} + 18)}}\label{group__xbee__device_gad842f3c5f8d2264a99ab67a01054323a}
+
+
+Max Frame Size, including type, is for 0x91, Receive Explicit. 
+
+Note that this is only for received frames -- we send 0x11 frames with 20 byte header. 
+
+Referenced by \-\_\-xbee\-\_\-frame\-\_\-load().
+
+\hypertarget{group__xbee__device_gaea0dcde46961aae6f1cf5949be02d1a6}{\index{Device Interface@{Device Interface}!X\-B\-E\-E\-\_\-\-M\-A\-X\-\_\-\-R\-F\-P\-A\-Y\-L\-O\-A\-D@{X\-B\-E\-E\-\_\-\-M\-A\-X\-\_\-\-R\-F\-P\-A\-Y\-L\-O\-A\-D}}
+\index{X\-B\-E\-E\-\_\-\-M\-A\-X\-\_\-\-R\-F\-P\-A\-Y\-L\-O\-A\-D@{X\-B\-E\-E\-\_\-\-M\-A\-X\-\_\-\-R\-F\-P\-A\-Y\-L\-O\-A\-D}!Device Interface@{Device Interface}}
+\subsubsection[{X\-B\-E\-E\-\_\-\-M\-A\-X\-\_\-\-R\-F\-P\-A\-Y\-L\-O\-A\-D}]{\setlength{\rightskip}{0pt plus 5cm}\#define X\-B\-E\-E\-\_\-\-M\-A\-X\-\_\-\-R\-F\-P\-A\-Y\-L\-O\-A\-D~128}}\label{group__xbee__device_gaea0dcde46961aae6f1cf5949be02d1a6}
+
+
+Max payload for all supported X\-Bee types is 256 bytes. 
+
+Actual firmware used may affect that size, and even enabling encryption can have an affect. Smart Energy and Zig\-Bee are limited to 128 bytes, Digi\-Mesh is 256 bytes. \hypertarget{group__xbee__device_gaece12bbe1dd3135e51f714b485ed0cf2}{\index{Device Interface@{Device Interface}!xbee\-\_\-zcl\-\_\-identify@{xbee\-\_\-zcl\-\_\-identify}}
+\index{xbee\-\_\-zcl\-\_\-identify@{xbee\-\_\-zcl\-\_\-identify}!Device Interface@{Device Interface}}
+\subsubsection[{xbee\-\_\-zcl\-\_\-identify}]{\setlength{\rightskip}{0pt plus 5cm}\#define xbee\-\_\-zcl\-\_\-identify(
+\begin{DoxyParamCaption}
+\item[{}]{xbee}
+\end{DoxyParamCaption}
+)~{\bf xbee\-\_\-identify}( xbee, {\bf zcl\-\_\-identify\-\_\-isactive}() $>$ 0)}}\label{group__xbee__device_gaece12bbe1dd3135e51f714b485ed0cf2}
+
+
+Programs with the Z\-C\-L Identify Server Cluster can call this macro in their main loop to have the X\-Bee module's association L\-E\-D flash fast (100ms cycle) when in Identify Mode. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em xbee} & device to identify\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{group__xbee__device_ga42768d8f8aa841ed4f42396cff2815aa}{xbee\-\_\-identify}, \hyperlink{group__zcl__identify_ga95b00d55b861c1ea6033c16794ae818d}{zcl\-\_\-identify\-\_\-isactive}, \hyperlink{group__zcl__identify_gaeae5b3a460629b095247d160235ec586}{Z\-C\-L\-\_\-\-C\-L\-U\-S\-T\-\_\-\-E\-N\-T\-R\-Y\-\_\-\-I\-D\-E\-N\-T\-I\-F\-Y\-\_\-\-S\-E\-R\-V\-E\-R} 
+\end{DoxySeeAlso}
+
+
+\subsection{Typedef Documentation}
+\hypertarget{group__xbee__device_ga55de36532265a72bffa969d5353800d7}{\index{Device Interface@{Device Interface}!xbee\-\_\-disc\-\_\-node\-\_\-id\-\_\-fn@{xbee\-\_\-disc\-\_\-node\-\_\-id\-\_\-fn}}
+\index{xbee\-\_\-disc\-\_\-node\-\_\-id\-\_\-fn@{xbee\-\_\-disc\-\_\-node\-\_\-id\-\_\-fn}!Device Interface@{Device Interface}}
+\subsubsection[{xbee\-\_\-disc\-\_\-node\-\_\-id\-\_\-fn}]{\setlength{\rightskip}{0pt plus 5cm}typedef void($\ast$ xbee\-\_\-disc\-\_\-node\-\_\-id\-\_\-fn)(struct {\bf xbee\-\_\-dev\-\_\-t} $\ast$xbee, const struct {\bf xbee\-\_\-node\-\_\-id\-\_\-t} $\ast$rec)}}\label{group__xbee__device_ga55de36532265a72bffa969d5353800d7}
+
+
+Function to process parsed Node I\-D messages. 
+
+Programs can register a Node I\-D message handler with this signature to receive Node I\-D messages (either from A\-T\-N\-D responses, Join Notifications, or as a result of Commissioning Button presses).
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em xbee} & X\-Bee device that received the message \\
+\hline
+\mbox{\tt in}  & {\em rec} & parsed Node I\-D message or N\-U\-L\-L if a targeted discovery timed out\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{group__xbee__discovery_ga59a0294fbcb1b9f43b8436d4ec3a5a9e}{xbee\-\_\-disc\-\_\-add\-\_\-node\-\_\-id\-\_\-handler}, \hyperlink{group__xbee__discovery_ga091ae347ddae0bd1b54948714e9d6933}{xbee\-\_\-disc\-\_\-remove\-\_\-node\-\_\-id\-\_\-handler}, \hyperlink{group__xbee__discovery_ga12d6a10c8348cf5eb9636bbf02420dd3}{xbee\-\_\-disc\-\_\-discover\-\_\-nodes} 
+\end{DoxySeeAlso}
+\hypertarget{group__xbee__device_ga3d8f20fa50d6f72eaf03f0cdd4c9832b}{\index{Device Interface@{Device Interface}!xbee\-\_\-frame\-\_\-handler\-\_\-fn@{xbee\-\_\-frame\-\_\-handler\-\_\-fn}}
+\index{xbee\-\_\-frame\-\_\-handler\-\_\-fn@{xbee\-\_\-frame\-\_\-handler\-\_\-fn}!Device Interface@{Device Interface}}
+\subsubsection[{xbee\-\_\-frame\-\_\-handler\-\_\-fn}]{\setlength{\rightskip}{0pt plus 5cm}typedef int($\ast$ xbee\-\_\-frame\-\_\-handler\-\_\-fn)(struct {\bf xbee\-\_\-dev\-\_\-t} $\ast$xbee, const void {\bf F\-A\-R} $\ast$frame, {\bf uint16\-\_\-t} {\bf length}, void {\bf F\-A\-R} $\ast$context)}}\label{group__xbee__device_ga3d8f20fa50d6f72eaf03f0cdd4c9832b}
+
+
+Standard A\-P\-I for an X\-Bee frame handler in xbee\-\_\-frame\-\_\-handlers global. 
+
+These functions are only called when \hyperlink{group__xbee__device_gaf16e8e532b1eb587794b60222c3a0cce}{xbee\-\_\-dev\-\_\-tick()} or \hyperlink{group__wpan__aps_ga1254464011d2d98c13db7b0b3d41c25b}{wpan\-\_\-tick()} are called and a complete frame is ready for processing.
+
+\begin{DoxyNote}{Note}
+There isn't an actual xbee\-\_\-frame\-\_\-handler\-\_\-fn function in the X\-Bee libraries. This documentation exists as a template for writing frame handlers.
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em xbee} & X\-Bee device that received frame. \\
+\hline
+\mbox{\tt in}  & {\em frame} & Pointer to frame data. Data starts with the frame type (the 0x7\-E start byte and frame length are stripped by lower layers of the driver). \\
+\hline
+\mbox{\tt in}  & {\em length} & Number of bytes in frame. \\
+\hline
+\mbox{\tt in}  & {\em context} & Handler-\/specific \char`\"{}context\char`\"{} value, chosen when the handler was registered with xbee\-\_\-frame\-\_\-handler\-\_\-add.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em 0} & successfully processed frame \\
+\hline
+{\em !0} & error processing frame \\
+\hline
+\end{DoxyRetVals}
+\hypertarget{group__xbee__device_ga4693a94bc5849fa7caef0cde5fb48e2f}{\index{Device Interface@{Device Interface}!xbee\-\_\-frame\-\_\-modem\-\_\-status\-\_\-t@{xbee\-\_\-frame\-\_\-modem\-\_\-status\-\_\-t}}
+\index{xbee\-\_\-frame\-\_\-modem\-\_\-status\-\_\-t@{xbee\-\_\-frame\-\_\-modem\-\_\-status\-\_\-t}!Device Interface@{Device Interface}}
+\subsubsection[{xbee\-\_\-frame\-\_\-modem\-\_\-status\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}xbee\-\_\-frame\-\_\-modem\-\_\-status\-\_\-t}}\label{group__xbee__device_ga4693a94bc5849fa7caef0cde5fb48e2f}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+\{
+   \hyperlink{group__hal_gae1affc9ca37cfb624959c866a73f83c2}{uint8\_t}       frame\_type
+\end{DoxyCode}
+\hypertarget{group__xbee__device_gace56b1c8dd7dc5a23f6fa01878d45b09}{\index{Device Interface@{Device Interface}!xbee\-\_\-is\-\_\-awake\-\_\-fn@{xbee\-\_\-is\-\_\-awake\-\_\-fn}}
+\index{xbee\-\_\-is\-\_\-awake\-\_\-fn@{xbee\-\_\-is\-\_\-awake\-\_\-fn}!Device Interface@{Device Interface}}
+\subsubsection[{xbee\-\_\-is\-\_\-awake\-\_\-fn}]{\setlength{\rightskip}{0pt plus 5cm}typedef int($\ast$ xbee\-\_\-is\-\_\-awake\-\_\-fn)(struct {\bf xbee\-\_\-dev\-\_\-t} $\ast$xbee)}}\label{group__xbee__device_gace56b1c8dd7dc5a23f6fa01878d45b09}
+
+
+Function to check the X\-Bee device's A\-W\-A\-K\-E pin to see if it is awake. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em xbee} & X\-Bee device that received frame\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em !0} & X\-Bee module is awake. \\
+\hline
+{\em 0} & X\-Bee module is asleep. \\
+\hline
+\end{DoxyRetVals}
+\hypertarget{group__xbee__device_ga7f2f41997c6215582cf3491c984b31ea}{\index{Device Interface@{Device Interface}!xbee\-\_\-reset\-\_\-fn@{xbee\-\_\-reset\-\_\-fn}}
+\index{xbee\-\_\-reset\-\_\-fn@{xbee\-\_\-reset\-\_\-fn}!Device Interface@{Device Interface}}
+\subsubsection[{xbee\-\_\-reset\-\_\-fn}]{\setlength{\rightskip}{0pt plus 5cm}typedef void($\ast$ xbee\-\_\-reset\-\_\-fn)(struct {\bf xbee\-\_\-dev\-\_\-t} $\ast$xbee, {\bf bool\-\_\-t} asserted)}}\label{group__xbee__device_ga7f2f41997c6215582cf3491c984b31ea}
+
+
+Function to toggle the /\-R\-E\-S\-E\-T pin to the X\-Bee device. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em xbee} & X\-Bee device that received frame \\
+\hline
+\mbox{\tt in}  & {\em asserted} & non-\/zero to assert /\-R\-E\-S\-E\-T, zero to de-\/assert \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Enumeration Type Documentation}
+\hypertarget{group__xbee__device_ga80478d6b87ebdf34b5ec06e5ca6f309e}{\index{Device Interface@{Device Interface}!xbee\-\_\-dev\-\_\-flags@{xbee\-\_\-dev\-\_\-flags}}
+\index{xbee\-\_\-dev\-\_\-flags@{xbee\-\_\-dev\-\_\-flags}!Device Interface@{Device Interface}}
+\subsubsection[{xbee\-\_\-dev\-\_\-flags}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf xbee\-\_\-dev\-\_\-flags}}}\label{group__xbee__device_ga80478d6b87ebdf34b5ec06e5ca6f309e}
+\begin{Desc}
+\item[Enumerator\-: ]\par
+\begin{description}
+\index{X\-B\-E\-E\-\_\-\-D\-E\-V\-\_\-\-F\-L\-A\-G\-\_\-\-C\-M\-D\-\_\-\-I\-N\-I\-T@{X\-B\-E\-E\-\_\-\-D\-E\-V\-\_\-\-F\-L\-A\-G\-\_\-\-C\-M\-D\-\_\-\-I\-N\-I\-T}!Device Interface@{Device Interface}}\index{Device Interface@{Device Interface}!X\-B\-E\-E\-\_\-\-D\-E\-V\-\_\-\-F\-L\-A\-G\-\_\-\-C\-M\-D\-\_\-\-I\-N\-I\-T@{X\-B\-E\-E\-\_\-\-D\-E\-V\-\_\-\-F\-L\-A\-G\-\_\-\-C\-M\-D\-\_\-\-I\-N\-I\-T}}\item[{\em 
+\hypertarget{group__xbee__device_gga80478d6b87ebdf34b5ec06e5ca6f309ea7227a8ae75aa792a17e24d20f1a5a4a8}{X\-B\-E\-E\-\_\-\-D\-E\-V\-\_\-\-F\-L\-A\-G\-\_\-\-C\-M\-D\-\_\-\-I\-N\-I\-T}\label{group__xbee__device_gga80478d6b87ebdf34b5ec06e5ca6f309ea7227a8ae75aa792a17e24d20f1a5a4a8}
+}]xbee\-\_\-cmd\-\_\-init called \index{X\-B\-E\-E\-\_\-\-D\-E\-V\-\_\-\-F\-L\-A\-G\-\_\-\-Q\-U\-E\-R\-Y\-\_\-\-B\-E\-G\-I\-N@{X\-B\-E\-E\-\_\-\-D\-E\-V\-\_\-\-F\-L\-A\-G\-\_\-\-Q\-U\-E\-R\-Y\-\_\-\-B\-E\-G\-I\-N}!Device Interface@{Device Interface}}\index{Device Interface@{Device Interface}!X\-B\-E\-E\-\_\-\-D\-E\-V\-\_\-\-F\-L\-A\-G\-\_\-\-Q\-U\-E\-R\-Y\-\_\-\-B\-E\-G\-I\-N@{X\-B\-E\-E\-\_\-\-D\-E\-V\-\_\-\-F\-L\-A\-G\-\_\-\-Q\-U\-E\-R\-Y\-\_\-\-B\-E\-G\-I\-N}}\item[{\em 
+\hypertarget{group__xbee__device_gga80478d6b87ebdf34b5ec06e5ca6f309ea28b7d1589252302b80f10a627656a6c5}{X\-B\-E\-E\-\_\-\-D\-E\-V\-\_\-\-F\-L\-A\-G\-\_\-\-Q\-U\-E\-R\-Y\-\_\-\-B\-E\-G\-I\-N}\label{group__xbee__device_gga80478d6b87ebdf34b5ec06e5ca6f309ea28b7d1589252302b80f10a627656a6c5}
+}]started querying device \index{X\-B\-E\-E\-\_\-\-D\-E\-V\-\_\-\-F\-L\-A\-G\-\_\-\-Q\-U\-E\-R\-Y\-\_\-\-D\-O\-N\-E@{X\-B\-E\-E\-\_\-\-D\-E\-V\-\_\-\-F\-L\-A\-G\-\_\-\-Q\-U\-E\-R\-Y\-\_\-\-D\-O\-N\-E}!Device Interface@{Device Interface}}\index{Device Interface@{Device Interface}!X\-B\-E\-E\-\_\-\-D\-E\-V\-\_\-\-F\-L\-A\-G\-\_\-\-Q\-U\-E\-R\-Y\-\_\-\-D\-O\-N\-E@{X\-B\-E\-E\-\_\-\-D\-E\-V\-\_\-\-F\-L\-A\-G\-\_\-\-Q\-U\-E\-R\-Y\-\_\-\-D\-O\-N\-E}}\item[{\em 
+\hypertarget{group__xbee__device_gga80478d6b87ebdf34b5ec06e5ca6f309ead04b8cb5ede9e940335559b26aa5399f}{X\-B\-E\-E\-\_\-\-D\-E\-V\-\_\-\-F\-L\-A\-G\-\_\-\-Q\-U\-E\-R\-Y\-\_\-\-D\-O\-N\-E}\label{group__xbee__device_gga80478d6b87ebdf34b5ec06e5ca6f309ead04b8cb5ede9e940335559b26aa5399f}
+}]querying completed \index{X\-B\-E\-E\-\_\-\-D\-E\-V\-\_\-\-F\-L\-A\-G\-\_\-\-Q\-U\-E\-R\-Y\-\_\-\-E\-R\-R\-O\-R@{X\-B\-E\-E\-\_\-\-D\-E\-V\-\_\-\-F\-L\-A\-G\-\_\-\-Q\-U\-E\-R\-Y\-\_\-\-E\-R\-R\-O\-R}!Device Interface@{Device Interface}}\index{Device Interface@{Device Interface}!X\-B\-E\-E\-\_\-\-D\-E\-V\-\_\-\-F\-L\-A\-G\-\_\-\-Q\-U\-E\-R\-Y\-\_\-\-E\-R\-R\-O\-R@{X\-B\-E\-E\-\_\-\-D\-E\-V\-\_\-\-F\-L\-A\-G\-\_\-\-Q\-U\-E\-R\-Y\-\_\-\-E\-R\-R\-O\-R}}\item[{\em 
+\hypertarget{group__xbee__device_gga80478d6b87ebdf34b5ec06e5ca6f309ea7dbd64bc34a6a405582cc92d6460921a}{X\-B\-E\-E\-\_\-\-D\-E\-V\-\_\-\-F\-L\-A\-G\-\_\-\-Q\-U\-E\-R\-Y\-\_\-\-E\-R\-R\-O\-R}\label{group__xbee__device_gga80478d6b87ebdf34b5ec06e5ca6f309ea7dbd64bc34a6a405582cc92d6460921a}
+}]querying timed out or error \index{X\-B\-E\-E\-\_\-\-D\-E\-V\-\_\-\-F\-L\-A\-G\-\_\-\-Q\-U\-E\-R\-Y\-\_\-\-R\-E\-F\-R\-E\-S\-H@{X\-B\-E\-E\-\_\-\-D\-E\-V\-\_\-\-F\-L\-A\-G\-\_\-\-Q\-U\-E\-R\-Y\-\_\-\-R\-E\-F\-R\-E\-S\-H}!Device Interface@{Device Interface}}\index{Device Interface@{Device Interface}!X\-B\-E\-E\-\_\-\-D\-E\-V\-\_\-\-F\-L\-A\-G\-\_\-\-Q\-U\-E\-R\-Y\-\_\-\-R\-E\-F\-R\-E\-S\-H@{X\-B\-E\-E\-\_\-\-D\-E\-V\-\_\-\-F\-L\-A\-G\-\_\-\-Q\-U\-E\-R\-Y\-\_\-\-R\-E\-F\-R\-E\-S\-H}}\item[{\em 
+\hypertarget{group__xbee__device_gga80478d6b87ebdf34b5ec06e5ca6f309ea08b02fa597f36fd613370d28ab5a0e81}{X\-B\-E\-E\-\_\-\-D\-E\-V\-\_\-\-F\-L\-A\-G\-\_\-\-Q\-U\-E\-R\-Y\-\_\-\-R\-E\-F\-R\-E\-S\-H}\label{group__xbee__device_gga80478d6b87ebdf34b5ec06e5ca6f309ea08b02fa597f36fd613370d28ab5a0e81}
+}]need to re-\/query device \index{X\-B\-E\-E\-\_\-\-D\-E\-V\-\_\-\-F\-L\-A\-G\-\_\-\-Q\-U\-E\-R\-Y\-\_\-\-I\-N\-P\-R\-O\-G\-R\-E\-S\-S@{X\-B\-E\-E\-\_\-\-D\-E\-V\-\_\-\-F\-L\-A\-G\-\_\-\-Q\-U\-E\-R\-Y\-\_\-\-I\-N\-P\-R\-O\-G\-R\-E\-S\-S}!Device Interface@{Device Interface}}\index{Device Interface@{Device Interface}!X\-B\-E\-E\-\_\-\-D\-E\-V\-\_\-\-F\-L\-A\-G\-\_\-\-Q\-U\-E\-R\-Y\-\_\-\-I\-N\-P\-R\-O\-G\-R\-E\-S\-S@{X\-B\-E\-E\-\_\-\-D\-E\-V\-\_\-\-F\-L\-A\-G\-\_\-\-Q\-U\-E\-R\-Y\-\_\-\-I\-N\-P\-R\-O\-G\-R\-E\-S\-S}}\item[{\em 
+\hypertarget{group__xbee__device_gga80478d6b87ebdf34b5ec06e5ca6f309ea5f1d6c0ecfad680a292b57e8b078e357}{X\-B\-E\-E\-\_\-\-D\-E\-V\-\_\-\-F\-L\-A\-G\-\_\-\-Q\-U\-E\-R\-Y\-\_\-\-I\-N\-P\-R\-O\-G\-R\-E\-S\-S}\label{group__xbee__device_gga80478d6b87ebdf34b5ec06e5ca6f309ea5f1d6c0ecfad680a292b57e8b078e357}
+}]query is in progress \index{X\-B\-E\-E\-\_\-\-D\-E\-V\-\_\-\-F\-L\-A\-G\-\_\-\-I\-N\-\_\-\-T\-I\-C\-K@{X\-B\-E\-E\-\_\-\-D\-E\-V\-\_\-\-F\-L\-A\-G\-\_\-\-I\-N\-\_\-\-T\-I\-C\-K}!Device Interface@{Device Interface}}\index{Device Interface@{Device Interface}!X\-B\-E\-E\-\_\-\-D\-E\-V\-\_\-\-F\-L\-A\-G\-\_\-\-I\-N\-\_\-\-T\-I\-C\-K@{X\-B\-E\-E\-\_\-\-D\-E\-V\-\_\-\-F\-L\-A\-G\-\_\-\-I\-N\-\_\-\-T\-I\-C\-K}}\item[{\em 
+\hypertarget{group__xbee__device_gga80478d6b87ebdf34b5ec06e5ca6f309ea87374abf657f1ed82b4eafdb287cbb11}{X\-B\-E\-E\-\_\-\-D\-E\-V\-\_\-\-F\-L\-A\-G\-\_\-\-I\-N\-\_\-\-T\-I\-C\-K}\label{group__xbee__device_gga80478d6b87ebdf34b5ec06e5ca6f309ea87374abf657f1ed82b4eafdb287cbb11}
+}]in xbee\-\_\-dev\-\_\-tick \index{X\-B\-E\-E\-\_\-\-D\-E\-V\-\_\-\-F\-L\-A\-G\-\_\-\-C\-O\-O\-R\-D\-I\-N\-A\-T\-O\-R@{X\-B\-E\-E\-\_\-\-D\-E\-V\-\_\-\-F\-L\-A\-G\-\_\-\-C\-O\-O\-R\-D\-I\-N\-A\-T\-O\-R}!Device Interface@{Device Interface}}\index{Device Interface@{Device Interface}!X\-B\-E\-E\-\_\-\-D\-E\-V\-\_\-\-F\-L\-A\-G\-\_\-\-C\-O\-O\-R\-D\-I\-N\-A\-T\-O\-R@{X\-B\-E\-E\-\_\-\-D\-E\-V\-\_\-\-F\-L\-A\-G\-\_\-\-C\-O\-O\-R\-D\-I\-N\-A\-T\-O\-R}}\item[{\em 
+\hypertarget{group__xbee__device_gga80478d6b87ebdf34b5ec06e5ca6f309eaeb56279696e50227507ac864ab9ac0ec}{X\-B\-E\-E\-\_\-\-D\-E\-V\-\_\-\-F\-L\-A\-G\-\_\-\-C\-O\-O\-R\-D\-I\-N\-A\-T\-O\-R}\label{group__xbee__device_gga80478d6b87ebdf34b5ec06e5ca6f309eaeb56279696e50227507ac864ab9ac0ec}
+}]Node Type is Coordinator. \index{X\-B\-E\-E\-\_\-\-D\-E\-V\-\_\-\-F\-L\-A\-G\-\_\-\-R\-O\-U\-T\-E\-R@{X\-B\-E\-E\-\_\-\-D\-E\-V\-\_\-\-F\-L\-A\-G\-\_\-\-R\-O\-U\-T\-E\-R}!Device Interface@{Device Interface}}\index{Device Interface@{Device Interface}!X\-B\-E\-E\-\_\-\-D\-E\-V\-\_\-\-F\-L\-A\-G\-\_\-\-R\-O\-U\-T\-E\-R@{X\-B\-E\-E\-\_\-\-D\-E\-V\-\_\-\-F\-L\-A\-G\-\_\-\-R\-O\-U\-T\-E\-R}}\item[{\em 
+\hypertarget{group__xbee__device_gga80478d6b87ebdf34b5ec06e5ca6f309ea1c75931e456c18105376472a4de0abd5}{X\-B\-E\-E\-\_\-\-D\-E\-V\-\_\-\-F\-L\-A\-G\-\_\-\-R\-O\-U\-T\-E\-R}\label{group__xbee__device_gga80478d6b87ebdf34b5ec06e5ca6f309ea1c75931e456c18105376472a4de0abd5}
+}]Node Type is Router. \index{X\-B\-E\-E\-\_\-\-D\-E\-V\-\_\-\-F\-L\-A\-G\-\_\-\-E\-N\-D\-D\-E\-V@{X\-B\-E\-E\-\_\-\-D\-E\-V\-\_\-\-F\-L\-A\-G\-\_\-\-E\-N\-D\-D\-E\-V}!Device Interface@{Device Interface}}\index{Device Interface@{Device Interface}!X\-B\-E\-E\-\_\-\-D\-E\-V\-\_\-\-F\-L\-A\-G\-\_\-\-E\-N\-D\-D\-E\-V@{X\-B\-E\-E\-\_\-\-D\-E\-V\-\_\-\-F\-L\-A\-G\-\_\-\-E\-N\-D\-D\-E\-V}}\item[{\em 
+\hypertarget{group__xbee__device_gga80478d6b87ebdf34b5ec06e5ca6f309ea8aadac61e98e3876795b213fe1e124df}{X\-B\-E\-E\-\_\-\-D\-E\-V\-\_\-\-F\-L\-A\-G\-\_\-\-E\-N\-D\-D\-E\-V}\label{group__xbee__device_gga80478d6b87ebdf34b5ec06e5ca6f309ea8aadac61e98e3876795b213fe1e124df}
+}]Node Type is End Device. \index{X\-B\-E\-E\-\_\-\-D\-E\-V\-\_\-\-F\-L\-A\-G\-\_\-\-Z\-N\-E\-T@{X\-B\-E\-E\-\_\-\-D\-E\-V\-\_\-\-F\-L\-A\-G\-\_\-\-Z\-N\-E\-T}!Device Interface@{Device Interface}}\index{Device Interface@{Device Interface}!X\-B\-E\-E\-\_\-\-D\-E\-V\-\_\-\-F\-L\-A\-G\-\_\-\-Z\-N\-E\-T@{X\-B\-E\-E\-\_\-\-D\-E\-V\-\_\-\-F\-L\-A\-G\-\_\-\-Z\-N\-E\-T}}\item[{\em 
+\hypertarget{group__xbee__device_gga80478d6b87ebdf34b5ec06e5ca6f309ea0162b7d193e6a7b2df66c854f8d1e6da}{X\-B\-E\-E\-\_\-\-D\-E\-V\-\_\-\-F\-L\-A\-G\-\_\-\-Z\-N\-E\-T}\label{group__xbee__device_gga80478d6b87ebdf34b5ec06e5ca6f309ea0162b7d193e6a7b2df66c854f8d1e6da}
+}]Firmware is Z\-Net. \index{X\-B\-E\-E\-\_\-\-D\-E\-V\-\_\-\-F\-L\-A\-G\-\_\-\-Z\-I\-G\-B\-E\-E@{X\-B\-E\-E\-\_\-\-D\-E\-V\-\_\-\-F\-L\-A\-G\-\_\-\-Z\-I\-G\-B\-E\-E}!Device Interface@{Device Interface}}\index{Device Interface@{Device Interface}!X\-B\-E\-E\-\_\-\-D\-E\-V\-\_\-\-F\-L\-A\-G\-\_\-\-Z\-I\-G\-B\-E\-E@{X\-B\-E\-E\-\_\-\-D\-E\-V\-\_\-\-F\-L\-A\-G\-\_\-\-Z\-I\-G\-B\-E\-E}}\item[{\em 
+\hypertarget{group__xbee__device_gga80478d6b87ebdf34b5ec06e5ca6f309ead4776798a97f943819304f84f7f16bf3}{X\-B\-E\-E\-\_\-\-D\-E\-V\-\_\-\-F\-L\-A\-G\-\_\-\-Z\-I\-G\-B\-E\-E}\label{group__xbee__device_gga80478d6b87ebdf34b5ec06e5ca6f309ead4776798a97f943819304f84f7f16bf3}
+}]Firmware is Zig\-Bee. \index{X\-B\-E\-E\-\_\-\-D\-E\-V\-\_\-\-F\-L\-A\-G\-\_\-\-D\-I\-G\-I\-M\-E\-S\-H@{X\-B\-E\-E\-\_\-\-D\-E\-V\-\_\-\-F\-L\-A\-G\-\_\-\-D\-I\-G\-I\-M\-E\-S\-H}!Device Interface@{Device Interface}}\index{Device Interface@{Device Interface}!X\-B\-E\-E\-\_\-\-D\-E\-V\-\_\-\-F\-L\-A\-G\-\_\-\-D\-I\-G\-I\-M\-E\-S\-H@{X\-B\-E\-E\-\_\-\-D\-E\-V\-\_\-\-F\-L\-A\-G\-\_\-\-D\-I\-G\-I\-M\-E\-S\-H}}\item[{\em 
+\hypertarget{group__xbee__device_gga80478d6b87ebdf34b5ec06e5ca6f309ea03185dfb6292bc0e4fc2b6e0372a0644}{X\-B\-E\-E\-\_\-\-D\-E\-V\-\_\-\-F\-L\-A\-G\-\_\-\-D\-I\-G\-I\-M\-E\-S\-H}\label{group__xbee__device_gga80478d6b87ebdf34b5ec06e5ca6f309ea03185dfb6292bc0e4fc2b6e0372a0644}
+}]Firmware is Digi\-Mesh. \index{X\-B\-E\-E\-\_\-\-D\-E\-V\-\_\-\-F\-L\-A\-G\-\_\-\-U\-S\-E\-\_\-\-F\-L\-O\-W\-C\-O\-N\-T\-R\-O\-L@{X\-B\-E\-E\-\_\-\-D\-E\-V\-\_\-\-F\-L\-A\-G\-\_\-\-U\-S\-E\-\_\-\-F\-L\-O\-W\-C\-O\-N\-T\-R\-O\-L}!Device Interface@{Device Interface}}\index{Device Interface@{Device Interface}!X\-B\-E\-E\-\_\-\-D\-E\-V\-\_\-\-F\-L\-A\-G\-\_\-\-U\-S\-E\-\_\-\-F\-L\-O\-W\-C\-O\-N\-T\-R\-O\-L@{X\-B\-E\-E\-\_\-\-D\-E\-V\-\_\-\-F\-L\-A\-G\-\_\-\-U\-S\-E\-\_\-\-F\-L\-O\-W\-C\-O\-N\-T\-R\-O\-L}}\item[{\em 
+\hypertarget{group__xbee__device_gga80478d6b87ebdf34b5ec06e5ca6f309ea09be9866c594c873c75532e1dfd411b6}{X\-B\-E\-E\-\_\-\-D\-E\-V\-\_\-\-F\-L\-A\-G\-\_\-\-U\-S\-E\-\_\-\-F\-L\-O\-W\-C\-O\-N\-T\-R\-O\-L}\label{group__xbee__device_gga80478d6b87ebdf34b5ec06e5ca6f309ea09be9866c594c873c75532e1dfd411b6}
+}]Check C\-T\-S before sending. \end{description}
+\end{Desc}
+
+\hypertarget{group__xbee__device_ga5015540d81fda839a15651ddb3fb411e}{\index{Device Interface@{Device Interface}!xbee\-\_\-dev\-\_\-mode@{xbee\-\_\-dev\-\_\-mode}}
+\index{xbee\-\_\-dev\-\_\-mode@{xbee\-\_\-dev\-\_\-mode}!Device Interface@{Device Interface}}
+\subsubsection[{xbee\-\_\-dev\-\_\-mode}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf xbee\-\_\-dev\-\_\-mode}}}\label{group__xbee__device_ga5015540d81fda839a15651ddb3fb411e}
+\begin{Desc}
+\item[Enumerator\-: ]\par
+\begin{description}
+\index{X\-B\-E\-E\-\_\-\-M\-O\-D\-E\-\_\-\-U\-N\-K\-N\-O\-W\-N@{X\-B\-E\-E\-\_\-\-M\-O\-D\-E\-\_\-\-U\-N\-K\-N\-O\-W\-N}!Device Interface@{Device Interface}}\index{Device Interface@{Device Interface}!X\-B\-E\-E\-\_\-\-M\-O\-D\-E\-\_\-\-U\-N\-K\-N\-O\-W\-N@{X\-B\-E\-E\-\_\-\-M\-O\-D\-E\-\_\-\-U\-N\-K\-N\-O\-W\-N}}\item[{\em 
+\hypertarget{group__xbee__device_gga5015540d81fda839a15651ddb3fb411eaf350ed60e69fcdaa6f966c76c8e6b27c}{X\-B\-E\-E\-\_\-\-M\-O\-D\-E\-\_\-\-U\-N\-K\-N\-O\-W\-N}\label{group__xbee__device_gga5015540d81fda839a15651ddb3fb411eaf350ed60e69fcdaa6f966c76c8e6b27c}
+}]Haven't started communicating with X\-Bee yet. \index{X\-B\-E\-E\-\_\-\-M\-O\-D\-E\-\_\-\-B\-O\-O\-T\-L\-O\-A\-D\-E\-R@{X\-B\-E\-E\-\_\-\-M\-O\-D\-E\-\_\-\-B\-O\-O\-T\-L\-O\-A\-D\-E\-R}!Device Interface@{Device Interface}}\index{Device Interface@{Device Interface}!X\-B\-E\-E\-\_\-\-M\-O\-D\-E\-\_\-\-B\-O\-O\-T\-L\-O\-A\-D\-E\-R@{X\-B\-E\-E\-\_\-\-M\-O\-D\-E\-\_\-\-B\-O\-O\-T\-L\-O\-A\-D\-E\-R}}\item[{\em 
+\hypertarget{group__xbee__device_gga5015540d81fda839a15651ddb3fb411ea09797cbe6ff6ca64b5f7a70749141d1f}{X\-B\-E\-E\-\_\-\-M\-O\-D\-E\-\_\-\-B\-O\-O\-T\-L\-O\-A\-D\-E\-R}\label{group__xbee__device_gga5015540d81fda839a15651ddb3fb411ea09797cbe6ff6ca64b5f7a70749141d1f}
+}]X\-Bee is in the bootloader, not running firmware. \index{X\-B\-E\-E\-\_\-\-M\-O\-D\-E\-\_\-\-A\-P\-I@{X\-B\-E\-E\-\_\-\-M\-O\-D\-E\-\_\-\-A\-P\-I}!Device Interface@{Device Interface}}\index{Device Interface@{Device Interface}!X\-B\-E\-E\-\_\-\-M\-O\-D\-E\-\_\-\-A\-P\-I@{X\-B\-E\-E\-\_\-\-M\-O\-D\-E\-\_\-\-A\-P\-I}}\item[{\em 
+\hypertarget{group__xbee__device_gga5015540d81fda839a15651ddb3fb411ead7770acc4f26137e5c0c196eb3971a55}{X\-B\-E\-E\-\_\-\-M\-O\-D\-E\-\_\-\-A\-P\-I}\label{group__xbee__device_gga5015540d81fda839a15651ddb3fb411ead7770acc4f26137e5c0c196eb3971a55}
+}]X\-Bee is using A\-P\-I firmware. \index{X\-B\-E\-E\-\_\-\-M\-O\-D\-E\-\_\-\-I\-D\-L\-E@{X\-B\-E\-E\-\_\-\-M\-O\-D\-E\-\_\-\-I\-D\-L\-E}!Device Interface@{Device Interface}}\index{Device Interface@{Device Interface}!X\-B\-E\-E\-\_\-\-M\-O\-D\-E\-\_\-\-I\-D\-L\-E@{X\-B\-E\-E\-\_\-\-M\-O\-D\-E\-\_\-\-I\-D\-L\-E}}\item[{\em 
+\hypertarget{group__xbee__device_gga5015540d81fda839a15651ddb3fb411eadd83df98ece1787bd0ddb19d28e319f5}{X\-B\-E\-E\-\_\-\-M\-O\-D\-E\-\_\-\-I\-D\-L\-E}\label{group__xbee__device_gga5015540d81fda839a15651ddb3fb411eadd83df98ece1787bd0ddb19d28e319f5}
+}]idle mode, data sent is passed to remote X\-Bee \index{X\-B\-E\-E\-\_\-\-M\-O\-D\-E\-\_\-\-P\-R\-E\-\_\-\-E\-S\-C\-A\-P\-E@{X\-B\-E\-E\-\_\-\-M\-O\-D\-E\-\_\-\-P\-R\-E\-\_\-\-E\-S\-C\-A\-P\-E}!Device Interface@{Device Interface}}\index{Device Interface@{Device Interface}!X\-B\-E\-E\-\_\-\-M\-O\-D\-E\-\_\-\-P\-R\-E\-\_\-\-E\-S\-C\-A\-P\-E@{X\-B\-E\-E\-\_\-\-M\-O\-D\-E\-\_\-\-P\-R\-E\-\_\-\-E\-S\-C\-A\-P\-E}}\item[{\em 
+\hypertarget{group__xbee__device_gga5015540d81fda839a15651ddb3fb411ea6291fcc5f3aca7d3c48d816cc4fc5d60}{X\-B\-E\-E\-\_\-\-M\-O\-D\-E\-\_\-\-P\-R\-E\-\_\-\-E\-S\-C\-A\-P\-E}\label{group__xbee__device_gga5015540d81fda839a15651ddb3fb411ea6291fcc5f3aca7d3c48d816cc4fc5d60}
+}]command mode, can send A\-T commands to X\-Bee \index{X\-B\-E\-E\-\_\-\-M\-O\-D\-E\-\_\-\-P\-O\-S\-T\-\_\-\-E\-S\-C\-A\-P\-E@{X\-B\-E\-E\-\_\-\-M\-O\-D\-E\-\_\-\-P\-O\-S\-T\-\_\-\-E\-S\-C\-A\-P\-E}!Device Interface@{Device Interface}}\index{Device Interface@{Device Interface}!X\-B\-E\-E\-\_\-\-M\-O\-D\-E\-\_\-\-P\-O\-S\-T\-\_\-\-E\-S\-C\-A\-P\-E@{X\-B\-E\-E\-\_\-\-M\-O\-D\-E\-\_\-\-P\-O\-S\-T\-\_\-\-E\-S\-C\-A\-P\-E}}\item[{\em 
+\hypertarget{group__xbee__device_gga5015540d81fda839a15651ddb3fb411eafd910da7a43596621a12dcbce8410ffd}{X\-B\-E\-E\-\_\-\-M\-O\-D\-E\-\_\-\-P\-O\-S\-T\-\_\-\-E\-S\-C\-A\-P\-E}\label{group__xbee__device_gga5015540d81fda839a15651ddb3fb411eafd910da7a43596621a12dcbce8410ffd}
+}]wait for guard-\/time ms before sending +++ \index{X\-B\-E\-E\-\_\-\-M\-O\-D\-E\-\_\-\-C\-O\-M\-M\-A\-N\-D@{X\-B\-E\-E\-\_\-\-M\-O\-D\-E\-\_\-\-C\-O\-M\-M\-A\-N\-D}!Device Interface@{Device Interface}}\index{Device Interface@{Device Interface}!X\-B\-E\-E\-\_\-\-M\-O\-D\-E\-\_\-\-C\-O\-M\-M\-A\-N\-D@{X\-B\-E\-E\-\_\-\-M\-O\-D\-E\-\_\-\-C\-O\-M\-M\-A\-N\-D}}\item[{\em 
+\hypertarget{group__xbee__device_gga5015540d81fda839a15651ddb3fb411eaaa62d524055898fb85100bd2363a5802}{X\-B\-E\-E\-\_\-\-M\-O\-D\-E\-\_\-\-C\-O\-M\-M\-A\-N\-D}\label{group__xbee__device_gga5015540d81fda839a15651ddb3fb411eaaa62d524055898fb85100bd2363a5802}
+}]wait guard-\/time ms for \char`\"{}\-O\-K\textbackslash{}r\char`\"{} before command mode \index{X\-B\-E\-E\-\_\-\-M\-O\-D\-E\-\_\-\-W\-A\-I\-T\-\_\-\-I\-D\-L\-E@{X\-B\-E\-E\-\_\-\-M\-O\-D\-E\-\_\-\-W\-A\-I\-T\-\_\-\-I\-D\-L\-E}!Device Interface@{Device Interface}}\index{Device Interface@{Device Interface}!X\-B\-E\-E\-\_\-\-M\-O\-D\-E\-\_\-\-W\-A\-I\-T\-\_\-\-I\-D\-L\-E@{X\-B\-E\-E\-\_\-\-M\-O\-D\-E\-\_\-\-W\-A\-I\-T\-\_\-\-I\-D\-L\-E}}\item[{\em 
+\hypertarget{group__xbee__device_gga5015540d81fda839a15651ddb3fb411ea4fdf81a02970e7d090a88e16e32f8c3a}{X\-B\-E\-E\-\_\-\-M\-O\-D\-E\-\_\-\-W\-A\-I\-T\-\_\-\-I\-D\-L\-E}\label{group__xbee__device_gga5015540d81fda839a15651ddb3fb411ea4fdf81a02970e7d090a88e16e32f8c3a}
+}]waiting for O\-K response to A\-T\-C\-N command \index{X\-B\-E\-E\-\_\-\-M\-O\-D\-E\-\_\-\-W\-A\-I\-T\-\_\-\-R\-E\-S\-P\-O\-N\-S\-E@{X\-B\-E\-E\-\_\-\-M\-O\-D\-E\-\_\-\-W\-A\-I\-T\-\_\-\-R\-E\-S\-P\-O\-N\-S\-E}!Device Interface@{Device Interface}}\index{Device Interface@{Device Interface}!X\-B\-E\-E\-\_\-\-M\-O\-D\-E\-\_\-\-W\-A\-I\-T\-\_\-\-R\-E\-S\-P\-O\-N\-S\-E@{X\-B\-E\-E\-\_\-\-M\-O\-D\-E\-\_\-\-W\-A\-I\-T\-\_\-\-R\-E\-S\-P\-O\-N\-S\-E}}\item[{\em 
+\hypertarget{group__xbee__device_gga5015540d81fda839a15651ddb3fb411eaabd85cf9e660bddbe0782fb96d1b831b}{X\-B\-E\-E\-\_\-\-M\-O\-D\-E\-\_\-\-W\-A\-I\-T\-\_\-\-R\-E\-S\-P\-O\-N\-S\-E}\label{group__xbee__device_gga5015540d81fda839a15651ddb3fb411eaabd85cf9e660bddbe0782fb96d1b831b}
+}]sent a command and now waiting for a response \end{description}
+\end{Desc}
+
+\hypertarget{group__xbee__device_ga30374ada0aff261c5da7557882fd09de}{\index{Device Interface@{Device Interface}!xbee\-\_\-dev\-\_\-rx\-\_\-state@{xbee\-\_\-dev\-\_\-rx\-\_\-state}}
+\index{xbee\-\_\-dev\-\_\-rx\-\_\-state@{xbee\-\_\-dev\-\_\-rx\-\_\-state}!Device Interface@{Device Interface}}
+\subsubsection[{xbee\-\_\-dev\-\_\-rx\-\_\-state}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf xbee\-\_\-dev\-\_\-rx\-\_\-state}}}\label{group__xbee__device_ga30374ada0aff261c5da7557882fd09de}
+\begin{Desc}
+\item[Enumerator\-: ]\par
+\begin{description}
+\index{X\-B\-E\-E\-\_\-\-R\-X\-\_\-\-S\-T\-A\-T\-E\-\_\-\-W\-A\-I\-T\-S\-T\-A\-R\-T@{X\-B\-E\-E\-\_\-\-R\-X\-\_\-\-S\-T\-A\-T\-E\-\_\-\-W\-A\-I\-T\-S\-T\-A\-R\-T}!Device Interface@{Device Interface}}\index{Device Interface@{Device Interface}!X\-B\-E\-E\-\_\-\-R\-X\-\_\-\-S\-T\-A\-T\-E\-\_\-\-W\-A\-I\-T\-S\-T\-A\-R\-T@{X\-B\-E\-E\-\_\-\-R\-X\-\_\-\-S\-T\-A\-T\-E\-\_\-\-W\-A\-I\-T\-S\-T\-A\-R\-T}}\item[{\em 
+\hypertarget{group__xbee__device_gga30374ada0aff261c5da7557882fd09deae0a149adbaecdd2c5d84a1ed006e01a3}{X\-B\-E\-E\-\_\-\-R\-X\-\_\-\-S\-T\-A\-T\-E\-\_\-\-W\-A\-I\-T\-S\-T\-A\-R\-T}\label{group__xbee__device_gga30374ada0aff261c5da7557882fd09deae0a149adbaecdd2c5d84a1ed006e01a3}
+}]waiting for initial 0x7\-E \index{X\-B\-E\-E\-\_\-\-R\-X\-\_\-\-S\-T\-A\-T\-E\-\_\-\-L\-E\-N\-G\-T\-H\-\_\-\-M\-S\-B@{X\-B\-E\-E\-\_\-\-R\-X\-\_\-\-S\-T\-A\-T\-E\-\_\-\-L\-E\-N\-G\-T\-H\-\_\-\-M\-S\-B}!Device Interface@{Device Interface}}\index{Device Interface@{Device Interface}!X\-B\-E\-E\-\_\-\-R\-X\-\_\-\-S\-T\-A\-T\-E\-\_\-\-L\-E\-N\-G\-T\-H\-\_\-\-M\-S\-B@{X\-B\-E\-E\-\_\-\-R\-X\-\_\-\-S\-T\-A\-T\-E\-\_\-\-L\-E\-N\-G\-T\-H\-\_\-\-M\-S\-B}}\item[{\em 
+\hypertarget{group__xbee__device_gga30374ada0aff261c5da7557882fd09dea641dccc2bf7a54d9108a7d3a1aa94dfc}{X\-B\-E\-E\-\_\-\-R\-X\-\_\-\-S\-T\-A\-T\-E\-\_\-\-L\-E\-N\-G\-T\-H\-\_\-\-M\-S\-B}\label{group__xbee__device_gga30374ada0aff261c5da7557882fd09dea641dccc2bf7a54d9108a7d3a1aa94dfc}
+}]waiting for M\-S\-B of length (first byte) \index{X\-B\-E\-E\-\_\-\-R\-X\-\_\-\-S\-T\-A\-T\-E\-\_\-\-L\-E\-N\-G\-T\-H\-\_\-\-L\-S\-B@{X\-B\-E\-E\-\_\-\-R\-X\-\_\-\-S\-T\-A\-T\-E\-\_\-\-L\-E\-N\-G\-T\-H\-\_\-\-L\-S\-B}!Device Interface@{Device Interface}}\index{Device Interface@{Device Interface}!X\-B\-E\-E\-\_\-\-R\-X\-\_\-\-S\-T\-A\-T\-E\-\_\-\-L\-E\-N\-G\-T\-H\-\_\-\-L\-S\-B@{X\-B\-E\-E\-\_\-\-R\-X\-\_\-\-S\-T\-A\-T\-E\-\_\-\-L\-E\-N\-G\-T\-H\-\_\-\-L\-S\-B}}\item[{\em 
+\hypertarget{group__xbee__device_gga30374ada0aff261c5da7557882fd09deafc90aadcdd6ea17637198aadd9d85efd}{X\-B\-E\-E\-\_\-\-R\-X\-\_\-\-S\-T\-A\-T\-E\-\_\-\-L\-E\-N\-G\-T\-H\-\_\-\-L\-S\-B}\label{group__xbee__device_gga30374ada0aff261c5da7557882fd09deafc90aadcdd6ea17637198aadd9d85efd}
+}]waiting for L\-S\-B of length (second byte) \index{X\-B\-E\-E\-\_\-\-R\-X\-\_\-\-S\-T\-A\-T\-E\-\_\-\-R\-X\-F\-R\-A\-M\-E@{X\-B\-E\-E\-\_\-\-R\-X\-\_\-\-S\-T\-A\-T\-E\-\_\-\-R\-X\-F\-R\-A\-M\-E}!Device Interface@{Device Interface}}\index{Device Interface@{Device Interface}!X\-B\-E\-E\-\_\-\-R\-X\-\_\-\-S\-T\-A\-T\-E\-\_\-\-R\-X\-F\-R\-A\-M\-E@{X\-B\-E\-E\-\_\-\-R\-X\-\_\-\-S\-T\-A\-T\-E\-\_\-\-R\-X\-F\-R\-A\-M\-E}}\item[{\em 
+\hypertarget{group__xbee__device_gga30374ada0aff261c5da7557882fd09deae7792cb93b09dde7b061947daffcb35a}{X\-B\-E\-E\-\_\-\-R\-X\-\_\-\-S\-T\-A\-T\-E\-\_\-\-R\-X\-F\-R\-A\-M\-E}\label{group__xbee__device_gga30374ada0aff261c5da7557882fd09deae7792cb93b09dde7b061947daffcb35a}
+}]receiving frame and/or trailing checksum \end{description}
+\end{Desc}
+
+\hypertarget{group__xbee__device_ga7753bbebaf00d6d64942f64b6ae9b7b9}{\index{Device Interface@{Device Interface}!xbee\-\_\-frame\-\_\-type@{xbee\-\_\-frame\-\_\-type}}
+\index{xbee\-\_\-frame\-\_\-type@{xbee\-\_\-frame\-\_\-type}!Device Interface@{Device Interface}}
+\subsubsection[{xbee\-\_\-frame\-\_\-type}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf xbee\-\_\-frame\-\_\-type}}}\label{group__xbee__device_ga7753bbebaf00d6d64942f64b6ae9b7b9}
+
+
+Possible values for the {\ttfamily frame\-\_\-type} field of frames sent to and from the X\-Bee module. 
+
+Values with the upper bit set (0x80) are frames we receive from the X\-Bee module. Values with the upper bit clear are for frames we send to the X\-Bee. \begin{Desc}
+\item[Enumerator\-: ]\par
+\begin{description}
+\index{X\-B\-E\-E\-\_\-\-F\-R\-A\-M\-E\-\_\-\-L\-O\-C\-A\-L\-\_\-\-A\-T\-\_\-\-C\-M\-D@{X\-B\-E\-E\-\_\-\-F\-R\-A\-M\-E\-\_\-\-L\-O\-C\-A\-L\-\_\-\-A\-T\-\_\-\-C\-M\-D}!Device Interface@{Device Interface}}\index{Device Interface@{Device Interface}!X\-B\-E\-E\-\_\-\-F\-R\-A\-M\-E\-\_\-\-L\-O\-C\-A\-L\-\_\-\-A\-T\-\_\-\-C\-M\-D@{X\-B\-E\-E\-\_\-\-F\-R\-A\-M\-E\-\_\-\-L\-O\-C\-A\-L\-\_\-\-A\-T\-\_\-\-C\-M\-D}}\item[{\em 
+\hypertarget{group__xbee__device_gga7753bbebaf00d6d64942f64b6ae9b7b9a540fdafbf3dbb8b5d07be5888e3573ee}{X\-B\-E\-E\-\_\-\-F\-R\-A\-M\-E\-\_\-\-L\-O\-C\-A\-L\-\_\-\-A\-T\-\_\-\-C\-M\-D}\label{group__xbee__device_gga7753bbebaf00d6d64942f64b6ae9b7b9a540fdafbf3dbb8b5d07be5888e3573ee}
+}]Send an A\-T Command to the local device (see \hyperlink{xbee__atcmd_8c}{xbee\-\_\-atcmd.\-c}, \hyperlink{unionxbee__header__at__request__t}{xbee\-\_\-header\-\_\-at\-\_\-request\-\_\-t}). \mbox{[}Zig\-Bee, Digi\-Mesh\mbox{]} \index{X\-B\-E\-E\-\_\-\-F\-R\-A\-M\-E\-\_\-\-L\-O\-C\-A\-L\-\_\-\-A\-T\-\_\-\-C\-M\-D\-\_\-\-Q@{X\-B\-E\-E\-\_\-\-F\-R\-A\-M\-E\-\_\-\-L\-O\-C\-A\-L\-\_\-\-A\-T\-\_\-\-C\-M\-D\-\_\-\-Q}!Device Interface@{Device Interface}}\index{Device Interface@{Device Interface}!X\-B\-E\-E\-\_\-\-F\-R\-A\-M\-E\-\_\-\-L\-O\-C\-A\-L\-\_\-\-A\-T\-\_\-\-C\-M\-D\-\_\-\-Q@{X\-B\-E\-E\-\_\-\-F\-R\-A\-M\-E\-\_\-\-L\-O\-C\-A\-L\-\_\-\-A\-T\-\_\-\-C\-M\-D\-\_\-\-Q}}\item[{\em 
+\hypertarget{group__xbee__device_gga7753bbebaf00d6d64942f64b6ae9b7b9a4dccc9c3f9859247218c0d0a93e2582a}{X\-B\-E\-E\-\_\-\-F\-R\-A\-M\-E\-\_\-\-L\-O\-C\-A\-L\-\_\-\-A\-T\-\_\-\-C\-M\-D\-\_\-\-Q}\label{group__xbee__device_gga7753bbebaf00d6d64942f64b6ae9b7b9a4dccc9c3f9859247218c0d0a93e2582a}
+}]Queue an A\-T command for batch processing on the local device. \mbox{[}Zig\-Bee, Digi\-Mesh\mbox{]} \index{X\-B\-E\-E\-\_\-\-F\-R\-A\-M\-E\-\_\-\-T\-R\-A\-N\-S\-M\-I\-T@{X\-B\-E\-E\-\_\-\-F\-R\-A\-M\-E\-\_\-\-T\-R\-A\-N\-S\-M\-I\-T}!Device Interface@{Device Interface}}\index{Device Interface@{Device Interface}!X\-B\-E\-E\-\_\-\-F\-R\-A\-M\-E\-\_\-\-T\-R\-A\-N\-S\-M\-I\-T@{X\-B\-E\-E\-\_\-\-F\-R\-A\-M\-E\-\_\-\-T\-R\-A\-N\-S\-M\-I\-T}}\item[{\em 
+\hypertarget{group__xbee__device_gga7753bbebaf00d6d64942f64b6ae9b7b9a5215c258e8db6c292b9e52ca26011ed1}{X\-B\-E\-E\-\_\-\-F\-R\-A\-M\-E\-\_\-\-T\-R\-A\-N\-S\-M\-I\-T}\label{group__xbee__device_gga7753bbebaf00d6d64942f64b6ae9b7b9a5215c258e8db6c292b9e52ca26011ed1}
+}]Send data to a default endpoint and cluster on a remote device. \mbox{[}Zig\-Bee, Digi\-Mesh, not Smart Energy\mbox{]} \index{X\-B\-E\-E\-\_\-\-F\-R\-A\-M\-E\-\_\-\-T\-R\-A\-N\-S\-M\-I\-T\-\_\-\-E\-X\-P\-L\-I\-C\-I\-T@{X\-B\-E\-E\-\_\-\-F\-R\-A\-M\-E\-\_\-\-T\-R\-A\-N\-S\-M\-I\-T\-\_\-\-E\-X\-P\-L\-I\-C\-I\-T}!Device Interface@{Device Interface}}\index{Device Interface@{Device Interface}!X\-B\-E\-E\-\_\-\-F\-R\-A\-M\-E\-\_\-\-T\-R\-A\-N\-S\-M\-I\-T\-\_\-\-E\-X\-P\-L\-I\-C\-I\-T@{X\-B\-E\-E\-\_\-\-F\-R\-A\-M\-E\-\_\-\-T\-R\-A\-N\-S\-M\-I\-T\-\_\-\-E\-X\-P\-L\-I\-C\-I\-T}}\item[{\em 
+\hypertarget{group__xbee__device_gga7753bbebaf00d6d64942f64b6ae9b7b9aa673474f9f3597929def38ad4cf7d63e}{X\-B\-E\-E\-\_\-\-F\-R\-A\-M\-E\-\_\-\-T\-R\-A\-N\-S\-M\-I\-T\-\_\-\-E\-X\-P\-L\-I\-C\-I\-T}\label{group__xbee__device_gga7753bbebaf00d6d64942f64b6ae9b7b9aa673474f9f3597929def38ad4cf7d63e}
+}]Send data to a specific endpoint and cluster on a remote device (see \hyperlink{xbee__wpan_8c}{xbee\-\_\-wpan.\-c}). \mbox{[}Zig\-Bee, Digi\-Mesh\mbox{]} \index{X\-B\-E\-E\-\_\-\-F\-R\-A\-M\-E\-\_\-\-R\-E\-M\-O\-T\-E\-\_\-\-A\-T\-\_\-\-C\-M\-D@{X\-B\-E\-E\-\_\-\-F\-R\-A\-M\-E\-\_\-\-R\-E\-M\-O\-T\-E\-\_\-\-A\-T\-\_\-\-C\-M\-D}!Device Interface@{Device Interface}}\index{Device Interface@{Device Interface}!X\-B\-E\-E\-\_\-\-F\-R\-A\-M\-E\-\_\-\-R\-E\-M\-O\-T\-E\-\_\-\-A\-T\-\_\-\-C\-M\-D@{X\-B\-E\-E\-\_\-\-F\-R\-A\-M\-E\-\_\-\-R\-E\-M\-O\-T\-E\-\_\-\-A\-T\-\_\-\-C\-M\-D}}\item[{\em 
+\hypertarget{group__xbee__device_gga7753bbebaf00d6d64942f64b6ae9b7b9a44cc0afd79605edfc1f4d5cbb7ed62a2}{X\-B\-E\-E\-\_\-\-F\-R\-A\-M\-E\-\_\-\-R\-E\-M\-O\-T\-E\-\_\-\-A\-T\-\_\-\-C\-M\-D}\label{group__xbee__device_gga7753bbebaf00d6d64942f64b6ae9b7b9a44cc0afd79605edfc1f4d5cbb7ed62a2}
+}]Send an A\-T command to a remote device on the network (see \hyperlink{xbee__atcmd_8c}{xbee\-\_\-atcmd.\-c}, \hyperlink{unionxbee__header__at__request__t}{xbee\-\_\-header\-\_\-at\-\_\-request\-\_\-t}). \mbox{[}Zig\-Bee, Digi\-Mesh, not Smart Energy\mbox{]} \index{X\-B\-E\-E\-\_\-\-F\-R\-A\-M\-E\-\_\-\-C\-R\-E\-A\-T\-E\-\_\-\-S\-R\-C\-\_\-\-R\-O\-U\-T\-E@{X\-B\-E\-E\-\_\-\-F\-R\-A\-M\-E\-\_\-\-C\-R\-E\-A\-T\-E\-\_\-\-S\-R\-C\-\_\-\-R\-O\-U\-T\-E}!Device Interface@{Device Interface}}\index{Device Interface@{Device Interface}!X\-B\-E\-E\-\_\-\-F\-R\-A\-M\-E\-\_\-\-C\-R\-E\-A\-T\-E\-\_\-\-S\-R\-C\-\_\-\-R\-O\-U\-T\-E@{X\-B\-E\-E\-\_\-\-F\-R\-A\-M\-E\-\_\-\-C\-R\-E\-A\-T\-E\-\_\-\-S\-R\-C\-\_\-\-R\-O\-U\-T\-E}}\item[{\em 
+\hypertarget{group__xbee__device_gga7753bbebaf00d6d64942f64b6ae9b7b9ab2c4deb1aaaab5b5edb54e701d3a3bbe}{X\-B\-E\-E\-\_\-\-F\-R\-A\-M\-E\-\_\-\-C\-R\-E\-A\-T\-E\-\_\-\-S\-R\-C\-\_\-\-R\-O\-U\-T\-E}\label{group__xbee__device_gga7753bbebaf00d6d64942f64b6ae9b7b9ab2c4deb1aaaab5b5edb54e701d3a3bbe}
+}]Create Source Route (used with many-\/to-\/one routing) \mbox{[}Zig\-Bee\mbox{]}. \index{X\-B\-E\-E\-\_\-\-F\-R\-A\-M\-E\-\_\-\-R\-E\-G\-\_\-\-J\-O\-I\-N\-I\-N\-G\-\_\-\-D\-E\-V@{X\-B\-E\-E\-\_\-\-F\-R\-A\-M\-E\-\_\-\-R\-E\-G\-\_\-\-J\-O\-I\-N\-I\-N\-G\-\_\-\-D\-E\-V}!Device Interface@{Device Interface}}\index{Device Interface@{Device Interface}!X\-B\-E\-E\-\_\-\-F\-R\-A\-M\-E\-\_\-\-R\-E\-G\-\_\-\-J\-O\-I\-N\-I\-N\-G\-\_\-\-D\-E\-V@{X\-B\-E\-E\-\_\-\-F\-R\-A\-M\-E\-\_\-\-R\-E\-G\-\_\-\-J\-O\-I\-N\-I\-N\-G\-\_\-\-D\-E\-V}}\item[{\em 
+\hypertarget{group__xbee__device_gga7753bbebaf00d6d64942f64b6ae9b7b9a54fd913d2de57592155023c3a742d85c}{X\-B\-E\-E\-\_\-\-F\-R\-A\-M\-E\-\_\-\-R\-E\-G\-\_\-\-J\-O\-I\-N\-I\-N\-G\-\_\-\-D\-E\-V}\label{group__xbee__device_gga7753bbebaf00d6d64942f64b6ae9b7b9a54fd913d2de57592155023c3a742d85c}
+}]Register Joining Device (add device to trust center's key table) \mbox{[}Smart Energy, coordinator\mbox{]}. \index{X\-B\-E\-E\-\_\-\-F\-R\-A\-M\-E\-\_\-\-L\-O\-C\-A\-L\-\_\-\-A\-T\-\_\-\-R\-E\-S\-P\-O\-N\-S\-E@{X\-B\-E\-E\-\_\-\-F\-R\-A\-M\-E\-\_\-\-L\-O\-C\-A\-L\-\_\-\-A\-T\-\_\-\-R\-E\-S\-P\-O\-N\-S\-E}!Device Interface@{Device Interface}}\index{Device Interface@{Device Interface}!X\-B\-E\-E\-\_\-\-F\-R\-A\-M\-E\-\_\-\-L\-O\-C\-A\-L\-\_\-\-A\-T\-\_\-\-R\-E\-S\-P\-O\-N\-S\-E@{X\-B\-E\-E\-\_\-\-F\-R\-A\-M\-E\-\_\-\-L\-O\-C\-A\-L\-\_\-\-A\-T\-\_\-\-R\-E\-S\-P\-O\-N\-S\-E}}\item[{\em 
+\hypertarget{group__xbee__device_gga7753bbebaf00d6d64942f64b6ae9b7b9ae66771334070219cd098c8201936cf4a}{X\-B\-E\-E\-\_\-\-F\-R\-A\-M\-E\-\_\-\-L\-O\-C\-A\-L\-\_\-\-A\-T\-\_\-\-R\-E\-S\-P\-O\-N\-S\-E}\label{group__xbee__device_gga7753bbebaf00d6d64942f64b6ae9b7b9ae66771334070219cd098c8201936cf4a}
+}]Response from local device to A\-T Command (see \hyperlink{xbee__atcmd_8c}{xbee\-\_\-atcmd.\-c}, \hyperlink{structxbee__cmd__response__t}{xbee\-\_\-cmd\-\_\-response\-\_\-t}). \mbox{[}Zig\-Bee, Digi\-Mesh\mbox{]} \index{X\-B\-E\-E\-\_\-\-F\-R\-A\-M\-E\-\_\-\-M\-O\-D\-E\-M\-\_\-\-S\-T\-A\-T\-U\-S@{X\-B\-E\-E\-\_\-\-F\-R\-A\-M\-E\-\_\-\-M\-O\-D\-E\-M\-\_\-\-S\-T\-A\-T\-U\-S}!Device Interface@{Device Interface}}\index{Device Interface@{Device Interface}!X\-B\-E\-E\-\_\-\-F\-R\-A\-M\-E\-\_\-\-M\-O\-D\-E\-M\-\_\-\-S\-T\-A\-T\-U\-S@{X\-B\-E\-E\-\_\-\-F\-R\-A\-M\-E\-\_\-\-M\-O\-D\-E\-M\-\_\-\-S\-T\-A\-T\-U\-S}}\item[{\em 
+\hypertarget{group__xbee__device_gga7753bbebaf00d6d64942f64b6ae9b7b9adff71d45371cf6b933688c43994b7f81}{X\-B\-E\-E\-\_\-\-F\-R\-A\-M\-E\-\_\-\-M\-O\-D\-E\-M\-\_\-\-S\-T\-A\-T\-U\-S}\label{group__xbee__device_gga7753bbebaf00d6d64942f64b6ae9b7b9adff71d45371cf6b933688c43994b7f81}
+}]Current modem status (see xbee\-\_\-frame\-\_\-modem\-\_\-status\-\_\-t). \mbox{[}Digi\-Mesh, Zig\-Bee\mbox{]}. \index{X\-B\-E\-E\-\_\-\-F\-R\-A\-M\-E\-\_\-\-T\-R\-A\-N\-S\-M\-I\-T\-\_\-\-S\-T\-A\-T\-U\-S@{X\-B\-E\-E\-\_\-\-F\-R\-A\-M\-E\-\_\-\-T\-R\-A\-N\-S\-M\-I\-T\-\_\-\-S\-T\-A\-T\-U\-S}!Device Interface@{Device Interface}}\index{Device Interface@{Device Interface}!X\-B\-E\-E\-\_\-\-F\-R\-A\-M\-E\-\_\-\-T\-R\-A\-N\-S\-M\-I\-T\-\_\-\-S\-T\-A\-T\-U\-S@{X\-B\-E\-E\-\_\-\-F\-R\-A\-M\-E\-\_\-\-T\-R\-A\-N\-S\-M\-I\-T\-\_\-\-S\-T\-A\-T\-U\-S}}\item[{\em 
+\hypertarget{group__xbee__device_gga7753bbebaf00d6d64942f64b6ae9b7b9aab7dc62b855e81a5be4cd5515e5f75bb}{X\-B\-E\-E\-\_\-\-F\-R\-A\-M\-E\-\_\-\-T\-R\-A\-N\-S\-M\-I\-T\-\_\-\-S\-T\-A\-T\-U\-S}\label{group__xbee__device_gga7753bbebaf00d6d64942f64b6ae9b7b9aab7dc62b855e81a5be4cd5515e5f75bb}
+}]Frame sent upon completion of a Transmit Request. \mbox{[}Digi\-Mesh, Zig\-Bee\mbox{]}. \index{X\-B\-E\-E\-\_\-\-F\-R\-A\-M\-E\-\_\-\-R\-O\-U\-T\-E\-\_\-\-I\-N\-F\-O\-R\-M\-A\-T\-I\-O\-N@{X\-B\-E\-E\-\_\-\-F\-R\-A\-M\-E\-\_\-\-R\-O\-U\-T\-E\-\_\-\-I\-N\-F\-O\-R\-M\-A\-T\-I\-O\-N}!Device Interface@{Device Interface}}\index{Device Interface@{Device Interface}!X\-B\-E\-E\-\_\-\-F\-R\-A\-M\-E\-\_\-\-R\-O\-U\-T\-E\-\_\-\-I\-N\-F\-O\-R\-M\-A\-T\-I\-O\-N@{X\-B\-E\-E\-\_\-\-F\-R\-A\-M\-E\-\_\-\-R\-O\-U\-T\-E\-\_\-\-I\-N\-F\-O\-R\-M\-A\-T\-I\-O\-N}}\item[{\em 
+\hypertarget{group__xbee__device_gga7753bbebaf00d6d64942f64b6ae9b7b9a3efa07f955a3591615319eff03f70e2d}{X\-B\-E\-E\-\_\-\-F\-R\-A\-M\-E\-\_\-\-R\-O\-U\-T\-E\-\_\-\-I\-N\-F\-O\-R\-M\-A\-T\-I\-O\-N}\label{group__xbee__device_gga7753bbebaf00d6d64942f64b6ae9b7b9a3efa07f955a3591615319eff03f70e2d}
+}]Route Information Frame, sent for Digi\-Mesh unicast transmissions with N\-A\-C\-K or Trace Route Enable transmit options set. \mbox{[}Digi\-Mesh\mbox{]} \index{X\-B\-E\-E\-\_\-\-F\-R\-A\-M\-E\-\_\-\-A\-G\-G\-R\-E\-G\-A\-T\-E\-\_\-\-A\-D\-D\-R\-E\-S\-S\-I\-N\-G@{X\-B\-E\-E\-\_\-\-F\-R\-A\-M\-E\-\_\-\-A\-G\-G\-R\-E\-G\-A\-T\-E\-\_\-\-A\-D\-D\-R\-E\-S\-S\-I\-N\-G}!Device Interface@{Device Interface}}\index{Device Interface@{Device Interface}!X\-B\-E\-E\-\_\-\-F\-R\-A\-M\-E\-\_\-\-A\-G\-G\-R\-E\-G\-A\-T\-E\-\_\-\-A\-D\-D\-R\-E\-S\-S\-I\-N\-G@{X\-B\-E\-E\-\_\-\-F\-R\-A\-M\-E\-\_\-\-A\-G\-G\-R\-E\-G\-A\-T\-E\-\_\-\-A\-D\-D\-R\-E\-S\-S\-I\-N\-G}}\item[{\em 
+\hypertarget{group__xbee__device_gga7753bbebaf00d6d64942f64b6ae9b7b9a19e510f8124f73788e27f8140a2ae842}{X\-B\-E\-E\-\_\-\-F\-R\-A\-M\-E\-\_\-\-A\-G\-G\-R\-E\-G\-A\-T\-E\-\_\-\-A\-D\-D\-R\-E\-S\-S\-I\-N\-G}\label{group__xbee__device_gga7753bbebaf00d6d64942f64b6ae9b7b9a19e510f8124f73788e27f8140a2ae842}
+}]Output when a node receives an address update frame and modifies its D\-H/\-D\-L registers. \mbox{[}Digi\-Mesh\mbox{]} \index{X\-B\-E\-E\-\_\-\-F\-R\-A\-M\-E\-\_\-\-R\-E\-C\-E\-I\-V\-E@{X\-B\-E\-E\-\_\-\-F\-R\-A\-M\-E\-\_\-\-R\-E\-C\-E\-I\-V\-E}!Device Interface@{Device Interface}}\index{Device Interface@{Device Interface}!X\-B\-E\-E\-\_\-\-F\-R\-A\-M\-E\-\_\-\-R\-E\-C\-E\-I\-V\-E@{X\-B\-E\-E\-\_\-\-F\-R\-A\-M\-E\-\_\-\-R\-E\-C\-E\-I\-V\-E}}\item[{\em 
+\hypertarget{group__xbee__device_gga7753bbebaf00d6d64942f64b6ae9b7b9ab6fa3650abecfac4645c5d4ccdf857fd}{X\-B\-E\-E\-\_\-\-F\-R\-A\-M\-E\-\_\-\-R\-E\-C\-E\-I\-V\-E}\label{group__xbee__device_gga7753bbebaf00d6d64942f64b6ae9b7b9ab6fa3650abecfac4645c5d4ccdf857fd}
+}]Data received on the transparent serial cluster, when A\-T\-A\-O is set to 0. \mbox{[}Zig\-Bee, Digi\-Mesh\mbox{]} \index{X\-B\-E\-E\-\_\-\-F\-R\-A\-M\-E\-\_\-\-R\-E\-C\-E\-I\-V\-E\-\_\-\-E\-X\-P\-L\-I\-C\-I\-T@{X\-B\-E\-E\-\_\-\-F\-R\-A\-M\-E\-\_\-\-R\-E\-C\-E\-I\-V\-E\-\_\-\-E\-X\-P\-L\-I\-C\-I\-T}!Device Interface@{Device Interface}}\index{Device Interface@{Device Interface}!X\-B\-E\-E\-\_\-\-F\-R\-A\-M\-E\-\_\-\-R\-E\-C\-E\-I\-V\-E\-\_\-\-E\-X\-P\-L\-I\-C\-I\-T@{X\-B\-E\-E\-\_\-\-F\-R\-A\-M\-E\-\_\-\-R\-E\-C\-E\-I\-V\-E\-\_\-\-E\-X\-P\-L\-I\-C\-I\-T}}\item[{\em 
+\hypertarget{group__xbee__device_gga7753bbebaf00d6d64942f64b6ae9b7b9a8f80b5fa338b8bf34888ffcbfd260a54}{X\-B\-E\-E\-\_\-\-F\-R\-A\-M\-E\-\_\-\-R\-E\-C\-E\-I\-V\-E\-\_\-\-E\-X\-P\-L\-I\-C\-I\-T}\label{group__xbee__device_gga7753bbebaf00d6d64942f64b6ae9b7b9a8f80b5fa338b8bf34888ffcbfd260a54}
+}]Data received for specific endpoint/cluster (see \hyperlink{xbee__wpan_8c}{xbee\-\_\-wpan.\-c}), when A\-T\-A\-O is non-\/zero. \mbox{[}Zig\-Bee, Digi\-Mesh\mbox{]} \index{X\-B\-E\-E\-\_\-\-F\-R\-A\-M\-E\-\_\-\-I\-O\-\_\-\-R\-E\-S\-P\-O\-N\-S\-E@{X\-B\-E\-E\-\_\-\-F\-R\-A\-M\-E\-\_\-\-I\-O\-\_\-\-R\-E\-S\-P\-O\-N\-S\-E}!Device Interface@{Device Interface}}\index{Device Interface@{Device Interface}!X\-B\-E\-E\-\_\-\-F\-R\-A\-M\-E\-\_\-\-I\-O\-\_\-\-R\-E\-S\-P\-O\-N\-S\-E@{X\-B\-E\-E\-\_\-\-F\-R\-A\-M\-E\-\_\-\-I\-O\-\_\-\-R\-E\-S\-P\-O\-N\-S\-E}}\item[{\em 
+\hypertarget{group__xbee__device_gga7753bbebaf00d6d64942f64b6ae9b7b9abd1291a130de887d7b01cae0f5adbe25}{X\-B\-E\-E\-\_\-\-F\-R\-A\-M\-E\-\_\-\-I\-O\-\_\-\-R\-E\-S\-P\-O\-N\-S\-E}\label{group__xbee__device_gga7753bbebaf00d6d64942f64b6ae9b7b9abd1291a130de887d7b01cae0f5adbe25}
+}]\mbox{[}Zig\-Bee, not Smart Energy\mbox{]} \index{X\-B\-E\-E\-\_\-\-F\-R\-A\-M\-E\-\_\-\-S\-E\-N\-D\-O\-R\-\_\-\-R\-E\-A\-D@{X\-B\-E\-E\-\_\-\-F\-R\-A\-M\-E\-\_\-\-S\-E\-N\-D\-O\-R\-\_\-\-R\-E\-A\-D}!Device Interface@{Device Interface}}\index{Device Interface@{Device Interface}!X\-B\-E\-E\-\_\-\-F\-R\-A\-M\-E\-\_\-\-S\-E\-N\-D\-O\-R\-\_\-\-R\-E\-A\-D@{X\-B\-E\-E\-\_\-\-F\-R\-A\-M\-E\-\_\-\-S\-E\-N\-D\-O\-R\-\_\-\-R\-E\-A\-D}}\item[{\em 
+\hypertarget{group__xbee__device_gga7753bbebaf00d6d64942f64b6ae9b7b9a936c8e1ddf949674a96fed5a401e11de}{X\-B\-E\-E\-\_\-\-F\-R\-A\-M\-E\-\_\-\-S\-E\-N\-D\-O\-R\-\_\-\-R\-E\-A\-D}\label{group__xbee__device_gga7753bbebaf00d6d64942f64b6ae9b7b9a936c8e1ddf949674a96fed5a401e11de}
+}]\mbox{[}Zig\-Bee, not Smart Energy\mbox{]} \index{X\-B\-E\-E\-\_\-\-F\-R\-A\-M\-E\-\_\-\-N\-O\-D\-E\-\_\-\-I\-D@{X\-B\-E\-E\-\_\-\-F\-R\-A\-M\-E\-\_\-\-N\-O\-D\-E\-\_\-\-I\-D}!Device Interface@{Device Interface}}\index{Device Interface@{Device Interface}!X\-B\-E\-E\-\_\-\-F\-R\-A\-M\-E\-\_\-\-N\-O\-D\-E\-\_\-\-I\-D@{X\-B\-E\-E\-\_\-\-F\-R\-A\-M\-E\-\_\-\-N\-O\-D\-E\-\_\-\-I\-D}}\item[{\em 
+\hypertarget{group__xbee__device_gga7753bbebaf00d6d64942f64b6ae9b7b9a5b572839c3123f1059ec2ced643cf5d2}{X\-B\-E\-E\-\_\-\-F\-R\-A\-M\-E\-\_\-\-N\-O\-D\-E\-\_\-\-I\-D}\label{group__xbee__device_gga7753bbebaf00d6d64942f64b6ae9b7b9a5b572839c3123f1059ec2ced643cf5d2}
+}]\mbox{[}Zig\-Bee, Digi\-Mesh, not Smart Energy\mbox{]} \index{X\-B\-E\-E\-\_\-\-F\-R\-A\-M\-E\-\_\-\-R\-E\-M\-O\-T\-E\-\_\-\-A\-T\-\_\-\-R\-E\-S\-P\-O\-N\-S\-E@{X\-B\-E\-E\-\_\-\-F\-R\-A\-M\-E\-\_\-\-R\-E\-M\-O\-T\-E\-\_\-\-A\-T\-\_\-\-R\-E\-S\-P\-O\-N\-S\-E}!Device Interface@{Device Interface}}\index{Device Interface@{Device Interface}!X\-B\-E\-E\-\_\-\-F\-R\-A\-M\-E\-\_\-\-R\-E\-M\-O\-T\-E\-\_\-\-A\-T\-\_\-\-R\-E\-S\-P\-O\-N\-S\-E@{X\-B\-E\-E\-\_\-\-F\-R\-A\-M\-E\-\_\-\-R\-E\-M\-O\-T\-E\-\_\-\-A\-T\-\_\-\-R\-E\-S\-P\-O\-N\-S\-E}}\item[{\em 
+\hypertarget{group__xbee__device_gga7753bbebaf00d6d64942f64b6ae9b7b9a3cd726459592fab4cdc9b5e6bbecb79f}{X\-B\-E\-E\-\_\-\-F\-R\-A\-M\-E\-\_\-\-R\-E\-M\-O\-T\-E\-\_\-\-A\-T\-\_\-\-R\-E\-S\-P\-O\-N\-S\-E}\label{group__xbee__device_gga7753bbebaf00d6d64942f64b6ae9b7b9a3cd726459592fab4cdc9b5e6bbecb79f}
+}]Response from remote device to A\-T Command (see \hyperlink{xbee__atcmd_8c}{xbee\-\_\-atcmd.\-c}, \hyperlink{structxbee__cmd__response__t}{xbee\-\_\-cmd\-\_\-response\-\_\-t}). \mbox{[}Zig\-Bee, Digi\-Mesh, not Smart Energy\mbox{]} \index{X\-B\-E\-E\-\_\-\-F\-R\-A\-M\-E\-\_\-\-F\-W\-\_\-\-U\-P\-D\-A\-T\-E\-\_\-\-S\-T\-A\-T\-U\-S@{X\-B\-E\-E\-\_\-\-F\-R\-A\-M\-E\-\_\-\-F\-W\-\_\-\-U\-P\-D\-A\-T\-E\-\_\-\-S\-T\-A\-T\-U\-S}!Device Interface@{Device Interface}}\index{Device Interface@{Device Interface}!X\-B\-E\-E\-\_\-\-F\-R\-A\-M\-E\-\_\-\-F\-W\-\_\-\-U\-P\-D\-A\-T\-E\-\_\-\-S\-T\-A\-T\-U\-S@{X\-B\-E\-E\-\_\-\-F\-R\-A\-M\-E\-\_\-\-F\-W\-\_\-\-U\-P\-D\-A\-T\-E\-\_\-\-S\-T\-A\-T\-U\-S}}\item[{\em 
+\hypertarget{group__xbee__device_gga7753bbebaf00d6d64942f64b6ae9b7b9a112bc9f0765ac60738788d27307e9661}{X\-B\-E\-E\-\_\-\-F\-R\-A\-M\-E\-\_\-\-F\-W\-\_\-\-U\-P\-D\-A\-T\-E\-\_\-\-S\-T\-A\-T\-U\-S}\label{group__xbee__device_gga7753bbebaf00d6d64942f64b6ae9b7b9a112bc9f0765ac60738788d27307e9661}
+}]Over-\/the-\/\-Air Firmware Update Status \mbox{[}Zig\-Bee, not Smart Energy\mbox{]}. \index{X\-B\-E\-E\-\_\-\-F\-R\-A\-M\-E\-\_\-\-R\-O\-U\-T\-E\-\_\-\-R\-E\-C\-O\-R\-D@{X\-B\-E\-E\-\_\-\-F\-R\-A\-M\-E\-\_\-\-R\-O\-U\-T\-E\-\_\-\-R\-E\-C\-O\-R\-D}!Device Interface@{Device Interface}}\index{Device Interface@{Device Interface}!X\-B\-E\-E\-\_\-\-F\-R\-A\-M\-E\-\_\-\-R\-O\-U\-T\-E\-\_\-\-R\-E\-C\-O\-R\-D@{X\-B\-E\-E\-\_\-\-F\-R\-A\-M\-E\-\_\-\-R\-O\-U\-T\-E\-\_\-\-R\-E\-C\-O\-R\-D}}\item[{\em 
+\hypertarget{group__xbee__device_gga7753bbebaf00d6d64942f64b6ae9b7b9ac43ff037a293ded12fb3099f5895d68e}{X\-B\-E\-E\-\_\-\-F\-R\-A\-M\-E\-\_\-\-R\-O\-U\-T\-E\-\_\-\-R\-E\-C\-O\-R\-D}\label{group__xbee__device_gga7753bbebaf00d6d64942f64b6ae9b7b9ac43ff037a293ded12fb3099f5895d68e}
+}]Route records received in response to a Route Request. \mbox{[}Zig\-Bee\mbox{]}. \index{X\-B\-E\-E\-\_\-\-F\-R\-A\-M\-E\-\_\-\-D\-E\-V\-I\-C\-E\-\_\-\-A\-U\-T\-H\-E\-N\-T\-I\-C\-A\-T\-E\-D@{X\-B\-E\-E\-\_\-\-F\-R\-A\-M\-E\-\_\-\-D\-E\-V\-I\-C\-E\-\_\-\-A\-U\-T\-H\-E\-N\-T\-I\-C\-A\-T\-E\-D}!Device Interface@{Device Interface}}\index{Device Interface@{Device Interface}!X\-B\-E\-E\-\_\-\-F\-R\-A\-M\-E\-\_\-\-D\-E\-V\-I\-C\-E\-\_\-\-A\-U\-T\-H\-E\-N\-T\-I\-C\-A\-T\-E\-D@{X\-B\-E\-E\-\_\-\-F\-R\-A\-M\-E\-\_\-\-D\-E\-V\-I\-C\-E\-\_\-\-A\-U\-T\-H\-E\-N\-T\-I\-C\-A\-T\-E\-D}}\item[{\em 
+\hypertarget{group__xbee__device_gga7753bbebaf00d6d64942f64b6ae9b7b9a29c721efe06b771d6b93dbb52097dbdc}{X\-B\-E\-E\-\_\-\-F\-R\-A\-M\-E\-\_\-\-D\-E\-V\-I\-C\-E\-\_\-\-A\-U\-T\-H\-E\-N\-T\-I\-C\-A\-T\-E\-D}\label{group__xbee__device_gga7753bbebaf00d6d64942f64b6ae9b7b9a29c721efe06b771d6b93dbb52097dbdc}
+}]Information on device authenticated on Smart Energy network. \mbox{[}Smart Energy, coordinator\mbox{]} \index{X\-B\-E\-E\-\_\-\-F\-R\-A\-M\-E\-\_\-\-R\-O\-U\-T\-E\-\_\-\-R\-E\-Q\-U\-E\-S\-T\-\_\-\-I\-N\-D\-I\-C\-A\-T\-O\-R@{X\-B\-E\-E\-\_\-\-F\-R\-A\-M\-E\-\_\-\-R\-O\-U\-T\-E\-\_\-\-R\-E\-Q\-U\-E\-S\-T\-\_\-\-I\-N\-D\-I\-C\-A\-T\-O\-R}!Device Interface@{Device Interface}}\index{Device Interface@{Device Interface}!X\-B\-E\-E\-\_\-\-F\-R\-A\-M\-E\-\_\-\-R\-O\-U\-T\-E\-\_\-\-R\-E\-Q\-U\-E\-S\-T\-\_\-\-I\-N\-D\-I\-C\-A\-T\-O\-R@{X\-B\-E\-E\-\_\-\-F\-R\-A\-M\-E\-\_\-\-R\-O\-U\-T\-E\-\_\-\-R\-E\-Q\-U\-E\-S\-T\-\_\-\-I\-N\-D\-I\-C\-A\-T\-O\-R}}\item[{\em 
+\hypertarget{group__xbee__device_gga7753bbebaf00d6d64942f64b6ae9b7b9a18e3955e47db5a81317a79886777600a}{X\-B\-E\-E\-\_\-\-F\-R\-A\-M\-E\-\_\-\-R\-O\-U\-T\-E\-\_\-\-R\-E\-Q\-U\-E\-S\-T\-\_\-\-I\-N\-D\-I\-C\-A\-T\-O\-R}\label{group__xbee__device_gga7753bbebaf00d6d64942f64b6ae9b7b9a18e3955e47db5a81317a79886777600a}
+}]Many-\/to-\/\-One Route Request Indicator \mbox{[}Zig\-Bee\mbox{]}. \index{X\-B\-E\-E\-\_\-\-F\-R\-A\-M\-E\-\_\-\-R\-E\-G\-\_\-\-J\-O\-I\-N\-I\-N\-G\-\_\-\-D\-E\-V\-\_\-\-S\-T\-A\-T\-U\-S@{X\-B\-E\-E\-\_\-\-F\-R\-A\-M\-E\-\_\-\-R\-E\-G\-\_\-\-J\-O\-I\-N\-I\-N\-G\-\_\-\-D\-E\-V\-\_\-\-S\-T\-A\-T\-U\-S}!Device Interface@{Device Interface}}\index{Device Interface@{Device Interface}!X\-B\-E\-E\-\_\-\-F\-R\-A\-M\-E\-\_\-\-R\-E\-G\-\_\-\-J\-O\-I\-N\-I\-N\-G\-\_\-\-D\-E\-V\-\_\-\-S\-T\-A\-T\-U\-S@{X\-B\-E\-E\-\_\-\-F\-R\-A\-M\-E\-\_\-\-R\-E\-G\-\_\-\-J\-O\-I\-N\-I\-N\-G\-\_\-\-D\-E\-V\-\_\-\-S\-T\-A\-T\-U\-S}}\item[{\em 
+\hypertarget{group__xbee__device_gga7753bbebaf00d6d64942f64b6ae9b7b9ab3db489c51e8c7dd65be0b454f281953}{X\-B\-E\-E\-\_\-\-F\-R\-A\-M\-E\-\_\-\-R\-E\-G\-\_\-\-J\-O\-I\-N\-I\-N\-G\-\_\-\-D\-E\-V\-\_\-\-S\-T\-A\-T\-U\-S}\label{group__xbee__device_gga7753bbebaf00d6d64942f64b6ae9b7b9ab3db489c51e8c7dd65be0b454f281953}
+}]Frame sent in response to Register Joining Device frame (X\-B\-E\-E\-\_\-\-F\-R\-A\-M\-E\-\_\-\-R\-E\-G\-\_\-\-J\-O\-I\-N\-I\-N\-G\-\_\-\-D\-E\-V). \mbox{[}Smart Energy, coordinator\mbox{]} \index{X\-B\-E\-E\-\_\-\-F\-R\-A\-M\-E\-\_\-\-J\-O\-I\-N\-\_\-\-N\-O\-T\-I\-F\-I\-C\-A\-T\-I\-O\-N\-\_\-\-S\-T\-A\-T\-U\-S@{X\-B\-E\-E\-\_\-\-F\-R\-A\-M\-E\-\_\-\-J\-O\-I\-N\-\_\-\-N\-O\-T\-I\-F\-I\-C\-A\-T\-I\-O\-N\-\_\-\-S\-T\-A\-T\-U\-S}!Device Interface@{Device Interface}}\index{Device Interface@{Device Interface}!X\-B\-E\-E\-\_\-\-F\-R\-A\-M\-E\-\_\-\-J\-O\-I\-N\-\_\-\-N\-O\-T\-I\-F\-I\-C\-A\-T\-I\-O\-N\-\_\-\-S\-T\-A\-T\-U\-S@{X\-B\-E\-E\-\_\-\-F\-R\-A\-M\-E\-\_\-\-J\-O\-I\-N\-\_\-\-N\-O\-T\-I\-F\-I\-C\-A\-T\-I\-O\-N\-\_\-\-S\-T\-A\-T\-U\-S}}\item[{\em 
+\hypertarget{group__xbee__device_gga7753bbebaf00d6d64942f64b6ae9b7b9a7c62b1f46ca384f2e605632ab0f73214}{X\-B\-E\-E\-\_\-\-F\-R\-A\-M\-E\-\_\-\-J\-O\-I\-N\-\_\-\-N\-O\-T\-I\-F\-I\-C\-A\-T\-I\-O\-N\-\_\-\-S\-T\-A\-T\-U\-S}\label{group__xbee__device_gga7753bbebaf00d6d64942f64b6ae9b7b9a7c62b1f46ca384f2e605632ab0f73214}
+}]Frame notifying trust center that a device has attempted to join, rejoin or leave the network. Enabled by setting bit 1 of A\-T\-D\-O. \mbox{[}Smart Energy, coordinator\mbox{]} \end{description}
+\end{Desc}
+
+
+
+\subsection{Function Documentation}
+\hypertarget{group__xbee__device_gac80e0cc51e69ec00731528a04ba8d667}{\index{Device Interface@{Device Interface}!\-\_\-xbee\-\_\-checksum@{\-\_\-xbee\-\_\-checksum}}
+\index{\-\_\-xbee\-\_\-checksum@{\-\_\-xbee\-\_\-checksum}!Device Interface@{Device Interface}}
+\subsubsection[{\-\_\-xbee\-\_\-checksum}]{\setlength{\rightskip}{0pt plus 5cm}{\bf uint8\-\_\-t} \-\_\-xbee\-\_\-checksum (
+\begin{DoxyParamCaption}
+\item[{const void {\bf F\-A\-R} $\ast$}]{bytes, }
+\item[{uint\-\_\-fast8\-\_\-t}]{length, }
+\item[{uint\-\_\-fast8\-\_\-t}]{initial}
+\end{DoxyParamCaption}
+)}}\label{group__xbee__device_gac80e0cc51e69ec00731528a04ba8d667}
+
+
+Calculate the checksum for an X\-Bee frame. 
+
+This function actually subtracts bytes from 0x\-F\-F, in order to determine the proper checksum byte so all bytes added together result in 0x00.
+
+Frame checksums start with the frame type (first byte after frame length).
+
+If calculating a checksum for an outgoing packet, sum all of the bytes using this function, and send the low byte of the result.
+
+If verifying a received packet, summing all of the bytes after the length, including the packet's checksum byte, should result in 0x00.
+
+Should only be used internally by this library.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em bytes} & Buffer of bytes to add to sum, assumed non-\/\-N\-U\-L\-L.\\
+\hline
+\mbox{\tt in}  & {\em length} & Number of bytes to add.\\
+\hline
+\mbox{\tt in}  & {\em initial} & Starting checksum value. Use 0x\-F\-F to start or the result of the previous call if summing multiple blocks of data.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Value from 0x00 to 0x\-F\-F that, when added to all bytes previously checksummed, results in a low byte of 0x00. 
+\end{DoxyReturn}
+
+
+References F\-A\-R, and length.
+
+
+
+Referenced by \-\_\-xbee\-\_\-frame\-\_\-load(), and xbee\-\_\-frame\-\_\-write().
+
+\hypertarget{group__xbee__device_gaa9c3bed7ca20dbb2cf4646811c59fe97}{\index{Device Interface@{Device Interface}!\-\_\-xbee\-\_\-dev\-\_\-modem\-\_\-status@{\-\_\-xbee\-\_\-dev\-\_\-modem\-\_\-status}}
+\index{\-\_\-xbee\-\_\-dev\-\_\-modem\-\_\-status@{\-\_\-xbee\-\_\-dev\-\_\-modem\-\_\-status}!Device Interface@{Device Interface}}
+\subsubsection[{\-\_\-xbee\-\_\-dev\-\_\-modem\-\_\-status}]{\setlength{\rightskip}{0pt plus 5cm}void \-\_\-xbee\-\_\-dev\-\_\-modem\-\_\-status (
+\begin{DoxyParamCaption}
+\item[{{\bf wpan\-\_\-dev\-\_\-t} $\ast$}]{wpan, }
+\item[{uint\-\_\-fast8\-\_\-t}]{status}
+\end{DoxyParamCaption}
+)}}\label{group__xbee__device_gaa9c3bed7ca20dbb2cf4646811c59fe97}
+
+
+Receive modem status frames and update flags/state of \hyperlink{structwpan__dev__t}{wpan\-\_\-dev\-\_\-t}. 
+
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{group__xbee__device_ga3d8f20fa50d6f72eaf03f0cdd4c9832b}{xbee\-\_\-frame\-\_\-handler\-\_\-fn()} 
+\end{DoxySeeAlso}
+
+
+References wpan\-\_\-dev\-\_\-t\-::address, wpan\-\_\-dev\-\_\-t\-::flags, W\-P\-A\-N\-\_\-\-F\-L\-A\-G\-\_\-\-A\-U\-T\-H\-E\-N\-T\-I\-C\-A\-T\-E\-D, W\-P\-A\-N\-\_\-\-F\-L\-A\-G\-\_\-\-J\-O\-I\-N\-E\-D, W\-P\-A\-N\-\_\-\-N\-E\-T\-\_\-\-A\-D\-D\-R\-\_\-\-C\-O\-O\-R\-D\-I\-N\-A\-T\-O\-R, W\-P\-A\-N\-\_\-\-N\-E\-T\-\_\-\-A\-D\-D\-R\-\_\-\-U\-N\-D\-E\-F\-I\-N\-E\-D, X\-B\-E\-E\-\_\-\-M\-O\-D\-E\-M\-\_\-\-S\-T\-A\-T\-U\-S\-\_\-\-C\-O\-O\-R\-D\-\_\-\-S\-T\-A\-R\-T, X\-B\-E\-E\-\_\-\-M\-O\-D\-E\-M\-\_\-\-S\-T\-A\-T\-U\-S\-\_\-\-D\-I\-S\-A\-S\-S\-O\-C, X\-B\-E\-E\-\_\-\-M\-O\-D\-E\-M\-\_\-\-S\-T\-A\-T\-U\-S\-\_\-\-H\-W\-\_\-\-R\-E\-S\-E\-T, X\-B\-E\-E\-\_\-\-M\-O\-D\-E\-M\-\_\-\-S\-T\-A\-T\-U\-S\-\_\-\-J\-O\-I\-N\-E\-D, X\-B\-E\-E\-\_\-\-M\-O\-D\-E\-M\-\_\-\-S\-T\-A\-T\-U\-S\-\_\-\-K\-E\-Y\-\_\-\-E\-S\-T\-A\-B\-L\-I\-S\-H\-E\-D, and X\-B\-E\-E\-\_\-\-M\-O\-D\-E\-M\-\_\-\-S\-T\-A\-T\-U\-S\-\_\-\-W\-A\-T\-C\-H\-D\-O\-G.
+
+
+
+Referenced by \-\_\-xbee\-\_\-frame\-\_\-dispatch().
+
+\hypertarget{group__xbee__device_gac7c192386ffce72242c2c8494b261491}{\index{Device Interface@{Device Interface}!\-\_\-xbee\-\_\-dispatch\-\_\-table\-\_\-dump@{\-\_\-xbee\-\_\-dispatch\-\_\-table\-\_\-dump}}
+\index{\-\_\-xbee\-\_\-dispatch\-\_\-table\-\_\-dump@{\-\_\-xbee\-\_\-dispatch\-\_\-table\-\_\-dump}!Device Interface@{Device Interface}}
+\subsubsection[{\-\_\-xbee\-\_\-dispatch\-\_\-table\-\_\-dump}]{\setlength{\rightskip}{0pt plus 5cm}void \-\_\-xbee\-\_\-dispatch\-\_\-table\-\_\-dump (
+\begin{DoxyParamCaption}
+\item[{const {\bf xbee\-\_\-dev\-\_\-t} $\ast$}]{xbee}
+\end{DoxyParamCaption}
+)}}\label{group__xbee__device_gac7c192386ffce72242c2c8494b261491}
+Dump the contents of the frame dispatch table for X\-Bee device {\itshape xbee}. Must have X\-B\-E\-E\-\_\-\-D\-E\-V\-I\-C\-E\-\_\-\-V\-E\-R\-B\-O\-S\-E defined.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em xbee} & X\-Bee device of table to dump. \\
+\hline
+\end{DoxyParams}
+
+
+References xbee\-\_\-dispatch\-\_\-table\-\_\-entry\-\_\-t\-::frame\-\_\-id, xbee\-\_\-dispatch\-\_\-table\-\_\-entry\-\_\-t\-::frame\-\_\-type, P\-R\-Ip\-F\-A\-R, xbee\-\_\-frame\-\_\-handlers, and X\-B\-E\-E\-\_\-\-U\-N\-U\-S\-E\-D\-\_\-\-P\-A\-R\-A\-M\-E\-T\-E\-R.
+
+\hypertarget{group__xbee__device_gab386cd9e1afe784ab79b3139fe8fc5c8}{\index{Device Interface@{Device Interface}!\-\_\-xbee\-\_\-frame\-\_\-dispatch@{\-\_\-xbee\-\_\-frame\-\_\-dispatch}}
+\index{\-\_\-xbee\-\_\-frame\-\_\-dispatch@{\-\_\-xbee\-\_\-frame\-\_\-dispatch}!Device Interface@{Device Interface}}
+\subsubsection[{\-\_\-xbee\-\_\-frame\-\_\-dispatch}]{\setlength{\rightskip}{0pt plus 5cm}int \-\_\-xbee\-\_\-frame\-\_\-dispatch (
+\begin{DoxyParamCaption}
+\item[{{\bf xbee\-\_\-dev\-\_\-t} $\ast$}]{xbee, }
+\item[{const void {\bf F\-A\-R} $\ast$}]{frame, }
+\item[{{\bf uint16\-\_\-t}}]{length}
+\end{DoxyParamCaption}
+)}}\label{group__xbee__device_gab386cd9e1afe784ab79b3139fe8fc5c8}
+
+
+Function called by \hyperlink{group__xbee__device_gac0874f9422c6588062a4b6205e989fc6}{\-\_\-xbee\-\_\-frame\-\_\-load()} to dispatch any frames read. 
+
+Scans through xbee-\/$>$frame\-\_\-handlers, matching the frame\-\_\-type and frame\-\_\-id (if frame\-\_\-id is not zero). Passes the frame and context (from the frame handler table) to each matching handler.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em xbee} & X\-Bee device that received the frames.\\
+\hline
+\mbox{\tt in}  & {\em frame} & Address of bytes in frame, starting with the frame type byte. Note that the frame is still in network byte order -- it is exactly as received from the X\-Bee module.\\
+\hline
+\mbox{\tt in}  & {\em length} & Number of bytes in frame.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Currently returns 0 in all cases. May be updated at some point with various error messages (e.\-g., no handlers are registered for the given frame type and I\-D) or the number of handlers it was dispatched to
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em -\/\-E\-I\-N\-V\-A\-L} & Invalid parameter \\
+\hline
+{\em $>$=0} & number of handlers frame was dispatched to \\
+\hline
+\end{DoxyRetVals}
+
+
+References \-\_\-xbee\-\_\-dev\-\_\-modem\-\_\-status(), E\-I\-N\-V\-A\-L, F\-A\-R, xbee\-\_\-dispatch\-\_\-table\-\_\-entry\-\_\-t\-::frame\-\_\-id, xbee\-\_\-dispatch\-\_\-table\-\_\-entry\-\_\-t\-::frame\-\_\-type, hex\-\_\-dump(), H\-E\-X\-\_\-\-D\-U\-M\-P\-\_\-\-F\-L\-A\-G\-\_\-\-N\-O\-N\-E, P\-R\-Ip\-F\-A\-R, xbee\-\_\-dev\-\_\-t\-::wpan\-\_\-dev, xbee\-\_\-frame\-\_\-handlers, and X\-B\-E\-E\-\_\-\-F\-R\-A\-M\-E\-\_\-\-M\-O\-D\-E\-M\-\_\-\-S\-T\-A\-T\-U\-S.
+
+
+
+Referenced by \-\_\-xbee\-\_\-frame\-\_\-load().
+
+\hypertarget{group__xbee__device_gac0874f9422c6588062a4b6205e989fc6}{\index{Device Interface@{Device Interface}!\-\_\-xbee\-\_\-frame\-\_\-load@{\-\_\-xbee\-\_\-frame\-\_\-load}}
+\index{\-\_\-xbee\-\_\-frame\-\_\-load@{\-\_\-xbee\-\_\-frame\-\_\-load}!Device Interface@{Device Interface}}
+\subsubsection[{\-\_\-xbee\-\_\-frame\-\_\-load}]{\setlength{\rightskip}{0pt plus 5cm}int \-\_\-xbee\-\_\-frame\-\_\-load (
+\begin{DoxyParamCaption}
+\item[{{\bf xbee\-\_\-dev\-\_\-t} $\ast$}]{xbee}
+\end{DoxyParamCaption}
+)}}\label{group__xbee__device_gac0874f9422c6588062a4b6205e989fc6}
+
+
+Check X\-Bee's serial buffer for complete frames and pass them off to the dispatcher. 
+
+Should only be called after {\itshape xbee} has been initialized by calling \hyperlink{group__xbee__device_ga550d7c865e75d3fc1df0e64cb880cf3d}{xbee\-\_\-dev\-\_\-init()}. Typically called by \hyperlink{group__xbee__device_gaf16e8e532b1eb587794b60222c3a0cce}{xbee\-\_\-dev\-\_\-tick()}.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em xbee} & X\-Bee device to read from.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em 0} & No new frames waiting. \\
+\hline
+{\em $>$0} & Number of frames processed. \\
+\hline
+{\em $<$0} & Error.\\
+\hline
+\end{DoxyRetVals}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{group__xbee__device_ga550d7c865e75d3fc1df0e64cb880cf3d}{xbee\-\_\-dev\-\_\-init()}, \hyperlink{group__xbee__device_gab386cd9e1afe784ab79b3139fe8fc5c8}{\-\_\-xbee\-\_\-frame\-\_\-dispatch()} 
+\end{DoxySeeAlso}
+
+
+References \-\_\-xbee\-\_\-checksum(), \-\_\-xbee\-\_\-frame\-\_\-dispatch(), xbee\-\_\-dev\-\_\-t\-::rx\-::bytes\-\_\-in\-\_\-frame, xbee\-\_\-dev\-\_\-t\-::rx\-::bytes\-\_\-read, E\-I\-N\-V\-A\-L, xbee\-\_\-dev\-\_\-t\-::rx\-::frame\-\_\-data, hex\-\_\-dump(), H\-E\-X\-\_\-\-D\-U\-M\-P\-\_\-\-F\-L\-A\-G\-\_\-\-O\-F\-F\-S\-E\-T, length, P\-R\-Iu16, xbee\-\_\-dev\-\_\-t\-::serport, xbee\-\_\-dev\-\_\-t\-::rx\-::state, X\-B\-E\-E\-\_\-\-D\-E\-V\-\_\-\-M\-A\-X\-\_\-\-D\-I\-S\-P\-A\-T\-C\-H\-\_\-\-P\-E\-R\-\_\-\-T\-I\-C\-K, X\-B\-E\-E\-\_\-\-M\-A\-X\-\_\-\-F\-R\-A\-M\-E\-\_\-\-L\-E\-N, X\-B\-E\-E\-\_\-\-R\-X\-\_\-\-S\-T\-A\-T\-E\-\_\-\-L\-E\-N\-G\-T\-H\-\_\-\-L\-S\-B, X\-B\-E\-E\-\_\-\-R\-X\-\_\-\-S\-T\-A\-T\-E\-\_\-\-L\-E\-N\-G\-T\-H\-\_\-\-M\-S\-B, X\-B\-E\-E\-\_\-\-R\-X\-\_\-\-S\-T\-A\-T\-E\-\_\-\-R\-X\-F\-R\-A\-M\-E, X\-B\-E\-E\-\_\-\-R\-X\-\_\-\-S\-T\-A\-T\-E\-\_\-\-W\-A\-I\-T\-S\-T\-A\-R\-T, xbee\-\_\-ser\-\_\-invalid(), and xbee\-\_\-ser\-\_\-read().
+
+
+
+Referenced by xbee\-\_\-dev\-\_\-tick().
+
+\hypertarget{group__xbee__device_ga96267a6b36d9a1b1d59b16cc60a2b09a}{\index{Device Interface@{Device Interface}!xbee\-\_\-dev\-\_\-dump\-\_\-settings@{xbee\-\_\-dev\-\_\-dump\-\_\-settings}}
+\index{xbee\-\_\-dev\-\_\-dump\-\_\-settings@{xbee\-\_\-dev\-\_\-dump\-\_\-settings}!Device Interface@{Device Interface}}
+\subsubsection[{xbee\-\_\-dev\-\_\-dump\-\_\-settings}]{\setlength{\rightskip}{0pt plus 5cm}void xbee\-\_\-dev\-\_\-dump\-\_\-settings (
+\begin{DoxyParamCaption}
+\item[{{\bf xbee\-\_\-dev\-\_\-t} $\ast$}]{xbee, }
+\item[{{\bf uint16\-\_\-t}}]{flags}
+\end{DoxyParamCaption}
+)}}\label{group__xbee__device_ga96267a6b36d9a1b1d59b16cc60a2b09a}
+
+
+Print information to stdout about the X\-Bee device. 
+
+Default behavior is to print the name of the serial port, the X\-Bee module's hardware version (A\-T\-H\-V), firmware version (A\-T\-V\-R), I\-E\-E\-E address (A\-T\-S\-H/\-A\-T\-S\-L) and network address (A\-T\-M\-Y).
+
+Assumes the user has already called \hyperlink{group__xbee__atcmd_ga1cc803f821ed44e27e404d38349f53c7}{xbee\-\_\-cmd\-\_\-init\-\_\-device()} and waited for \hyperlink{group__xbee__atcmd_ga83f36dfc3c3cd2c4046719ea6e9cc53c}{xbee\-\_\-cmd\-\_\-query\-\_\-status()} to finish.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em xbee} & \\
+\hline
+\mbox{\tt in}  & {\em flags} & 
+\begin{DoxyItemize}
+\item X\-B\-E\-E\-\_\-\-D\-E\-V\-\_\-\-D\-U\-M\-P\-\_\-\-F\-L\-A\-G\-\_\-\-N\-O\-N\-E\-: default settings
+\end{DoxyItemize}\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{group__xbee__atcmd_ga1cc803f821ed44e27e404d38349f53c7}{xbee\-\_\-cmd\-\_\-init\-\_\-device()}, \hyperlink{group__xbee__atcmd_ga83f36dfc3c3cd2c4046719ea6e9cc53c}{xbee\-\_\-cmd\-\_\-query\-\_\-status()}, \hyperlink{group__hal__dos_ga898057d1b7645785e7f3d6256828d039}{xbee\-\_\-ser\-\_\-portname()} 
+\end{DoxySeeAlso}
+
+
+References addr64\-\_\-format(), A\-D\-D\-R64\-\_\-\-S\-T\-R\-I\-N\-G\-\_\-\-L\-E\-N\-G\-T\-H, wpan\-\_\-dev\-\_\-t\-::address, xbee\-\_\-dev\-\_\-t\-::firmware\-\_\-version, xbee\-\_\-dev\-\_\-t\-::hardware\-\_\-version, P\-R\-Is\-F\-A\-R, P\-R\-Ix32, xbee\-\_\-dev\-\_\-t\-::serport, xbee\-\_\-dev\-\_\-t\-::wpan\-\_\-dev, xbee\-\_\-ser\-\_\-portname(), and X\-B\-E\-E\-\_\-\-U\-N\-U\-S\-E\-D\-\_\-\-P\-A\-R\-A\-M\-E\-T\-E\-R.
+
+\hypertarget{group__xbee__device_ga75bfe1292b8af0588e0e322a42d3d2dc}{\index{Device Interface@{Device Interface}!xbee\-\_\-dev\-\_\-flowcontrol@{xbee\-\_\-dev\-\_\-flowcontrol}}
+\index{xbee\-\_\-dev\-\_\-flowcontrol@{xbee\-\_\-dev\-\_\-flowcontrol}!Device Interface@{Device Interface}}
+\subsubsection[{xbee\-\_\-dev\-\_\-flowcontrol}]{\setlength{\rightskip}{0pt plus 5cm}void xbee\-\_\-dev\-\_\-flowcontrol (
+\begin{DoxyParamCaption}
+\item[{{\bf xbee\-\_\-dev\-\_\-t} $\ast$}]{xbee, }
+\item[{{\bf bool\-\_\-t}}]{enabled}
+\end{DoxyParamCaption}
+)}}\label{group__xbee__device_ga75bfe1292b8af0588e0e322a42d3d2dc}
+
+
+Control whether \hyperlink{group__xbee__device_ga51f281b72bffcc99eec0e8c7f65a5f3f}{xbee\-\_\-frame\-\_\-write()} checks the X\-Bee C\-T\-S signal before sending frames. 
+
+Flow control is enabled in \hyperlink{group__xbee__device_ga550d7c865e75d3fc1df0e64cb880cf3d}{xbee\-\_\-dev\-\_\-init()} by default.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in,out}  & {\em xbee} & X\-Bee to configure \\
+\hline
+\mbox{\tt in}  & {\em enabled} & T\-R\-U\-E to enable checking C\-T\-S before sending\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{group__xbee__device_ga550d7c865e75d3fc1df0e64cb880cf3d}{xbee\-\_\-dev\-\_\-init()}, \hyperlink{group__xbee__device_ga51f281b72bffcc99eec0e8c7f65a5f3f}{xbee\-\_\-frame\-\_\-write()} 
+\end{DoxySeeAlso}
+
+
+References xbee\-\_\-dev\-\_\-t\-::flags, and X\-B\-E\-E\-\_\-\-D\-E\-V\-\_\-\-F\-L\-A\-G\-\_\-\-U\-S\-E\-\_\-\-F\-L\-O\-W\-C\-O\-N\-T\-R\-O\-L.
+
+\hypertarget{group__xbee__device_ga550d7c865e75d3fc1df0e64cb880cf3d}{\index{Device Interface@{Device Interface}!xbee\-\_\-dev\-\_\-init@{xbee\-\_\-dev\-\_\-init}}
+\index{xbee\-\_\-dev\-\_\-init@{xbee\-\_\-dev\-\_\-init}!Device Interface@{Device Interface}}
+\subsubsection[{xbee\-\_\-dev\-\_\-init}]{\setlength{\rightskip}{0pt plus 5cm}int xbee\-\_\-dev\-\_\-init (
+\begin{DoxyParamCaption}
+\item[{{\bf xbee\-\_\-dev\-\_\-t} $\ast$}]{xbee, }
+\item[{const {\bf xbee\-\_\-serial\-\_\-t} $\ast$}]{serport, }
+\item[{{\bf xbee\-\_\-is\-\_\-awake\-\_\-fn}}]{is\-\_\-awake, }
+\item[{{\bf xbee\-\_\-reset\-\_\-fn}}]{reset}
+\end{DoxyParamCaption}
+)}}\label{group__xbee__device_ga550d7c865e75d3fc1df0e64cb880cf3d}
+
+
+Initialize the X\-Bee device structure and open a serial connection to a local, serially-\/attached X\-Bee module. 
+
+This function does not actually initiate communications with the X\-Bee module. See \hyperlink{group__xbee__atcmd_ga1cc803f821ed44e27e404d38349f53c7}{xbee\-\_\-cmd\-\_\-init\-\_\-device()} for information on initializing the \char`\"{}\-A\-T Command\char`\"{} layer of the driver, which will read basic information from the X\-Bee module.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em xbee} & X\-Bee device to initialize.\\
+\hline
+\mbox{\tt in}  & {\em serport} & Pointer to an \hyperlink{structxbee__serial__t}{xbee\-\_\-serial\-\_\-t} structure used to initialize {\itshape xbee-\/$>$serport}.\\
+\hline
+\mbox{\tt in}  & {\em is\-\_\-awake} & Pointer to function that reads the X\-Bee module's \char`\"{}\-O\-N\char`\"{} pin. The function should return 1 if X\-Bee is on and 0 if it is off.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+\textcolor{keywordtype}{int} is\_awake( \hyperlink{structxbee__dev__t}{xbee\_dev\_t} *xbee); 
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em reset} & Pointer to function that asserts the X\-Bee module's \char`\"{}/\-R\-E\-S\-E\-T\char`\"{} pin. If {\itshape asserted} is T\-R\-U\-E, puts the X\-Bee into reset. If {\itshape asserted} is F\-A\-L\-S\-E, takes it out of reset. No return value.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+\textcolor{keywordtype}{void} xbee\_reset( \hyperlink{structxbee__dev__t}{xbee\_dev\_t} *xbee, \hyperlink{group__hal_ga04dd5074964518403bf944f2b240a5f8}{bool\_t} asserted); 
+\end{DoxyCode}
+
+
+
+\begin{DoxyRetVals}{Return values}
+{\em 0} & Success \\
+\hline
+{\em -\/\-E\-I\-N\-V\-A\-L} & Invalid parameter ({\itshape xbee} is N\-U\-L\-L, {\itshape serport} is not valid, etc.) \\
+\hline
+{\em -\/\-E\-I\-O} & Couldn't set serial port baudrate within 5\% of {\itshape serport-\/$>$baudrate}. \\
+\hline
+\end{DoxyRetVals}
+
+
+References E\-I\-N\-V\-A\-L, xbee\-\_\-dev\-\_\-t\-::flags, xbee\-\_\-dev\-\_\-t\-::is\-\_\-awake, xbee\-\_\-dev\-\_\-t\-::reset, xbee\-\_\-dev\-\_\-t\-::serport, X\-B\-E\-E\-\_\-\-D\-E\-V\-\_\-\-F\-L\-A\-G\-\_\-\-U\-S\-E\-\_\-\-F\-L\-O\-W\-C\-O\-N\-T\-R\-O\-L, xbee\-\_\-ser\-\_\-flowcontrol(), and xbee\-\_\-ser\-\_\-open().
+
+\hypertarget{group__xbee__device_gad312efa700cca7ca044cddf364cc51f5}{\index{Device Interface@{Device Interface}!xbee\-\_\-dev\-\_\-reset@{xbee\-\_\-dev\-\_\-reset}}
+\index{xbee\-\_\-dev\-\_\-reset@{xbee\-\_\-dev\-\_\-reset}!Device Interface@{Device Interface}}
+\subsubsection[{xbee\-\_\-dev\-\_\-reset}]{\setlength{\rightskip}{0pt plus 5cm}int xbee\-\_\-dev\-\_\-reset (
+\begin{DoxyParamCaption}
+\item[{{\bf xbee\-\_\-dev\-\_\-t} $\ast$}]{xbee}
+\end{DoxyParamCaption}
+)}}\label{group__xbee__device_gad312efa700cca7ca044cddf364cc51f5}
+
+
+Toggles the reset line of the X\-Bee device. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em xbee} & X\-Bee device to reset.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em 0} & Successfully toggled reset. \\
+\hline
+{\em -\/\-E\-I\-N\-V\-A\-L} & Invalid \hyperlink{structxbee__dev__t}{xbee\-\_\-dev\-\_\-t} passed to function. \\
+\hline
+{\em -\/\-E\-I\-O} & This X\-Bee device doesn't have an interface to the module's reset pin. \\
+\hline
+\end{DoxyRetVals}
+
+
+References E\-I\-N\-V\-A\-L, E\-I\-O, xbee\-\_\-dev\-\_\-t\-::reset, X\-B\-E\-E\-\_\-\-C\-H\-E\-C\-K\-\_\-\-T\-I\-M\-E\-O\-U\-T\-\_\-\-M\-S, X\-B\-E\-E\-\_\-\-M\-O\-D\-E\-\_\-\-U\-N\-K\-N\-O\-W\-N, and X\-B\-E\-E\-\_\-\-S\-E\-T\-\_\-\-T\-I\-M\-E\-O\-U\-T\-\_\-\-M\-S.
+
+
+
+Referenced by xbee\-\_\-fw\-\_\-install\-\_\-ebl\-\_\-tick(), and xbee\-\_\-fw\-\_\-install\-\_\-oem\-\_\-tick().
+
+\hypertarget{group__xbee__device_gaf16e8e532b1eb587794b60222c3a0cce}{\index{Device Interface@{Device Interface}!xbee\-\_\-dev\-\_\-tick@{xbee\-\_\-dev\-\_\-tick}}
+\index{xbee\-\_\-dev\-\_\-tick@{xbee\-\_\-dev\-\_\-tick}!Device Interface@{Device Interface}}
+\subsubsection[{xbee\-\_\-dev\-\_\-tick}]{\setlength{\rightskip}{0pt plus 5cm}int xbee\-\_\-dev\-\_\-tick (
+\begin{DoxyParamCaption}
+\item[{{\bf xbee\-\_\-dev\-\_\-t} $\ast$}]{xbee}
+\end{DoxyParamCaption}
+)}}\label{group__xbee__device_gaf16e8e532b1eb587794b60222c3a0cce}
+
+
+Check for newly received frames on an X\-Bee device and dispatch them to registered frame handlers. 
+
+A program with an X\-Bee interface needs to call this function often enough to keep up with inbound bytes.
+
+Execution time depends greatly on how long each frame handler takes to process its frame.
+
+\begin{DoxyWarning}{Warning}
+This function is N\-O\-T re-\/entrant and will return -\/\-E\-B\-U\-S\-Y if it is called when already running.
+\end{DoxyWarning}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em xbee} & X\-Bee device to check for, and then dispatch, new frames.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em $>$=0} & Number of frames received and dispatched. \\
+\hline
+{\em -\/\-E\-I\-N\-V\-A\-L} & If {\itshape xbee} isn't a valid device structure. \\
+\hline
+{\em -\/\-E\-B\-U\-S\-Y} & If \hyperlink{group__xbee__device_gaf16e8e532b1eb587794b60222c3a0cce}{xbee\-\_\-dev\-\_\-tick()} was called when it's already running for this device. \\
+\hline
+\end{DoxyRetVals}
+
+
+References \-\_\-xbee\-\_\-frame\-\_\-load(), E\-B\-U\-S\-Y, E\-I\-N\-V\-A\-L, xbee\-\_\-dev\-\_\-t\-::flags, I\-N\-T\-E\-R\-R\-U\-P\-T\-\_\-\-D\-I\-S\-A\-B\-L\-E, I\-N\-T\-E\-R\-R\-U\-P\-T\-\_\-\-E\-N\-A\-B\-L\-E, and X\-B\-E\-E\-\_\-\-D\-E\-V\-\_\-\-F\-L\-A\-G\-\_\-\-I\-N\-\_\-\-T\-I\-C\-K.
+
+
+
+Referenced by \-\_\-xbee\-\_\-wpan\-\_\-tick().
+
+\hypertarget{group__xbee__device_gae54cdc832021172ae535a449856450b7}{\index{Device Interface@{Device Interface}!xbee\-\_\-frame\-\_\-dump\-\_\-modem\-\_\-status@{xbee\-\_\-frame\-\_\-dump\-\_\-modem\-\_\-status}}
+\index{xbee\-\_\-frame\-\_\-dump\-\_\-modem\-\_\-status@{xbee\-\_\-frame\-\_\-dump\-\_\-modem\-\_\-status}!Device Interface@{Device Interface}}
+\subsubsection[{xbee\-\_\-frame\-\_\-dump\-\_\-modem\-\_\-status}]{\setlength{\rightskip}{0pt plus 5cm}int xbee\-\_\-frame\-\_\-dump\-\_\-modem\-\_\-status (
+\begin{DoxyParamCaption}
+\item[{{\bf xbee\-\_\-dev\-\_\-t} $\ast$}]{xbee, }
+\item[{const void {\bf F\-A\-R} $\ast$}]{frame, }
+\item[{{\bf uint16\-\_\-t}}]{length, }
+\item[{void {\bf F\-A\-R} $\ast$}]{context}
+\end{DoxyParamCaption}
+)}}\label{group__xbee__device_gae54cdc832021172ae535a449856450b7}
+
+
+Frame handler for 0x8\-A (X\-B\-E\-E\-\_\-\-F\-R\-A\-M\-E\-\_\-\-M\-O\-D\-E\-M\-\_\-\-S\-T\-A\-T\-U\-S) frames -- dumps modem status to S\-T\-D\-O\-U\-T for debugging purposes. 
+
+View the documentation of \hyperlink{group__xbee__device_ga3d8f20fa50d6f72eaf03f0cdd4c9832b}{xbee\-\_\-frame\-\_\-handler\-\_\-fn()} for this function's parameters and return value.
+
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{group__xbee__device_gabeb9dfc3097d684df3fd9284021085f6}{X\-B\-E\-E\-\_\-\-F\-R\-A\-M\-E\-\_\-\-M\-O\-D\-E\-M\-\_\-\-S\-T\-A\-T\-U\-S\-\_\-\-D\-E\-B\-U\-G}, \hyperlink{group__xbee__device_ga3d8f20fa50d6f72eaf03f0cdd4c9832b}{xbee\-\_\-frame\-\_\-handler\-\_\-fn()} 
+\end{DoxySeeAlso}
+
+
+References E\-I\-N\-V\-A\-L, F\-A\-R, payload, X\-B\-E\-E\-\_\-\-M\-O\-D\-E\-M\-\_\-\-S\-T\-A\-T\-U\-S\-\_\-\-C\-O\-N\-F\-I\-G\-\_\-\-C\-H\-A\-N\-G\-E\-\_\-\-I\-N\-\_\-\-J\-O\-I\-N, X\-B\-E\-E\-\_\-\-M\-O\-D\-E\-M\-\_\-\-S\-T\-A\-T\-U\-S\-\_\-\-C\-O\-O\-R\-D\-\_\-\-S\-T\-A\-R\-T, X\-B\-E\-E\-\_\-\-M\-O\-D\-E\-M\-\_\-\-S\-T\-A\-T\-U\-S\-\_\-\-D\-I\-S\-A\-S\-S\-O\-C, X\-B\-E\-E\-\_\-\-M\-O\-D\-E\-M\-\_\-\-S\-T\-A\-T\-U\-S\-\_\-\-H\-W\-\_\-\-R\-E\-S\-E\-T, X\-B\-E\-E\-\_\-\-M\-O\-D\-E\-M\-\_\-\-S\-T\-A\-T\-U\-S\-\_\-\-J\-O\-I\-N\-E\-D, X\-B\-E\-E\-\_\-\-M\-O\-D\-E\-M\-\_\-\-S\-T\-A\-T\-U\-S\-\_\-\-K\-E\-Y\-\_\-\-E\-S\-T\-A\-B\-L\-I\-S\-H\-E\-D, X\-B\-E\-E\-\_\-\-M\-O\-D\-E\-M\-\_\-\-S\-T\-A\-T\-U\-S\-\_\-\-N\-E\-T\-W\-O\-R\-K\-\_\-\-K\-E\-Y\-\_\-\-U\-P\-D\-A\-T\-E\-D, X\-B\-E\-E\-\_\-\-M\-O\-D\-E\-M\-\_\-\-S\-T\-A\-T\-U\-S\-\_\-\-O\-V\-E\-R\-V\-O\-L\-T\-A\-G\-E, X\-B\-E\-E\-\_\-\-M\-O\-D\-E\-M\-\_\-\-S\-T\-A\-T\-U\-S\-\_\-\-S\-L\-E\-E\-P\-I\-N\-G, X\-B\-E\-E\-\_\-\-M\-O\-D\-E\-M\-\_\-\-S\-T\-A\-T\-U\-S\-\_\-\-S\-T\-A\-C\-K\-\_\-\-E\-R\-R\-O\-R, X\-B\-E\-E\-\_\-\-M\-O\-D\-E\-M\-\_\-\-S\-T\-A\-T\-U\-S\-\_\-\-W\-A\-T\-C\-H\-D\-O\-G, X\-B\-E\-E\-\_\-\-M\-O\-D\-E\-M\-\_\-\-S\-T\-A\-T\-U\-S\-\_\-\-W\-O\-K\-E\-\_\-\-U\-P, and X\-B\-E\-E\-\_\-\-U\-N\-U\-S\-E\-D\-\_\-\-P\-A\-R\-A\-M\-E\-T\-E\-R.
+
+\hypertarget{group__xbee__device_ga51f281b72bffcc99eec0e8c7f65a5f3f}{\index{Device Interface@{Device Interface}!xbee\-\_\-frame\-\_\-write@{xbee\-\_\-frame\-\_\-write}}
+\index{xbee\-\_\-frame\-\_\-write@{xbee\-\_\-frame\-\_\-write}!Device Interface@{Device Interface}}
+\subsubsection[{xbee\-\_\-frame\-\_\-write}]{\setlength{\rightskip}{0pt plus 5cm}int xbee\-\_\-frame\-\_\-write (
+\begin{DoxyParamCaption}
+\item[{{\bf xbee\-\_\-dev\-\_\-t} $\ast$}]{xbee, }
+\item[{const void {\bf F\-A\-R} $\ast$}]{header, }
+\item[{{\bf uint16\-\_\-t}}]{headerlen, }
+\item[{const void {\bf F\-A\-R} $\ast$}]{data, }
+\item[{{\bf uint16\-\_\-t}}]{datalen, }
+\item[{{\bf uint16\-\_\-t}}]{flags}
+\end{DoxyParamCaption}
+)}}\label{group__xbee__device_ga51f281b72bffcc99eec0e8c7f65a5f3f}
+
+
+Copies a frame into the transmit serial buffer to send to an X\-Bee module. 
+
+Header should include bytes as they will be sent to the X\-Bee. Function accepts separate header and data to limit the amount of copying necessary to send requests.
+
+This function should only be called after {\itshape xbee} has been initialized by calling \hyperlink{group__xbee__device_ga550d7c865e75d3fc1df0e64cb880cf3d}{xbee\-\_\-dev\-\_\-init()}.
+
+By default, \hyperlink{group__xbee__device_ga51f281b72bffcc99eec0e8c7f65a5f3f}{xbee\-\_\-frame\-\_\-write()} checks the /\-C\-T\-S signal from the X\-Bee before attempting to send, and will return -\/\-E\-B\-U\-S\-Y if the X\-Bee has deasserted C\-T\-S. Use \hyperlink{group__xbee__device_ga75bfe1292b8af0588e0e322a42d3d2dc}{xbee\-\_\-dev\-\_\-flowcontrol()} to disable this check (necessary on a system without a connection to the X\-Bee module's /\-C\-T\-S signal).
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em xbee} & X\-Bee device to send to.\\
+\hline
+\mbox{\tt in}  & {\em header} & Pointer to the header to send. Header starts with the frame type (this function will pre-\/pend the 0x7\-E start-\/of-\/frame and 16-\/bit length). Pass {\ttfamily N\-U\-L\-L} if there isn't a header and the entire frame is in the payload ({\itshape data} and {\itshape datalen}).\\
+\hline
+\mbox{\tt in}  & {\em headerlen} & Number of header bytes to send (starting with address passed in {\itshape header}). Ignored if {\itshape header} is {\ttfamily N\-U\-L\-L}.\\
+\hline
+\mbox{\tt in}  & {\em data} & Address of frame payload or {\ttfamily N\-U\-L\-L} if the entire frame content is stored in the header bytes ({\itshape header} and {\itshape headerlen}).\\
+\hline
+\mbox{\tt in}  & {\em datalen} & Number of payload bytes to send (starting with address passed in {\itshape data}). Ignored if {\itshape data} is {\ttfamily N\-U\-L\-L}.\\
+\hline
+\mbox{\tt in}  & {\em flags} & Optional flags
+\begin{DoxyItemize}
+\item X\-B\-E\-E\-\_\-\-W\-R\-I\-T\-E\-\_\-\-F\-L\-A\-G\-\_\-\-N\-O\-N\-E
+\end{DoxyItemize}\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em 0} & Successfully queued frame in transmit serial buffer. \\
+\hline
+{\em -\/\-E\-I\-N\-V\-A\-L} & {\itshape xbee} is {\ttfamily N\-U\-L\-L} or invalid flags passed \\
+\hline
+{\em -\/\-E\-N\-O\-D\-A\-T\-A} & No data to send ({\itshape headerlen} + {\itshape datalen} == 0). \\
+\hline
+{\em -\/\-E\-B\-U\-S\-Y} & Transmit serial buffer is full, or X\-Bee is not accepting serial data (deasserting /\-C\-T\-S signal). \\
+\hline
+{\em -\/\-E\-M\-S\-G\-S\-I\-Z\-E} & Serial buffer can't ever send a frame this large.\\
+\hline
+\end{DoxyRetVals}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{group__xbee__device_ga550d7c865e75d3fc1df0e64cb880cf3d}{xbee\-\_\-dev\-\_\-init()}, xbee\-\_\-serial\-\_\-write(), \hyperlink{group__xbee__device_ga75bfe1292b8af0588e0e322a42d3d2dc}{xbee\-\_\-dev\-\_\-flowcontrol()} 
+\end{DoxySeeAlso}
+
+
+References \-\_\-xbee\-\_\-checksum(), E\-B\-U\-S\-Y, E\-I\-N\-V\-A\-L, E\-M\-S\-G\-S\-I\-Z\-E, E\-N\-O\-D\-A\-T\-A, F\-A\-R, xbee\-\_\-dev\-\_\-t\-::flags, htobe16, P\-A\-C\-K\-E\-D\-\_\-\-S\-T\-R\-U\-C\-T, xbee\-\_\-dev\-\_\-t\-::serport, type, X\-B\-E\-E\-\_\-\-D\-E\-V\-\_\-\-F\-L\-A\-G\-\_\-\-U\-S\-E\-\_\-\-F\-L\-O\-W\-C\-O\-N\-T\-R\-O\-L, xbee\-\_\-ser\-\_\-get\-\_\-cts(), xbee\-\_\-ser\-\_\-invalid(), xbee\-\_\-ser\-\_\-tx\-\_\-free(), xbee\-\_\-ser\-\_\-tx\-\_\-used(), xbee\-\_\-ser\-\_\-write(), and X\-B\-E\-E\-\_\-\-U\-N\-U\-S\-E\-D\-\_\-\-P\-A\-R\-A\-M\-E\-T\-E\-R.
+
+
+
+Referenced by \-\_\-xbee\-\_\-endpoint\-\_\-send(), xbee\-\_\-cmd\-\_\-execute(), xbee\-\_\-cmd\-\_\-send(), and xbee\-\_\-cmd\-\_\-simple().
+
+\hypertarget{group__xbee__device_ga42768d8f8aa841ed4f42396cff2815aa}{\index{Device Interface@{Device Interface}!xbee\-\_\-identify@{xbee\-\_\-identify}}
+\index{xbee\-\_\-identify@{xbee\-\_\-identify}!Device Interface@{Device Interface}}
+\subsubsection[{xbee\-\_\-identify}]{\setlength{\rightskip}{0pt plus 5cm}void xbee\-\_\-identify (
+\begin{DoxyParamCaption}
+\item[{{\bf xbee\-\_\-dev\-\_\-t} $\ast$}]{xbee, }
+\item[{{\bf bool\-\_\-t}}]{identify}
+\end{DoxyParamCaption}
+)}}\label{group__xbee__device_ga42768d8f8aa841ed4f42396cff2815aa}
+
+
+Programs with the Z\-C\-L Identify Server Cluster can call this function in their main loop to have the X\-Bee module's association L\-E\-D flash fast (100ms cycle) when in Identify Mode. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em xbee} & device to identify \\
+\hline
+\mbox{\tt in}  & {\em identify} & T\-R\-U\-E if X\-Bee should be in identify mode\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{group__xbee__device_gaece12bbe1dd3135e51f714b485ed0cf2}{xbee\-\_\-zcl\-\_\-identify}, \hyperlink{group__zcl__identify_ga95b00d55b861c1ea6033c16794ae818d}{zcl\-\_\-identify\-\_\-isactive}, \hyperlink{group__zcl__identify_gaeae5b3a460629b095247d160235ec586}{Z\-C\-L\-\_\-\-C\-L\-U\-S\-T\-\_\-\-E\-N\-T\-R\-Y\-\_\-\-I\-D\-E\-N\-T\-I\-F\-Y\-\_\-\-S\-E\-R\-V\-E\-R} 
+\end{DoxySeeAlso}
+
+
+References xbee\-\_\-cmd\-\_\-simple().
+
+\hypertarget{group__xbee__device_ga9faca10d7a960dcd3c0c3ad9c0d59cab}{\index{Device Interface@{Device Interface}!xbee\-\_\-next\-\_\-frame\-\_\-id@{xbee\-\_\-next\-\_\-frame\-\_\-id}}
+\index{xbee\-\_\-next\-\_\-frame\-\_\-id@{xbee\-\_\-next\-\_\-frame\-\_\-id}!Device Interface@{Device Interface}}
+\subsubsection[{xbee\-\_\-next\-\_\-frame\-\_\-id}]{\setlength{\rightskip}{0pt plus 5cm}{\bf uint8\-\_\-t} xbee\-\_\-next\-\_\-frame\-\_\-id (
+\begin{DoxyParamCaption}
+\item[{{\bf xbee\-\_\-dev\-\_\-t} $\ast$}]{xbee}
+\end{DoxyParamCaption}
+)}}\label{group__xbee__device_ga9faca10d7a960dcd3c0c3ad9c0d59cab}
+
+
+Increment and return current frame I\-D for a given X\-Bee device. 
+
+Frame I\-Ds go from 1 to 255 and then back to 1.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em xbee} & X\-Bee device.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em 1-\/255} & Current frame I\-D (after incrementing) for device \\
+\hline
+{\em 0} & {\itshape xbee} is not a valid X\-Bee device pointer. \\
+\hline
+\end{DoxyRetVals}
+
+
+References xbee\-\_\-dev\-\_\-t\-::frame\-\_\-id.
+
+
+
+Referenced by \-\_\-xbee\-\_\-endpoint\-\_\-send(), xbee\-\_\-cmd\-\_\-execute(), and xbee\-\_\-cmd\-\_\-send().
+
+
+
+\subsection{Variable Documentation}
+\hypertarget{group__xbee__device_ga1a91a1dc6e99737715fbf882842872c5}{\index{Device Interface@{Device Interface}!xbee\-\_\-frame\-\_\-handlers@{xbee\-\_\-frame\-\_\-handlers}}
+\index{xbee\-\_\-frame\-\_\-handlers@{xbee\-\_\-frame\-\_\-handlers}!Device Interface@{Device Interface}}
+\subsubsection[{xbee\-\_\-frame\-\_\-handlers}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf xbee\-\_\-dispatch\-\_\-table\-\_\-entry\-\_\-t} xbee\-\_\-frame\-\_\-handlers\mbox{[}$\,$\mbox{]}}}\label{group__xbee__device_ga1a91a1dc6e99737715fbf882842872c5}
+
+
+Static table used for dispatching frames. 
+
+The application needs to define this table, and it should end with the X\-B\-E\-E\-\_\-\-F\-R\-A\-M\-E\-\_\-\-T\-A\-B\-L\-E\-\_\-\-E\-N\-D marker. 
+
+Referenced by \-\_\-xbee\-\_\-dispatch\-\_\-table\-\_\-dump(), and \-\_\-xbee\-\_\-frame\-\_\-dispatch().
+

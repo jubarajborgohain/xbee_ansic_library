@@ -1,0 +1,61 @@
+\hypertarget{zcl__onoff_8h}{\section{include/zigbee/zcl\-\_\-onoff.h File Reference}
+\label{zcl__onoff_8h}\index{include/zigbee/zcl\-\_\-onoff.\-h@{include/zigbee/zcl\-\_\-onoff.\-h}}
+}
+
+
+On/\-Off Cluster\-: Attributes and commands for switching devices between 'On' and 'Off' states.  
+
+
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{group__zcl__onoff_gacead5607fb8cc864c55906e350a64bd1}{\#define \hyperlink{group__zcl__onoff_gacead5607fb8cc864c55906e350a64bd1}{Z\-C\-L\-\_\-\-O\-N\-O\-F\-F\-\_\-\-A\-T\-T\-R\-\_\-\-O\-N\-O\-F\-F}~0x0000}\label{group__zcl__onoff_gacead5607fb8cc864c55906e350a64bd1}
+
+\begin{DoxyCompactList}\small\item\em On\-Off attribute, Boolean, Read only, Mandatory; Shall be reported. \end{DoxyCompactList}\item 
+\hypertarget{group__zcl__onoff_gaecb7161f8e345f46eb152712ad013076}{\#define {\bfseries Z\-C\-L\-\_\-\-O\-N\-O\-F\-F\-\_\-\-O\-N}~1}\label{group__zcl__onoff_gaecb7161f8e345f46eb152712ad013076}
+
+\item 
+\hypertarget{group__zcl__onoff_gafb283aacc97d39a5dce2e5f43861794c}{\#define {\bfseries Z\-C\-L\-\_\-\-O\-N\-O\-F\-F\-\_\-\-O\-F\-F}~0}\label{group__zcl__onoff_gafb283aacc97d39a5dce2e5f43861794c}
+
+\item 
+\hypertarget{group__zcl__onoff_gae399574a77084fc410cbd12cd30ff10d}{\#define \hyperlink{group__zcl__onoff_gae399574a77084fc410cbd12cd30ff10d}{Z\-C\-L\-\_\-\-O\-N\-O\-F\-F\-\_\-\-C\-M\-D\-\_\-\-O\-F\-F}~0x00}\label{group__zcl__onoff_gae399574a77084fc410cbd12cd30ff10d}
+
+\begin{DoxyCompactList}\small\item\em Off command, Mandatory. \end{DoxyCompactList}\item 
+\hypertarget{group__zcl__onoff_gab3ebd17876bb8a4ac892665a7093cd22}{\#define \hyperlink{group__zcl__onoff_gab3ebd17876bb8a4ac892665a7093cd22}{Z\-C\-L\-\_\-\-O\-N\-O\-F\-F\-\_\-\-C\-M\-D\-\_\-\-O\-N}~0x01}\label{group__zcl__onoff_gab3ebd17876bb8a4ac892665a7093cd22}
+
+\begin{DoxyCompactList}\small\item\em On command, Mandatory. \end{DoxyCompactList}\item 
+\hypertarget{group__zcl__onoff_ga03727593ce0b9deea2e9c6c24077a27c}{\#define \hyperlink{group__zcl__onoff_ga03727593ce0b9deea2e9c6c24077a27c}{Z\-C\-L\-\_\-\-O\-N\-O\-F\-F\-\_\-\-C\-M\-D\-\_\-\-T\-O\-G\-G\-L\-E}~0x02}\label{group__zcl__onoff_ga03727593ce0b9deea2e9c6c24077a27c}
+
+\begin{DoxyCompactList}\small\item\em Toggle command, Mandatory. \end{DoxyCompactList}\item 
+\hypertarget{group__zcl__onoff_ga515413fcce31bf79d2bd46fb28c93a2e}{\#define \hyperlink{group__zcl__onoff_ga515413fcce31bf79d2bd46fb28c93a2e}{Z\-C\-L\-\_\-\-S\-W\-I\-T\-C\-H\-\_\-\-A\-T\-T\-R\-\_\-\-S\-W\-I\-T\-C\-H\-\_\-\-T\-Y\-P\-E}~0x0000}\label{group__zcl__onoff_ga515413fcce31bf79d2bd46fb28c93a2e}
+
+\begin{DoxyCompactList}\small\item\em Switch\-Type, 8-\/bit Enumeration, Read only, Mandatory. \end{DoxyCompactList}\item 
+\hypertarget{group__zcl__onoff_ga046e143f5f7685aff4cd2a25ae626bbf}{\#define {\bfseries Z\-C\-L\-\_\-\-S\-W\-I\-T\-C\-H\-\_\-\-T\-Y\-P\-E\-\_\-\-T\-O\-G\-G\-L\-E}~0x00}\label{group__zcl__onoff_ga046e143f5f7685aff4cd2a25ae626bbf}
+
+\item 
+\hypertarget{group__zcl__onoff_ga567b4d099adf0574a0cf616a763528f3}{\#define {\bfseries Z\-C\-L\-\_\-\-S\-W\-I\-T\-C\-H\-\_\-\-T\-Y\-P\-E\-\_\-\-M\-O\-M\-E\-N\-T\-A\-R\-Y}~0x01}\label{group__zcl__onoff_ga567b4d099adf0574a0cf616a763528f3}
+
+\item 
+\hypertarget{group__zcl__onoff_ga2ca3d5c19e5422fe71c9389045603a9d}{\#define \hyperlink{group__zcl__onoff_ga2ca3d5c19e5422fe71c9389045603a9d}{Z\-C\-L\-\_\-\-S\-W\-I\-T\-C\-H\-\_\-\-A\-T\-T\-R\-\_\-\-S\-W\-I\-T\-C\-H\-\_\-\-A\-C\-T\-I\-O\-N\-S}~0x0010}\label{group__zcl__onoff_ga2ca3d5c19e5422fe71c9389045603a9d}
+
+\begin{DoxyCompactList}\small\item\em Switch\-Actions, 8-\/bit Enumeration, Read/\-Write, Mandatory. \end{DoxyCompactList}\item 
+\hypertarget{group__zcl__onoff_gaf7aebb04ff54e953ad6fab425b59b82c}{\#define {\bfseries Z\-C\-L\-\_\-\-S\-W\-I\-T\-C\-H\-\_\-\-A\-C\-T\-I\-O\-N\-\_\-\-O\-N\-O\-F\-F}~0x00}\label{group__zcl__onoff_gaf7aebb04ff54e953ad6fab425b59b82c}
+
+\item 
+\hypertarget{group__zcl__onoff_gac32f070ae508e84d80d0d389d24fe5cf}{\#define {\bfseries Z\-C\-L\-\_\-\-S\-W\-I\-T\-C\-H\-\_\-\-A\-C\-T\-I\-O\-N\-\_\-\-O\-F\-F\-O\-N}~0x01}\label{group__zcl__onoff_gac32f070ae508e84d80d0d389d24fe5cf}
+
+\item 
+\hypertarget{group__zcl__onoff_ga5924f219a203d07537f949e44842dd60}{\#define {\bfseries Z\-C\-L\-\_\-\-S\-W\-I\-T\-C\-H\-\_\-\-A\-C\-T\-I\-O\-N\-\_\-\-T\-O\-G\-G\-L\-E}~0x02}\label{group__zcl__onoff_ga5924f219a203d07537f949e44842dd60}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+On/\-Off Cluster\-: Attributes and commands for switching devices between 'On' and 'Off' states. Z\-C\-L General Specification, Section 3.\-8
+
+On/\-Off Switch Configuration Cluster\-: Attributes and commands for configuring On/\-Off switching devices.
+
+Z\-C\-L General Specification, Section 3.\-9
+
+\begin{DoxyRefDesc}{Todo}
+\item[\hyperlink{todo__todo000035}{Todo}]Write code to support On\-Off commands. Create sample program demonstrating use of these clusters (perhaps using L\-E\-Ds and switches of X\-B\-I\-B-\/\-U-\/\-D\-E\-V board). R\-E\-Q\-U\-I\-R\-E\-S\-: need to have reporting in place before this cluster is really useful. Devices need to receive updates whenever switch status changes. \end{DoxyRefDesc}

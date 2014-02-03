@@ -1,0 +1,116 @@
+\hypertarget{group__xbee__ota__server}{\section{Server}
+\label{group__xbee__ota__server}\index{Server@{Server}}
+}
+
+
+Code for the Programmable X\-Bee to receive over-\/the-\/air firmware updates.  
+
+
+\subsection*{Files}
+\begin{DoxyCompactItemize}
+\item 
+file \hyperlink{xbee__ota__server_8c}{xbee\-\_\-ota\-\_\-server.\-c}
+\begin{DoxyCompactList}\small\item\em Code to add an O\-T\-A Server Cluster to a device. \end{DoxyCompactList}\item 
+file \hyperlink{ota__server_8h}{ota\-\_\-server.\-h}
+\begin{DoxyCompactList}\small\item\em Code to add an O\-T\-A Server Cluster to a device. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{group__xbee__ota__server_gacdc427d19ad192bd817194a74a8d7b08}{X\-B\-E\-E\-\_\-\-O\-T\-A\-\_\-\-C\-M\-D\-\_\-\-S\-E\-R\-V\-E\-R\-\_\-\-C\-L\-U\-S\-T\-\_\-\-E\-N\-T\-R\-Y}(flag)
+\begin{DoxyCompactList}\small\item\em Macro to add the O\-T\-A cluster to the Digi Data Endpoint. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{group__xbee__ota__server_ga22cb77be06faba4020a4f5e0daf48f4f}{xbee\-\_\-ota\-\_\-server\-\_\-cmd} (const \hyperlink{structwpan__envelope__t}{wpan\-\_\-envelope\-\_\-t} \hyperlink{group__hal_gaef060b3456fdcc093a7210a762d5f2ed}{F\-A\-R} $\ast$envelope, void \hyperlink{group__hal_gaef060b3456fdcc093a7210a762d5f2ed}{F\-A\-R} $\ast$context)
+\begin{DoxyCompactList}\small\item\em Cluster command to initiate firmware updates. \end{DoxyCompactList}\item 
+const char $\ast$ \hyperlink{group__xbee__ota__server_ga38fdff5e9fec8c3aa8bfd167621ee35c}{xbee\-\_\-update\-\_\-firmware\-\_\-ota} (const \hyperlink{structwpan__envelope__t}{wpan\-\_\-envelope\-\_\-t} \hyperlink{group__hal_gaef060b3456fdcc093a7210a762d5f2ed}{F\-A\-R} $\ast$envelope, void \hyperlink{group__hal_gaef060b3456fdcc093a7210a762d5f2ed}{F\-A\-R} $\ast$context)
+\begin{DoxyCompactList}\small\item\em Application needs to provide this function as a method of receiving firmware updates over-\/the-\/air with Xmodem protocol. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Code for the Programmable X\-Bee to receive over-\/the-\/air firmware updates. 
+
+\subsection{Macro Definition Documentation}
+\hypertarget{group__xbee__ota__server_gacdc427d19ad192bd817194a74a8d7b08}{\index{Server@{Server}!X\-B\-E\-E\-\_\-\-O\-T\-A\-\_\-\-C\-M\-D\-\_\-\-S\-E\-R\-V\-E\-R\-\_\-\-C\-L\-U\-S\-T\-\_\-\-E\-N\-T\-R\-Y@{X\-B\-E\-E\-\_\-\-O\-T\-A\-\_\-\-C\-M\-D\-\_\-\-S\-E\-R\-V\-E\-R\-\_\-\-C\-L\-U\-S\-T\-\_\-\-E\-N\-T\-R\-Y}}
+\index{X\-B\-E\-E\-\_\-\-O\-T\-A\-\_\-\-C\-M\-D\-\_\-\-S\-E\-R\-V\-E\-R\-\_\-\-C\-L\-U\-S\-T\-\_\-\-E\-N\-T\-R\-Y@{X\-B\-E\-E\-\_\-\-O\-T\-A\-\_\-\-C\-M\-D\-\_\-\-S\-E\-R\-V\-E\-R\-\_\-\-C\-L\-U\-S\-T\-\_\-\-E\-N\-T\-R\-Y}!Server@{Server}}
+\subsubsection[{X\-B\-E\-E\-\_\-\-O\-T\-A\-\_\-\-C\-M\-D\-\_\-\-S\-E\-R\-V\-E\-R\-\_\-\-C\-L\-U\-S\-T\-\_\-\-E\-N\-T\-R\-Y}]{\setlength{\rightskip}{0pt plus 5cm}\#define X\-B\-E\-E\-\_\-\-O\-T\-A\-\_\-\-C\-M\-D\-\_\-\-S\-E\-R\-V\-E\-R\-\_\-\-C\-L\-U\-S\-T\-\_\-\-E\-N\-T\-R\-Y(
+\begin{DoxyParamCaption}
+\item[{}]{flag}
+\end{DoxyParamCaption}
+)}}\label{group__xbee__ota__server_gacdc427d19ad192bd817194a74a8d7b08}
+{\bfseries Value\-:}
+\begin{DoxyCode}
+\{  \hyperlink{group__wpan__aps_gga1227ab13b41d82d9c9c9080662f74cf7aedb825ada66b8c7bbfbeaee6d9dfba0a}{DIGI\_CLUST\_PROG\_XBEE\_OTA\_UPD},   
+      \hyperlink{group__xbee__ota__server_ga22cb77be06faba4020a4f5e0daf48f4f}{xbee\_ota\_server\_cmd}, NULL,         \(\backslash\)
+      (flag) | \hyperlink{group__wpan__aps_ga9e0a1a0abf5594d8fa5a38b1ca40b3bc}{WPAN\_CLUST\_FLAG\_SERVER} | 
+      \hyperlink{group__wpan__aps_gacb0e365a8c5e72ee90be503513e7e630}{WPAN\_CLUST\_FLAG\_NOT\_ZCL} \}
+\end{DoxyCode}
+
+
+Macro to add the O\-T\-A cluster to the Digi Data Endpoint. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em flag} & set to W\-P\-A\-N\-\_\-\-C\-L\-U\-S\-T\-\_\-\-F\-L\-A\-G\-\_\-\-N\-O\-N\-E or W\-P\-A\-N\-\_\-\-C\-L\-U\-S\-T\-\_\-\-F\-L\-A\-G\-\_\-\-E\-N\-C\-R\-Y\-P\-T \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Function Documentation}
+\hypertarget{group__xbee__ota__server_ga22cb77be06faba4020a4f5e0daf48f4f}{\index{Server@{Server}!xbee\-\_\-ota\-\_\-server\-\_\-cmd@{xbee\-\_\-ota\-\_\-server\-\_\-cmd}}
+\index{xbee\-\_\-ota\-\_\-server\-\_\-cmd@{xbee\-\_\-ota\-\_\-server\-\_\-cmd}!Server@{Server}}
+\subsubsection[{xbee\-\_\-ota\-\_\-server\-\_\-cmd}]{\setlength{\rightskip}{0pt plus 5cm}{\bf X\-B\-E\-E\-\_\-\-B\-E\-G\-I\-N\-\_\-\-D\-E\-C\-L\-S} int xbee\-\_\-ota\-\_\-server\-\_\-cmd (
+\begin{DoxyParamCaption}
+\item[{const {\bf wpan\-\_\-envelope\-\_\-t} {\bf F\-A\-R} $\ast$}]{envelope, }
+\item[{void {\bf F\-A\-R} $\ast$}]{context}
+\end{DoxyParamCaption}
+)}}\label{group__xbee__ota__server_ga22cb77be06faba4020a4f5e0daf48f4f}
+
+
+Cluster command to initiate firmware updates. 
+
+Verifies that A\-P\-S encryption was used (if cluster is configured as such) before handing off to implementation-\/provided function \hyperlink{group__xbee__ota__server_ga38fdff5e9fec8c3aa8bfd167621ee35c}{xbee\-\_\-update\-\_\-firmware\-\_\-ota()}.
+
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{group__wpan__aps_ga62b1036c0e296905f2d9a74e7e480297}{wpan\-\_\-aps\-\_\-handler\-\_\-fn} 
+\end{DoxySeeAlso}
+
+
+References E\-I\-N\-V\-A\-L, wpan\-\_\-envelope\-\_\-t\-::length, options, wpan\-\_\-envelope\-\_\-t\-::payload, W\-P\-A\-N\-\_\-\-C\-L\-U\-S\-T\-\_\-\-F\-L\-A\-G\-\_\-\-E\-N\-C\-R\-Y\-P\-T, wpan\-\_\-envelope\-\_\-reply(), W\-P\-A\-N\-\_\-\-E\-N\-V\-E\-L\-O\-P\-E\-\_\-\-R\-X\-\_\-\-A\-P\-S\-\_\-\-E\-N\-C\-R\-Y\-P\-T, wpan\-\_\-envelope\-\_\-send(), and xbee\-\_\-update\-\_\-firmware\-\_\-ota().
+
+\hypertarget{group__xbee__ota__server_ga38fdff5e9fec8c3aa8bfd167621ee35c}{\index{Server@{Server}!xbee\-\_\-update\-\_\-firmware\-\_\-ota@{xbee\-\_\-update\-\_\-firmware\-\_\-ota}}
+\index{xbee\-\_\-update\-\_\-firmware\-\_\-ota@{xbee\-\_\-update\-\_\-firmware\-\_\-ota}!Server@{Server}}
+\subsubsection[{xbee\-\_\-update\-\_\-firmware\-\_\-ota}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ xbee\-\_\-update\-\_\-firmware\-\_\-ota (
+\begin{DoxyParamCaption}
+\item[{const {\bf wpan\-\_\-envelope\-\_\-t} {\bf F\-A\-R} $\ast$}]{envelope, }
+\item[{void {\bf F\-A\-R} $\ast$}]{context}
+\end{DoxyParamCaption}
+)}}\label{group__xbee__ota__server_ga38fdff5e9fec8c3aa8bfd167621ee35c}
+
+
+Application needs to provide this function as a method of receiving firmware updates over-\/the-\/air with Xmodem protocol. 
+
+See \hyperlink{ota__client_8h}{xbee/ota\-\_\-client.\-h} for details on sending updates.
+
+Your application can support password-\/protected updates by checking the payload of the request. If the payload is a valid request to initiate an update, this function should enter an \char`\"{}\-X\-M\-O\-D\-E\-M receive\char`\"{} mode and start sending 'C' to the sender of the request, indicating that it should start sending 64-\/byte X\-M\-O\-D\-E\-M packets with the new firmware.
+
+On Digi's Programmable X\-Bee platform, this function would exit to the bootloader so it can receive the new application firmware.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em envelope} & command sent to start update -- function may want to use the payload for some sort of password verification \\
+\hline
+\mbox{\tt in,out}  & {\em context} & user context (from cluster table)\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em N\-U\-L\-L} & do not respond to request \\
+\hline
+{\em !\-N\-U\-L\-L} & respond to request with error message \\
+\hline
+\end{DoxyRetVals}
+
+
+Referenced by xbee\-\_\-ota\-\_\-server\-\_\-cmd().
+

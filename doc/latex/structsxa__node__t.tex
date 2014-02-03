@@ -1,0 +1,420 @@
+\hypertarget{structsxa__node__t}{\section{sxa\-\_\-node\-\_\-t Struct Reference}
+\label{structsxa__node__t}\index{sxa\-\_\-node\-\_\-t@{sxa\-\_\-node\-\_\-t}}
+}
+
+
+This structure and the attendant functions provide a useful layer for Rabbit applications who wish to use a simplified interface to the X\-Bee A\-P\-I.  
+
+
+
+
+{\ttfamily \#include \char`\"{}xbee/sxa.\-h\char`\"{}}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{structsxa__node__t_a8e784384cf9ff8c8972ae68e501e05c4}{{\bfseries \-\_\-\-S\-X\-A\-\_\-\-C\-A\-C\-H\-E\-D\-\_\-\-S\-T\-R\-I\-N\-G} (command\-\_\-char, 1)}\label{structsxa__node__t_a8e784384cf9ff8c8972ae68e501e05c4}
+
+\item 
+\hypertarget{structsxa__node__t_a72344c6c328b655270d31a7aa74a0c7e}{{\bfseries \-\_\-\-S\-X\-A\-\_\-\-C\-A\-C\-H\-E\-D\-\_\-\-B\-I\-N} (ext\-\_\-pan\-\_\-id, 8)}\label{structsxa__node__t_a72344c6c328b655270d31a7aa74a0c7e}
+
+\item 
+\hypertarget{structsxa__node__t_a54caac55fa94d32e26c54447a064ebee}{{\bfseries \-\_\-\-S\-X\-A\-\_\-\-C\-A\-C\-H\-E\-D\-\_\-\-B\-I\-N} (link\-\_\-key, 16)}\label{structsxa__node__t_a54caac55fa94d32e26c54447a064ebee}
+
+\item 
+\hypertarget{structsxa__node__t_a18c56e9dac1d18c895c0989b85b583ae}{{\bfseries \-\_\-\-S\-X\-A\-\_\-\-C\-A\-C\-H\-E\-D\-\_\-\-B\-I\-N} (network\-\_\-key, 16)}\label{structsxa__node__t_a18c56e9dac1d18c895c0989b85b583ae}
+
+\end{DoxyCompactItemize}
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{structsxa__node__t_a10a0382c260b61c11040f1ea8853abd5}{struct \hyperlink{structsxa__node__t}{sxa\-\_\-node\-\_\-t} \hyperlink{group__hal_gaef060b3456fdcc093a7210a762d5f2ed}{F\-A\-R} $\ast$ \hyperlink{structsxa__node__t_a10a0382c260b61c11040f1ea8853abd5}{next}}\label{structsxa__node__t_a10a0382c260b61c11040f1ea8853abd5}
+
+\begin{DoxyCompactList}\small\item\em Next in linked list (or N\-U\-L\-L) \end{DoxyCompactList}\item 
+\hypertarget{structsxa__node__t_aba67917f7787a4106c8c066621db9bea}{struct \hyperlink{structsxa__node__t}{sxa\-\_\-node\-\_\-t} \hyperlink{group__hal_gaef060b3456fdcc093a7210a762d5f2ed}{F\-A\-R} $\ast$ \hyperlink{structsxa__node__t_aba67917f7787a4106c8c066621db9bea}{next\-\_\-local}}\label{structsxa__node__t_aba67917f7787a4106c8c066621db9bea}
+
+\begin{DoxyCompactList}\small\item\em Next in linked list of local devices (or N\-U\-L\-L) \end{DoxyCompactList}\item 
+\hypertarget{structsxa__node__t_a8411ba20cacdddb520e6c1358291c9ba}{\hyperlink{group__hal_ga2140805d08462d474b82ddc8d1c2f3e6}{int16\-\_\-t} \hyperlink{structsxa__node__t_a8411ba20cacdddb520e6c1358291c9ba}{index}}\label{structsxa__node__t_a8411ba20cacdddb520e6c1358291c9ba}
+
+\begin{DoxyCompactList}\small\item\em Index (order of discovery\-: 0, 1, 2...) \end{DoxyCompactList}\item 
+\hypertarget{structsxa__node__t_a79f0c368a2efd172b3779a2ef3a26706}{\hyperlink{structxbee__dev__t}{xbee\-\_\-dev\-\_\-t} $\ast$ \hyperlink{structsxa__node__t_a79f0c368a2efd172b3779a2ef3a26706}{xbee}}\label{structsxa__node__t_a79f0c368a2efd172b3779a2ef3a26706}
+
+\begin{DoxyCompactList}\small\item\em Local device through which discovered. \end{DoxyCompactList}\item 
+\hyperlink{group__hal__dos_ga09a1e304d66d35dd47daffee9731edaa}{uint32\-\_\-t} \hyperlink{structsxa__node__t_ac543485164457c0eefd43dcee04c82c6}{stamp}
+\begin{DoxyCompactList}\small\item\em Time stamp of last received message from xbee\-\_\-seconds\-\_\-timer(). \end{DoxyCompactList}\item 
+\hypertarget{structsxa__node__t_a6d8abccf90f28f0ea0a3423eaffacc7e}{\hyperlink{group__hal__dos_ga09a1e304d66d35dd47daffee9731edaa}{uint32\-\_\-t} \hyperlink{structsxa__node__t_a6d8abccf90f28f0ea0a3423eaffacc7e}{caps}}\label{structsxa__node__t_a6d8abccf90f28f0ea0a3423eaffacc7e}
+
+\begin{DoxyCompactList}\small\item\em Capabilites bitmask (Z\-B\-\_\-\-C\-A\-P\-\_\-$\ast$) \end{DoxyCompactList}\item 
+\hypertarget{structsxa__node__t_a65028dacab709b3d58f37d40d9c1b572}{\hyperlink{structxbee__node__id__t}{xbee\-\_\-node\-\_\-id\-\_\-t} \hyperlink{structsxa__node__t_a65028dacab709b3d58f37d40d9c1b572}{id}}\label{structsxa__node__t_a65028dacab709b3d58f37d40d9c1b572}
+
+\begin{DoxyCompactList}\small\item\em Instance of basic node addressing and identification info. \end{DoxyCompactList}\item 
+\hyperlink{structwpan__address__t}{wpan\-\_\-address\-\_\-t} \hyperlink{group__hal_gaef060b3456fdcc093a7210a762d5f2ed}{F\-A\-R} $\ast$ \hyperlink{structsxa__node__t_ae22454fb2324ac2f3c9ddc07fe24ae35}{addr\-\_\-ptr}
+\begin{DoxyCompactList}\small\item\em Either N\-U\-L\-L (for local device) or points to next field. \end{DoxyCompactList}\item 
+\hypertarget{structsxa__node__t_a66a58a737aee9733019399e2eceabf4a}{\hyperlink{structwpan__address__t}{wpan\-\_\-address\-\_\-t} \hyperlink{structsxa__node__t_a66a58a737aee9733019399e2eceabf4a}{address}}\label{structsxa__node__t_a66a58a737aee9733019399e2eceabf4a}
+
+\begin{DoxyCompactList}\small\item\em I\-E\-E\-E and network addresses (for remote devices, else N/\-A) \end{DoxyCompactList}\item 
+\hyperlink{group__hal_ga5a8b2dc9e45a9ee81a94ef304fb62505}{uint16\-\_\-t} \hyperlink{structsxa__node__t_a8de35431542d2c2508bb17ac8fa48a84}{nqueued}
+\begin{DoxyCompactList}\small\item\em Cached register value handling\-: number of entries in .queued Range \mbox{[}0..\hyperlink{sxa_8h_a9e47d5fe0e89846d0bc2b3f1584382ae}{\-\_\-\-S\-X\-A\-\_\-\-M\-A\-X\-\_\-\-Q\-U\-E\-U\-E\-D}\mbox{]}. \end{DoxyCompactList}\item 
+struct \hyperlink{struct__xbee__reg__descr__t}{\-\_\-xbee\-\_\-reg\-\_\-descr\-\_\-t} \hyperlink{group__hal_gaef060b3456fdcc093a7210a762d5f2ed}{F\-A\-R} $\ast$\hyperlink{group__hal_gaef060b3456fdcc093a7210a762d5f2ed}{F\-A\-R} $\ast$ \hyperlink{structsxa__node__t_a4be7d670379c92c9d32f55bc02a81add}{queued}
+\begin{DoxyCompactList}\small\item\em Cached register value handling\-: list of queued updates. \end{DoxyCompactList}\item 
+\hyperlink{group__hal_ga5a8b2dc9e45a9ee81a94ef304fb62505}{uint16\-\_\-t} \hyperlink{structsxa__node__t_a8aa02a31241baba968d2892c98971c65}{q\-\_\-index}
+\begin{DoxyCompactList}\small\item\em Cached register value handling\-: current update (index into .queued) If $>$= .nqueued, then no current update is being processed, so scan list for next update (if any). \end{DoxyCompactList}\item 
+\hyperlink{structxbee__atcmd__reg__t}{xbee\-\_\-atcmd\-\_\-reg\-\_\-t} \hyperlink{structsxa__node__t_ae825a2809f705ef65c961e8bfe3e98cc}{misc\-\_\-reg} \mbox{[}2\mbox{]}
+\begin{DoxyCompactList}\small\item\em Cached register value handling\-: Single entry command list for single register (miscellaneous) updates. \end{DoxyCompactList}\item 
+\hypertarget{structsxa__node__t_a41aeca059e6fef32cb611359925a0c5c}{const \hyperlink{structsxa__cached__group__t}{sxa\-\_\-cached\-\_\-group\-\_\-t} \hyperlink{group__hal_gaef060b3456fdcc093a7210a762d5f2ed}{F\-A\-R} $\ast$ {\bfseries groups}}\label{structsxa__node__t_a41aeca059e6fef32cb611359925a0c5c}
+
+\item 
+\hypertarget{structsxa__node__t_ab2dff3a5f503f07dec32ae1e59c85898}{const \hyperlink{structsxa__cached__group__t}{sxa\-\_\-cached\-\_\-group\-\_\-t} \hyperlink{group__hal_gaef060b3456fdcc093a7210a762d5f2ed}{F\-A\-R} $\ast$ {\bfseries doing\-\_\-group}}\label{structsxa__node__t_ab2dff3a5f503f07dec32ae1e59c85898}
+
+\item 
+\hypertarget{structsxa__node__t_ac2acdbe4009c4fc763c6ac93bc0056eb}{\hyperlink{group___s_x_a_ga21b45e50d83fcc1363c4239313e88c06}{sxa\-\_\-cache\-\_\-flags\-\_\-t} \hyperlink{structsxa__node__t_ac2acdbe4009c4fc763c6ac93bc0056eb}{node\-\_\-id\-\_\-cf}}\label{structsxa__node__t_ac2acdbe4009c4fc763c6ac93bc0056eb}
+
+\begin{DoxyCompactList}\small\item\em Cache flags for node\-\_\-id group. \end{DoxyCompactList}\item 
+\hypertarget{structsxa__node__t_a8b839f7ad17e883aa9ef2532b2be929a}{\hyperlink{group___s_x_a_ga21b45e50d83fcc1363c4239313e88c06}{sxa\-\_\-cache\-\_\-flags\-\_\-t} \hyperlink{structsxa__node__t_a8b839f7ad17e883aa9ef2532b2be929a}{io\-\_\-config\-\_\-cf}}\label{structsxa__node__t_a8b839f7ad17e883aa9ef2532b2be929a}
+
+\begin{DoxyCompactList}\small\item\em Cache flags for I/\-O configuration group. \end{DoxyCompactList}\item 
+\hyperlink{structxbee__io__t}{xbee\-\_\-io\-\_\-t} \hyperlink{structsxa__node__t_a87711fd12194e90fe58291cf2ea6e30f}{io}
+\begin{DoxyCompactList}\small\item\em I/\-O shadow state and configuration. \end{DoxyCompactList}\item 
+\hypertarget{structsxa__node__t_a02af329d146957380b2ca7ffaae5bd83}{\hyperlink{group___s_x_a_ga21b45e50d83fcc1363c4239313e88c06}{sxa\-\_\-cache\-\_\-flags\-\_\-t} \hyperlink{structsxa__node__t_a02af329d146957380b2ca7ffaae5bd83}{device\-\_\-info\-\_\-cf}}\label{structsxa__node__t_a02af329d146957380b2ca7ffaae5bd83}
+
+\begin{DoxyCompactList}\small\item\em Cache flags for device info group. \end{DoxyCompactList}\item 
+\hyperlink{group__hal_gae1affc9ca37cfb624959c866a73f83c2}{uint8\-\_\-t} \hyperlink{structsxa__node__t_a4f850621475e7b60aa5aee84dda81a8f}{ao}
+\begin{DoxyCompactList}\small\item\em Value of X\-Bee module's A\-O (A\-P\-I options) register. \end{DoxyCompactList}\item 
+\hypertarget{structsxa__node__t_ad4c7c16c071f95965e2e506752b450fe}{\hyperlink{group__hal_ga5a8b2dc9e45a9ee81a94ef304fb62505}{uint16\-\_\-t} \hyperlink{structsxa__node__t_ad4c7c16c071f95965e2e506752b450fe}{hardware\-\_\-version}}\label{structsxa__node__t_ad4c7c16c071f95965e2e506752b450fe}
+
+\begin{DoxyCompactList}\small\item\em Value of X\-Bee module's H\-V register. \end{DoxyCompactList}\item 
+\hypertarget{structsxa__node__t_ac8e0f35fdeff288dd1a7b4f49754c9b2}{\hyperlink{group__hal__dos_ga09a1e304d66d35dd47daffee9731edaa}{uint32\-\_\-t} \hyperlink{structsxa__node__t_ac8e0f35fdeff288dd1a7b4f49754c9b2}{firmware\-\_\-version}}\label{structsxa__node__t_ac8e0f35fdeff288dd1a7b4f49754c9b2}
+
+\begin{DoxyCompactList}\small\item\em Value of X\-Bee module's V\-R register (4-\/bytes on some devices) \end{DoxyCompactList}\item 
+\hypertarget{structsxa__node__t_a296bccce81453e35d3726ac1476101eb}{\hyperlink{group__hal__dos_ga09a1e304d66d35dd47daffee9731edaa}{uint32\-\_\-t} \hyperlink{structsxa__node__t_a296bccce81453e35d3726ac1476101eb}{dd}}\label{structsxa__node__t_a296bccce81453e35d3726ac1476101eb}
+
+\begin{DoxyCompactList}\small\item\em Value of X\-Bee module's D\-D register (device type) \end{DoxyCompactList}\item 
+\hypertarget{structsxa__node__t_adff7949139ea5500a94ee6fbedad3087}{\hyperlink{group___s_x_a_ga21b45e50d83fcc1363c4239313e88c06}{sxa\-\_\-cache\-\_\-flags\-\_\-t} \hyperlink{structsxa__node__t_adff7949139ea5500a94ee6fbedad3087}{dhdl\-\_\-cf}}\label{structsxa__node__t_adff7949139ea5500a94ee6fbedad3087}
+
+\begin{DoxyCompactList}\small\item\em Cache flags for D\-H/\-D\-L (destination address) group. \end{DoxyCompactList}\item 
+\hyperlink{unionaddr64}{addr64} \hyperlink{structsxa__node__t_abb357ccdd72453fd6f4ee76e18fde30c}{dest\-\_\-addr}
+\begin{DoxyCompactList}\small\item\em Value of D\-H and D\-L registers, combined into a single logical field. \end{DoxyCompactList}\item 
+\hypertarget{structsxa__node__t_addae4971fe88bef06542be6b2de54ea3}{sxa\-\_\-cached\-\_\-uint8\-\_\-t {\bfseries aggregation}}\label{structsxa__node__t_addae4971fe88bef06542be6b2de54ea3}
+
+\item 
+\hypertarget{structsxa__node__t_a4857814d272d7c236f20217036eadaa7}{sxa\-\_\-cached\-\_\-uint8\-\_\-t {\bfseries assoc\-\_\-led}}\label{structsxa__node__t_a4857814d272d7c236f20217036eadaa7}
+
+\item 
+\hypertarget{structsxa__node__t_afbbaf03169e6357fcc78463452c5f473}{sxa\-\_\-cached\-\_\-uint8\-\_\-t {\bfseries beacon\-\_\-response}}\label{structsxa__node__t_afbbaf03169e6357fcc78463452c5f473}
+
+\item 
+\hypertarget{structsxa__node__t_a2fe0610672454f943a5a01ade84e7180}{sxa\-\_\-cached\-\_\-uint8\-\_\-t {\bfseries broadcast\-\_\-hops}}\label{structsxa__node__t_a2fe0610672454f943a5a01ade84e7180}
+
+\item 
+\hypertarget{structsxa__node__t_a9b601d4ed7a3ec9b0e05528390e78cdd}{sxa\-\_\-cached\-\_\-uint8\-\_\-t {\bfseries cca\-\_\-threshold}}\label{structsxa__node__t_a9b601d4ed7a3ec9b0e05528390e78cdd}
+
+\item 
+\hypertarget{structsxa__node__t_a1f6b05bef57db1f1cbb4740a78914b5f}{sxa\-\_\-cached\-\_\-uint8\-\_\-t {\bfseries channel}}\label{structsxa__node__t_a1f6b05bef57db1f1cbb4740a78914b5f}
+
+\item 
+\hypertarget{structsxa__node__t_a112bc7028dd0dd7833eff63333fae9bb}{sxa\-\_\-cached\-\_\-uint16\-\_\-t {\bfseries cluster\-\_\-id}}\label{structsxa__node__t_a112bc7028dd0dd7833eff63333fae9bb}
+
+\item 
+\hypertarget{structsxa__node__t_a46cab60ad63ab8babe24c5ce86516638}{sxa\-\_\-cached\-\_\-uint16\-\_\-t {\bfseries command\-\_\-timeout}}\label{structsxa__node__t_a46cab60ad63ab8babe24c5ce86516638}
+
+\item 
+\hypertarget{structsxa__node__t_a7a94e7e4b3817846d70454a9ab66da8b}{sxa\-\_\-cached\-\_\-uint8\-\_\-t {\bfseries coord\-\_\-assoc}}\label{structsxa__node__t_a7a94e7e4b3817846d70454a9ab66da8b}
+
+\item 
+\hypertarget{structsxa__node__t_ad3fce2599083f4ebf5f888b8330d504a}{sxa\-\_\-cached\-\_\-uint8\-\_\-t {\bfseries coord\-\_\-enable}}\label{structsxa__node__t_ad3fce2599083f4ebf5f888b8330d504a}
+
+\item 
+\hypertarget{structsxa__node__t_ab9f0e8453527234d22e536993a78456d}{sxa\-\_\-cached\-\_\-uint8\-\_\-t {\bfseries delay\-\_\-slots}}\label{structsxa__node__t_ab9f0e8453527234d22e536993a78456d}
+
+\item 
+\hypertarget{structsxa__node__t_a689242fa5061f19e077a70301de98059}{sxa\-\_\-cached\-\_\-uint8\-\_\-t {\bfseries dest\-\_\-endpoint}}\label{structsxa__node__t_a689242fa5061f19e077a70301de98059}
+
+\item 
+\hypertarget{structsxa__node__t_ac9f368083274bb195986b50252588f7b}{sxa\-\_\-cached\-\_\-uint8\-\_\-t {\bfseries device\-\_\-options}}\label{structsxa__node__t_ac9f368083274bb195986b50252588f7b}
+
+\item 
+\hypertarget{structsxa__node__t_a0a42004e700f2c03e6129a8147e95d97}{sxa\-\_\-cached\-\_\-uint16\-\_\-t {\bfseries discover\-\_\-timeout}}\label{structsxa__node__t_a0a42004e700f2c03e6129a8147e95d97}
+
+\item 
+\hypertarget{structsxa__node__t_a00ffdb170ca6e037cd0173021ef8e4c7}{sxa\-\_\-cached\-\_\-uint8\-\_\-t {\bfseries encrypt\-\_\-enable}}\label{structsxa__node__t_a00ffdb170ca6e037cd0173021ef8e4c7}
+
+\item 
+\hypertarget{structsxa__node__t_ae49cea8f0239bc780cf483678c71128f}{sxa\-\_\-cached\-\_\-uint8\-\_\-t {\bfseries encrypt\-\_\-options}}\label{structsxa__node__t_ae49cea8f0239bc780cf483678c71128f}
+
+\item 
+\hypertarget{structsxa__node__t_a23a460f331135e1dc1a5eb78119a4371}{sxa\-\_\-cached\-\_\-uint8\-\_\-t {\bfseries end\-\_\-assoc}}\label{structsxa__node__t_a23a460f331135e1dc1a5eb78119a4371}
+
+\item 
+\hypertarget{structsxa__node__t_ac58d8910a5f2c760b01eac5ad38a7f16}{sxa\-\_\-cached\-\_\-uint16\-\_\-t {\bfseries flow\-\_\-threshold}}\label{structsxa__node__t_ac58d8910a5f2c760b01eac5ad38a7f16}
+
+\item 
+\hypertarget{structsxa__node__t_a31a81247489c58560b3127236c6b7af4}{sxa\-\_\-cached\-\_\-uint16\-\_\-t {\bfseries guard\-\_\-times}}\label{structsxa__node__t_a31a81247489c58560b3127236c6b7af4}
+
+\item 
+\hypertarget{structsxa__node__t_a44d133b35c0be116fac508f07a528eae}{sxa\-\_\-cached\-\_\-uint8\-\_\-t {\bfseries hop\-\_\-sequence}}\label{structsxa__node__t_a44d133b35c0be116fac508f07a528eae}
+
+\item 
+\hypertarget{structsxa__node__t_a644deb9891fae6db24eb3f7ef5870965}{sxa\-\_\-cached\-\_\-addr64 {\bfseries io\-\_\-address}}\label{structsxa__node__t_a644deb9891fae6db24eb3f7ef5870965}
+
+\item 
+\hypertarget{structsxa__node__t_abc455e4cec44f0633172562200c876ca}{sxa\-\_\-cached\-\_\-uint8\-\_\-t {\bfseries io\-\_\-enable}}\label{structsxa__node__t_abc455e4cec44f0633172562200c876ca}
+
+\item 
+\hypertarget{structsxa__node__t_a2e3166588ffbe8aea29b921e2c3fc6d3}{sxa\-\_\-cached\-\_\-uint16\-\_\-t {\bfseries initial\-\_\-pan\-\_\-id}}\label{structsxa__node__t_a2e3166588ffbe8aea29b921e2c3fc6d3}
+
+\item 
+\hypertarget{structsxa__node__t_abc833d46789693278bb0217a1fa08315}{sxa\-\_\-cached\-\_\-uint8\-\_\-t {\bfseries join\-\_\-time}}\label{structsxa__node__t_abc833d46789693278bb0217a1fa08315}
+
+\item 
+\hypertarget{structsxa__node__t_a7cc47c55ea75a6b3a18415bbde2d8a0a}{sxa\-\_\-cached\-\_\-uint8\-\_\-t {\bfseries join\-\_\-notification}}\label{structsxa__node__t_a7cc47c55ea75a6b3a18415bbde2d8a0a}
+
+\item 
+\hypertarget{structsxa__node__t_a23899e347d6c43d4242065204cfa0939}{sxa\-\_\-cached\-\_\-uint8\-\_\-t {\bfseries join\-\_\-verification}}\label{structsxa__node__t_a23899e347d6c43d4242065204cfa0939}
+
+\item 
+\hypertarget{structsxa__node__t_a72d79130c22c9fd91a190ef41b011fce}{sxa\-\_\-cached\-\_\-uint8\-\_\-t {\bfseries mac\-\_\-mode}}\label{structsxa__node__t_a72d79130c22c9fd91a190ef41b011fce}
+
+\item 
+\hypertarget{structsxa__node__t_a7cdc48529cf2caa8c23e4d1587c5dcbb}{sxa\-\_\-cached\-\_\-uint8\-\_\-t {\bfseries mac\-\_\-retries}}\label{structsxa__node__t_a7cdc48529cf2caa8c23e4d1587c5dcbb}
+
+\item 
+\hypertarget{structsxa__node__t_aff8f109f646d13ad739b8a1968cd448c}{sxa\-\_\-cached\-\_\-uint8\-\_\-t {\bfseries max\-\_\-hops}}\label{structsxa__node__t_aff8f109f646d13ad739b8a1968cd448c}
+
+\item 
+\hypertarget{structsxa__node__t_a9f101d3b4bbdb6e537204aaea805e79d}{sxa\-\_\-cached\-\_\-uint8\-\_\-t {\bfseries mesh\-\_\-retries}}\label{structsxa__node__t_a9f101d3b4bbdb6e537204aaea805e79d}
+
+\item 
+\hypertarget{structsxa__node__t_a9f73e487a189f357e4c2d472fe280eeb}{sxa\-\_\-cached\-\_\-uint8\-\_\-t {\bfseries multi\-\_\-transmit}}\label{structsxa__node__t_a9f73e487a189f357e4c2d472fe280eeb}
+
+\item 
+\hypertarget{structsxa__node__t_a12b87380c0ae5a34354e9eae5c073ece}{sxa\-\_\-cached\-\_\-uint8\-\_\-t {\bfseries net\-\_\-delay\-\_\-slots}}\label{structsxa__node__t_a12b87380c0ae5a34354e9eae5c073ece}
+
+\item 
+\hypertarget{structsxa__node__t_af2a08d1eb0031318ec99dd9912bbd9ef}{sxa\-\_\-cached\-\_\-uint16\-\_\-t {\bfseries network\-\_\-watchdog}}\label{structsxa__node__t_af2a08d1eb0031318ec99dd9912bbd9ef}
+
+\item 
+\hypertarget{structsxa__node__t_a3a4e03433345119bd0bb6e347a7424a2}{sxa\-\_\-cached\-\_\-uint8\-\_\-t {\bfseries packet\-\_\-timeout}}\label{structsxa__node__t_a3a4e03433345119bd0bb6e347a7424a2}
+
+\item 
+\hypertarget{structsxa__node__t_a90ab3737ab9066793e4bce19727d6552}{sxa\-\_\-cached\-\_\-uint16\-\_\-t {\bfseries pan\-\_\-id}}\label{structsxa__node__t_a90ab3737ab9066793e4bce19727d6552}
+
+\item 
+\hypertarget{structsxa__node__t_aaba7c04f6808b9ca181417fa48a4536e}{sxa\-\_\-cached\-\_\-uint16\-\_\-t {\bfseries polling\-\_\-rate}}\label{structsxa__node__t_aaba7c04f6808b9ca181417fa48a4536e}
+
+\item 
+\hypertarget{structsxa__node__t_a8d8ab853c4db7da7889ddf177619eef8}{sxa\-\_\-cached\-\_\-uint8\-\_\-t {\bfseries power\-\_\-level}}\label{structsxa__node__t_a8d8ab853c4db7da7889ddf177619eef8}
+
+\item 
+\hypertarget{structsxa__node__t_a24a7cf27e344d37b32c65c7be8c9c9e7}{sxa\-\_\-cached\-\_\-uint8\-\_\-t {\bfseries power\-\_\-mode}}\label{structsxa__node__t_a24a7cf27e344d37b32c65c7be8c9c9e7}
+
+\item 
+\hypertarget{structsxa__node__t_a19e007d8d40744632be14e3791dabde0}{sxa\-\_\-cached\-\_\-uint8\-\_\-t {\bfseries rssi\-\_\-timer}}\label{structsxa__node__t_a19e007d8d40744632be14e3791dabde0}
+
+\item 
+\hypertarget{structsxa__node__t_af32b39eca3921c88cbe56528343fa7fc}{sxa\-\_\-cached\-\_\-uint16\-\_\-t {\bfseries scan\-\_\-channels}}\label{structsxa__node__t_af32b39eca3921c88cbe56528343fa7fc}
+
+\item 
+\hypertarget{structsxa__node__t_aa80aa88a7abf5d8d659bb026c0e900fb}{sxa\-\_\-cached\-\_\-uint8\-\_\-t {\bfseries scan\-\_\-duration}}\label{structsxa__node__t_aa80aa88a7abf5d8d659bb026c0e900fb}
+
+\item 
+\hypertarget{structsxa__node__t_a19676a93e32db8ba76b14f8381b088ad}{sxa\-\_\-cached\-\_\-uint8\-\_\-t {\bfseries serial\-\_\-parity}}\label{structsxa__node__t_a19676a93e32db8ba76b14f8381b088ad}
+
+\item 
+\hypertarget{structsxa__node__t_aa826e8539b193121c88bec64543fbcc6}{sxa\-\_\-cached\-\_\-uint32\-\_\-t {\bfseries serial\-\_\-rate}}\label{structsxa__node__t_aa826e8539b193121c88bec64543fbcc6}
+
+\item 
+\hypertarget{structsxa__node__t_ae9676b0bfe7646b4b58db600d0e3a0a6}{sxa\-\_\-cached\-\_\-uint16\-\_\-t {\bfseries sleep\-\_\-count}}\label{structsxa__node__t_ae9676b0bfe7646b4b58db600d0e3a0a6}
+
+\item 
+\hypertarget{structsxa__node__t_ad5afcd7a6f3cbdb16fe69055e7b8846d}{sxa\-\_\-cached\-\_\-uint16\-\_\-t {\bfseries sleep\-\_\-disassoc}}\label{structsxa__node__t_ad5afcd7a6f3cbdb16fe69055e7b8846d}
+
+\item 
+\hypertarget{structsxa__node__t_a28336f5bad6b465b0369b3acfc62d189}{sxa\-\_\-cached\-\_\-uint8\-\_\-t {\bfseries sleep\-\_\-mode}}\label{structsxa__node__t_a28336f5bad6b465b0369b3acfc62d189}
+
+\item 
+\hypertarget{structsxa__node__t_aed3bebe6a6fae2d721034293d2ab5e6f}{sxa\-\_\-cached\-\_\-uint8\-\_\-t {\bfseries sleep\-\_\-options}}\label{structsxa__node__t_aed3bebe6a6fae2d721034293d2ab5e6f}
+
+\item 
+\hypertarget{structsxa__node__t_ae374c3f0670061420de61693cc9a4b45}{sxa\-\_\-cached\-\_\-uint16\-\_\-t {\bfseries sleep\-\_\-period}}\label{structsxa__node__t_ae374c3f0670061420de61693cc9a4b45}
+
+\item 
+\hypertarget{structsxa__node__t_a9438233a08e6ad639e8d2ef265afa76c}{sxa\-\_\-cached\-\_\-uint8\-\_\-t {\bfseries sleep\-\_\-sample\-\_\-rate}}\label{structsxa__node__t_a9438233a08e6ad639e8d2ef265afa76c}
+
+\item 
+\hypertarget{structsxa__node__t_a1b8b3953786fc8f4e85babd2424714ea}{sxa\-\_\-cached\-\_\-uint16\-\_\-t {\bfseries sleep\-\_\-time}}\label{structsxa__node__t_a1b8b3953786fc8f4e85babd2424714ea}
+
+\item 
+\hypertarget{structsxa__node__t_a5c074f146b34af1d0676c4ed20dd8add}{sxa\-\_\-cached\-\_\-uint16\-\_\-t {\bfseries sleep\-\_\-wake}}\label{structsxa__node__t_a5c074f146b34af1d0676c4ed20dd8add}
+
+\item 
+\hypertarget{structsxa__node__t_a797bdd82fbff3c15a514b681fb86497d}{sxa\-\_\-cached\-\_\-uint8\-\_\-t {\bfseries source\-\_\-endpoint}}\label{structsxa__node__t_a797bdd82fbff3c15a514b681fb86497d}
+
+\item 
+\hypertarget{structsxa__node__t_ad870c94f6e1cb4697b6d2e04f15e71e7}{sxa\-\_\-cached\-\_\-uint8\-\_\-t {\bfseries stack\-\_\-profile}}\label{structsxa__node__t_ad870c94f6e1cb4697b6d2e04f15e71e7}
+
+\item 
+\hypertarget{structsxa__node__t_aee1069d5bd2d37c3be8c5c5d4e17fa02}{sxa\-\_\-cached\-\_\-uint8\-\_\-t {\bfseries stop\-\_\-bits}}\label{structsxa__node__t_aee1069d5bd2d37c3be8c5c5d4e17fa02}
+
+\item 
+\hypertarget{structsxa__node__t_a3212070d20eab81e78e6ed45c625d9cf}{sxa\-\_\-cached\-\_\-uint16\-\_\-t {\bfseries supply\-\_\-threshold}}\label{structsxa__node__t_a3212070d20eab81e78e6ed45c625d9cf}
+
+\item 
+\hypertarget{structsxa__node__t_aaf807aaf291b79ce0e474e3bc5525e3a}{sxa\-\_\-cached\-\_\-uint8\-\_\-t {\bfseries xbee\-\_\-retries}}\label{structsxa__node__t_aaf807aaf291b79ce0e474e3bc5525e3a}
+
+\item 
+\hypertarget{structsxa__node__t_ae6f50e937e739f9f76268cd9ada5913b}{sxa\-\_\-cached\-\_\-uint16\-\_\-t {\bfseries wake\-\_\-host\-\_\-delay}}\label{structsxa__node__t_ae6f50e937e739f9f76268cd9ada5913b}
+
+\item 
+\hypertarget{structsxa__node__t_a7305c35cc7e30bf2e8f957bc632bd568}{sxa\-\_\-cached\-\_\-uint8\-\_\-t {\bfseries zigbee\-\_\-enable}}\label{structsxa__node__t_a7305c35cc7e30bf2e8f957bc632bd568}
+
+\item 
+\hypertarget{structsxa__node__t_a4ca0beadf74288cf8953000e9c68974f}{sxa\-\_\-cached\-\_\-uint8\-\_\-t {\bfseries association}}\label{structsxa__node__t_a4ca0beadf74288cf8953000e9c68974f}
+
+\item 
+\hypertarget{structsxa__node__t_a5242f89ec315c2686d3fbd5c9722986e}{sxa\-\_\-cached\-\_\-uint16\-\_\-t {\bfseries children}}\label{structsxa__node__t_a5242f89ec315c2686d3fbd5c9722986e}
+
+\item 
+\hypertarget{structsxa__node__t_a12367fce32f52967043c0af353fa2914}{sxa\-\_\-cached\-\_\-uint8\-\_\-t {\bfseries max\-\_\-payload}}\label{structsxa__node__t_a12367fce32f52967043c0af353fa2914}
+
+\item 
+\hypertarget{structsxa__node__t_ade3c4bde58c058d4c0bf3c8c253687b6}{sxa\-\_\-cached\-\_\-uint16\-\_\-t {\bfseries config\-\_\-code}}\label{structsxa__node__t_ade3c4bde58c058d4c0bf3c8c253687b6}
+
+\item 
+\hypertarget{structsxa__node__t_ab46f86f2b69313ee4718880c9c3b3069}{sxa\-\_\-cached\-\_\-uint8\-\_\-t {\bfseries verify\-\_\-cert}}\label{structsxa__node__t_ab46f86f2b69313ee4718880c9c3b3069}
+
+\item 
+\hypertarget{structsxa__node__t_a9d0f7386d38f7870566220befdb0b2ea}{sxa\-\_\-cached\-\_\-uint16\-\_\-t {\bfseries supply\-\_\-voltage}}\label{structsxa__node__t_a9d0f7386d38f7870566220befdb0b2ea}
+
+\item 
+\hypertarget{structsxa__node__t_acd76a81e7c979f34f6556d30279f7a11}{sxa\-\_\-cached\-\_\-uint8\-\_\-t {\bfseries temperature}}\label{structsxa__node__t_acd76a81e7c979f34f6556d30279f7a11}
+
+\item 
+\hypertarget{structsxa__node__t_a9ad0ea06f029820d1f85b9ca75ab9eff}{sxa\-\_\-cached\-\_\-uint8\-\_\-t {\bfseries duty\-\_\-cycle}}\label{structsxa__node__t_a9ad0ea06f029820d1f85b9ca75ab9eff}
+
+\item 
+\hypertarget{structsxa__node__t_a0f7f3bc7364d8cace8d6271080973848}{sxa\-\_\-cached\-\_\-uint8\-\_\-t {\bfseries rssi}}\label{structsxa__node__t_a0f7f3bc7364d8cace8d6271080973848}
+
+\item 
+\hypertarget{structsxa__node__t_a99f0c98b1183b3312790bae7d260c904}{sxa\-\_\-cached\-\_\-uint8\-\_\-t {\bfseries tx\-\_\-power}}\label{structsxa__node__t_a99f0c98b1183b3312790bae7d260c904}
+
+\item 
+\hypertarget{structsxa__node__t_a0966b19e355117ac1fd4b0803385f4a0}{sxa\-\_\-cached\-\_\-uint8\-\_\-t {\bfseries sleep\-\_\-status}}\label{structsxa__node__t_a0966b19e355117ac1fd4b0803385f4a0}
+
+\item 
+\hypertarget{structsxa__node__t_a731ed9c34ea8cd4c59e540336a2f754b}{sxa\-\_\-cached\-\_\-uint16\-\_\-t {\bfseries sleep\-\_\-time\-\_\-op}}\label{structsxa__node__t_a731ed9c34ea8cd4c59e540336a2f754b}
+
+\item 
+\hypertarget{structsxa__node__t_a60c7dd44749ecf219809ebea0923156c}{sxa\-\_\-cached\-\_\-uint16\-\_\-t {\bfseries wake\-\_\-time}}\label{structsxa__node__t_a60c7dd44749ecf219809ebea0923156c}
+
+\item 
+\hypertarget{structsxa__node__t_a1d997ce4ddc636bf758ce8b467c6375c}{sxa\-\_\-cached\-\_\-uint32\-\_\-t {\bfseries ack\-\_\-failures}}\label{structsxa__node__t_a1d997ce4ddc636bf758ce8b467c6375c}
+
+\item 
+\hypertarget{structsxa__node__t_ae386d0a73ecaa5d9e8ecdf2a5c1c937a}{sxa\-\_\-cached\-\_\-uint32\-\_\-t {\bfseries cca\-\_\-failures}}\label{structsxa__node__t_ae386d0a73ecaa5d9e8ecdf2a5c1c937a}
+
+\item 
+\hypertarget{structsxa__node__t_ab651a5fe7d96c4a7310cf30dc5693f7d}{sxa\-\_\-cached\-\_\-uint32\-\_\-t {\bfseries good\-\_\-packets}}\label{structsxa__node__t_ab651a5fe7d96c4a7310cf30dc5693f7d}
+
+\item 
+\hypertarget{structsxa__node__t_ac7aa17ed22ae2c91a61313365fd9d37d}{sxa\-\_\-cached\-\_\-uint32\-\_\-t {\bfseries missed\-\_\-syncs}}\label{structsxa__node__t_ac7aa17ed22ae2c91a61313365fd9d37d}
+
+\item 
+\hypertarget{structsxa__node__t_ae5c478ae4e83cf0d44c55ab530a7c265}{sxa\-\_\-cached\-\_\-uint32\-\_\-t {\bfseries missed\-\_\-sync\-\_\-msg}}\label{structsxa__node__t_ae5c478ae4e83cf0d44c55ab530a7c265}
+
+\item 
+\hypertarget{structsxa__node__t_a2aceee1ec0b4d950e907d33ee61bf31f}{sxa\-\_\-cached\-\_\-uint32\-\_\-t {\bfseries rf\-\_\-errors}}\label{structsxa__node__t_a2aceee1ec0b4d950e907d33ee61bf31f}
+
+\item 
+\hypertarget{structsxa__node__t_a98a3b8427635213b5171534ae43c0df9}{sxa\-\_\-cached\-\_\-uint32\-\_\-t {\bfseries tx\-\_\-errors}}\label{structsxa__node__t_a98a3b8427635213b5171534ae43c0df9}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This structure and the attendant functions provide a useful layer for Rabbit applications who wish to use a simplified interface to the X\-Bee A\-P\-I. 
+
+The Simplified X\-Bee A\-P\-I (S\-X\-A) has the following facilities\-:
+\begin{DoxyItemize}
+\item discovery of nodes and maintenance of a node table
+\item access to configurable I/\-Os on the X\-Bee module
+\item management of cached register values
+\item establishment of point-\/to-\/point reliable data streams (xbee\-\_\-sxa\-\_\-socket) \mbox{[}Rabbit implementation only\mbox{]}.
+\end{DoxyItemize}
+
+The first three items are device-\/independent. Data streams requires Rabbit-\/compatible C\-P\-Us on both ends.
+
+It is assumed that X\-Bee modules are used. This library depends on proprietary X\-Bee functions, so interoperability with other manufacturers' devices is not expected. In fact, since S\-X\-A currently supports only A\-T\-N\-D node discovery (D\-D\-O) and not Z\-D\-O discovery, only X\-Bee devices will show up in the node list. For upward compatibility, code can call sxa\-\_\-is\-\_\-digi() to determine whether the node is a 'Digi' (i.\-e. X\-Bee) device, and thus supports remote A\-T commands. The .caps field has additional information about node capabilities.
+
+Node discovery is the most important service. Each node is added to a linked list which is dynamically allocated. The application deals with pointers to individual table elements, as returned by table searching A\-P\-I functions. Each new node (identified uniquely by I\-E\-E\-E 64-\/bit address) has a table entry allocated. The entry is never freed so that applications do not have to be concerned with dangling pointers. The assumption is that the total set of X\-Bee nodes ever discovered (in one power cycle) is bounded to a reasonably small number (maybe in the low hundreds).
+
+Each table entry contains basic addressing data for the node, some of which may be dynamically updated. The I\-E\-E\-E address is guaranteed to be constant. The table entry contains pointers (initially set N\-U\-L\-L) which may be set to point to other dynamically allocated information such as I/\-O configuration. Some of the additional information is used to maintain \char`\"{}cached\char`\"{} settings of remote node configuration, which is necessary to avoid redundant radio traffic. Other information is used to record updated state on the remote device, and to implement scheduling for remote commands. 
+
+\subsection{Field Documentation}
+\hypertarget{structsxa__node__t_ae22454fb2324ac2f3c9ddc07fe24ae35}{\index{sxa\-\_\-node\-\_\-t@{sxa\-\_\-node\-\_\-t}!addr\-\_\-ptr@{addr\-\_\-ptr}}
+\index{addr\-\_\-ptr@{addr\-\_\-ptr}!sxa_node_t@{sxa\-\_\-node\-\_\-t}}
+\subsubsection[{addr\-\_\-ptr}]{\setlength{\rightskip}{0pt plus 5cm}{\bf wpan\-\_\-address\-\_\-t} {\bf F\-A\-R}$\ast$ addr\-\_\-ptr}}\label{structsxa__node__t_ae22454fb2324ac2f3c9ddc07fe24ae35}
+
+
+Either N\-U\-L\-L (for local device) or points to next field. 
+
+This is for convenience with functions which take N\-U\-L\-L address to indicate the local device. \hypertarget{structsxa__node__t_a4f850621475e7b60aa5aee84dda81a8f}{\index{sxa\-\_\-node\-\_\-t@{sxa\-\_\-node\-\_\-t}!ao@{ao}}
+\index{ao@{ao}!sxa_node_t@{sxa\-\_\-node\-\_\-t}}
+\subsubsection[{ao}]{\setlength{\rightskip}{0pt plus 5cm}{\bf uint8\-\_\-t} ao}}\label{structsxa__node__t_a4f850621475e7b60aa5aee84dda81a8f}
+
+
+Value of X\-Bee module's A\-O (A\-P\-I options) register. 
+
+Also sets value 0x\-F\-F if the A\-O command is not supported (fails to read). \hypertarget{structsxa__node__t_abb357ccdd72453fd6f4ee76e18fde30c}{\index{sxa\-\_\-node\-\_\-t@{sxa\-\_\-node\-\_\-t}!dest\-\_\-addr@{dest\-\_\-addr}}
+\index{dest\-\_\-addr@{dest\-\_\-addr}!sxa_node_t@{sxa\-\_\-node\-\_\-t}}
+\subsubsection[{dest\-\_\-addr}]{\setlength{\rightskip}{0pt plus 5cm}{\bf addr64} dest\-\_\-addr}}\label{structsxa__node__t_abb357ccdd72453fd6f4ee76e18fde30c}
+
+
+Value of D\-H and D\-L registers, combined into a single logical field. 
+
+You always want both, so there is a command list to get them. \hypertarget{structsxa__node__t_a87711fd12194e90fe58291cf2ea6e30f}{\index{sxa\-\_\-node\-\_\-t@{sxa\-\_\-node\-\_\-t}!io@{io}}
+\index{io@{io}!sxa_node_t@{sxa\-\_\-node\-\_\-t}}
+\subsubsection[{io}]{\setlength{\rightskip}{0pt plus 5cm}{\bf xbee\-\_\-io\-\_\-t} io}}\label{structsxa__node__t_a87711fd12194e90fe58291cf2ea6e30f}
+
+
+I/\-O shadow state and configuration. 
+
+This contains a C\-L\-C which is used for the other queries as well. \hypertarget{structsxa__node__t_ae825a2809f705ef65c961e8bfe3e98cc}{\index{sxa\-\_\-node\-\_\-t@{sxa\-\_\-node\-\_\-t}!misc\-\_\-reg@{misc\-\_\-reg}}
+\index{misc\-\_\-reg@{misc\-\_\-reg}!sxa_node_t@{sxa\-\_\-node\-\_\-t}}
+\subsubsection[{misc\-\_\-reg}]{\setlength{\rightskip}{0pt plus 5cm}{\bf xbee\-\_\-atcmd\-\_\-reg\-\_\-t} misc\-\_\-reg\mbox{[}2\mbox{]}}}\label{structsxa__node__t_ae825a2809f705ef65c961e8bfe3e98cc}
+
+
+Cached register value handling\-: Single entry command list for single register (miscellaneous) updates. 
+
+2 elements used because 2nd must terminate the list. \hypertarget{structsxa__node__t_a8de35431542d2c2508bb17ac8fa48a84}{\index{sxa\-\_\-node\-\_\-t@{sxa\-\_\-node\-\_\-t}!nqueued@{nqueued}}
+\index{nqueued@{nqueued}!sxa_node_t@{sxa\-\_\-node\-\_\-t}}
+\subsubsection[{nqueued}]{\setlength{\rightskip}{0pt plus 5cm}{\bf uint16\-\_\-t} nqueued}}\label{structsxa__node__t_a8de35431542d2c2508bb17ac8fa48a84}
+
+
+Cached register value handling\-: number of entries in .queued Range \mbox{[}0..\hyperlink{sxa_8h_a9e47d5fe0e89846d0bc2b3f1584382ae}{\-\_\-\-S\-X\-A\-\_\-\-M\-A\-X\-\_\-\-Q\-U\-E\-U\-E\-D}\mbox{]}. 
+
+Requests in excess of the maximum will not be queued and the application will need to try again later. \hypertarget{structsxa__node__t_a8aa02a31241baba968d2892c98971c65}{\index{sxa\-\_\-node\-\_\-t@{sxa\-\_\-node\-\_\-t}!q\-\_\-index@{q\-\_\-index}}
+\index{q\-\_\-index@{q\-\_\-index}!sxa_node_t@{sxa\-\_\-node\-\_\-t}}
+\subsubsection[{q\-\_\-index}]{\setlength{\rightskip}{0pt plus 5cm}{\bf uint16\-\_\-t} q\-\_\-index}}\label{structsxa__node__t_a8aa02a31241baba968d2892c98971c65}
+
+
+Cached register value handling\-: current update (index into .queued) If $>$= .nqueued, then no current update is being processed, so scan list for next update (if any). 
+
+\hypertarget{structsxa__node__t_a4be7d670379c92c9d32f55bc02a81add}{\index{sxa\-\_\-node\-\_\-t@{sxa\-\_\-node\-\_\-t}!queued@{queued}}
+\index{queued@{queued}!sxa_node_t@{sxa\-\_\-node\-\_\-t}}
+\subsubsection[{queued}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf \-\_\-xbee\-\_\-reg\-\_\-descr\-\_\-t} {\bf F\-A\-R}$\ast$ {\bf F\-A\-R}$\ast$ queued}}\label{structsxa__node__t_a4be7d670379c92c9d32f55bc02a81add}
+
+
+Cached register value handling\-: list of queued updates. 
+
+This may be N\-U\-L\-L if there are no outstanding updates. The list is allocated only when being used. \hypertarget{structsxa__node__t_ac543485164457c0eefd43dcee04c82c6}{\index{sxa\-\_\-node\-\_\-t@{sxa\-\_\-node\-\_\-t}!stamp@{stamp}}
+\index{stamp@{stamp}!sxa_node_t@{sxa\-\_\-node\-\_\-t}}
+\subsubsection[{stamp}]{\setlength{\rightskip}{0pt plus 5cm}{\bf uint32\-\_\-t} stamp}}\label{structsxa__node__t_ac543485164457c0eefd43dcee04c82c6}
+
+
+Time stamp of last received message from xbee\-\_\-seconds\-\_\-timer(). 
+
+
+
+The documentation for this struct was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+include/xbee/\hyperlink{sxa_8h}{sxa.\-h}\end{DoxyCompactItemize}

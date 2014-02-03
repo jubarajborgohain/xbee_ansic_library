@@ -1,0 +1,48 @@
+\hypertarget{jslong_8c}{\section{src/util/jslong.c File Reference}
+\label{jslong_8c}\index{src/util/jslong.\-c@{src/util/jslong.\-c}}
+}
+{\ttfamily \#include $<$stdio.\-h$>$}\\*
+{\ttfamily \#include $<$string.\-h$>$}\\*
+{\ttfamily \#include \char`\"{}xbee/platform.\-h\char`\"{}}\\*
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{group__zcl__64_ga82d69c4b59ebfde1f784f7d30246e575}{\#define {\bfseries jslo16}(a)~((a) \& 0x0000\-F\-F\-F\-F)}\label{group__zcl__64_ga82d69c4b59ebfde1f784f7d30246e575}
+
+\item 
+\hypertarget{group__zcl__64_ga50ea98cec1c7c8393b65115d0bd756f9}{\#define {\bfseries jshi16}(a)~((\hyperlink{group__hal__dos_ga09a1e304d66d35dd47daffee9731edaa}{uint32\-\_\-t})(a) $>$$>$ 16)}\label{group__zcl__64_ga50ea98cec1c7c8393b65115d0bd756f9}
+
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{group__zcl__64_ga09e45168abb5ea8e6d487514eae102c8}{void {\bfseries jsll\-\_\-mul} (\hyperlink{struct_j_s_int64}{J\-S\-Uint64} $\ast$rp, \hyperlink{struct_j_s_int64}{J\-S\-Uint64} a, \hyperlink{struct_j_s_int64}{J\-S\-Uint64} b)}\label{group__zcl__64_ga09e45168abb5ea8e6d487514eae102c8}
+
+\item 
+\hypertarget{group__zcl__64_ga0b4ed4198b603054301a4c9147e5f060}{void {\bfseries jsll\-\_\-mul32} (\hyperlink{struct_j_s_int64}{J\-S\-Uint64} $\ast$rp, J\-S\-Uint32 a, J\-S\-Uint32 b)}\label{group__zcl__64_ga0b4ed4198b603054301a4c9147e5f060}
+
+\item 
+\hypertarget{group__zcl__64_ga26cb84da9083907cc41db0edf95b1b96}{void {\bfseries jsll\-\_\-udivmod} (\hyperlink{struct_j_s_int64}{J\-S\-Uint64} $\ast$qp, \hyperlink{struct_j_s_int64}{J\-S\-Uint64} $\ast$rp, \hyperlink{struct_j_s_int64}{J\-S\-Uint64} a, \hyperlink{struct_j_s_int64}{J\-S\-Uint64} b)}\label{group__zcl__64_ga26cb84da9083907cc41db0edf95b1b96}
+
+\item 
+\hypertarget{group__zcl__64_gaf40c23a4a3872380497dae260ea58554}{void {\bfseries jsll\-\_\-div} (\hyperlink{struct_j_s_int64}{J\-S\-Uint64} $\ast$r, const \hyperlink{struct_j_s_int64}{J\-S\-Uint64} $\ast$a, const \hyperlink{struct_j_s_int64}{J\-S\-Uint64} $\ast$b)}\label{group__zcl__64_gaf40c23a4a3872380497dae260ea58554}
+
+\item 
+\hypertarget{group__zcl__64_gaecddfb7e3ca39fa5313632c47a47f20c}{void {\bfseries jsll\-\_\-mod} (\hyperlink{struct_j_s_int64}{J\-S\-Uint64} $\ast$r, const \hyperlink{struct_j_s_int64}{J\-S\-Uint64} $\ast$a, const \hyperlink{struct_j_s_int64}{J\-S\-Uint64} $\ast$b)}\label{group__zcl__64_gaecddfb7e3ca39fa5313632c47a47f20c}
+
+\item 
+\hypertarget{group__zcl__64_gadbc8463d4ec9862cbb621cdd5f7297fa}{void {\bfseries jsll\-\_\-shl} (\hyperlink{struct_j_s_int64}{J\-S\-Uint64} $\ast$r, \hyperlink{struct_j_s_int64}{J\-S\-Uint64} a, uint\-\_\-fast8\-\_\-t b)}\label{group__zcl__64_gadbc8463d4ec9862cbb621cdd5f7297fa}
+
+\item 
+\hypertarget{group__zcl__64_gab406a00beab4086e1f29bfa6c98e0e6d}{void {\bfseries jsll\-\_\-shr} (\hyperlink{struct_j_s_int64}{J\-S\-Int64} $\ast$r, \hyperlink{struct_j_s_int64}{J\-S\-Int64} a, uint\-\_\-fast8\-\_\-t b)}\label{group__zcl__64_gab406a00beab4086e1f29bfa6c98e0e6d}
+
+\item 
+\hypertarget{group__zcl__64_gaab6291a66e18f75aa28dd777cb66d49b}{void {\bfseries jsll\-\_\-ushr} (\hyperlink{struct_j_s_int64}{J\-S\-Int64} $\ast$r, \hyperlink{struct_j_s_int64}{J\-S\-Int64} a, uint\-\_\-fast8\-\_\-t b)}\label{group__zcl__64_gaab6291a66e18f75aa28dd777cb66d49b}
+
+\item 
+\hypertarget{group__zcl__64_gaaeb3f577d08fb658090c74ce03da319a}{int {\bfseries jsll\-\_\-decstr} (char $\ast$buffer, const \hyperlink{struct_j_s_int64}{J\-S\-Int64} $\ast$v)}\label{group__zcl__64_gaaeb3f577d08fb658090c74ce03da319a}
+
+\item 
+\hypertarget{group__zcl__64_gaf41ea39427421502a4c90a5cd5f62cb7}{int {\bfseries jsll\-\_\-udecstr} (char $\ast$buffer, const \hyperlink{struct_j_s_int64}{J\-S\-Uint64} $\ast$v)}\label{group__zcl__64_gaf41ea39427421502a4c90a5cd5f62cb7}
+
+\end{DoxyCompactItemize}

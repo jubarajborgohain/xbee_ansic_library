@@ -1,0 +1,40 @@
+\hypertarget{structxbee__cbuf__t}{\section{xbee\-\_\-cbuf\-\_\-t Struct Reference}
+\label{structxbee__cbuf__t}\index{xbee\-\_\-cbuf\-\_\-t@{xbee\-\_\-cbuf\-\_\-t}}
+}
+
+
+Circular buffer used by transparent serial cluster handler.  
+
+
+
+
+{\ttfamily \#include \char`\"{}xbee/cbuf.\-h\char`\"{}}
+
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{group__util__cbuf_ga92435efb84d6814afd444fd462802e9c}{\hyperlink{group__hal_gae1affc9ca37cfb624959c866a73f83c2}{uint8\-\_\-t} {\bfseries lock}}\label{group__util__cbuf_ga92435efb84d6814afd444fd462802e9c}
+
+\item 
+\hypertarget{group__util__cbuf_ga9794c0e61506b826b49b458708ae2489}{\hyperlink{group__hal_gae1affc9ca37cfb624959c866a73f83c2}{uint8\-\_\-t} {\bfseries head}}\label{group__util__cbuf_ga9794c0e61506b826b49b458708ae2489}
+
+\item 
+\hypertarget{group__util__cbuf_ga8db7f977b77e4e4d588ef0d3e04ada16}{\hyperlink{group__hal_gae1affc9ca37cfb624959c866a73f83c2}{uint8\-\_\-t} {\bfseries tail}}\label{group__util__cbuf_ga8db7f977b77e4e4d588ef0d3e04ada16}
+
+\item 
+\hypertarget{group__util__cbuf_ga8a74907784be6c7786c2d060c8d7e10b}{\hyperlink{group__hal_gae1affc9ca37cfb624959c866a73f83c2}{uint8\-\_\-t} {\bfseries mask}}\label{group__util__cbuf_ga8a74907784be6c7786c2d060c8d7e10b}
+
+\item 
+\hypertarget{group__util__cbuf_gaa86e1085c6a16f60258f29c9d5fc2144}{\hyperlink{group__hal_gae1affc9ca37cfb624959c866a73f83c2}{uint8\-\_\-t} {\bfseries data} \mbox{[}1\mbox{]}}\label{group__util__cbuf_gaa86e1085c6a16f60258f29c9d5fc2144}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Circular buffer used by transparent serial cluster handler. 
+
+Buffer is empty when {\ttfamily head} == {\ttfamily tail} and full when {\ttfamily head} == {\ttfamily }(tail -\/ 1). 
+
+The documentation for this struct was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+include/xbee/\hyperlink{cbuf_8h}{cbuf.\-h}\end{DoxyCompactItemize}

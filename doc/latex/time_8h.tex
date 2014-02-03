@@ -1,0 +1,33 @@
+\hypertarget{time_8h}{\section{include/xbee/time.h File Reference}
+\label{time_8h}\index{include/xbee/time.\-h@{include/xbee/time.\-h}}
+}
+
+
+Header for portable time functions using January 1, 2000 a the epoch.  
+
+
+{\ttfamily \#include $<$time.\-h$>$}\\*
+{\ttfamily \#include \char`\"{}xbee/platform.\-h\char`\"{}}\\*
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{group__xbee__time_gaff9233a38930ed8e37c64e6b39f33b43}{\#define {\bfseries X\-B\-E\-E\-\_\-\-U\-T\-C\-T\-I\-M\-E\-\_\-\-I\-N\-V\-A\-L\-I\-D}~0x\-F\-F\-F\-F\-F\-F\-F\-F}\label{group__xbee__time_gaff9233a38930ed8e37c64e6b39f33b43}
+
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+struct tm $\ast$ \hyperlink{group__xbee__time_ga82532f78c0106d9d57ccc370781f1c0a}{xbee\-\_\-gmtime} (struct tm $\ast$dest\-\_\-tm, xbee\-\_\-utctime\-\_\-t timestamp)
+\begin{DoxyCompactList}\small\item\em Converts a U\-T\-C\-Time value into a \char`\"{}broken-\/down time\char`\"{} (a struct tm) for directly accessing month, day, year, hour, minute and second, or for use with other functions from $<$\hyperlink{time_8h}{time.\-h}$>$. \end{DoxyCompactList}\item 
+xbee\-\_\-utctime\-\_\-t \hyperlink{group__xbee__time_gaed48be3b2d3a20dcd32ea14b52eb4e60}{xbee\-\_\-mktime} (struct tm $\ast$time\-\_\-rec)
+\begin{DoxyCompactList}\small\item\em Convert a struct tm (from the Standard C Library's {\ttfamily \hyperlink{time_8h}{time.\-h}}) to a xbee\-\_\-utctime\-\_\-t type (number of seconds since Midnight January 1, 2000 U\-T\-C). \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{group__xbee__time_ga5b559cd0f08a9ef0c00524862093c46f}{\hyperlink{group__hal_ga336bff4f4a6012aacc4468132bbd3d7f}{X\-B\-E\-E\-\_\-\-B\-E\-G\-I\-N\-\_\-\-D\-E\-C\-L\-S} typedef \hyperlink{group__hal__dos_ga09a1e304d66d35dd47daffee9731edaa}{uint32\-\_\-t} {\bfseries xbee\-\_\-utctime\-\_\-t}}\label{group__xbee__time_ga5b559cd0f08a9ef0c00524862093c46f}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Header for portable time functions using January 1, 2000 a the epoch. 

@@ -1,0 +1,250 @@
+\hypertarget{xbee__serial__dos_8c}{\section{src/dos/xbee\-\_\-serial\-\_\-dos.c File Reference}
+\label{xbee__serial__dos_8c}\index{src/dos/xbee\-\_\-serial\-\_\-dos.\-c@{src/dos/xbee\-\_\-serial\-\_\-dos.\-c}}
+}
+
+
+Serial Interface for X\-Bee Module (D\-O\-S Platform)  
+
+
+{\ttfamily \#include $<$errno.\-h$>$}\\*
+{\ttfamily \#include $<$limits.\-h$>$}\\*
+{\ttfamily \#include $<$stdio.\-h$>$}\\*
+{\ttfamily \#include \char`\"{}xbee/serial.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}xbee/cbuf.\-h\char`\"{}}\\*
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{group__hal__dos_ga3eb7d5a767dae7774aa2b4be28e20a7e}{\#define {\bfseries U\-A\-R\-T\-\_\-\-R\-B\-R}~0}\label{group__hal__dos_ga3eb7d5a767dae7774aa2b4be28e20a7e}
+
+\item 
+\hypertarget{group__hal__dos_ga7a676f075475e46d27eb878977b867ec}{\#define {\bfseries U\-A\-R\-T\-\_\-\-T\-H\-R}~0}\label{group__hal__dos_ga7a676f075475e46d27eb878977b867ec}
+
+\item 
+\hypertarget{group__hal__dos_ga7ff21e0cfc73a2db80c3907c5cac5a61}{\#define {\bfseries U\-A\-R\-T\-\_\-\-D\-L\-L}~0}\label{group__hal__dos_ga7ff21e0cfc73a2db80c3907c5cac5a61}
+
+\item 
+\hypertarget{group__hal__dos_gaaf7aaa372e86b3aa99e6c78242be2722}{\#define {\bfseries U\-A\-R\-T\-\_\-\-I\-E\-R}~1}\label{group__hal__dos_gaaf7aaa372e86b3aa99e6c78242be2722}
+
+\item 
+\hypertarget{group__hal__dos_ga63f95172026aa533407e357e73b04551}{\#define {\bfseries U\-A\-R\-T\-\_\-\-D\-L\-M}~1}\label{group__hal__dos_ga63f95172026aa533407e357e73b04551}
+
+\item 
+\hypertarget{group__hal__dos_ga16add7e6b9f91a6698c5910704111b68}{\#define {\bfseries U\-A\-R\-T\-\_\-\-I\-I\-R}~2}\label{group__hal__dos_ga16add7e6b9f91a6698c5910704111b68}
+
+\item 
+\hypertarget{group__hal__dos_ga220a678f91ca8244b30fe813200c26c1}{\#define {\bfseries U\-A\-R\-T\-\_\-\-F\-C\-R}~2}\label{group__hal__dos_ga220a678f91ca8244b30fe813200c26c1}
+
+\item 
+\hypertarget{group__hal__dos_ga36c30861e332468c7f1998648e706740}{\#define {\bfseries U\-A\-R\-T\-\_\-\-L\-C\-R}~3}\label{group__hal__dos_ga36c30861e332468c7f1998648e706740}
+
+\item 
+\hypertarget{group__hal__dos_ga8ef39bc0942ddd0411d87001d12224f4}{\#define {\bfseries U\-A\-R\-T\-\_\-\-M\-C\-R}~4}\label{group__hal__dos_ga8ef39bc0942ddd0411d87001d12224f4}
+
+\item 
+\hypertarget{group__hal__dos_ga0f8ac527073d763bac90daba987361c6}{\#define {\bfseries U\-A\-R\-T\-\_\-\-L\-S\-R}~5}\label{group__hal__dos_ga0f8ac527073d763bac90daba987361c6}
+
+\item 
+\hypertarget{group__hal__dos_ga71067c48bdde7dc6c5d0a1c56746e776}{\#define {\bfseries U\-A\-R\-T\-\_\-\-M\-S\-R}~6}\label{group__hal__dos_ga71067c48bdde7dc6c5d0a1c56746e776}
+
+\item 
+\hypertarget{group__hal__dos_ga0aca402a154875f36d38e4ebc5c8f043}{\#define {\bfseries U\-A\-R\-T\-\_\-\-S\-C\-R}~7}\label{group__hal__dos_ga0aca402a154875f36d38e4ebc5c8f043}
+
+\item 
+\hypertarget{group__hal__dos_ga2c43b3d54061de2d1a40c11a0dc36d99}{\#define {\bfseries I\-E\-R\-\_\-\-N\-O\-N\-E}~0}\label{group__hal__dos_ga2c43b3d54061de2d1a40c11a0dc36d99}
+
+\item 
+\hypertarget{group__hal__dos_ga06339c8fac453ce9078d90d59d1d5833}{\#define {\bfseries I\-E\-R\-\_\-\-R\-X\-\_\-\-D\-A\-T\-A}~(1$<$$<$0)}\label{group__hal__dos_ga06339c8fac453ce9078d90d59d1d5833}
+
+\item 
+\hypertarget{group__hal__dos_ga3b5355c5845bf4e5f9900dae4977fc65}{\#define {\bfseries I\-E\-R\-\_\-\-T\-X\-\_\-\-E\-M\-P\-T\-Y}~(1$<$$<$1)}\label{group__hal__dos_ga3b5355c5845bf4e5f9900dae4977fc65}
+
+\item 
+\hypertarget{group__hal__dos_ga8fdda855b9a7ec12dccdb44f0e985af5}{\#define {\bfseries I\-E\-R\-\_\-\-L\-S\-R\-\_\-\-C\-H\-A\-N\-G\-E}~(1$<$$<$2)}\label{group__hal__dos_ga8fdda855b9a7ec12dccdb44f0e985af5}
+
+\item 
+\hypertarget{group__hal__dos_gaf722d4c4e6617d62b6a2ea4f8fcdc7a3}{\#define {\bfseries I\-E\-R\-\_\-\-M\-S\-R\-\_\-\-C\-H\-A\-N\-G\-E}~(1$<$$<$3)}\label{group__hal__dos_gaf722d4c4e6617d62b6a2ea4f8fcdc7a3}
+
+\item 
+\hypertarget{group__hal__dos_ga90f46b37cc5f1208e83a0a027e83f2c8}{\#define {\bfseries I\-E\-R\-\_\-\-D\-E\-F\-A\-U\-L\-T}~(I\-E\-R\-\_\-\-R\-X\-\_\-\-D\-A\-T\-A $|$ I\-E\-R\-\_\-\-T\-X\-\_\-\-E\-M\-P\-T\-Y $|$ I\-E\-R\-\_\-\-L\-S\-R\-\_\-\-C\-H\-A\-N\-G\-E)}\label{group__hal__dos_ga90f46b37cc5f1208e83a0a027e83f2c8}
+
+\item 
+\hypertarget{group__hal__dos_ga50ff8e2789f5f8485ad903fa36cb5ff4}{\#define {\bfseries F\-C\-R\-\_\-\-D\-I\-S\-A\-B\-L\-E\-\_\-\-F\-I\-F\-O\-S}~(0$<$$<$0)}\label{group__hal__dos_ga50ff8e2789f5f8485ad903fa36cb5ff4}
+
+\item 
+\hypertarget{group__hal__dos_gacbbf96e0ad7b0c0ce83ded2a69b7edd6}{\#define {\bfseries F\-C\-R\-\_\-\-E\-N\-A\-B\-L\-E\-\_\-\-F\-I\-F\-O\-S}~(1$<$$<$0)}\label{group__hal__dos_gacbbf96e0ad7b0c0ce83ded2a69b7edd6}
+
+\item 
+\hypertarget{group__hal__dos_gaab7aea2b0a8ad9fbaf3e59d3f069c38c}{\#define {\bfseries F\-C\-R\-\_\-\-C\-L\-E\-A\-R\-\_\-\-R\-X\-\_\-\-F\-I\-F\-O}~(1$<$$<$1)}\label{group__hal__dos_gaab7aea2b0a8ad9fbaf3e59d3f069c38c}
+
+\item 
+\hypertarget{group__hal__dos_ga37c91cd823b315b67cb9d1bbf902feb4}{\#define {\bfseries F\-C\-R\-\_\-\-C\-L\-E\-A\-R\-\_\-\-T\-X\-\_\-\-F\-I\-F\-O}~(1$<$$<$2)}\label{group__hal__dos_ga37c91cd823b315b67cb9d1bbf902feb4}
+
+\item 
+\hypertarget{group__hal__dos_gae6161db9bf7143fe70cf25f70998c9c0}{\#define {\bfseries F\-C\-R\-\_\-\-D\-M\-A\-\_\-\-M\-O\-D\-E\-\_\-0}~(0$<$$<$3)}\label{group__hal__dos_gae6161db9bf7143fe70cf25f70998c9c0}
+
+\item 
+\hypertarget{group__hal__dos_gac313793a646e3df0162722cb7ae49ef1}{\#define {\bfseries F\-C\-R\-\_\-\-D\-M\-A\-\_\-\-M\-O\-D\-E\-\_\-1}~(1$<$$<$3)}\label{group__hal__dos_gac313793a646e3df0162722cb7ae49ef1}
+
+\item 
+\hypertarget{group__hal__dos_gafc8e8e20ec7621118f93a5bf7bc81c4b}{\#define {\bfseries F\-C\-R\-\_\-\-E\-N\-A\-B\-L\-E\-\_\-64\-B\-Y\-T\-E}~(1$<$$<$5)}\label{group__hal__dos_gafc8e8e20ec7621118f93a5bf7bc81c4b}
+
+\item 
+\hypertarget{group__hal__dos_gafb61755694cecd05881690c0c3f3654f}{\#define {\bfseries F\-C\-R\-\_\-\-I\-N\-T\-\_\-\-T\-R\-I\-G\-G\-E\-R\-\_\-1\-B\-Y\-T\-E}~(0$<$$<$6)}\label{group__hal__dos_gafb61755694cecd05881690c0c3f3654f}
+
+\item 
+\hypertarget{group__hal__dos_gaa16e7c8893fa44bb53381f93cbc2ba27}{\#define {\bfseries F\-C\-R\-\_\-\-I\-N\-T\-\_\-\-T\-R\-I\-G\-G\-E\-R\-\_\-4\-B\-Y\-T\-E}~(1$<$$<$6)}\label{group__hal__dos_gaa16e7c8893fa44bb53381f93cbc2ba27}
+
+\item 
+\hypertarget{group__hal__dos_gabeabe9b8e7dd748b99ffa6472fe0b3ef}{\#define {\bfseries F\-C\-R\-\_\-\-I\-N\-T\-\_\-\-T\-R\-I\-G\-G\-E\-R\-\_\-8\-B\-Y\-T\-E}~(2$<$$<$6)}\label{group__hal__dos_gabeabe9b8e7dd748b99ffa6472fe0b3ef}
+
+\item 
+\hypertarget{group__hal__dos_gaed94cd04e976b03515a43d6b8cbf805d}{\#define {\bfseries F\-C\-R\-\_\-\-I\-N\-T\-\_\-\-T\-R\-I\-G\-G\-E\-R\-\_\-14\-B\-Y\-T\-E}~(3$<$$<$6)}\label{group__hal__dos_gaed94cd04e976b03515a43d6b8cbf805d}
+
+\item 
+\hypertarget{group__hal__dos_ga733e75579da0032be20c7fd6ac33944e}{\#define {\bfseries F\-C\-R\-\_\-\-D\-E\-F\-A\-U\-L\-T}~(F\-C\-R\-\_\-\-E\-N\-A\-B\-L\-E\-\_\-\-F\-I\-F\-O\-S $|$ F\-C\-R\-\_\-\-D\-M\-A\-\_\-\-M\-O\-D\-E\-\_\-0)}\label{group__hal__dos_ga733e75579da0032be20c7fd6ac33944e}
+
+\item 
+\hypertarget{group__hal__dos_ga4f14e7d3fd79b40ca1405245e0242f3b}{\#define {\bfseries L\-C\-R\-\_\-5\-B\-I\-T}~(0$<$$<$0)}\label{group__hal__dos_ga4f14e7d3fd79b40ca1405245e0242f3b}
+
+\item 
+\hypertarget{group__hal__dos_ga28e5afbb0dd71482c103d76ba8ccdda6}{\#define {\bfseries L\-C\-R\-\_\-6\-B\-I\-T}~(1$<$$<$0)}\label{group__hal__dos_ga28e5afbb0dd71482c103d76ba8ccdda6}
+
+\item 
+\hypertarget{group__hal__dos_ga9578b66996a3790b53955c9a42ef43ab}{\#define {\bfseries L\-C\-R\-\_\-7\-B\-I\-T}~(2$<$$<$0)}\label{group__hal__dos_ga9578b66996a3790b53955c9a42ef43ab}
+
+\item 
+\hypertarget{group__hal__dos_ga11849794cd90dedfc1d211cf948b0a3f}{\#define {\bfseries L\-C\-R\-\_\-8\-B\-I\-T}~(3$<$$<$0)}\label{group__hal__dos_ga11849794cd90dedfc1d211cf948b0a3f}
+
+\item 
+\hypertarget{group__hal__dos_ga766df9edd07ffee6d4c425be00765c14}{\#define {\bfseries L\-C\-R\-\_\-1\-S\-T\-O\-P}~(0$<$$<$2)}\label{group__hal__dos_ga766df9edd07ffee6d4c425be00765c14}
+
+\item 
+\hypertarget{group__hal__dos_gace2deeea42a791b868d540cf107da914}{\#define {\bfseries L\-C\-R\-\_\-2\-S\-T\-O\-P}~(1$<$$<$2)}\label{group__hal__dos_gace2deeea42a791b868d540cf107da914}
+
+\item 
+\hypertarget{group__hal__dos_ga0a9c31abffbc2246670b81b11937db50}{\#define {\bfseries L\-C\-R\-\_\-\-P\-A\-R\-I\-T\-Y\-\_\-\-N\-O\-N\-E}~(0$<$$<$3)}\label{group__hal__dos_ga0a9c31abffbc2246670b81b11937db50}
+
+\item 
+\hypertarget{group__hal__dos_ga8153311f90845501a4dd0befc8e21574}{\#define {\bfseries L\-C\-R\-\_\-\-P\-A\-R\-I\-T\-Y\-\_\-\-O\-D\-D}~(1$<$$<$3)}\label{group__hal__dos_ga8153311f90845501a4dd0befc8e21574}
+
+\item 
+\hypertarget{group__hal__dos_gacda2ab112fb4dbffec4246609d3c1345}{\#define {\bfseries L\-C\-R\-\_\-\-P\-A\-R\-I\-T\-Y\-\_\-\-E\-V\-E\-N}~(3$<$$<$3)}\label{group__hal__dos_gacda2ab112fb4dbffec4246609d3c1345}
+
+\item 
+\hypertarget{group__hal__dos_ga25d8154ba512821b3da064c25f5eae42}{\#define {\bfseries L\-C\-R\-\_\-\-P\-A\-R\-I\-T\-Y\-\_\-\-M\-A\-R\-K}~(5$<$$<$3)}\label{group__hal__dos_ga25d8154ba512821b3da064c25f5eae42}
+
+\item 
+\hypertarget{group__hal__dos_gad37b540b9daa8a535548dff47ef92f72}{\#define {\bfseries L\-C\-R\-\_\-\-P\-A\-R\-I\-T\-Y\-\_\-\-S\-P\-A\-C\-E}~(7$<$$<$3)}\label{group__hal__dos_gad37b540b9daa8a535548dff47ef92f72}
+
+\item 
+\hypertarget{group__hal__dos_ga7c9aedd8591754a50e93d26d93b72fc8}{\#define {\bfseries L\-C\-R\-\_\-\-B\-R\-E\-A\-K\-\_\-\-E\-N\-A\-B\-L\-E}~(1$<$$<$6)}\label{group__hal__dos_ga7c9aedd8591754a50e93d26d93b72fc8}
+
+\item 
+\hypertarget{group__hal__dos_ga4357ee6d0bdd480b29fa7616d7571f45}{\#define {\bfseries L\-C\-R\-\_\-\-D\-I\-V\-I\-S\-O\-R\-\_\-\-L\-A\-T\-C\-H}~(1$<$$<$7)}\label{group__hal__dos_ga4357ee6d0bdd480b29fa7616d7571f45}
+
+\item 
+\hypertarget{group__hal__dos_gaf3256e1cdd81ee02b9b694c3e45f8d33}{\#define {\bfseries L\-C\-R\-\_\-\-D\-E\-F\-A\-U\-L\-T}~(L\-C\-R\-\_\-8\-B\-I\-T $|$ L\-C\-R\-\_\-1\-S\-T\-O\-P $|$ L\-C\-R\-\_\-\-P\-A\-R\-I\-T\-Y\-\_\-\-N\-O\-N\-E)}\label{group__hal__dos_gaf3256e1cdd81ee02b9b694c3e45f8d33}
+
+\item 
+\hypertarget{group__hal__dos_gad313b1aec7d507ae1ca1e9c372d52454}{\#define {\bfseries M\-C\-R\-\_\-\-N\-O\-N\-E}~0}\label{group__hal__dos_gad313b1aec7d507ae1ca1e9c372d52454}
+
+\item 
+\hypertarget{group__hal__dos_ga213d57e849bb18388f24d65874af6325}{\#define {\bfseries M\-C\-R\-\_\-\-D\-T\-R}~(1$<$$<$0)}\label{group__hal__dos_ga213d57e849bb18388f24d65874af6325}
+
+\item 
+\hypertarget{group__hal__dos_gaed27b96a2b261695692cfdec8bf8b1c5}{\#define {\bfseries M\-C\-R\-\_\-\-R\-T\-S}~(1$<$$<$1)}\label{group__hal__dos_gaed27b96a2b261695692cfdec8bf8b1c5}
+
+\item 
+\hypertarget{group__hal__dos_ga2628a4fa8d48830ccea7fab2ef08c5d9}{\#define {\bfseries M\-C\-R\-\_\-\-O\-U\-T1}~(1$<$$<$2)}\label{group__hal__dos_ga2628a4fa8d48830ccea7fab2ef08c5d9}
+
+\item 
+\hypertarget{group__hal__dos_ga3469b6cce183c5fee697856acc404952}{\#define {\bfseries M\-C\-R\-\_\-\-O\-U\-T2}~(1$<$$<$3)}\label{group__hal__dos_ga3469b6cce183c5fee697856acc404952}
+
+\item 
+\hypertarget{group__hal__dos_ga95592ff726b61e0780b0d4c7c7c26fcb}{\#define {\bfseries M\-C\-R\-\_\-\-L\-O\-O\-P\-B\-A\-C\-K}~(1$<$$<$4)}\label{group__hal__dos_ga95592ff726b61e0780b0d4c7c7c26fcb}
+
+\item 
+\hypertarget{group__hal__dos_gadaf99d8ba6dea7d12c2551f9ba0d000a}{\#define {\bfseries M\-C\-R\-\_\-\-A\-U\-T\-O\-F\-L\-O\-W}~(1$<$$<$5)}\label{group__hal__dos_gadaf99d8ba6dea7d12c2551f9ba0d000a}
+
+\item 
+\hypertarget{group__hal__dos_ga3041367c1e3b71ea438e88b68d90d725}{\#define {\bfseries M\-C\-R\-\_\-\-D\-E\-F\-A\-U\-L\-T}~(M\-C\-R\-\_\-\-D\-T\-R $|$ M\-C\-R\-\_\-\-R\-T\-S $|$ M\-C\-R\-\_\-\-O\-U\-T2)}\label{group__hal__dos_ga3041367c1e3b71ea438e88b68d90d725}
+
+\item 
+\hypertarget{group__hal__dos_gaf5024a0b85987ce1b19e46609a4023c6}{\#define {\bfseries M\-S\-R\-\_\-\-C\-T\-S\-\_\-\-C\-H\-A\-N\-G\-E\-D}~(1$<$$<$0)}\label{group__hal__dos_gaf5024a0b85987ce1b19e46609a4023c6}
+
+\item 
+\hypertarget{group__hal__dos_ga856f1438337659d52d03fee4e37675e9}{\#define {\bfseries M\-S\-R\-\_\-\-D\-S\-R\-\_\-\-C\-H\-A\-N\-G\-E\-D}~(1$<$$<$1)}\label{group__hal__dos_ga856f1438337659d52d03fee4e37675e9}
+
+\item 
+\hypertarget{group__hal__dos_ga89a8c65c6f184a528b8efc3762ed7ea8}{\#define {\bfseries M\-S\-R\-\_\-\-R\-I\-\_\-\-E\-D\-G\-E}~(1$<$$<$2)}\label{group__hal__dos_ga89a8c65c6f184a528b8efc3762ed7ea8}
+
+\item 
+\hypertarget{group__hal__dos_gacaf7caab8fffc95e513e9e65cef46c97}{\#define {\bfseries M\-S\-R\-\_\-\-C\-D\-\_\-\-C\-H\-A\-N\-G\-E\-D}~(1$<$$<$3)}\label{group__hal__dos_gacaf7caab8fffc95e513e9e65cef46c97}
+
+\item 
+\hypertarget{group__hal__dos_ga99bfd5dadd350f9bd1901282bc88bc35}{\#define {\bfseries M\-S\-R\-\_\-\-C\-T\-S}~(1$<$$<$4)}\label{group__hal__dos_ga99bfd5dadd350f9bd1901282bc88bc35}
+
+\item 
+\hypertarget{group__hal__dos_gabefbb7ce73e57a43abd7351c33dd81dd}{\#define {\bfseries M\-S\-R\-\_\-\-D\-S\-R}~(1$<$$<$5)}\label{group__hal__dos_gabefbb7ce73e57a43abd7351c33dd81dd}
+
+\item 
+\hypertarget{group__hal__dos_ga0960208e3de952801488883144eae96b}{\#define {\bfseries M\-S\-R\-\_\-\-R\-I}~(1$<$$<$6)}\label{group__hal__dos_ga0960208e3de952801488883144eae96b}
+
+\item 
+\hypertarget{group__hal__dos_gac94b8604b9ebea796f84bfa89cf79a01}{\#define {\bfseries M\-S\-R\-\_\-\-C\-D}~(1$<$$<$7)}\label{group__hal__dos_gac94b8604b9ebea796f84bfa89cf79a01}
+
+\item 
+\hypertarget{group__hal__dos_ga755b7e850db6200a6f43b741c678ae53}{\#define {\bfseries X\-B\-E\-E\-\_\-\-S\-E\-R\-\_\-\-C\-H\-E\-C\-K}(ptr)}\label{group__hal__dos_ga755b7e850db6200a6f43b741c678ae53}
+
+\item 
+\hypertarget{group__hal__dos_gae5ad24619d6c5bd6073b2f566f6fc266}{\#define {\bfseries C\-B\-U\-F\-\_\-\-S\-I\-Z\-E}~255}\label{group__hal__dos_gae5ad24619d6c5bd6073b2f566f6fc266}
+
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{group__hal__dos_ga2d4d704dafd7a589a4305575192fb012}{void \-\_\-\-\_\-interrupt \-\_\-\-\_\-far {\bfseries xbee\-\_\-ser\-\_\-isr} ()}\label{group__hal__dos_ga2d4d704dafd7a589a4305575192fb012}
+
+\item 
+int \hyperlink{group__hal__dos_ga3c79f6b72b6cfc3cc5c4524450f661b9}{xbee\-\_\-ser\-\_\-invalid} (\hyperlink{structxbee__serial__t}{xbee\-\_\-serial\-\_\-t} $\ast$serial)
+\begin{DoxyCompactList}\small\item\em Helper function used by other xbee\-\_\-serial functions to validate the {\itshape serial} parameter. \end{DoxyCompactList}\item 
+const char $\ast$ \hyperlink{group__hal__dos_ga898057d1b7645785e7f3d6256828d039}{xbee\-\_\-ser\-\_\-portname} (\hyperlink{structxbee__serial__t}{xbee\-\_\-serial\-\_\-t} $\ast$serial)
+\begin{DoxyCompactList}\small\item\em Returns a human-\/readable string describing the serial port. \end{DoxyCompactList}\item 
+int \hyperlink{group__hal__dos_ga2ca4e60c9d642084afa52dff9e1f6be4}{xbee\-\_\-ser\-\_\-write} (\hyperlink{structxbee__serial__t}{xbee\-\_\-serial\-\_\-t} $\ast$serial, const void \hyperlink{group__hal_gaef060b3456fdcc093a7210a762d5f2ed}{F\-A\-R} $\ast$buffer, int \hyperlink{group__zdo_gab2b3adeb2a67e656ff030b56727fd0ac}{length})
+\begin{DoxyCompactList}\small\item\em Transmits {\itshape length} bytes from {\itshape buffer} to the X\-Bee serial port {\itshape serial}. \end{DoxyCompactList}\item 
+int \hyperlink{group__hal__dos_ga8263312373c03a79a718142e051b3342}{xbee\-\_\-ser\-\_\-read} (\hyperlink{structxbee__serial__t}{xbee\-\_\-serial\-\_\-t} $\ast$serial, void \hyperlink{group__hal_gaef060b3456fdcc093a7210a762d5f2ed}{F\-A\-R} $\ast$buffer, int bufsize)
+\begin{DoxyCompactList}\small\item\em Reads up to {\itshape bufsize} bytes from X\-Bee serial port {\itshape serial} and into {\itshape buffer}. \end{DoxyCompactList}\item 
+int \hyperlink{group__hal__dos_ga86fea2345efb8bf9424228f0979b1849}{xbee\-\_\-ser\-\_\-putchar} (\hyperlink{structxbee__serial__t}{xbee\-\_\-serial\-\_\-t} $\ast$serial, \hyperlink{group__hal_gae1affc9ca37cfb624959c866a73f83c2}{uint8\-\_\-t} ch)
+\begin{DoxyCompactList}\small\item\em Transmits a single character, {\itshape ch}, to the X\-Bee serial port {\itshape serial}. \end{DoxyCompactList}\item 
+int \hyperlink{group__hal__dos_gaeeb38154313a44f86146cdcfe08e7d08}{xbee\-\_\-ser\-\_\-getchar} (\hyperlink{structxbee__serial__t}{xbee\-\_\-serial\-\_\-t} $\ast$serial)
+\begin{DoxyCompactList}\small\item\em Reads a single character from the X\-Bee serial port {\itshape serial}. \end{DoxyCompactList}\item 
+int \hyperlink{group__hal__dos_ga3ad8f378b572d6fec982f1086bd3b94f}{xbee\-\_\-ser\-\_\-tx\-\_\-free} (\hyperlink{structxbee__serial__t}{xbee\-\_\-serial\-\_\-t} $\ast$serial)
+\begin{DoxyCompactList}\small\item\em Returns the number of bytes of unused space in the serial transmit buffer for X\-Bee serial port {\itshape serial}. \end{DoxyCompactList}\item 
+int \hyperlink{group__hal__dos_gaabf70934d186354cde4ac14ed27d1bd2}{xbee\-\_\-ser\-\_\-tx\-\_\-used} (\hyperlink{structxbee__serial__t}{xbee\-\_\-serial\-\_\-t} $\ast$serial)
+\begin{DoxyCompactList}\small\item\em Returns the number of queued bytes in the serial transmit buffer for X\-Bee serial port {\itshape serial}. \end{DoxyCompactList}\item 
+int \hyperlink{group__hal__dos_ga05308d37301d27715f1e1308b7189220}{xbee\-\_\-ser\-\_\-tx\-\_\-flush} (\hyperlink{structxbee__serial__t}{xbee\-\_\-serial\-\_\-t} $\ast$serial)
+\begin{DoxyCompactList}\small\item\em Flushes (i.\-e., deletes and does not transmit) characters in the serial transmit buffer for X\-Bee serial port {\itshape serial}. \end{DoxyCompactList}\item 
+int \hyperlink{group__hal__dos_ga16fb431a1e66861439518e562431821f}{xbee\-\_\-ser\-\_\-rx\-\_\-free} (\hyperlink{structxbee__serial__t}{xbee\-\_\-serial\-\_\-t} $\ast$serial)
+\begin{DoxyCompactList}\small\item\em Returns the number of bytes of unused space in the serial receive buffer for X\-Bee serial port {\itshape serial}. \end{DoxyCompactList}\item 
+int \hyperlink{group__hal__dos_ga43b8322771cc16b4130fa5330ad2242b}{xbee\-\_\-ser\-\_\-rx\-\_\-used} (\hyperlink{structxbee__serial__t}{xbee\-\_\-serial\-\_\-t} $\ast$serial)
+\begin{DoxyCompactList}\small\item\em Returns the number of queued bytes in the serial receive buffer for X\-Bee serial port {\itshape serial}. \end{DoxyCompactList}\item 
+int \hyperlink{group__hal__dos_ga98a6d5ceb5e1445e8ef82ccaa65a8c15}{xbee\-\_\-ser\-\_\-rx\-\_\-flush} (\hyperlink{structxbee__serial__t}{xbee\-\_\-serial\-\_\-t} $\ast$serial)
+\begin{DoxyCompactList}\small\item\em Deletes all characters in the serial receive buffer for X\-Bee serial port {\itshape serial}. \end{DoxyCompactList}\item 
+int \hyperlink{group__hal__dos_gab3c12543a07e0669b672c5cab54b0926}{xbee\-\_\-ser\-\_\-baudrate} (\hyperlink{structxbee__serial__t}{xbee\-\_\-serial\-\_\-t} $\ast$serial, \hyperlink{group__hal__dos_ga09a1e304d66d35dd47daffee9731edaa}{uint32\-\_\-t} baudrate)
+\begin{DoxyCompactList}\small\item\em Change the baud rate of X\-Bee serial port {\itshape serial} to {\itshape baudrate} bits/second. \end{DoxyCompactList}\item 
+int \hyperlink{group__hal__dos_gaa615a221dd69c17ee2989c281f2bf04a}{xbee\-\_\-ser\-\_\-open} (\hyperlink{structxbee__serial__t}{xbee\-\_\-serial\-\_\-t} $\ast$serial, \hyperlink{group__hal__dos_ga09a1e304d66d35dd47daffee9731edaa}{uint32\-\_\-t} baudrate)
+\begin{DoxyCompactList}\small\item\em Opens the serial port connected to X\-Bee serial port {\itshape serial} at {\itshape baudrate} bits/second. \end{DoxyCompactList}\item 
+int \hyperlink{group__hal__dos_ga48b9d743a446074ea6abacd0de24044d}{xbee\-\_\-ser\-\_\-close} (\hyperlink{structxbee__serial__t}{xbee\-\_\-serial\-\_\-t} $\ast$serial)
+\begin{DoxyCompactList}\small\item\em Close the serial port attached to X\-Bee serial port {\itshape serial}. \end{DoxyCompactList}\item 
+int \hyperlink{group__hal__dos_ga6ae89792415a7ac8b45b56188eb9eeb4}{xbee\-\_\-ser\-\_\-break} (\hyperlink{structxbee__serial__t}{xbee\-\_\-serial\-\_\-t} $\ast$serial, int enabled)
+\begin{DoxyCompactList}\small\item\em Disable the serial transmit pin and pull it low to send a break to the X\-Bee serial port. \end{DoxyCompactList}\item 
+int \hyperlink{group__hal__dos_ga1f5f72ffdfbfb45ac523640db32296ff}{xbee\-\_\-ser\-\_\-flowcontrol} (\hyperlink{structxbee__serial__t}{xbee\-\_\-serial\-\_\-t} $\ast$serial, int enabled)
+\begin{DoxyCompactList}\small\item\em Enable or disable hardware flow control (C\-T\-S/\-R\-T\-S) on the serial port for X\-Bee serial port {\itshape serial}. \end{DoxyCompactList}\item 
+int \hyperlink{group__hal__dos_ga731188d8cf41d3d749bc84d51b672535}{xbee\-\_\-ser\-\_\-set\-\_\-rts} (\hyperlink{structxbee__serial__t}{xbee\-\_\-serial\-\_\-t} $\ast$serial, int asserted)
+\begin{DoxyCompactList}\small\item\em Disable hardware flow control and manually set the R\-T\-S (ready to send) pin on the X\-Bee device's serial port. \end{DoxyCompactList}\item 
+int \hyperlink{group__hal__dos_ga894f6fadc890b5ba5ce32338f0acd217}{xbee\-\_\-ser\-\_\-get\-\_\-cts} (\hyperlink{structxbee__serial__t}{xbee\-\_\-serial\-\_\-t} $\ast$serial)
+\begin{DoxyCompactList}\small\item\em Read the status of the /\-C\-T\-S (clear to send) pin on the serial port connected to X\-Bee serial port {\itshape serial}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Serial Interface for X\-Bee Module (D\-O\-S Platform) Warning\-: This module is incomplete. It only supports C\-O\-M1. 

@@ -1,0 +1,43 @@
+\hypertarget{unionebl__file__header__t}{\section{ebl\-\_\-file\-\_\-header\-\_\-t Union Reference}
+\label{unionebl__file__header__t}\index{ebl\-\_\-file\-\_\-header\-\_\-t@{ebl\-\_\-file\-\_\-header\-\_\-t}}
+}
+
+
+Union of header formats for all Ember firmware images.  
+
+
+
+
+{\ttfamily \#include \char`\"{}xbee/ebl\-\_\-file.\-h\char`\"{}}
+
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{unionebl__file__header__t_ae4d0cd97d39be408a86e1680ae67ba4f}{\begin{tabbing}
+xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=\kill
+struct \{\\
+\>\hyperlink{group__hal_ga5a8b2dc9e45a9ee81a94ef304fb62505}{uint16\_t} \hyperlink{unionebl__file__header__t_a7de4514a713d8a42dd9d4749d775a0ef}{ebltag\_be}\\
+\>\>{\em Set to EBLTAG\_HEADER (0x0000) }\\
+\>\hyperlink{group__hal_ga5a8b2dc9e45a9ee81a94ef304fb62505}{uint16\_t} \hyperlink{unionebl__file__header__t_a44c1c906129a1b8f619154f42c31d706}{length\_be}\\
+\>\>{\em Header length. }\\
+\>\hyperlink{group__hal_gae1affc9ca37cfb624959c866a73f83c2}{uint8\_t} {\bfseries reserved} \mbox{[}2\mbox{]}\\
+\>\hyperlink{group__hal_ga5a8b2dc9e45a9ee81a94ef304fb62505}{uint16\_t} \hyperlink{unionebl__file__header__t_ab20e78cfd004b348162a62ebe3689514}{signature\_be}\\
+\>\>{\em One of the IMAGE\_SIGNATURE\_$\ast$ macros. }\\
+\} \hyperlink{unionebl__file__header__t_ae4d0cd97d39be408a86e1680ae67ba4f}{common}}\label{unionebl__file__header__t_ae4d0cd97d39be408a86e1680ae67ba4f}
+\\
+
+\end{tabbing}\begin{DoxyCompactList}\small\item\em Common fields of all .E\-B\-L files. \end{DoxyCompactList}\item 
+\hypertarget{unionebl__file__header__t_aa26a3771b6d72ea08af4f323bb8e4604}{\hyperlink{structem2xx__header__t}{em2xx\-\_\-header\-\_\-t} {\bfseries em2xx}}\label{unionebl__file__header__t_aa26a3771b6d72ea08af4f323bb8e4604}
+
+\item 
+\hypertarget{unionebl__file__header__t_a0587c0600affa009707209ba2e5edbf3}{\hyperlink{structem3xx__header__t}{em3xx\-\_\-header\-\_\-t} {\bfseries em3xx}}\label{unionebl__file__header__t_a0587c0600affa009707209ba2e5edbf3}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Union of header formats for all Ember firmware images. 
+
+The documentation for this union was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+include/xbee/\hyperlink{ebl__file_8h}{ebl\-\_\-file.\-h}\end{DoxyCompactItemize}

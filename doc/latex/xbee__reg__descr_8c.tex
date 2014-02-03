@@ -1,0 +1,66 @@
+\hypertarget{xbee__reg__descr_8c}{\section{src/xbee/xbee\-\_\-reg\-\_\-descr.c File Reference}
+\label{xbee__reg__descr_8c}\index{src/xbee/xbee\-\_\-reg\-\_\-descr.\-c@{src/xbee/xbee\-\_\-reg\-\_\-descr.\-c}}
+}
+
+
+Code related to the register descriptor table.  
+
+
+{\ttfamily \#include \char`\"{}xbee/reg\-\_\-descr.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}xbee/sxa.\-h\char`\"{}}\\*
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define {\bfseries \-\_\-\-X\-R\-T\-\_\-\-E\-N\-T\-R\-Y}(state, tag, at, cxv, desc, units, min, max, rci\-\_\-type, sxa\-\_\-field, group)
+\item 
+\hypertarget{group___s_x_a_gaebf0bdb7cd47b4d4c612c2cadee1a743}{\#define {\bfseries F8}~0x0002}\label{group___s_x_a_gaebf0bdb7cd47b4d4c612c2cadee1a743}
+
+\item 
+\hypertarget{group___s_x_a_gaa58c02315d6d183636fa06f91600855c}{\#define {\bfseries E\-Z}~0x0004}\label{group___s_x_a_gaa58c02315d6d183636fa06f91600855c}
+
+\item 
+\hypertarget{group___s_x_a_ga7c41685fef06e2a89abc69a7edfb4500}{\#define {\bfseries Z\-B}~0x0408}\label{group___s_x_a_ga7c41685fef06e2a89abc69a7edfb4500}
+
+\item 
+\hypertarget{group___s_x_a_ga415a5793bb5269705fcb36b6d3800952}{\#define {\bfseries X9}~0x0010}\label{group___s_x_a_ga415a5793bb5269705fcb36b6d3800952}
+
+\item 
+\hypertarget{group___s_x_a_ga79ae03a0214cb30e57b9e8835f2a0019}{\#define {\bfseries X2}~0x0020}\label{group___s_x_a_ga79ae03a0214cb30e57b9e8835f2a0019}
+
+\item 
+\hypertarget{group___s_x_a_ga97d09b56987fc327100f41788e1b26db}{\#define {\bfseries X8}~0x0040}\label{group___s_x_a_ga97d09b56987fc327100f41788e1b26db}
+
+\item 
+\hypertarget{group___s_x_a_gab3383e72bb58d5e6faf0501cd117acfa}{\#define {\bfseries D\-P}~0x0080}\label{group___s_x_a_gab3383e72bb58d5e6faf0501cd117acfa}
+
+\item 
+\hypertarget{group___s_x_a_gab288c4e26b9e229231ba0f0f6b039b62}{\#define {\bfseries F\-Z}~0x0001}\label{group___s_x_a_gab288c4e26b9e229231ba0f0f6b039b62}
+
+\item 
+\hypertarget{group___s_x_a_ga18bbe716f5be6adbd2150139244c0262}{\#define {\bfseries S\-E}~0x0100}\label{group___s_x_a_ga18bbe716f5be6adbd2150139244c0262}
+
+\item 
+\hypertarget{group___s_x_a_ga1edd1ea8bddaf4d9c5eb3eae1ee1726a}{\#define {\bfseries A\-L\-L}~0x07ff}\label{group___s_x_a_ga1edd1ea8bddaf4d9c5eb3eae1ee1726a}
+
+\item 
+\hypertarget{group___s_x_a_gaac44b4153048abba18e0e606de4e42bc}{\#define {\bfseries G\-W}~0x8000}\label{group___s_x_a_gaac44b4153048abba18e0e606de4e42bc}
+
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const char $\ast$ \hyperlink{group___s_x_a_ga62238d483c628f8c996664ff0f47ccef}{\-\_\-xbee\-\_\-rci\-\_\-types} \mbox{[}$\,$\mbox{]}
+\begin{DoxyCompactList}\small\item\em Table to map \-\_\-xbee\-\_\-rci\-\_\-type\-\_\-t to R\-C\-I type string. \end{DoxyCompactList}\item 
+\hypertarget{group___s_x_a_ga38e53826af221faaa9c92525dfeb8ed3}{const \hyperlink{group__hal_gaef060b3456fdcc093a7210a762d5f2ed}{F\-A\-R} \hyperlink{struct__xbee__reg__descr__t}{\-\_\-xbee\-\_\-reg\-\_\-descr\-\_\-t} {\bfseries \-\_\-xbee\-\_\-reg\-\_\-table} \mbox{[}$\,$\mbox{]}}\label{group___s_x_a_ga38e53826af221faaa9c92525dfeb8ed3}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Code related to the register descriptor table. The X\-Bee register descriptor table is initialized here.
+
+\begin{DoxyNote}{Note}
+\hyperlink{sxa_8h}{sxa.\-h} needs to be included before including this header.
+
+This header is sensitive to the macro I\-D\-I\-G\-I\-\_\-\-U\-S\-E\-\_\-\-X\-B\-E\-E. If defined, then extra fields are included in the table in order to support i\-Digi. Otherwise, the fields are omitted so as to save storage. 
+\end{DoxyNote}

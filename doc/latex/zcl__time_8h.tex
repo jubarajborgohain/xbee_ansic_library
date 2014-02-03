@@ -1,0 +1,93 @@
+\hypertarget{zcl__time_8h}{\section{include/zigbee/zcl\-\_\-time.h File Reference}
+\label{zcl__time_8h}\index{include/zigbee/zcl\-\_\-time.\-h@{include/zigbee/zcl\-\_\-time.\-h}}
+}
+
+
+Header for implementation of Zig\-Bee Time Cluster (Z\-C\-L Spec section 3.\-12).  
+
+
+{\ttfamily \#include $<$time.\-h$>$}\\*
+{\ttfamily \#include \char`\"{}zigbee/zcl.\-h\char`\"{}}\\*
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{group__zcl__time_ga838affe8c53b76cc63f8113a6f4ca3d4}{\#define {\bfseries zcl\-\_\-gmtime}(tm, timestamp)~\hyperlink{group__xbee__time_ga82532f78c0106d9d57ccc370781f1c0a}{xbee\-\_\-gmtime}( tm, timestamp)}\label{group__zcl__time_ga838affe8c53b76cc63f8113a6f4ca3d4}
+
+\item 
+\hypertarget{group__zcl__time_ga55a19a11c22e852cb463f73e28a6e608}{\#define {\bfseries zcl\-\_\-mktime}(tm)~\hyperlink{group__xbee__time_gaed48be3b2d3a20dcd32ea14b52eb4e60}{xbee\-\_\-mktime}( tm)}\label{group__zcl__time_ga55a19a11c22e852cb463f73e28a6e608}
+
+\item 
+\#define \hyperlink{group__zcl__time_gaa45500dbe82c2beea426914014e26fff}{Z\-C\-L\-\_\-\-C\-L\-U\-S\-T\-\_\-\-E\-N\-T\-R\-Y\-\_\-\-T\-I\-M\-E\-\_\-\-B\-O\-T\-H}
+\begin{DoxyCompactList}\small\item\em Macro for inserting a standard Time Server (and Client) into an endpoint's cluster list. \end{DoxyCompactList}\item 
+\#define {\bfseries Z\-C\-L\-\_\-\-C\-L\-U\-S\-T\-\_\-\-E\-N\-T\-R\-Y\-\_\-\-T\-I\-M\-E\-\_\-\-S\-E\-R\-V\-E\-R}
+\item 
+\#define \hyperlink{group__zcl__time_gac043586e4bfcfa93f631aa144158a17c}{Z\-C\-L\-\_\-\-C\-L\-U\-S\-T\-\_\-\-E\-N\-T\-R\-Y\-\_\-\-T\-I\-M\-E\-\_\-\-C\-L\-I\-E\-N\-T}
+\begin{DoxyCompactList}\small\item\em Macro for inserting a standard Time Client (no Server) into an endpoint's cluster list. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+zcl\-\_\-utctime\-\_\-t \hyperlink{group__zcl__time_gad56f618c84b428540c5ffcb60095462c}{zcl\-\_\-time\-\_\-now} (void)
+\begin{DoxyCompactList}\small\item\em Returns the current date/time, using the Z\-C\-L epoch of January 1, 2000. \end{DoxyCompactList}\item 
+int \hyperlink{group__zcl__time_ga2c66ee215547beae5b5dde4f23cc8e00}{zcl\-\_\-time\-\_\-client} (const \hyperlink{structwpan__envelope__t}{wpan\-\_\-envelope\-\_\-t} \hyperlink{group__hal_gaef060b3456fdcc093a7210a762d5f2ed}{F\-A\-R} $\ast$envelope, void \hyperlink{group__hal_gaef060b3456fdcc093a7210a762d5f2ed}{F\-A\-R} $\ast$context)
+\begin{DoxyCompactList}\small\item\em Handle Read Attribute Responses to requests sent as part of the \hyperlink{group__zcl__time_ga32a901048d0bf5b6c6cf9a1cf7fb1e28}{zcl\-\_\-time\-\_\-find\-\_\-servers()} process. \end{DoxyCompactList}\item 
+int \hyperlink{group__zcl__time_ga32a901048d0bf5b6c6cf9a1cf7fb1e28}{zcl\-\_\-time\-\_\-find\-\_\-servers} (\hyperlink{structwpan__dev__t}{wpan\-\_\-dev\-\_\-t} $\ast$dev, \hyperlink{group__hal_ga5a8b2dc9e45a9ee81a94ef304fb62505}{uint16\-\_\-t} profile\-\_\-id)
+\begin{DoxyCompactList}\small\item\em Find Time Servers on the network, query them for the current time and then synchronize this device's clock to that time. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{group__zcl__time_ga926f1bfd80ed5a894abfc872a292c556}{\hyperlink{group__hal_ga336bff4f4a6012aacc4468132bbd3d7f}{X\-B\-E\-E\-\_\-\-B\-E\-G\-I\-N\-\_\-\-D\-E\-C\-L\-S} const \\*
+\hyperlink{structzcl__attribute__tree__t}{zcl\-\_\-attribute\-\_\-tree\-\_\-t} {\bfseries zcl\-\_\-time\-\_\-attribute\-\_\-tree} \mbox{[}$\,$\mbox{]}}\label{group__zcl__time_ga926f1bfd80ed5a894abfc872a292c556}
+
+\end{DoxyCompactItemize}
+\label{_amgrp01747264fe7bf50731df0522c351974e}%
+Attributes of Z\-C\-L Time Cluster \begin{DoxyCompactItemize}
+\item 
+\hypertarget{group__zcl__time_ga6abf0e2cc70ac533ebe153a40185be63}{\#define \hyperlink{group__zcl__time_ga6abf0e2cc70ac533ebe153a40185be63}{Z\-C\-L\-\_\-\-T\-I\-M\-E\-\_\-\-A\-T\-T\-R\-\_\-\-T\-I\-M\-E}~0x0000}\label{group__zcl__time_ga6abf0e2cc70ac533ebe153a40185be63}
+
+\begin{DoxyCompactList}\small\item\em 3.\-12.\-2.\-2.\-1 Time Attribute \end{DoxyCompactList}\item 
+\hypertarget{group__zcl__time_ga5931aa648c777cb21c8337249b6e1699}{\#define \hyperlink{group__zcl__time_ga5931aa648c777cb21c8337249b6e1699}{Z\-C\-L\-\_\-\-T\-I\-M\-E\-\_\-\-A\-T\-T\-R\-\_\-\-T\-I\-M\-E\-\_\-\-S\-T\-A\-T\-U\-S}~0x0001}\label{group__zcl__time_ga5931aa648c777cb21c8337249b6e1699}
+
+\begin{DoxyCompactList}\small\item\em 3.\-12.\-2.\-2.\-2 Time\-Status Attribute \end{DoxyCompactList}\item 
+\hypertarget{group__zcl__time_ga28b3510bbe09eed7e47fe5b4f24c5bad}{\#define \hyperlink{group__zcl__time_ga28b3510bbe09eed7e47fe5b4f24c5bad}{Z\-C\-L\-\_\-\-T\-I\-M\-E\-\_\-\-A\-T\-T\-R\-\_\-\-T\-I\-M\-E\-\_\-\-Z\-O\-N\-E}~0x0002}\label{group__zcl__time_ga28b3510bbe09eed7e47fe5b4f24c5bad}
+
+\begin{DoxyCompactList}\small\item\em 3.\-12.\-2.\-2.\-3 Time\-Zone Attribute \end{DoxyCompactList}\item 
+\hypertarget{group__zcl__time_gaaf1e36f36654ae9f4d1c453cdf9b526b}{\#define \hyperlink{group__zcl__time_gaaf1e36f36654ae9f4d1c453cdf9b526b}{Z\-C\-L\-\_\-\-T\-I\-M\-E\-\_\-\-A\-T\-T\-R\-\_\-\-D\-S\-T\-\_\-\-S\-T\-A\-R\-T}~0x0003}\label{group__zcl__time_gaaf1e36f36654ae9f4d1c453cdf9b526b}
+
+\begin{DoxyCompactList}\small\item\em 3.\-12.\-2.\-2.\-4 Dst\-Start Attribute \end{DoxyCompactList}\item 
+\hypertarget{group__zcl__time_ga05ac335a9f642b671514517d8f4c4a16}{\#define \hyperlink{group__zcl__time_ga05ac335a9f642b671514517d8f4c4a16}{Z\-C\-L\-\_\-\-T\-I\-M\-E\-\_\-\-A\-T\-T\-R\-\_\-\-D\-S\-T\-\_\-\-E\-N\-D}~0x0004}\label{group__zcl__time_ga05ac335a9f642b671514517d8f4c4a16}
+
+\begin{DoxyCompactList}\small\item\em 3.\-12.\-2.\-2.\-5 Dst\-End Attribute \end{DoxyCompactList}\item 
+\hypertarget{group__zcl__time_ga62da9f7b4065ce9e96b0f818a4b9bb5c}{\#define \hyperlink{group__zcl__time_ga62da9f7b4065ce9e96b0f818a4b9bb5c}{Z\-C\-L\-\_\-\-T\-I\-M\-E\-\_\-\-A\-T\-T\-R\-\_\-\-D\-S\-T\-\_\-\-S\-H\-I\-F\-T}~0x0005}\label{group__zcl__time_ga62da9f7b4065ce9e96b0f818a4b9bb5c}
+
+\begin{DoxyCompactList}\small\item\em 3.\-12.\-2.\-2.\-6 Dst\-Shift Attribute \end{DoxyCompactList}\item 
+\hypertarget{group__zcl__time_gac2ab06404c97ad9c24f6e53297966d06}{\#define \hyperlink{group__zcl__time_gac2ab06404c97ad9c24f6e53297966d06}{Z\-C\-L\-\_\-\-T\-I\-M\-E\-\_\-\-A\-T\-T\-R\-\_\-\-S\-T\-A\-N\-D\-A\-R\-D\-\_\-\-T\-I\-M\-E}~0x0006}\label{group__zcl__time_gac2ab06404c97ad9c24f6e53297966d06}
+
+\begin{DoxyCompactList}\small\item\em 3.\-12.\-2.\-2.\-7 Standard\-Time Attribute \end{DoxyCompactList}\item 
+\hypertarget{group__zcl__time_gad734cb8827c2307184fd74f1f1336c4f}{\#define \hyperlink{group__zcl__time_gad734cb8827c2307184fd74f1f1336c4f}{Z\-C\-L\-\_\-\-T\-I\-M\-E\-\_\-\-A\-T\-T\-R\-\_\-\-L\-O\-C\-A\-L\-\_\-\-T\-I\-M\-E}~0x0007}\label{group__zcl__time_gad734cb8827c2307184fd74f1f1336c4f}
+
+\begin{DoxyCompactList}\small\item\em 3.\-12.\-2.\-2.\-8 Local\-Time Attribute \end{DoxyCompactList}\end{DoxyCompactItemize}
+\label{_amgrp01747264fe7bf50731df0522c351974e}%
+Bitfields for attribute \hyperlink{group__zcl__time_ga6abf0e2cc70ac533ebe153a40185be63}{Z\-C\-L\-\_\-\-T\-I\-M\-E\-\_\-\-A\-T\-T\-R\-\_\-\-T\-I\-M\-E}, Time\-Status.
+
+Bits 3-\/7 are reserved.
+
+Per Section 3.\-12.\-2.\-2.\-2 of the Z\-C\-L spec\-:
+\begin{DoxyItemize}
+\item If the Master bit is 1, the value of \mbox{[}the Synchronized bit\mbox{]} is 0.
+\end{DoxyItemize}
+
+
+\begin{DoxyItemize}
+\item If both the Master and Synchronized bits are 0, the real time clock has no defined relationship to the time standard. 
+\end{DoxyItemize}\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{group__zcl__time_gabf057b123b136f20ade3faf065dcb298}{Z\-C\-L\-\_\-\-T\-I\-M\-E\-\_\-\-S\-T\-A\-T\-U\-S\-\_\-\-M\-A\-S\-T\-E\-R}~0x01
+\begin{DoxyCompactList}\small\item\em The R\-T\-C corresponding to the Time attribute is internally set to the time standard. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__zcl__time_ga07fc4fc7df3e8b1b44817bcaa50b7170}{Z\-C\-L\-\_\-\-T\-I\-M\-E\-\_\-\-S\-T\-A\-T\-U\-S\-\_\-\-S\-Y\-N\-C\-H\-R\-O\-N\-I\-Z\-E\-D}~0x02
+\begin{DoxyCompactList}\small\item\em The Synchronized bit specifies whether Time has been set over the \mbox{[}Zig\-Bee\mbox{]} network to synchronize it (as close as may be practical) to the time standard (see 3.\-12.\-1). \end{DoxyCompactList}\item 
+\#define \hyperlink{group__zcl__time_ga76367e10cd6d032aad80cdd4786c1eca}{Z\-C\-L\-\_\-\-T\-I\-M\-E\-\_\-\-S\-T\-A\-T\-U\-S\-\_\-\-M\-A\-S\-T\-E\-R\-Z\-O\-N\-E\-D\-S\-T}~0x04
+\begin{DoxyCompactList}\small\item\em The Master\-Zone\-Dst bit specifies whether the Time\-Zone, Dst\-Start, Dst\-End and Dst\-Shift attributes are set internally to correct values for the location of the clock. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Header for implementation of Zig\-Bee Time Cluster (Z\-C\-L Spec section 3.\-12). Numbers in comments refer to sections of Zig\-Bee Cluster Library specification (Document 075123r02\-Z\-B). 

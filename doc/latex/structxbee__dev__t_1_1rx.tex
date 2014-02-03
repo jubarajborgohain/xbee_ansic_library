@@ -1,0 +1,35 @@
+\hypertarget{structxbee__dev__t_1_1rx}{\section{xbee\-\_\-dev\-\_\-t\-:\-:rx Struct Reference}
+\label{structxbee__dev__t_1_1rx}\index{xbee\-\_\-dev\-\_\-t\-::rx@{xbee\-\_\-dev\-\_\-t\-::rx}}
+}
+
+
+Buffer and state variables used for receiving a frame.  
+
+
+
+
+{\ttfamily \#include \char`\"{}xbee/device.\-h\char`\"{}}
+
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{group__xbee__device_ga758a79cfaf819f091728c06474466321}{enum \hyperlink{group__xbee__device_ga30374ada0aff261c5da7557882fd09de}{xbee\-\_\-dev\-\_\-rx\-\_\-state} \hyperlink{group__xbee__device_ga758a79cfaf819f091728c06474466321}{state}}\label{group__xbee__device_ga758a79cfaf819f091728c06474466321}
+
+\begin{DoxyCompactList}\small\item\em current state of receiving a frame \end{DoxyCompactList}\item 
+\hypertarget{group__xbee__device_ga1048ca0eb1adc5759a0df48ae8ae740a}{\hyperlink{group__hal_ga5a8b2dc9e45a9ee81a94ef304fb62505}{uint16\-\_\-t} \hyperlink{group__xbee__device_ga1048ca0eb1adc5759a0df48ae8ae740a}{bytes\-\_\-in\-\_\-frame}}\label{group__xbee__device_ga1048ca0eb1adc5759a0df48ae8ae740a}
+
+\begin{DoxyCompactList}\small\item\em bytes in frame being read; does not include checksum byte \end{DoxyCompactList}\item 
+\hypertarget{group__xbee__device_gad7b2ae5814cb8706ab662a5d67e4837a}{\hyperlink{group__hal_ga5a8b2dc9e45a9ee81a94ef304fb62505}{uint16\-\_\-t} \hyperlink{group__xbee__device_gad7b2ae5814cb8706ab662a5d67e4837a}{bytes\-\_\-read}}\label{group__xbee__device_gad7b2ae5814cb8706ab662a5d67e4837a}
+
+\begin{DoxyCompactList}\small\item\em bytes read so far \end{DoxyCompactList}\item 
+\hypertarget{group__xbee__device_gaa172073584adf9e2f74034489f9cd2a4}{\hyperlink{group__hal_gae1affc9ca37cfb624959c866a73f83c2}{uint8\-\_\-t} \hyperlink{group__xbee__device_gaa172073584adf9e2f74034489f9cd2a4}{frame\-\_\-data} \mbox{[}\hyperlink{group__xbee__device_gad842f3c5f8d2264a99ab67a01054323a}{X\-B\-E\-E\-\_\-\-M\-A\-X\-\_\-\-F\-R\-A\-M\-E\-\_\-\-L\-E\-N}+1\mbox{]}}\label{group__xbee__device_gaa172073584adf9e2f74034489f9cd2a4}
+
+\begin{DoxyCompactList}\small\item\em bytes received, starting with frame\-\_\-type, +1 is for checksum \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Buffer and state variables used for receiving a frame. 
+
+The documentation for this struct was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+include/xbee/\hyperlink{device_8h}{device.\-h}\end{DoxyCompactItemize}

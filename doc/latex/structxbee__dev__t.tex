@@ -1,0 +1,62 @@
+\hypertarget{structxbee__dev__t}{\section{xbee\-\_\-dev\-\_\-t Struct Reference}
+\label{structxbee__dev__t}\index{xbee\-\_\-dev\-\_\-t@{xbee\-\_\-dev\-\_\-t}}
+}
+
+
+{\ttfamily \#include \char`\"{}xbee/device.\-h\char`\"{}}
+
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structxbee__dev__t_1_1rx}{rx}
+\begin{DoxyCompactList}\small\item\em Buffer and state variables used for receiving a frame. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{group__xbee__device_ga8547395da056b57ba7c6b26c0c0f6ccf}{\hyperlink{structwpan__dev__t}{wpan\-\_\-dev\-\_\-t} \hyperlink{group__xbee__device_ga8547395da056b57ba7c6b26c0c0f6ccf}{wpan\-\_\-dev}}\label{group__xbee__device_ga8547395da056b57ba7c6b26c0c0f6ccf}
+
+\begin{DoxyCompactList}\small\item\em Generic W\-P\-A\-N device required by the \hyperlink{group__zigbee}{Zig\-Bee Networking} layers of the A\-P\-I. \end{DoxyCompactList}\item 
+\hypertarget{group__xbee__device_ga3145a7888ffabfc3f10e8e85ced0c686}{\hyperlink{structxbee__serial__t}{xbee\-\_\-serial\-\_\-t} \hyperlink{group__xbee__device_ga3145a7888ffabfc3f10e8e85ced0c686}{serport}}\label{group__xbee__device_ga3145a7888ffabfc3f10e8e85ced0c686}
+
+\begin{DoxyCompactList}\small\item\em Platform-\/specific structure required by xbee\-\_\-serial.\-c. \end{DoxyCompactList}\item 
+\hypertarget{group__xbee__device_ga1f3cf44cb21be8f101d33062a9d2cf97}{\hyperlink{group__xbee__device_ga7f2f41997c6215582cf3491c984b31ea}{xbee\-\_\-reset\-\_\-fn} \hyperlink{group__xbee__device_ga1f3cf44cb21be8f101d33062a9d2cf97}{reset}}\label{group__xbee__device_ga1f3cf44cb21be8f101d33062a9d2cf97}
+
+\begin{DoxyCompactList}\small\item\em Optional function to control reset pin. \end{DoxyCompactList}\item 
+\hypertarget{group__xbee__device_gaf17bb63b8639d0278a2d0ad259865930}{\hyperlink{group__xbee__device_gace56b1c8dd7dc5a23f6fa01878d45b09}{xbee\-\_\-is\-\_\-awake\-\_\-fn} \hyperlink{group__xbee__device_gaf17bb63b8639d0278a2d0ad259865930}{is\-\_\-awake}}\label{group__xbee__device_gaf17bb63b8639d0278a2d0ad259865930}
+
+\begin{DoxyCompactList}\small\item\em Optional function to read A\-W\-A\-K\-E pin. \end{DoxyCompactList}\item 
+\hypertarget{group__xbee__device_ga4952189ed8b46b133b5298b4fce75ab8}{\hyperlink{group__xbee__device_ga55de36532265a72bffa969d5353800d7}{xbee\-\_\-disc\-\_\-node\-\_\-id\-\_\-fn} \hyperlink{group__xbee__device_ga4952189ed8b46b133b5298b4fce75ab8}{node\-\_\-id\-\_\-handler}}\label{group__xbee__device_ga4952189ed8b46b133b5298b4fce75ab8}
+
+\begin{DoxyCompactList}\small\item\em Optional function to receive parsed Node I\-D messages. \end{DoxyCompactList}\item 
+\hypertarget{group__xbee__device_gad4c7c16c071f95965e2e506752b450fe}{\hyperlink{group__hal_ga5a8b2dc9e45a9ee81a94ef304fb62505}{uint16\-\_\-t} \hyperlink{group__xbee__device_gad4c7c16c071f95965e2e506752b450fe}{hardware\-\_\-version}}\label{group__xbee__device_gad4c7c16c071f95965e2e506752b450fe}
+
+\begin{DoxyCompactList}\small\item\em Value of X\-Bee module's H\-V register. \end{DoxyCompactList}\item 
+\hypertarget{group__xbee__device_gac8e0f35fdeff288dd1a7b4f49754c9b2}{\hyperlink{group__hal__dos_ga09a1e304d66d35dd47daffee9731edaa}{uint32\-\_\-t} \hyperlink{group__xbee__device_gac8e0f35fdeff288dd1a7b4f49754c9b2}{firmware\-\_\-version}}\label{group__xbee__device_gac8e0f35fdeff288dd1a7b4f49754c9b2}
+
+\begin{DoxyCompactList}\small\item\em Value of X\-Bee module's V\-R register (4-\/bytes on some devices) \end{DoxyCompactList}\item 
+\hypertarget{group__xbee__device_ga9ac684521a8154bddc272049a7a61b73}{enum \hyperlink{group__xbee__device_ga80478d6b87ebdf34b5ec06e5ca6f309e}{xbee\-\_\-dev\-\_\-flags} \hyperlink{group__xbee__device_ga9ac684521a8154bddc272049a7a61b73}{flags}}\label{group__xbee__device_ga9ac684521a8154bddc272049a7a61b73}
+
+\begin{DoxyCompactList}\small\item\em Multi-\/purpose flags for tracking information about this device. \end{DoxyCompactList}\item 
+\hypertarget{group__xbee__device_ga43dd406313bf0281f9a7b9a6c1555fc6}{struct \hyperlink{structxbee__dev__t_1_1rx}{xbee\-\_\-dev\-\_\-t\-::rx} {\bfseries rx}}\label{group__xbee__device_ga43dd406313bf0281f9a7b9a6c1555fc6}
+
+\item 
+\hypertarget{group__xbee__device_ga03c1016ac46b9df250b994f242cf956a}{\hyperlink{group__hal_gae1affc9ca37cfb624959c866a73f83c2}{uint8\-\_\-t} \hyperlink{group__xbee__device_ga03c1016ac46b9df250b994f242cf956a}{frame\-\_\-id}}\label{group__xbee__device_ga03c1016ac46b9df250b994f242cf956a}
+
+\begin{DoxyCompactList}\small\item\em last frame\-\_\-id used for sending \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyNote}{Note}
+
+\begin{DoxyItemize}
+\item This structure must start with a \hyperlink{structwpan__dev__t}{wpan\-\_\-dev\-\_\-t} so that the device can be used with the wpan library.
+\end{DoxyItemize}
+\end{DoxyNote}
+
+\begin{DoxyItemize}
+\item Uses function pointers for setting the reset pin and reading the awake pin on the X\-Bee. User code should not call the reset function directly; use \hyperlink{group__xbee__device_gad312efa700cca7ca044cddf364cc51f5}{xbee\-\_\-dev\-\_\-reset()} instead so the various network layers will know about the reset. 
+\end{DoxyItemize}
+
+The documentation for this struct was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+include/xbee/\hyperlink{device_8h}{device.\-h}\end{DoxyCompactItemize}

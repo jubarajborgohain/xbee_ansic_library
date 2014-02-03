@@ -1,0 +1,71 @@
+\hypertarget{structxbee__cmd__request__t}{\section{xbee\-\_\-cmd\-\_\-request\-\_\-t Struct Reference}
+\label{structxbee__cmd__request__t}\index{xbee\-\_\-cmd\-\_\-request\-\_\-t@{xbee\-\_\-cmd\-\_\-request\-\_\-t}}
+}
+
+
+This structure is used to keep track of outstanding local and remote A\-T requests.  
+
+
+
+
+{\ttfamily \#include \char`\"{}xbee/atcmd.\-h\char`\"{}}
+
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{group__hal_gae1affc9ca37cfb624959c866a73f83c2}{uint8\-\_\-t} \hyperlink{structxbee__cmd__request__t_acb5c8866a58116314f6c8eda9dc3544c}{sequence}
+\begin{DoxyCompactList}\small\item\em Rolling identifier used to prevent use of stale request indicies. \end{DoxyCompactList}\item 
+\hyperlink{structxbee__dev__t}{xbee\-\_\-dev\-\_\-t} $\ast$ \hyperlink{structxbee__cmd__request__t_ac780e07a2b2cd8df18f56240588090c5}{device}
+\begin{DoxyCompactList}\small\item\em Device that sent this request -- if we have a table for each X\-Bee, this element isn't necessary. \end{DoxyCompactList}\item 
+\hypertarget{structxbee__cmd__request__t_a7f1ad43d3bf79b40bc39dbb5a6c3a5ae}{\hyperlink{group__hal_ga5a8b2dc9e45a9ee81a94ef304fb62505}{uint16\-\_\-t} \hyperlink{structxbee__cmd__request__t_a7f1ad43d3bf79b40bc39dbb5a6c3a5ae}{timeout}}\label{structxbee__cmd__request__t_a7f1ad43d3bf79b40bc39dbb5a6c3a5ae}
+
+\begin{DoxyCompactList}\small\item\em expire entry if \hyperlink{group__hal_ga858c3c1caa899efd6af9ee8a0fe09246}{X\-B\-E\-E\-\_\-\-C\-H\-E\-C\-K\-\_\-\-T\-I\-M\-E\-O\-U\-T\-\_\-\-S\-E\-C(timeout)} is true \end{DoxyCompactList}\item 
+\hypertarget{structxbee__cmd__request__t_a1e87af3c18a2fd36c61faf89949bdc3f}{\hyperlink{group__hal_ga5a8b2dc9e45a9ee81a94ef304fb62505}{uint16\-\_\-t} \hyperlink{structxbee__cmd__request__t_a1e87af3c18a2fd36c61faf89949bdc3f}{flags}}\label{structxbee__cmd__request__t_a1e87af3c18a2fd36c61faf89949bdc3f}
+
+\begin{DoxyCompactList}\small\item\em combination of X\-B\-E\-E\-\_\-\-C\-M\-D\-\_\-\-F\-L\-A\-G\-\_\-$\ast$ macros \end{DoxyCompactList}\item 
+\hypertarget{structxbee__cmd__request__t_a4dd3f2f91ad35819bbed1f14b2b2ad13}{\hyperlink{group__hal_gae1affc9ca37cfb624959c866a73f83c2}{uint8\-\_\-t} \hyperlink{structxbee__cmd__request__t_a4dd3f2f91ad35819bbed1f14b2b2ad13}{param} \mbox{[}\hyperlink{group__xbee__atcmd_ga9b1046f9c200c1bb0a9b57cb0ec474df}{X\-B\-E\-E\-\_\-\-C\-M\-D\-\_\-\-M\-A\-X\-\_\-\-P\-A\-R\-A\-M\-\_\-\-L\-E\-N\-G\-T\-H}\mbox{]}}\label{structxbee__cmd__request__t_a4dd3f2f91ad35819bbed1f14b2b2ad13}
+
+\begin{DoxyCompactList}\small\item\em bytes sent in the request or returned in the response \end{DoxyCompactList}\item 
+\hypertarget{structxbee__cmd__request__t_a2045e9bf1b048b408cc9fdc02271e494}{\hyperlink{group__hal_gae1affc9ca37cfb624959c866a73f83c2}{uint8\-\_\-t} \hyperlink{structxbee__cmd__request__t_a2045e9bf1b048b408cc9fdc02271e494}{param\-\_\-length}}\label{structxbee__cmd__request__t_a2045e9bf1b048b408cc9fdc02271e494}
+
+\begin{DoxyCompactList}\small\item\em number of bytes stored in .param\mbox{[}\mbox{]} \end{DoxyCompactList}\item 
+\hypertarget{structxbee__cmd__request__t_a5d0bf7245ec4d667898f583a0384efb3}{\hyperlink{group__xbee__atcmd_ga9c6cda2f2b7450e8ef2f6b32d9fdcb12}{xbee\-\_\-cmd\-\_\-callback\-\_\-fn} \hyperlink{structxbee__cmd__request__t_a5d0bf7245ec4d667898f583a0384efb3}{callback}}\label{structxbee__cmd__request__t_a5d0bf7245ec4d667898f583a0384efb3}
+
+\begin{DoxyCompactList}\small\item\em function to pass responses to \end{DoxyCompactList}\item 
+\hypertarget{structxbee__cmd__request__t_aa91f8e864e06077c354e5f5216547758}{void \hyperlink{group__hal_gaef060b3456fdcc093a7210a762d5f2ed}{F\-A\-R} $\ast$ \hyperlink{structxbee__cmd__request__t_aa91f8e864e06077c354e5f5216547758}{context}}\label{structxbee__cmd__request__t_aa91f8e864e06077c354e5f5216547758}
+
+\begin{DoxyCompactList}\small\item\em context to pass to callback function \end{DoxyCompactList}\item 
+\hypertarget{structxbee__cmd__request__t_a03c1016ac46b9df250b994f242cf956a}{\hyperlink{group__hal_gae1affc9ca37cfb624959c866a73f83c2}{uint8\-\_\-t} \hyperlink{structxbee__cmd__request__t_a03c1016ac46b9df250b994f242cf956a}{frame\-\_\-id}}\label{structxbee__cmd__request__t_a03c1016ac46b9df250b994f242cf956a}
+
+\begin{DoxyCompactList}\small\item\em frame\-\_\-id of last request sent \end{DoxyCompactList}\item 
+\hypertarget{structxbee__cmd__request__t_a66a58a737aee9733019399e2eceabf4a}{\hyperlink{structwpan__address__t}{wpan\-\_\-address\-\_\-t} \hyperlink{structxbee__cmd__request__t_a66a58a737aee9733019399e2eceabf4a}{address}}\label{structxbee__cmd__request__t_a66a58a737aee9733019399e2eceabf4a}
+
+\begin{DoxyCompactList}\small\item\em address of target device (64-\/bit I\-E\-E\-E and 16-\/bit network) \end{DoxyCompactList}\item 
+\hypertarget{structxbee__cmd__request__t_aa1e66c60bb56acaced6ca2646fd44616}{\hyperlink{unionxbee__at__cmd__t}{xbee\-\_\-at\-\_\-cmd\-\_\-t} \hyperlink{structxbee__cmd__request__t_aa1e66c60bb56acaced6ca2646fd44616}{command}}\label{structxbee__cmd__request__t_aa1e66c60bb56acaced6ca2646fd44616}
+
+\begin{DoxyCompactList}\small\item\em command to send \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This structure is used to keep track of outstanding local and remote A\-T requests. 
+
+\subsection{Field Documentation}
+\hypertarget{structxbee__cmd__request__t_ac780e07a2b2cd8df18f56240588090c5}{\index{xbee\-\_\-cmd\-\_\-request\-\_\-t@{xbee\-\_\-cmd\-\_\-request\-\_\-t}!device@{device}}
+\index{device@{device}!xbee_cmd_request_t@{xbee\-\_\-cmd\-\_\-request\-\_\-t}}
+\subsubsection[{device}]{\setlength{\rightskip}{0pt plus 5cm}{\bf xbee\-\_\-dev\-\_\-t}$\ast$ device}}\label{structxbee__cmd__request__t_ac780e07a2b2cd8df18f56240588090c5}
+
+
+Device that sent this request -- if we have a table for each X\-Bee, this element isn't necessary. 
+
+N\-U\-L\-L if slot is empty. \hypertarget{structxbee__cmd__request__t_acb5c8866a58116314f6c8eda9dc3544c}{\index{xbee\-\_\-cmd\-\_\-request\-\_\-t@{xbee\-\_\-cmd\-\_\-request\-\_\-t}!sequence@{sequence}}
+\index{sequence@{sequence}!xbee_cmd_request_t@{xbee\-\_\-cmd\-\_\-request\-\_\-t}}
+\subsubsection[{sequence}]{\setlength{\rightskip}{0pt plus 5cm}{\bf uint8\-\_\-t} sequence}}\label{structxbee__cmd__request__t_acb5c8866a58116314f6c8eda9dc3544c}
+
+
+Rolling identifier used to prevent use of stale request indicies. 
+
+Handle is a combination of index and this sequence byte. 
+
+The documentation for this struct was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+include/xbee/\hyperlink{atcmd_8h}{atcmd.\-h}\end{DoxyCompactItemize}

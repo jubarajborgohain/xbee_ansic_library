@@ -1,0 +1,179 @@
+\hypertarget{xbee__firmware_8c}{\section{src/xbee/xbee\-\_\-firmware.c File Reference}
+\label{xbee__firmware_8c}\index{src/xbee/xbee\-\_\-firmware.\-c@{src/xbee/xbee\-\_\-firmware.\-c}}
+}
+
+
+A\-P\-I related to updating X\-Bee firmware on the local X\-Bee module.  
+
+
+{\ttfamily \#include $<$errno.\-h$>$}\\*
+{\ttfamily \#include $<$stdio.\-h$>$}\\*
+{\ttfamily \#include \char`\"{}xbee/platform.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}xbee/atmode.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}xbee/byteorder.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}xbee/firmware.\-h\char`\"{}}\\*
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{group__xbee__firmware_ga67178b0dd7b917c4416789c1b17931c0}{\#define {\bfseries \-\_\-xbee\-\_\-firmware\-\_\-debug}}\label{group__xbee__firmware_ga67178b0dd7b917c4416789c1b17931c0}
+
+\item 
+\hypertarget{group__xbee__firmware_ga89e5bb5d965f258c48d9cea25e67ebd9}{\#define {\bfseries \-\_\-\-T\-I\-M\-E\-\_\-\-E\-L\-A\-P\-S\-E\-D}(x)~(\hyperlink{group__hal_ga22b4e3df788254ca5f8530e9aee58515}{xbee\-\_\-millisecond\-\_\-timer}() -\/ source-\/$>$timer $>$ (x))}\label{group__xbee__firmware_ga89e5bb5d965f258c48d9cea25e67ebd9}
+
+\item 
+\hypertarget{group__xbee__firmware_gacc2d97a3340a997e4ac2df44e42d3220}{\#define {\bfseries X\-B\-E\-E\-\_\-\-O\-E\-M\-\_\-\-M\-A\-G\-I\-C\-\_\-\-N\-U\-M\-B\-E\-R}~0x93\-F\-D}\label{group__xbee__firmware_gacc2d97a3340a997e4ac2df44e42d3220}
+
+\item 
+\hypertarget{group__xbee__firmware_gab7b27e58766348f7ee11552e19a3dc80}{\#define {\bfseries X\-B\-E\-E\-\_\-\-O\-E\-M\-\_\-\-O\-F\-S\-\_\-\-M\-A\-G\-I\-C\-\_\-\-N\-U\-M\-B\-E\-R}~0}\label{group__xbee__firmware_gab7b27e58766348f7ee11552e19a3dc80}
+
+\item 
+\hypertarget{group__xbee__firmware_ga61fbda32638ce4b34b34f9be4e323f69}{\#define {\bfseries X\-B\-E\-E\-\_\-\-O\-E\-M\-\_\-\-O\-F\-S\-\_\-\-C\-H\-E\-C\-K\-S\-U\-M}~2}\label{group__xbee__firmware_ga61fbda32638ce4b34b34f9be4e323f69}
+
+\item 
+\hypertarget{group__xbee__firmware_ga30791d99a3f412a18712b68f42f913be}{\#define {\bfseries X\-B\-E\-E\-\_\-\-O\-E\-M\-\_\-\-O\-F\-S\-\_\-\-I\-M\-A\-G\-E\-\_\-\-L\-E\-N}~4}\label{group__xbee__firmware_ga30791d99a3f412a18712b68f42f913be}
+
+\item 
+\hypertarget{group__xbee__firmware_gab7cea8c88aa786bdc27e3e2a14f52278}{\#define {\bfseries X\-B\-E\-E\-\_\-\-O\-E\-M\-\_\-\-O\-F\-S\-\_\-\-H\-E\-A\-D\-E\-R\-\_\-\-L\-E\-N}~8}\label{group__xbee__firmware_gab7cea8c88aa786bdc27e3e2a14f52278}
+
+\item 
+\hypertarget{group__xbee__firmware_ga9819ebdc24e69594a3f511caa46a7ea9}{\#define {\bfseries X\-B\-E\-E\-\_\-\-O\-E\-M\-\_\-\-O\-F\-S\-\_\-\-M\-O\-D\-U\-L\-E\-\_\-\-I\-D}~10}\label{group__xbee__firmware_ga9819ebdc24e69594a3f511caa46a7ea9}
+
+\item 
+\hypertarget{group__xbee__firmware_ga36a4d3918b8dce95c49f64a66a60c940}{\#define {\bfseries X\-B\-E\-E\-\_\-\-O\-E\-M\-\_\-\-O\-F\-S\-\_\-\-S\-W\-\_\-\-C\-O\-M\-P\-A\-T\-\_\-\-L\-E\-V\-E\-L}~11}\label{group__xbee__firmware_ga36a4d3918b8dce95c49f64a66a60c940}
+
+\item 
+\hypertarget{group__xbee__firmware_ga08c3c592ffffa1278d96c33fda285b87}{\#define {\bfseries X\-B\-E\-E\-\_\-\-O\-E\-M\-\_\-\-O\-F\-S\-\_\-\-F\-W\-\_\-\-V\-E\-R\-S\-I\-O\-N}~12}\label{group__xbee__firmware_ga08c3c592ffffa1278d96c33fda285b87}
+
+\item 
+\hypertarget{group__xbee__firmware_gab7cbb4f6b1f3bb08d85a092921689c57}{\#define {\bfseries X\-B\-E\-E\-\_\-\-B\-O\-O\-T\-L\-O\-A\-D\-E\-R\-\_\-\-A\-C\-K}~'U'}\label{group__xbee__firmware_gab7cbb4f6b1f3bb08d85a092921689c57}
+
+\item 
+\hypertarget{group__xbee__firmware_ga4a6c559672de2516d8d86335f1753715}{\#define {\bfseries X\-B\-E\-E\-\_\-\-B\-O\-O\-T\-L\-O\-A\-D\-E\-R\-\_\-\-N\-A\-K}~0x11}\label{group__xbee__firmware_ga4a6c559672de2516d8d86335f1753715}
+
+\item 
+\hypertarget{group__xbee__firmware_ga01933f6abed1e3799566a284d24af8b3}{\#define {\bfseries X\-B\-E\-E\-\_\-\-O\-E\-M\-\_\-\-F\-L\-A\-G\-\_\-\-N\-O\-N\-E}~0x0000}\label{group__xbee__firmware_ga01933f6abed1e3799566a284d24af8b3}
+
+\item 
+\hypertarget{group__xbee__firmware_ga28fca9c70673cb50a5103c8685e1af36}{\#define {\bfseries X\-B\-E\-E\-\_\-\-O\-E\-M\-\_\-\-F\-L\-A\-G\-\_\-\-F\-O\-R\-C\-E\-U\-P\-D\-A\-T\-E}~0x0001}\label{group__xbee__firmware_ga28fca9c70673cb50a5103c8685e1af36}
+
+\item 
+\hypertarget{group__xbee__firmware_ga89e5bb5d965f258c48d9cea25e67ebd9}{\#define {\bfseries \-\_\-\-T\-I\-M\-E\-\_\-\-E\-L\-A\-P\-S\-E\-D}(x)~(\hyperlink{group__hal_ga22b4e3df788254ca5f8530e9aee58515}{xbee\-\_\-millisecond\-\_\-timer}() -\/ source-\/$>$timer $>$ (x))}\label{group__xbee__firmware_ga89e5bb5d965f258c48d9cea25e67ebd9}
+
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef \hyperlink{group___s_x_a_ga4233297bd31be5c273d4fb0758cc54d7}{P\-A\-C\-K\-E\-D\-\_\-\-S\-T\-R\-U\-C\-T} {\bfseries \-\_\-xbee\-\_\-oem\-\_\-header}
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \{ \\*
+{\bfseries X\-B\-E\-E\-\_\-\-F\-W\-\_\-\-S\-T\-A\-T\-E\-\_\-\-I\-N\-I\-T}, 
+{\bfseries X\-B\-E\-E\-\_\-\-F\-W\-\_\-\-S\-T\-A\-T\-E\-\_\-\-R\-E\-S\-E\-T}, 
+{\bfseries X\-B\-E\-E\-\_\-\-F\-W\-\_\-\-S\-T\-A\-T\-E\-\_\-\-T\-O\-G\-G\-L\-E}, 
+{\bfseries X\-B\-E\-E\-\_\-\-F\-W\-\_\-\-S\-T\-A\-T\-E\-\_\-\-B\-R\-E\-A\-K}, 
+\\*
+{\bfseries X\-B\-E\-E\-\_\-\-F\-W\-\_\-\-S\-T\-A\-T\-E\-\_\-\-P\-R\-O\-M\-P\-T}, 
+{\bfseries X\-B\-E\-E\-\_\-\-F\-W\-\_\-\-S\-T\-A\-T\-E\-\_\-\-X\-M\-O\-D\-E\-M\-\_\-\-W\-A\-I\-T}, 
+{\bfseries X\-B\-E\-E\-\_\-\-F\-W\-\_\-\-S\-T\-A\-T\-E\-\_\-\-X\-M\-O\-D\-E\-M\-\_\-\-S\-E\-N\-D}, 
+{\bfseries X\-B\-E\-E\-\_\-\-F\-W\-\_\-\-S\-T\-A\-T\-E\-\_\-\-X\-M\-O\-D\-E\-M\-\_\-\-D\-O\-N\-E}, 
+\\*
+{\bfseries X\-B\-E\-E\-\_\-\-F\-W\-\_\-\-S\-T\-A\-T\-E\-\_\-\-F\-I\-N\-A\-L\-\_\-\-P\-R\-O\-M\-P\-T}, 
+{\bfseries X\-B\-E\-E\-\_\-\-F\-W\-\_\-\-S\-T\-A\-T\-E\-\_\-\-C\-M\-D\-\_\-\-P\-E\-N\-D\-I\-N\-G}, 
+{\bfseries X\-B\-E\-E\-\_\-\-F\-W\-\_\-\-S\-T\-A\-T\-E\-\_\-\-C\-M\-D}, 
+{\bfseries X\-B\-E\-E\-\_\-\-F\-W\-\_\-\-S\-T\-A\-T\-E\-\_\-\-P\-A\-R\-S\-E\-\_\-\-R\-E\-S\-P\-O\-N\-S\-E}, 
+\\*
+{\bfseries X\-B\-E\-E\-\_\-\-F\-W\-\_\-\-S\-T\-A\-T\-E\-\_\-\-C\-M\-D\-\_\-\-H\-V}, 
+{\bfseries X\-B\-E\-E\-\_\-\-F\-W\-\_\-\-S\-T\-A\-T\-E\-\_\-\-C\-M\-D\-\_\-\-C\-O\-M\-P\-A\-T}, 
+{\bfseries X\-B\-E\-E\-\_\-\-F\-W\-\_\-\-S\-T\-A\-T\-E\-\_\-\-C\-M\-D\-\_\-\-V\-R}, 
+{\bfseries X\-B\-E\-E\-\_\-\-F\-W\-\_\-\-S\-T\-A\-T\-E\-\_\-\-C\-M\-D\-\_\-\-C\-F1}, 
+\\*
+{\bfseries X\-B\-E\-E\-\_\-\-F\-W\-\_\-\-S\-T\-A\-T\-E\-\_\-\-C\-M\-D\-\_\-\-S\-L}, 
+{\bfseries X\-B\-E\-E\-\_\-\-F\-W\-\_\-\-S\-T\-A\-T\-E\-\_\-\-C\-M\-D\-\_\-\-P\-R\-O\-G}, 
+{\bfseries X\-B\-E\-E\-\_\-\-F\-W\-\_\-\-S\-T\-A\-T\-E\-\_\-\-C\-M\-D\-\_\-\-F\-R}, 
+{\bfseries X\-B\-E\-E\-\_\-\-F\-W\-\_\-\-S\-T\-A\-T\-E\-\_\-\-B\-O\-O\-T\-L\-O\-A\-D\-E\-R}, 
+\\*
+{\bfseries X\-B\-E\-E\-\_\-\-F\-W\-\_\-\-S\-T\-A\-T\-E\-\_\-\-T\-X\-\_\-\-S\-T\-A\-R\-T}, 
+{\bfseries X\-B\-E\-E\-\_\-\-F\-W\-\_\-\-S\-T\-A\-T\-E\-\_\-\-T\-X\-\_\-\-B\-L\-O\-C\-K}, 
+{\bfseries X\-B\-E\-E\-\_\-\-F\-W\-\_\-\-S\-T\-A\-T\-E\-\_\-\-S\-E\-N\-D\-I\-N\-G}, 
+{\bfseries X\-B\-E\-E\-\_\-\-F\-W\-\_\-\-S\-T\-A\-T\-E\-\_\-\-R\-X\-\_\-\-B\-L\-O\-C\-K}, 
+\\*
+{\bfseries X\-B\-E\-E\-\_\-\-F\-W\-\_\-\-S\-T\-A\-T\-E\-\_\-\-R\-X\-\_\-\-F\-A\-I\-L}, 
+{\bfseries X\-B\-E\-E\-\_\-\-F\-W\-\_\-\-S\-T\-A\-T\-E\-\_\-\-D\-O\-N\-E}, 
+{\bfseries X\-B\-E\-E\-\_\-\-F\-W\-\_\-\-S\-T\-A\-T\-E\-\_\-\-F\-A\-I\-L\-U\-R\-E}, 
+{\bfseries X\-B\-E\-E\-\_\-\-F\-W\-\_\-\-S\-T\-A\-T\-E\-\_\-\-S\-U\-C\-C\-E\-S\-S}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\-\_\-xbee\-\_\-firmware\-\_\-debug int \hyperlink{group__xbee__firmware_ga3ea95570f7d7366e42b0ee6ba21a1c41}{xbee\-\_\-fw\-\_\-install\-\_\-init} (\hyperlink{structxbee__dev__t}{xbee\-\_\-dev\-\_\-t} $\ast$xbee, const \hyperlink{structwpan__address__t}{wpan\-\_\-address\-\_\-t} \hyperlink{group__hal_gaef060b3456fdcc093a7210a762d5f2ed}{F\-A\-R} $\ast$target, \hyperlink{structxbee__fw__source__t}{xbee\-\_\-fw\-\_\-source\-\_\-t} $\ast$source)
+\begin{DoxyCompactList}\small\item\em \begin{DoxyVerb}        Prepare to install new firmware on an attached XBee module.\end{DoxyVerb}
+ \end{DoxyCompactList}\item 
+\-\_\-xbee\-\_\-firmware\-\_\-debug unsigned int \hyperlink{group__xbee__firmware_ga8590708a38ac57ace8c816cc7cfd0859}{xbee\-\_\-fw\-\_\-install\-\_\-ebl\-\_\-state} (\hyperlink{structxbee__fw__source__t}{xbee\-\_\-fw\-\_\-source\-\_\-t} $\ast$source)
+\begin{DoxyCompactList}\small\item\em Returns a unique value indicating the state of the .E\-B\-L install process. \end{DoxyCompactList}\item 
+\-\_\-xbee\-\_\-firmware\-\_\-debug int \hyperlink{group__xbee__firmware_ga00113850eb74d0cb2928c9530d253381}{xbee\-\_\-fw\-\_\-install\-\_\-hcs08\-\_\-tick} (\hyperlink{structxbee__fw__source__t}{xbee\-\_\-fw\-\_\-source\-\_\-t} $\ast$source)
+\begin{DoxyCompactList}\small\item\em Drive the firmware update process for the H\-C\-S08 application on Programmable X\-Bee modules. \end{DoxyCompactList}\item 
+\-\_\-xbee\-\_\-firmware\-\_\-debug int \hyperlink{group__xbee__firmware_gaae62252a2e1331127c9df86b6ebfc4e8}{xbee\-\_\-fw\-\_\-install\-\_\-ebl\-\_\-tick} (\hyperlink{structxbee__fw__source__t}{xbee\-\_\-fw\-\_\-source\-\_\-t} $\ast$source)
+\begin{DoxyCompactList}\small\item\em Drive the firmware update process for boards that use .E\-B\-L files to store their firmware. \end{DoxyCompactList}\item 
+\-\_\-xbee\-\_\-firmware\-\_\-debug char \hyperlink{group__hal_gaef060b3456fdcc093a7210a762d5f2ed}{F\-A\-R} $\ast$ \hyperlink{group__xbee__firmware_ga8bee6e4bb7564c51bb38129e97a12e99}{xbee\-\_\-fw\-\_\-status\-\_\-ebl} (\hyperlink{structxbee__fw__source__t}{xbee\-\_\-fw\-\_\-source\-\_\-t} $\ast$source, char \hyperlink{group__hal_gaef060b3456fdcc093a7210a762d5f2ed}{F\-A\-R} $\ast$buffer)
+\begin{DoxyCompactList}\small\item\em \begin{DoxyVerb}  Update \a buffer with the current install status of \a source.\end{DoxyVerb}
+ \end{DoxyCompactList}\item 
+\-\_\-xbee\-\_\-firmware\-\_\-debug int \hyperlink{group__xbee__firmware_ga279def556401f533d798bb3896302ced}{xbee\-\_\-fw\-\_\-read\-\_\-byte} (\hyperlink{structxbee__fw__source__t}{xbee\-\_\-fw\-\_\-source\-\_\-t} $\ast$source)
+\item 
+\hypertarget{group__xbee__firmware_ga746388cd011a0d01a71d8165f218ac0c}{\-\_\-xbee\-\_\-firmware\-\_\-debug \hyperlink{group__hal_ga5a8b2dc9e45a9ee81a94ef304fb62505}{uint16\-\_\-t} {\bfseries xbee\-\_\-fw\-\_\-read\-\_\-uint16} (\hyperlink{structxbee__fw__source__t}{xbee\-\_\-fw\-\_\-source\-\_\-t} $\ast$source)}\label{group__xbee__firmware_ga746388cd011a0d01a71d8165f218ac0c}
+
+\item 
+\hypertarget{group__xbee__firmware_gac6ee0eef9cb2fad06cdb35e7efbfa4b7}{\-\_\-xbee\-\_\-firmware\-\_\-debug \hyperlink{group__hal__dos_ga09a1e304d66d35dd47daffee9731edaa}{uint32\-\_\-t} {\bfseries xbee\-\_\-fw\-\_\-read\-\_\-uint32} (\hyperlink{structxbee__fw__source__t}{xbee\-\_\-fw\-\_\-source\-\_\-t} $\ast$source)}\label{group__xbee__firmware_gac6ee0eef9cb2fad06cdb35e7efbfa4b7}
+
+\item 
+\hypertarget{group__xbee__firmware_ga435d274639214c2d05e85602bb5753b0}{\-\_\-xbee\-\_\-firmware\-\_\-debug \hyperlink{group__hal_ga5a8b2dc9e45a9ee81a94ef304fb62505}{uint16\-\_\-t} {\bfseries xbee\-\_\-fw\-\_\-hex2word} (const char $\ast$p\-String)}\label{group__xbee__firmware_ga435d274639214c2d05e85602bb5753b0}
+
+\item 
+\-\_\-xbee\-\_\-firmware\-\_\-debug int \hyperlink{group__xbee__firmware_ga06368ad0d6cc0d4e92dbf36f8b233f90}{\-\_\-xbee\-\_\-oem\-\_\-verify} (\hyperlink{structxbee__fw__source__t}{xbee\-\_\-fw\-\_\-source\-\_\-t} $\ast$source)
+\item 
+\hypertarget{group__xbee__firmware_ga2ab185ce19159e57ca4666300be1a94b}{\-\_\-xbee\-\_\-firmware\-\_\-debug int {\bfseries \-\_\-xbee\-\_\-fw\-\_\-send\-\_\-request} (\hyperlink{structxbee__fw__source__t}{xbee\-\_\-fw\-\_\-source\-\_\-t} $\ast$source, const \hyperlink{group__hal_gaef060b3456fdcc093a7210a762d5f2ed}{F\-A\-R} char $\ast$request, int next\-\_\-state)}\label{group__xbee__firmware_ga2ab185ce19159e57ca4666300be1a94b}
+
+\item 
+\-\_\-xbee\-\_\-firmware\-\_\-debug int \hyperlink{group__xbee__firmware_gaea52642560ef68878fbca44e81df2be8}{xbee\-\_\-fw\-\_\-install\-\_\-oem\-\_\-tick} (\hyperlink{structxbee__fw__source__t}{xbee\-\_\-fw\-\_\-source\-\_\-t} $\ast$source)
+\begin{DoxyCompactList}\small\item\em Install the firmware image stored in {\itshape source}. \end{DoxyCompactList}\item 
+\-\_\-xbee\-\_\-firmware\-\_\-debug char \hyperlink{group__hal_gaef060b3456fdcc093a7210a762d5f2ed}{F\-A\-R} $\ast$ \hyperlink{group__xbee__firmware_ga0198db687345929eece03335ea1c7701}{xbee\-\_\-fw\-\_\-status\-\_\-oem} (\hyperlink{structxbee__fw__source__t}{xbee\-\_\-fw\-\_\-source\-\_\-t} $\ast$source, char \hyperlink{group__hal_gaef060b3456fdcc093a7210a762d5f2ed}{F\-A\-R} $\ast$buffer)
+\begin{DoxyCompactList}\small\item\em Update {\itshape buffer} with the current install status of {\itshape source}. \end{DoxyCompactList}\item 
+\-\_\-xbee\-\_\-firmware\-\_\-debug int \hyperlink{group__xbee__firmware_ga86a474f683ca3239ddea7b6414a6c555}{\-\_\-xbee\-\_\-fw\-\_\-buffer\-\_\-seek} (void \hyperlink{group__hal_gaef060b3456fdcc093a7210a762d5f2ed}{F\-A\-R} $\ast$context, \hyperlink{group__hal__dos_ga09a1e304d66d35dd47daffee9731edaa}{uint32\-\_\-t} offset)
+\begin{DoxyCompactList}\small\item\em Helper function used when the source firmware image is entirely held in a buffer. \end{DoxyCompactList}\item 
+\-\_\-xbee\-\_\-firmware\-\_\-debug int \hyperlink{group__xbee__firmware_ga3e528e574ae73a5f8bbc8b2783f04c4f}{\-\_\-xbee\-\_\-fw\-\_\-buffer\-\_\-read} (void \hyperlink{group__hal_gaef060b3456fdcc093a7210a762d5f2ed}{F\-A\-R} $\ast$context, void \hyperlink{group__hal_gaef060b3456fdcc093a7210a762d5f2ed}{F\-A\-R} $\ast$buffer, \hyperlink{group__hal_ga2140805d08462d474b82ddc8d1c2f3e6}{int16\-\_\-t} bytes)
+\begin{DoxyCompactList}\small\item\em Helper function used when the source firmware image is entirely held in a buffer. \end{DoxyCompactList}\item 
+\-\_\-xbee\-\_\-firmware\-\_\-debug int \hyperlink{group__xbee__firmware_ga8ac2a394778a985657db3c7f08b12692}{xbee\-\_\-fw\-\_\-buffer\-\_\-init} (\hyperlink{structxbee__fw__buffer__t}{xbee\-\_\-fw\-\_\-buffer\-\_\-t} $\ast$fw, \hyperlink{group__hal__dos_ga09a1e304d66d35dd47daffee9731edaa}{uint32\-\_\-t} \hyperlink{group__zdo_gab2b3adeb2a67e656ff030b56727fd0ac}{length}, const char \hyperlink{group__hal_gaef060b3456fdcc093a7210a762d5f2ed}{F\-A\-R} $\ast$address)
+\begin{DoxyCompactList}\small\item\em Helper function for setting up an \hyperlink{structxbee__fw__buffer__t}{xbee\-\_\-fw\-\_\-buffer\-\_\-t} for use with a source firmware image held entirely in a buffer. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{group__xbee__firmware_ga6796c847bbd16253ce2538754c250bd6}{\hyperlink{group__hal_ga5a8b2dc9e45a9ee81a94ef304fb62505}{uint16\-\_\-t} {\bfseries checksum}}\label{group__xbee__firmware_ga6796c847bbd16253ce2538754c250bd6}
+
+\item 
+\hypertarget{group__xbee__firmware_ga4de969ee47deaf3562bc7175ce46d8d6}{\hyperlink{group__hal__dos_ga09a1e304d66d35dd47daffee9731edaa}{uint32\-\_\-t} {\bfseries image\-\_\-len}}\label{group__xbee__firmware_ga4de969ee47deaf3562bc7175ce46d8d6}
+
+\item 
+\hypertarget{group__xbee__firmware_gaf377dbe5982b0f6ee2f3f01826aaed5e}{\hyperlink{group__hal_ga5a8b2dc9e45a9ee81a94ef304fb62505}{uint16\-\_\-t} {\bfseries header\-\_\-len}}\label{group__xbee__firmware_gaf377dbe5982b0f6ee2f3f01826aaed5e}
+
+\item 
+\hypertarget{group__xbee__firmware_ga68ff5f6cab8d5a337f7caa2bd0a8f5da}{\hyperlink{group__hal_gae1affc9ca37cfb624959c866a73f83c2}{uint8\-\_\-t} {\bfseries module\-\_\-id}}\label{group__xbee__firmware_ga68ff5f6cab8d5a337f7caa2bd0a8f5da}
+
+\item 
+\hypertarget{group__xbee__firmware_ga53f7e683f3ff948b2ed5debd6e76a43b}{\hyperlink{group__hal_gae1affc9ca37cfb624959c866a73f83c2}{uint8\-\_\-t} {\bfseries software\-\_\-id}}\label{group__xbee__firmware_ga53f7e683f3ff948b2ed5debd6e76a43b}
+
+\item 
+\hypertarget{group__xbee__firmware_gac9da2c457e0aecd27ecabc42941c8c37}{{\bfseries xbee\-\_\-oem\-\_\-header\-\_\-t}}\label{group__xbee__firmware_gac9da2c457e0aecd27ecabc42941c8c37}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A\-P\-I related to updating X\-Bee firmware on the local X\-Bee module. This could grow to support O\-T\-A (Over The Air) updates, via an expanded A\-P\-I.
+
+Include helper A\-P\-I for initiating an update via firmware loaded to a far char buffer. An additional xbee\-\_\-firmware\-\_\-fat.\-lib could include helper functions for installing firmware from a file on the F\-A\-T filesystem.
+
+Define X\-B\-E\-E\-\_\-\-F\-I\-R\-M\-W\-A\-R\-E\-\_\-\-V\-E\-R\-B\-O\-S\-E for debugging messages.
+
+Define X\-B\-E\-E\-\_\-\-F\-I\-R\-M\-W\-A\-R\-E\-\_\-\-D\-E\-B\-U\-G to make the functions in this file debuggable. 
